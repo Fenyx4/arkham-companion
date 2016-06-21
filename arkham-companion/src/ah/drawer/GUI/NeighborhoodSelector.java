@@ -126,4 +126,10 @@ public class NeighborhoodSelector extends Activity {
         lv1.setAdapter(mAdapter);
      
     }
+    
+    public void openEncHx(View view)
+    {
+    	Intent i = new Intent(this, LocationHxActivity.class);
+		this.startActivity(i);
+    }
 }

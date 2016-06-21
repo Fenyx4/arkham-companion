@@ -26,8 +26,14 @@ public class Card {
     	return "CardID: " + ID + " NeiID: " + neiID;
     }
 
+    ArrayList<Long> expIDs = null;
 	public ArrayList<Long> getExpIDs() {
-		return AHFlyweightFactory.INSTANCE.getExpansionsForCard(ID);
+		if(expIDs == null)
+		{
+			expIDs = AHFlyweightFactory.INSTANCE.getExpansionsForCard(ID);
+		}
+		
+		return expIDs;
 	}
 
 	public Neighborhood getNeighborhood() {

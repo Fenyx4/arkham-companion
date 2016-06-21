@@ -20,5 +20,12 @@
 		    android:layout_width="100dp"
 		    android:background="@drawable/ow_btn"
 		    android:layout_alignParentLeft="true"/>
+    	<Button 
+    	    android:id="@+id/open_encounterhx" 
+		  	android:layout_height="100dp"
+		    android:layout_width="100dp"
+		    android:text="Hx"
+		    android:layout_alignParentRight="true"
+			android:onClick="openEncHx"/>
     </RelativeLayout>
 </LinearLayout>

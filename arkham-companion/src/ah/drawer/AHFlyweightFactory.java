@@ -27,7 +27,7 @@ public class AHFlyweightFactory {
 			DatabaseHelper dh = DatabaseHelper.getInstance(context);
 			SQLiteDatabase db = dh.getReadableDatabase();
 			
-			String[] columns = new String[]{DatabaseHelper.expID,DatabaseHelper.expName};
+			String[] columns = new String[]{DatabaseHelper.expID,DatabaseHelper.expName,DatabaseHelper.expIconPath};
 			Cursor c = db.query(DatabaseHelper.expTable, columns, null, null, null, null, null);
 			
 			c.moveToFirst();
@@ -35,7 +35,7 @@ public class AHFlyweightFactory {
 			while(!c.isAfterLast())
 			{
 				ID = c.getInt(0);
-				expansionMap.put(ID, new Expansion(ID, c.getString(1)));
+				expansionMap.put(ID, new Expansion(ID, c.getString(1), c.getString(2)));
 				
 				c.moveToNext();
 			}
@@ -369,6 +369,19 @@ public class AHFlyweightFactory {
 		{
 			DatabaseHelper.getInstance(applicationContext);
 		}
+	}
+
+	public Expansion getExpansion(Long expID) 
+	{
+		//!!! Fill the map if necessary
+		getExpansions();
+		
+		if( expansionMap.containsKey(expID))
+		{
+			return expansionMap.get(expID);
+		}
+		
+		return null;
 	}
 	   
 }

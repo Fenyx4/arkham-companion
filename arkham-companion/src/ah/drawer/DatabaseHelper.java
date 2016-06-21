@@ -28,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String expTable="Expansion";
 	static final String expID="expID";
 	static final String expName="expName";
+	static final String expIconPath="expIconPath";
 	
 	//Encounters
 	static final String encounterTable="Encounter";
@@ -53,10 +54,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String viewEmps="ViewEmps";
 	
 	public static DatabaseHelper instance;
-
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,73); 
+		  super(context, dbName, null,81); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -75,6 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public void onCreate(SQLiteDatabase db) {
 		 
 		  db.execSQL("CREATE TABLE "+expTable+" ("+expID+ " INTEGER PRIMARY KEY, "+
+				  expIconPath + " TEXT, "+
 				  expName + " TEXT)");
 		  
 		  db.execSQL("CREATE TABLE "+neighborhoodTable+" ("+neiID+" INTEGER PRIMARY KEY, "+

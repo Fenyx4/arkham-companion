@@ -11,6 +11,8 @@ public class GameState
 	//Sorted arrays for each neighborhood representing the deck of cards
 	private HashMap<Long,ArrayList<Card>> encounterCardsList;
 	private Random rand;
+	private ArrayList<Encounter> encounterHx = null;
+	private ArrayList<Card> cardHx = null;
 	
 	//The expansions selected for this play session
 	private HashMap<Long,Long> currentExpansions;
@@ -19,6 +21,8 @@ public class GameState
 	{
 		currentExpansions = new HashMap<Long,Long>();
 		encounterCardsList = new HashMap<Long,ArrayList<Card>>();
+		encounterHx = new ArrayList<Encounter>();
+		cardHx = new ArrayList<Card>();
 		rand = new Random(522348);
 	}
 	public ArrayList<Card> getDeckByNeighborhood(long neiID)
@@ -77,5 +81,23 @@ public class GameState
 		
 		//Clear the deck lists
 		encounterCardsList = new HashMap<Long,ArrayList<Card>>();
+		encounterHx = new ArrayList<Encounter>();
+		cardHx = new ArrayList<Card>();
+	}
+	
+	public void AddHistory(Card card, Encounter enc) 
+	{
+		cardHx.add(0,card);
+		encounterHx.add(0, enc);
+	}
+	
+	public ArrayList<Encounter> getEncounterHx()
+	{
+		return encounterHx;
+	}
+	
+	public ArrayList<Card> getCardHx()
+	{
+		return cardHx;
 	}
 }

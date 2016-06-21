@@ -4,11 +4,13 @@ public class Expansion {
 
 	private long ID;
 	private String name;
+	private String expIconPath;
 
-	public Expansion(long ID, String name)
+	public Expansion(long ID, String name, String expIconPath)
 	{
 		this.ID = ID;
 		this.name = name;
+		this.expIconPath = expIconPath;
 	}
 
 	public long getID() {
@@ -29,6 +31,12 @@ public class Expansion {
 		return GameState.INSTANCE.getAppliedExpansions().contains(ID);
 	}
 	
+	//Icon for this expansion. Can be null (i.e. Base)
+	public String getExpansionIconPath()
+	{
+		return expIconPath;
+	}
+	
 	public String getCheckboxOffPath()
 	{
 		switch ((int)ID)
@@ -41,7 +49,7 @@ public class Expansion {
 			case 6: return "checkbox/btn_bg_check_off.png";
 			case 7: return "checkbox/btn_ih_check_off.png";
 			case 8: return "checkbox/btn_lt_check_off.png";
-			case 9: return "checkbox/btn_dp_check_off.png";
+			case 9: return "checkbox/btn_dpr_check_off.png";
 			case 10: return "checkbox/btn_mh_check_off.png";
 			default: return "checkbox/btn_dh_check_off.png";
 		}
@@ -59,7 +67,7 @@ public class Expansion {
 			case 6: return "checkbox/btn_bg_check_on.png";
 			case 7: return "checkbox/btn_ih_check_on.png";
 			case 8: return "checkbox/btn_lt_check_on.png";
-			case 9: return "checkbox/btn_dp_check_on.png";
+			case 9: return "checkbox/btn_dpr_check_on.png";
 			case 10: return "checkbox/btn_mh_check_on.png";
 			default: return "checkbox/btn_dh_check_on.png";
 		}

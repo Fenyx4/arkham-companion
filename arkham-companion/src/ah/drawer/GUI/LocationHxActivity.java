@@ -27,11 +27,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -39,7 +37,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout.LayoutParams;
 
-public class LocationDeckActivity extends Activity {
+public class LocationHxActivity extends Activity {
 	//private Encounter encounter;
 	
     /** Called when the activity is first created. */
@@ -49,17 +47,15 @@ public class LocationDeckActivity extends Activity {
         setContentView(R.layout.locationdeck);
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
-        
-        Bundle extras = getIntent().getExtras();
 
-        long neiID = extras.getLong("neighborhood");
+        //long neiID = extras.getLong("neighborhood");
         
         Gallery gallery = (Gallery) findViewById(R.id.gallery);
-	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
+	    gallery.setAdapter(new EncounterHxAdapter(this, GameState.INSTANCE.getEncounterHx()));
 
 	    gallery.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	            Toast.makeText(LocationDeckActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+	            Toast.makeText(LocationHxActivity.this, "" + position, Toast.LENGTH_SHORT).show();
 	        }
 	    });
         
@@ -67,19 +63,19 @@ public class LocationDeckActivity extends Activity {
 	    gallery.setSelection(0);
     }
 
-    public class CardAdapter extends BaseAdapter {
+    public class EncounterHxAdapter extends BaseAdapter {
 	    //int mGalleryItemBackground;
 	    private Context mContext;
 
-	    private ArrayList<Card> cardArr;
+	    private ArrayList<Encounter> encArr;
 
-	    public CardAdapter(Context c, ArrayList<Card> cardArr) 
+	    public EncounterHxAdapter(Context c, ArrayList<Encounter> encArr) 
 	    {
 	        mContext = c;
-	        this.cardArr = cardArr;
+	        this.encArr = encArr;
 	        TypedArray attr = mContext.obtainStyledAttributes(R.styleable.HelloGallery);
 	        
-	        Log.w("AHDecks", cardArr.size() + " cards in deck.");
+	        Log.w("AHEncounters", encArr.size() + " encounters in Hx.");
 	        
 	        //mGalleryItemBackground = attr.getResourceId(
 	        //        R.styleable.HelloGallery_android_galleryItemBackground, 0);
@@ -87,11 +83,11 @@ public class LocationDeckActivity extends Activity {
 	    }
 
 	    public int getCount() {
-	        return cardArr.size();
+	        return encArr.size();
 	    }
 
 	    public Object getItem(int position) {
-	        return cardArr.get(position);
+	        return encArr.get(position);
 	    }
 
 	    public long getItemId(int position) {
@@ -107,7 +103,8 @@ public class LocationDeckActivity extends Activity {
 	    	int titleBottomPadding = 0;
 	    	int textTopPadding = 0;
 	    	int textBottomPadding = 0;
-	    	final Card theCard = cardArr.get(position);
+	    	Encounter theEnc = encArr.get(position);
+	    	final Card theCard = GameState.INSTANCE.getCardHx().get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
 	    	
 		    LinearLayout cardLayout = new LinearLayout(getApplicationContext());
@@ -149,21 +146,6 @@ public class LocationDeckActivity extends Activity {
 		        //tv.setHeight();
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
 		        
-		        //TODO Remove
-		        tv.setOnClickListener(
-				        //chooseEncounterBtn.setOnClickListener(
-				        		new OnClickListener()
-		                {                	 
-		                	private Encounter enc = encounters.get(0);
-		                	private Card cardHx = theCard; 
-
-							@Override
-							public void onClick(View v) {
-								GameState.INSTANCE.AddHistory(cardHx, enc);
-								
-							}
-		                });
-		        
 		        //tv.setBackgroundColor(Color.GREEN);
 		        cardLayout.addView(tv);
 		        
@@ -186,36 +168,9 @@ public class LocationDeckActivity extends Activity {
 		        //tv.setHeight(dm.heightPixels);
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
 		        
-		        //tv.setBackgroundColor(Color.CYAN);
-		        
-		        //encounterLayout.addView(tv);
-		        
-		        Button chooseEncounterBtn = new Button(getApplicationContext());
-		        chooseEncounterBtn.setText("Blah");
-		        //chooseEncounter.setHeight(20);
-		        //chooseEncounter.setWidth(20);
-		        chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        
-		        chooseEncounterBtn.setOnClickListener(
-		        		new OnClickListener()
-                {                	 
-                	private Encounter enc = encounters.get(0);
-                	private Card cardHx = theCard; 
-
-					@Override
-					public void onClick(View v) {
-						GameState.INSTANCE.AddHistory(cardHx, enc);
-						
-					}
-                });
-		        
-		        
-		        //encounterLayout.addView(chooseEncounterBtn);
-		        
 		        encounterLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
 		        
 		        cardLayout.addView(tv);
-		        //cardLayout.addView(chooseEncounterBtn);
 	        
 		        for(int i = 1; i < encounters.size(); i++)
 		        {
@@ -236,21 +191,6 @@ public class LocationDeckActivity extends Activity {
 			        tv.setWidth(dm.widthPixels );
 			        //tv.setHeight();
 			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-			        
-			      //TODO Remove
-			        tv.setOnClickListener(
-					        //chooseEncounterBtn.setOnClickListener(
-					        		new OnClickListener()
-			                {                	 
-			                	private Encounter enc = encounters.get(0);
-			                	private Card cardHx = theCard; 
-
-								@Override
-								public void onClick(View v) {
-									GameState.INSTANCE.AddHistory(cardHx, enc);
-									
-								}
-			                });
 			        
 			        //tv.setBackgroundColor(Color.GREEN);
 			        cardLayout.addView(tv);
@@ -275,27 +215,7 @@ public class LocationDeckActivity extends Activity {
 			        
 			        //tv.setBackgroundColor(Color.CYAN);
 			        
-			        chooseEncounterBtn = new Button(getApplicationContext());
-			        chooseEncounterBtn.setText("Blah");
-			        //chooseEncounter.setHeight(20);
-			        //chooseEncounter.setWidth(20);
-			        chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-			        
-			        chooseEncounterBtn.setOnClickListener(
-			        		new OnClickListener()
-	                {                	 
-	                	private Encounter enc = encounters.get(0);
-	                	private Card cardHx = theCard; 
-
-						@Override
-						public void onClick(View v) {
-							GameState.INSTANCE.AddHistory(cardHx, enc);
-							
-						}
-	                });
-			        
 			        cardLayout.addView(tv);
-			        //cardLayout.addView(chooseEncounterBtn);
 		        }
 		        
 		        // Last one takes up the remaining space

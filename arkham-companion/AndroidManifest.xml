@@ -17,6 +17,7 @@
         <activity android:name=".GUI.NeighborhoodSelector" android:label="Neighborhood" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <activity android:name=".GUI.LocationDeckActivity" android:label="LocationDeck"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation="portrait"></activity>
+        <activity android:name=".GUI.LocationHxActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="LocationHx"></activity>
 
     </application>
 
