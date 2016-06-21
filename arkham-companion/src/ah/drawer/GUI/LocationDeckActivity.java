@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
 import ah.drawer.Encounter;
+import ah.drawer.Expansion;
 import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
 import ah.drawer.R;
@@ -232,7 +233,7 @@ public class LocationDeckActivity extends Activity {
 			}
 	        
 	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
-	        Bitmap result = overlay(front, GetExpansionIcon(theCard.getExpID()));
+	        Bitmap result = overlayCard(front, theCard);
 	        
 	        layout.setBackgroundDrawable(new BitmapDrawable(result));
 
@@ -289,6 +290,11 @@ public class LocationDeckActivity extends Activity {
 	    	}
 		}
 
+	    private Bitmap overlayCard(Bitmap bmp1, Card card)
+	    {
+	    	return overlay(bmp1, GetExpansionIcon(card.getExpIDs().get(0)));
+	    }
+	    
 		private Bitmap overlay(Bitmap bmp1, Bitmap bmp2) 
 	    {
 			if(bmp2 ==null)

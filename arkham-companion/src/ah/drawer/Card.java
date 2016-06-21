@@ -6,12 +6,11 @@ public class Card {
 	
 	private long ID;
 	private long neiID;
-	private long expID;
+	//private ArrayList<Long> expIDs;
 	
-	public Card(long ID, long neiID, long expID) {
+	public Card(long ID, long neiID) {
 		this.ID = ID;
 		this.neiID = neiID;
-		this.expID = expID;
 	}
 	
 	public long getID() {
@@ -27,8 +26,8 @@ public class Card {
     	return "CardID: " + ID + " NeiID: " + neiID;
     }
 
-	public long getExpID() {
-		return expID;
+	public ArrayList<Long> getExpIDs() {
+		return AHFlyweightFactory.INSTANCE.getExpansionsForCard(ID);
 	}
 
 	public Neighborhood getNeighborhood() {

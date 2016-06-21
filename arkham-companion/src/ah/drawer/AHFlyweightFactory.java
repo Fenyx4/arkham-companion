@@ -58,9 +58,10 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 		String select = DatabaseHelper.locNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
 		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
-		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{expIDs}, null, null, null);
+		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{expIDs}, null, null, orderby);
 		
 		Log.i("List",expIDs);
 		c.moveToFirst();
@@ -89,7 +90,8 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 		String select = DatabaseHelper.locNeiID+"=?";
-		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
+		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
+		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(neiID)}, null, null, orderby);
 		
 		c.moveToFirst();
 		long ID;
@@ -115,19 +117,31 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID, DatabaseHelper.cardExpID};
+		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
 		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
-		String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
+		//SELECT DISTINCT cardID, NeiID
+		//FROM cardTable
+		//WHERE neiID= neiID
+		//      AND cardID IN (SELECT cardID FROM cardToExpTable
+		//                 WHERE expID IN (expIDs)
+		//                 AND cardID NOT IN (SELECT cardID from cardToExpTable
+		//                                    WHERE expID NOT IN (expIDs)))
+		String select = DatabaseHelper.cardNeiID+"=? "+
+		"AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") "+
+		"AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
+		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
 		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			cards.add(new Card(c.getLong(0),c.getLong(1),c.getLong(2)));
+			cards.add(new Card(c.getLong(0),c.getLong(1)));
 			
 			c.moveToNext();
 		}
@@ -255,8 +269,9 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 		String select = DatabaseHelper.locID+"=?";
+		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
 
-		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(locID)}, null, null, null);
+		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(locID)}, null, null, orderby);
 		
 		c.moveToFirst();
 		if(!c.isAfterLast())
@@ -277,10 +292,13 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.encID,DatabaseHelper.encLocID};
-		String select = DatabaseHelper.encID+" in (SELECT "+DatabaseHelper.cardToEncEncID+" FROM "+DatabaseHelper.cardToEncTable+ " WHERE "+DatabaseHelper.cardToEncCardID+"=?)";
-
-		Cursor c = db.query(DatabaseHelper.encounterTable, columns, select, new String[]{Long.toString(cardID)}, null, null, null);
+		//Need to order it by location
+		String table = DatabaseHelper.encounterTable+" LEFT JOIN "+DatabaseHelper.locTable+
+		" ON "+DatabaseHelper.encounterTable+"."+DatabaseHelper.encLocID+"="+DatabaseHelper.locTable+"."+DatabaseHelper.locID;
+		String[] columns = new String[]{DatabaseHelper.encounterTable+"."+DatabaseHelper.encID,DatabaseHelper.encounterTable+"."+DatabaseHelper.encLocID};
+		String select = DatabaseHelper.encounterTable+"."+DatabaseHelper.encID+" in (SELECT "+DatabaseHelper.cardToEncEncID+" FROM "+DatabaseHelper.cardToEncTable+ " WHERE "+DatabaseHelper.cardToEncCardID+"=?)";
+		String orderby = DatabaseHelper.locTable+"."+DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locTable+"."+DatabaseHelper.locName+" ASC";
+		Cursor c = db.query(table, columns, select, new String[]{Long.toString(cardID)}, null, null, orderby);
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
@@ -294,6 +312,32 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return encounters;
+	}
+	
+	public ArrayList<Long> getExpansionsForCard(long cardID) 
+	{
+		ArrayList<Long> expIDs = new ArrayList<Long>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.cardToExpExpID};
+		String select = DatabaseHelper.cardToExpCardID+"=?";
+
+		Cursor c = db.query(DatabaseHelper.cardToExpTable, columns, select, new String[]{Long.toString(cardID)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			expIDs.add(c.getLong(0));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return expIDs;
 	}
 
 	public Neighborhood getNeighborhood(long neiID) 

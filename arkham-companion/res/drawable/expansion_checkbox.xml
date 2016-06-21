@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
  <selector xmlns:android="http://schemas.android.com/apk/res/android">
      <!-- Enabled states -->
-    <item android:state_checked="true" android:state_window_focused="false"
+<!--     <item android:state_checked="true" android:state_window_focused="false"
          android:state_enabled="true"
          android:drawable="@drawable/btn_dh_check_on" />
  
@@ -38,9 +38,9 @@
  
  
  
- 
+ -->
     <!-- Disabled states -->
- 
+ <!-- 
  
  
     <item android:state_checked="true" android:state_window_focused="false"
@@ -68,5 +68,5 @@
     <item android:state_checked="true" android:drawable="@drawable/btn_check_on_disable" />
  
  
- 
+-->
 </selector>

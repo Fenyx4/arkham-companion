@@ -37,7 +37,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String cardTable="Card";
 	static final String cardID = "cardID";
 	static final String cardNeiID = "neiID";
-	static final String cardExpID = "expID";
+	
+	//CardsToExpansion
+	static final String cardToExpTable = "CardToExpansion";
+	static final String cardToExpCardID = "cardID";
+	static final String cardToExpExpID = "expID";
 	
 	//CardsToEncounter
 	static final String cardToEncTable = "CardToEncounter";
@@ -46,10 +50,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
 	static final String viewEmps="ViewEmps";
 	
-	public static DatabaseHelper instance; 
+	public static DatabaseHelper instance;
+
+	public static String locSort = "sort"; 
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,65); 
+		  super(context, dbName, null,72); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -74,17 +80,26 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				    		neiName+" TEXT, "+neiExpID+" INTEGER NOT NULL, " + neiCardPath + " TEXT, FOREIGN KEY ("+neiExpID+") REFERENCES "+expTable+" ("+expID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY, "+
-				  locName + " TEXT, "+locNeiID+" INTEGER NOT NULL ,FOREIGN KEY ("+locNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");
+				  locName + " TEXT, "+
+				  locNeiID+" INTEGER NOT NULL, "+
+				  locSort+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+locNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+encounterTable+" ("+encID+" INTEGER PRIMARY KEY, "+
 		    		encText+" TEXT, "+encLocID+" INTEGER NOT NULL ,FOREIGN KEY ("+encLocID+") REFERENCES "+locTable+" ("+locID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY, "+
 				  //cardEncID+" INTEGER NOT NULL ,"+
-				  cardExpID+" INTEGER NOT NULL ,"+
 				  cardNeiID+" INTEGER NOT NULL ,"+
-				  "FOREIGN KEY ("+cardExpID+") REFERENCES "+expTable+" ("+expID+"), "+
 				  "FOREIGN KEY ("+cardNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");//+
+				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
+		  
+		  db.execSQL("CREATE TABLE "+cardToExpTable+" ("+
+				  //cardEncID+" INTEGER NOT NULL ,"+
+				  cardToExpCardID+" INTEGER NOT NULL ,"+
+				  cardToExpExpID+" INTEGER NOT NULL ,"+
+				  "FOREIGN KEY ("+cardToExpCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
+				  "FOREIGN KEY ("+cardToExpExpID+") REFERENCES "+expTable+" ("+expID+"));");//+
 				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+cardToEncTable+" ("+cardToEncCardID+" INTEGER NOT NULL , "+
@@ -92,7 +107,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  cardToEncEncID+" INTEGER NOT NULL ,"+
 				  "PRIMARY KEY ("+cardToEncCardID+","+cardToEncEncID+"), "+
 				  "FOREIGN KEY ("+cardToEncCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
-				  "FOREIGN KEY ("+cardToEncEncID+") REFERENCES "+encounterTable+" ("+neiID+"));");//+
+				  "FOREIGN KEY ("+cardToEncEncID+") REFERENCES "+encounterTable+" ("+encID+"));");//+
 		  
 //		  //For referential integrity
 //		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
@@ -160,6 +175,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("DROP TABLE IF EXISTS "+locTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+neighborhoodTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+cardTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+cardToExpTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
 		  
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
