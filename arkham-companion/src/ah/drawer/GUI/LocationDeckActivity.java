@@ -19,6 +19,7 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -37,6 +39,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
+import android.support.v4.view.*;;
 
 public class LocationDeckActivity extends Activity {
 	//private Encounter encounter;
@@ -45,7 +48,7 @@ public class LocationDeckActivity extends Activity {
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.locationdeck);
+        setContentView(R.layout.locationdeck2);
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
@@ -53,8 +56,8 @@ public class LocationDeckActivity extends Activity {
 
         long neiID = extras.getLong("neighborhood");
         
-        Gallery gallery = (Gallery) findViewById(R.id.gallery);
-	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
+        ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
+        viewpager.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
 
 	    /*
 	    gallery.setOnItemClickListener(new OnItemClickListener() {
@@ -63,10 +66,37 @@ public class LocationDeckActivity extends Activity {
 	        }
 	    });
 	    */
+        viewpager.setBackgroundColor(Color.CYAN);
         
-	    gallery.setSelected(true);
-	    gallery.setSelection(0);
+	    //gallery.setSelected(true);
+	    //gallery.setSelection(0);
     }
+    
+//	public void onCreate2(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.locationdeck);
+//        
+//        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+//        
+//        Bundle extras = getIntent().getExtras();
+//
+//        long neiID = extras.getLong("neighborhood");
+//        
+//        Gallery gallery = (Gallery) findViewById(R.id.gallery);
+//	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
+//
+//	    /*
+//	    gallery.setOnItemClickListener(new OnItemClickListener() {
+//	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+//	            Toast.makeText(LocationDeckActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+//	        }
+//	    });
+//	    */
+//	    gallery.setBackgroundColor(Color.CYAN);
+//        
+//	    gallery.setSelected(true);
+//	    gallery.setSelection(0);
+//    }
     
     @Override
     public void onBackPressed() {
@@ -75,11 +105,13 @@ public class LocationDeckActivity extends Activity {
     }
 
 
-    public class CardAdapter extends BaseAdapter {
+    public class CardAdapter extends PagerAdapter {
 	    //int mGalleryItemBackground;
 	    private Context mContext;
 
 	    private ArrayList<Card> cardArr;
+	    
+	    private LayoutInflater mInflater;
 
 	    public CardAdapter(Context c, ArrayList<Card> cardArr) 
 	    {
@@ -88,6 +120,8 @@ public class LocationDeckActivity extends Activity {
 	        TypedArray attr = mContext.obtainStyledAttributes(R.styleable.HelloGallery);
 	        
 	        Log.w("AHDecks", cardArr.size() + " cards in deck.");
+	        
+	        mInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	        
 	        //mGalleryItemBackground = attr.getResourceId(
 	        //        R.styleable.HelloGallery_android_galleryItemBackground, 0);
@@ -98,90 +132,34 @@ public class LocationDeckActivity extends Activity {
 	        return cardArr.size();
 	    }
 
-	    public Object getItem(int position) {
-	        return cardArr.get(position);
-	    }
+//	    public Object getItem(int position) {
+//	        return cardArr.get(position);
+//	    }
 
-	    public long getItemId(int position) {
-	        return position;
-	    }
-
-	    public View getView(int position, View convertView, ViewGroup parent) 
+//	    public long getItemId(int position) {
+//	        return position;
+//	    }
+	    
+	    @Override
+	    public Object instantiateItem( View pager, int position )
 	    {
-	    	int leftPadding = 30;
-	    	int rightPadding = 30;
-	    	int firstTopPadding = 30;
-	    	int titleTopPadding = 10;
-	    	int titleBottomPadding = 0;
-	    	int textTopPadding = 0;
-	    	int textBottomPadding = 0;
 	    	final Card theCard = cardArr.get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
-	    	//final LocationDeckActivity thisActivity = (LocationDeckActivity)parent;
-	    	
-		    LinearLayout cardLayout = new LinearLayout(getApplicationContext());
-	    	cardLayout.setOrientation(LinearLayout.VERTICAL);
-	    	cardLayout.setGravity(Gravity.CENTER);
-	    	
-	        DisplayMetrics dm = new DisplayMetrics();
-	        getWindowManager().getDefaultDisplay().getMetrics(dm);
-	        
-	        XmlResourceParser xpp=getResources().getXml(R.color.deck_textview_style); 
-	        ColorStateList csl = null;
-	        try {
-				csl = ColorStateList.createFromXml(getResources(), xpp);
-			} catch (XmlPullParserException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-	        //ColorStateList states = ColorStateList.createFromXml(r, parser)
-	    	
-	        if(encounters.size() > 0)
-	        {
-	        	//Header 1
-	        	RelativeLayout headerLayout = new RelativeLayout(getApplicationContext());
-	        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-	        	headerLayout.setPadding(0, 0, 0, -7);
-	        	headerLayout.setGravity(Gravity.CENTER);
-	        	//headerLayout.setBackgroundColor(Color.MAGENTA);
-		        cardLayout.addView(headerLayout);
-		        
-		    	TextView tv = new TextView(mContext);
-		    	tv.setTextSize(18);
-		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(0, firstTopPadding, 5, titleBottomPadding);	       
-		        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		        //params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
-		        
-		        tv.setLayoutParams(params);
-		        
-		    	if(csl != null)
-		    	{
-		    		tv.setTextColor(csl);
-		    	}
-		    	
-		    	tv.setText(encounters.get(0).getLocation().getLocationName());
-		        
-		        //tv.setBackgroundColor(Color.CYAN);
-		        tv.setId(1);
-		        headerLayout.addView(tv);
 
-		        
-		        Button chooseEncounterBtn = new Button(getApplicationContext());
-		        chooseEncounterBtn.setGravity(Gravity.CENTER);
-		        chooseEncounterBtn.setPadding(0, 0, 10, 0);
-		        RelativeLayout.LayoutParams btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
-		        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
-		        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
-		        
-		        chooseEncounterBtn.setOnClickListener(
+	    	LinearLayout layout = (LinearLayout)mInflater.inflate(R.layout.cardlistitem, null);
+	    	//Set stuff
+
+	    	TextView text = null;
+	    	for(int i = 0; i < encounters.size(); i++)
+	    	{
+	    		final int idx = i;
+		    	RelativeLayout header = (RelativeLayout)mInflater.inflate(R.layout.encounterheader, null);
+		    	((TextView)header.findViewById(R.id.titleTV1)).setText(encounters.get(i).getLocation().getLocationName());
+		    	//Button chooseEncounterBtn = ((Button)header.findViewById(R.id.button1));
+		    	header.setOnClickListener(
 		        		new OnClickListener()
                 {                	 
-                	private Encounter enc = encounters.get(0);
+                	private Encounter enc = encounters.get(idx);
                 	private Card cardHx = theCard; 
 
 					public void onClick(View v) {
@@ -192,142 +170,26 @@ public class LocationDeckActivity extends Activity {
 						finish();
 					}
                 });
-		        
-		        headerLayout.addView(chooseEncounterBtn,btnParams);
-
-		        //Encounter Text
-		        tv = new TextView(mContext);
 		    	
-		        if(csl != null)
-		    	{
-		    		tv.setTextColor(csl);
-		    	}
-		        
-		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
-		        
-		    	tv.setGravity(Gravity.TOP);
+		    	
+		    	text = (TextView)mInflater.inflate(R.layout.encountertext, null);
+		    	text.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
+		    	
 		    
-		    	tv.setTextSize(12);
-		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
-		        tv.setWidth(dm.widthPixels);
-		        
-		        tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0f));
-		        
-		        
-		        //tv.setBackgroundColor(Color.CYAN);
-		        tv.setId(1);
-		        cardLayout.addView(tv);
-		        	        
-		        for(int i = 1; i < encounters.size(); i++)
-		        {
-		        	final int idx = i;
-		        	//Header
-		        	headerLayout = new RelativeLayout(getApplicationContext());
-		        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        	headerLayout.setPadding(0, 0, 0, -7);
-		        	headerLayout.setGravity(Gravity.CENTER);
-			        //encounterLayout.setBackgroundColor(Color.MAGENTA);
-			        cardLayout.addView(headerLayout);
-			        		        
-			    	tv = new TextView(mContext);
-			    	tv.setTextSize(18);
-			    	tv.setTypeface(Typeface.SERIF);
-			        tv.setPadding(leftPadding, titleTopPadding, 5, titleBottomPadding);	       
-			        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-			        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
-			        
-			        tv.setLayoutParams(params);
-			        
-			    	if(csl != null)
-			    	{
-			    		tv.setTextColor(csl);
-			    	}
-			    	
-			    	tv.setText(encounters.get(i).getLocation().getLocationName());
-			        
-			        //tv.setBackgroundColor(Color.CYAN);
-			        tv.setId(i+1);
-			        headerLayout.addView(tv);
-			        
-			        chooseEncounterBtn = new Button(getApplicationContext());
-			        chooseEncounterBtn.setGravity(Gravity.CENTER);
-			        chooseEncounterBtn.setPadding(0, 0, 10, 0);
-			        btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-			        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
-			        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
-			        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
-			        
-			        chooseEncounterBtn.setOnClickListener(
-			        		new OnClickListener()
-	                {                	 
-	                	private Encounter enc = encounters.get(idx);
-	                	private Card cardHx = theCard; 
-
-						public void onClick(View v) {
-							GameState.INSTANCE.AddHistory(cardHx, enc);
-							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
-							
-							Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
-							finish();
-							
-							finish();
-						}
-	                });
-			        
-			        headerLayout.addView(chooseEncounterBtn,btnParams);
-			        
-			        //Encounter Text
-			        tv = new TextView(mContext);
-			    	
-			        if(csl != null)
-			    	{
-			    		tv.setTextColor(csl);
-			    	}
-			        
-			    	tv.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
-			    	tv.setGravity(Gravity.TOP);
-			    
-			    	tv.setTextSize(12);
-			    	tv.setTypeface(Typeface.SERIF);
-			        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
-			        tv.setWidth(dm.widthPixels );
-			        //tv.setHeight(dm.heightPixels);
-			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-			        
-			        //tv.setBackgroundColor(Color.CYAN);
-			        
-			        chooseEncounterBtn = new Button(getApplicationContext());
-			        chooseEncounterBtn.setText("Blah");
-			        //chooseEncounter.setHeight(20);
-			        //chooseEncounter.setWidth(20);
-			        chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-			        
-			        chooseEncounterBtn.setOnClickListener(
-			        		new OnClickListener()
-	                {                	 
-	                	private Encounter enc = encounters.get(0);
-	                	private Card cardHx = theCard; 
-
-						public void onClick(View v) {
-							GameState.INSTANCE.AddHistory(cardHx, enc);
-							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
-							
-							finish();
-						}
-	                });
-			        
-			        cardLayout.addView(tv);
-			        //cardLayout.addView(chooseEncounterBtn);
-		        }
-		        
-		        // Last one takes up the remaining space
-		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-	        }
-	        
-	        cardLayout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
-	        //layout.setBackgroundColor(Color.CYAN);
-	        Neighborhood nei = theCard.getNeighborhood();
+		    	layout.addView(header);
+		    	layout.addView(text);
+	    	}
+	    	
+	    	//Last text fills the rest of the space
+	    	if(text != null)
+	    	{
+	    		text.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
+	    	}
+	    	
+	    	
+	    	((ViewPager) pager).addView(layout);
+	    	
+	    	Neighborhood nei = theCard.getNeighborhood();
 	        Bitmap front;
 	        try {
 	        	front = BitmapFactory.decodeStream(getAssets().open(nei.getCardPath()));
@@ -338,13 +200,261 @@ public class LocationDeckActivity extends Activity {
 	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
 	        Bitmap result = overlayCard(front, theCard);
 	        
-	        cardLayout.setBackgroundDrawable(new BitmapDrawable(result));
-
-	        //layout.setBackgroundResource(R.drawable.encounter_front);
-	        
-	        return cardLayout;
+	        layout.setBackgroundDrawable(new BitmapDrawable(result));
+	    	
+	    	return layout;
 	    }
-	   
+	    
+//	    
+//	    public View getView2(int position, View convertView, ViewGroup parent) 
+//	    {
+//	    	int leftPadding = 30;
+//	    	int rightPadding = 30;
+//	    	int firstTopPadding = 30;
+//	    	int titleTopPadding = 10;
+//	    	int titleBottomPadding = 0;
+//	    	int textTopPadding = 0;
+//	    	int textBottomPadding = 0;
+//	    	final Card theCard = cardArr.get(position);
+//	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
+//	    	//final LocationDeckActivity thisActivity = (LocationDeckActivity)parent;
+//	    	
+//		    LinearLayout cardLayout = new LinearLayout(getApplicationContext());
+//	    	cardLayout.setOrientation(LinearLayout.VERTICAL);
+//	    	cardLayout.setGravity(Gravity.CENTER);
+//	    	
+//	        DisplayMetrics dm = new DisplayMetrics();
+//	        getWindowManager().getDefaultDisplay().getMetrics(dm);
+//	        
+//	        XmlResourceParser xpp=getResources().getXml(R.color.deck_textview_style); 
+//	        ColorStateList csl = null;
+//	        try {
+//				csl = ColorStateList.createFromXml(getResources(), xpp);
+//			} catch (XmlPullParserException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} 
+//	        //ColorStateList states = ColorStateList.createFromXml(r, parser)
+//	    	
+//	        if(encounters.size() > 0)
+//	        {
+//	        	//Header 1
+//	        	RelativeLayout headerLayout = new RelativeLayout(getApplicationContext());
+//	        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+//	        	headerLayout.setPadding(0, 0, 0, -7);
+//	        	headerLayout.setGravity(Gravity.CENTER);
+//	        	//headerLayout.setBackgroundColor(Color.MAGENTA);
+//		        cardLayout.addView(headerLayout);
+//		        
+//		    	TextView tv = new TextView(mContext);
+//		    	tv.setTextSize(18);
+//		    	tv.setTypeface(Typeface.SERIF);
+//		        tv.setPadding(0, firstTopPadding, 5, titleBottomPadding);	       
+//		        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//		        //params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+//		        
+//		        tv.setLayoutParams(params);
+//		        
+//		    	if(csl != null)
+//		    	{
+//		    		tv.setTextColor(csl);
+//		    	}
+//		    	
+//		    	tv.setText(encounters.get(0).getLocation().getLocationName());
+//		        
+//		        //tv.setBackgroundColor(Color.CYAN);
+//		        tv.setId(1);
+//		        headerLayout.addView(tv);
+//
+//		        
+//		        Button chooseEncounterBtn = new Button(getApplicationContext());
+//		        chooseEncounterBtn.setGravity(Gravity.CENTER);
+//		        chooseEncounterBtn.setPadding(0, 0, 10, 0);
+//		        RelativeLayout.LayoutParams btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//		        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
+//		        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
+//		        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
+//		        
+//		        chooseEncounterBtn.setOnClickListener(
+//		        		new OnClickListener()
+//                {                	 
+//                	private Encounter enc = encounters.get(0);
+//                	private Card cardHx = theCard; 
+//
+//					public void onClick(View v) {
+//						GameState.INSTANCE.AddHistory(cardHx, enc);
+//						GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+//						
+//						Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
+//						finish();
+//					}
+//                });
+//		        
+//		        headerLayout.addView(chooseEncounterBtn,btnParams);
+//
+//		        //Encounter Text
+//		        tv = new TextView(mContext);
+//		    	
+//		        if(csl != null)
+//		    	{
+//		    		tv.setTextColor(csl);
+//		    	}
+//		        
+//		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
+//		        
+//		    	tv.setGravity(Gravity.TOP);
+//		    
+//		    	tv.setTextSize(12);
+//		    	tv.setTypeface(Typeface.SERIF);
+//		        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
+//		        tv.setWidth(dm.widthPixels);
+//		        
+//		        tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0f));
+//		        
+//		        
+//		        //tv.setBackgroundColor(Color.CYAN);
+//		        tv.setId(1);
+//		        cardLayout.addView(tv);
+//		        	        
+//		        for(int i = 1; i < encounters.size(); i++)
+//		        {
+//		        	final int idx = i;
+//		        	//Header
+//		        	headerLayout = new RelativeLayout(getApplicationContext());
+//		        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+//		        	headerLayout.setPadding(0, 0, 0, -7);
+//		        	headerLayout.setGravity(Gravity.CENTER);
+//			        //encounterLayout.setBackgroundColor(Color.MAGENTA);
+//			        cardLayout.addView(headerLayout);
+//			        		        
+//			    	tv = new TextView(mContext);
+//			    	tv.setTextSize(18);
+//			    	tv.setTypeface(Typeface.SERIF);
+//			        tv.setPadding(leftPadding, titleTopPadding, 5, titleBottomPadding);	       
+//			        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//			        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+//			        
+//			        tv.setLayoutParams(params);
+//			        
+//			    	if(csl != null)
+//			    	{
+//			    		tv.setTextColor(csl);
+//			    	}
+//			    	
+//			    	tv.setText(encounters.get(i).getLocation().getLocationName());
+//			        
+//			        //tv.setBackgroundColor(Color.CYAN);
+//			        tv.setId(i+1);
+//			        headerLayout.addView(tv);
+//			        
+//			        chooseEncounterBtn = new Button(getApplicationContext());
+//			        chooseEncounterBtn.setGravity(Gravity.CENTER);
+//			        chooseEncounterBtn.setPadding(0, 0, 10, 0);
+//			        btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//			        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
+//			        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
+//			        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
+//			        
+//			        chooseEncounterBtn.setOnClickListener(
+//			        		new OnClickListener()
+//	                {                	 
+//	                	private Encounter enc = encounters.get(idx);
+//	                	private Card cardHx = theCard; 
+//
+//						public void onClick(View v) {
+//							GameState.INSTANCE.AddHistory(cardHx, enc);
+//							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+//							
+//							Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
+//							finish();
+//						}
+//	                });
+//			        
+//			        headerLayout.addView(chooseEncounterBtn,btnParams);
+//			        
+//			        //Encounter Text
+//			        tv = new TextView(mContext);
+//			    	
+//			        if(csl != null)
+//			    	{
+//			    		tv.setTextColor(csl);
+//			    	}
+//			        
+//			    	tv.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
+//			    	tv.setGravity(Gravity.TOP);
+//			    
+//			    	tv.setTextSize(12);
+//			    	tv.setTypeface(Typeface.SERIF);
+//			        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
+//			        tv.setWidth(dm.widthPixels );
+//			        //tv.setHeight(dm.heightPixels);
+//			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+//			        
+//			        //tv.setBackgroundColor(Color.CYAN);
+//			        
+//			        chooseEncounterBtn = new Button(getApplicationContext());
+//			        chooseEncounterBtn.setText("Blah");
+//			        //chooseEncounter.setHeight(20);
+//			        //chooseEncounter.setWidth(20);
+//			        chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+//			        
+//			        chooseEncounterBtn.setOnClickListener(
+//			        		new OnClickListener()
+//	                {                	 
+//	                	private Encounter enc = encounters.get(0);
+//	                	private Card cardHx = theCard; 
+//
+//						public void onClick(View v) {
+//							GameState.INSTANCE.AddHistory(cardHx, enc);
+//							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+//							
+//							finish();
+//						}
+//	                });
+//			        
+//			        cardLayout.addView(tv);
+//			        //cardLayout.addView(chooseEncounterBtn);
+//		        }
+//		        
+//		        // Last one takes up the remaining space
+//		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
+//	        }
+//	        
+//	        cardLayout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+//	        //layout.setBackgroundColor(Color.CYAN);
+//	        Neighborhood nei = theCard.getNeighborhood();
+//	        Bitmap front;
+//	        try {
+//	        	front = BitmapFactory.decodeStream(getAssets().open(nei.getCardPath()));
+//			} catch (IOException e) {
+//				front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
+//			}
+//	        
+//	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
+//	        Bitmap result = overlayCard(front, theCard);
+//	        
+//	        cardLayout.setBackgroundDrawable(new BitmapDrawable(result));
+//
+//	        //layout.setBackgroundResource(R.drawable.encounter_front);
+//	        
+//	        return cardLayout;
+//	    }
+//	   
+	    @Override
+	    public void destroyItem( View pager, int position, Object view )
+	    {
+	        ((ViewPager)pager).removeView( (View)view );
+	    }
+	 
+	    @Override
+	    public boolean isViewFromObject( View view, Object object )
+	    {
+	        return view.equals( object );
+	    }
+	    
 	    private Bitmap overlayCard(Bitmap bmp1, Card card)
 	    {
 	    	Bitmap retBmp = bmp1;
