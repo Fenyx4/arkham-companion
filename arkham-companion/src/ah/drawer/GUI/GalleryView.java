@@ -33,12 +33,5 @@ public class GalleryView extends Gallery {
 	    onKeyDown(kEvent, null);
 	    return true;  
 	}
-	
-	//Remove the weird little pop-up number thingy
-	@Override
-	public boolean onSingleTapUp(MotionEvent e)
-	{
-		return true;
-	}
 
 }

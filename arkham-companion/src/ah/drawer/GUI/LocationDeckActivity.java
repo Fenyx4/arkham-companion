@@ -58,11 +58,13 @@ public class LocationDeckActivity extends Activity {
         Gallery gallery = (Gallery) findViewById(R.id.gallery);
 	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
 
+	    /*
 	    gallery.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            Toast.makeText(LocationDeckActivity.this, "" + position, Toast.LENGTH_SHORT).show();
 	        }
 	    });
+	    */
         
 	    gallery.setSelected(true);
 	    gallery.setSelection(0);
