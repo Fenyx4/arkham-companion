@@ -83,7 +83,6 @@ public class ExpansionSelector extends Activity {
                     {
             			private Expansion exp = ((ExpansionCursor)cursor).getExpansion();
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
-						@Override
 						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                         {
 							GameState.INSTANCE.applyExpansion(exp.getID(), isChecked);

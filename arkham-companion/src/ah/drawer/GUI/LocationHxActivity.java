@@ -103,7 +103,7 @@ public class LocationHxActivity extends Activity {
 	    	int titleBottomPadding = 0;
 	    	int textTopPadding = 0;
 	    	int textBottomPadding = 0;
-	    	Encounter theEnc = encArr.get(position);
+	    	//Encounter theEnc = encArr.get(position);
 	    	final Card theCard = GameState.INSTANCE.getCardHx().get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
 	    	

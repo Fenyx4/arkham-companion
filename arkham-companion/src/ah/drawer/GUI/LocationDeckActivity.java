@@ -29,16 +29,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.Toast;
 
 public class LocationDeckActivity extends Activity {
 	//private Encounter encounter;
@@ -69,6 +67,13 @@ public class LocationDeckActivity extends Activity {
 	    gallery.setSelected(true);
 	    gallery.setSelection(0);
     }
+    
+    @Override
+    public void onBackPressed() {
+    	Toast.makeText(LocationDeckActivity.this, R.string.location_deck_back, Toast.LENGTH_SHORT).show();
+    	super.onBackPressed();
+    }
+
 
     public class CardAdapter extends BaseAdapter {
 	    //int mGalleryItemBackground;
@@ -179,11 +184,11 @@ public class LocationDeckActivity extends Activity {
                 	private Encounter enc = encounters.get(0);
                 	private Card cardHx = theCard; 
 
-					@Override
 					public void onClick(View v) {
 						GameState.INSTANCE.AddHistory(cardHx, enc);
 						GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
 						
+						Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
 						finish();
 					}
                 });
@@ -259,10 +264,12 @@ public class LocationDeckActivity extends Activity {
 	                	private Encounter enc = encounters.get(idx);
 	                	private Card cardHx = theCard; 
 
-						@Override
 						public void onClick(View v) {
 							GameState.INSTANCE.AddHistory(cardHx, enc);
 							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+							
+							Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
+							finish();
 							
 							finish();
 						}
@@ -302,7 +309,6 @@ public class LocationDeckActivity extends Activity {
 	                	private Encounter enc = encounters.get(0);
 	                	private Card cardHx = theCard; 
 
-						@Override
 						public void onClick(View v) {
 							GameState.INSTANCE.AddHistory(cardHx, enc);
 							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());

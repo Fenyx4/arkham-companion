@@ -3,7 +3,6 @@ package ah.drawer.GUI;
 import java.io.IOException;
 
 import ah.drawer.AHFlyweightFactory;
-import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
 import ah.drawer.NeighborhoodCursor;
 import ah.drawer.R;
@@ -100,7 +99,6 @@ public class NeighborhoodSelector extends Activity {
             		{
             			private Neighborhood nei = ((NeighborhoodCursor)cursor).getNeighborhood(colIdx);
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
-						@Override
 						public void onClick(View arg0) {
 							Log.i("Neighborhood", "Neighborhood Clicked");
 							bundle.putLong("neighborhood", nei.getID());
