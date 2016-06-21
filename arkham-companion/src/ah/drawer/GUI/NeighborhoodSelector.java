@@ -105,7 +105,7 @@ public class NeighborhoodSelector extends Activity {
 							Log.i("Neighborhood", "Neighborhood Clicked");
 							bundle.putLong("neighborhood", nei.getID());
 							
-					        GameState.INSTANCE.randomize(nei.getID());
+					        GameState.INSTANCE.randomizeNeighborhood(nei.getID());
 
 							Intent i = new Intent(act, LocationDeckActivity.class);
 							i.putExtras(bundle);

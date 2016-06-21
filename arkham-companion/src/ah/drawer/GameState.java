@@ -37,7 +37,7 @@ public class GameState
 		}
 	}
 	
-	public void randomize(long neiID)
+	public void randomizeNeighborhood(long neiID)
 	{
 		if(encounterCardsList.containsKey(neiID))
 		{

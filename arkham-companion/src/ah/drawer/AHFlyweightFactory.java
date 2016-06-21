@@ -2,7 +2,6 @@ package ah.drawer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +12,6 @@ public class AHFlyweightFactory {
 	
 	public final static AHFlyweightFactory INSTANCE = new AHFlyweightFactory();
 	private HashMap<Long,Expansion> expansionMap;
-	public final Random myRandom = new Random();
 	
 	private Context context;
 	

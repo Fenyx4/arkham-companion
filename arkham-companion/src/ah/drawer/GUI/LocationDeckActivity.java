@@ -8,7 +8,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
 import ah.drawer.Encounter;
-import ah.drawer.Expansion;
 import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
 import ah.drawer.R;
