@@ -8,7 +8,7 @@
             
         </activity>
         <activity android:label="Encounter" android:name=".GUI.EncounterActivity"></activity>
-        <activity android:label="Expansion" android:name=".GUI.ExpansionSelector">
+        <activity android:label="Expansion" android:name=".GUI.ExpansionSelector" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         	<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

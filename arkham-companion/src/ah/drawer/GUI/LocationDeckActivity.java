@@ -1,23 +1,25 @@
 package ah.drawer.GUI;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.xmlpull.v1.XmlPullParserException;
 
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
-import ah.drawer.CardCursor;
 import ah.drawer.Encounter;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.AssetManager;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.opengl.Matrix;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -108,11 +110,29 @@ public class LocationDeckActivity extends Activity {
 	    	
 	        DisplayMetrics dm = new DisplayMetrics();
 	        getWindowManager().getDefaultDisplay().getMetrics(dm);
+	        
+	        XmlResourceParser xpp=getResources().getXml(R.color.deck_textview_style); 
+	        ColorStateList csl = null;
+	        try {
+				csl = ColorStateList.createFromXml(getResources(), xpp);
+			} catch (XmlPullParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+	        //ColorStateList states = ColorStateList.createFromXml(r, parser)
 	    	
 	        if(encounters.size() > 0)
 	        {
 		    	//Header 1
 		    	TextView tv = new TextView(mContext);
+		    	
+		    	if(csl != null)
+		    	{
+		    		tv.setTextColor(csl);
+		    	}
 		    	
 		    	tv.setText(encounters.get(0).getLocation().getLocationName());
 		    	tv.setGravity(Gravity.CENTER|Gravity.TOP);
@@ -129,6 +149,11 @@ public class LocationDeckActivity extends Activity {
 		        
 		        tv = new TextView(mContext);
 		    	
+		        if(csl != null)
+		    	{
+		    		tv.setTextColor(csl);
+		    	}
+		        
 		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
 		    	tv.setGravity(Gravity.TOP);
 		    
@@ -148,6 +173,11 @@ public class LocationDeckActivity extends Activity {
 		        	//Header
 		        	tv = new TextView(mContext);
 			    	
+		        	if(csl != null)
+			    	{
+			    		tv.setTextColor(csl);
+			    	}
+		        	
 			    	tv.setText(encounters.get(i).getLocation().getLocationName());
 			    	tv.setGravity(Gravity.CENTER|Gravity.TOP);
 			    
@@ -164,6 +194,11 @@ public class LocationDeckActivity extends Activity {
 			        //Encounter Text
 			        tv = new TextView(mContext);
 			    	
+			        if(csl != null)
+			    	{
+			    		tv.setTextColor(csl);
+			    	}
+			        
 			    	tv.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
 			    	tv.setGravity(Gravity.TOP);
 			    

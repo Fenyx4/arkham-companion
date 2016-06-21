@@ -8,5 +8,17 @@
 	android:id="@+id/ListView01" 
 	android:layout_width="match_parent" 
 	android:layout_height="wrap_content"
-	android:choiceMode="multipleChoice"></ListView>
+	android:choiceMode="multipleChoice"
+	android:layout_weight="1"></ListView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" >
+    	<Button
+		  	android:id="@+id/open_otherworld" 
+		  	android:layout_height="100dp"
+		    android:layout_width="100dp"
+		    android:background="@drawable/ow_btn"
+		    android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
 </LinearLayout>

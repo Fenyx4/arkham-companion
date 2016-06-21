@@ -7,9 +7,7 @@ import ah.drawer.Expansion;
 import ah.drawer.ExpansionCursor;
 import ah.drawer.R;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -54,6 +52,9 @@ public class ExpansionSelector extends Activity {
             		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             		
             		CheckBox cb = (CheckBox) view;
+            		
+            		Expansion exp = ((ExpansionCursor)cursor).getExpansion();
+            		cb.setChecked(exp.getApplied());
             		
             		StateListDrawable myStates = new StateListDrawable();
             	    int stateChecked = android.R.attr.state_checked;

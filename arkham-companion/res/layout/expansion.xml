@@ -4,22 +4,29 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-	<Button 
-  	android:text="Done" 
-  	android:id="@+id/open_neighborhoods" 
-  	android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-	android:onClick="openNeighborhood" />
     <ListView 
 	android:id="@+id/ListView01" 
 	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content"
-	android:choiceMode="multipleChoice"></ListView>
-
-	
+	android:layout_height="fill_parent"
+	android:choiceMode="multipleChoice"
+	android:layout_weight="1"></ListView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" >
+    	<Button
+		  	android:id="@+id/open_otherworld" 
+		  	android:layout_height="100dp"
+		    android:layout_width="100dp"
+		    android:background="@drawable/ow_btn"
+		    android:layout_alignParentLeft="true"
+			android:onClick="openNeighborhood" />
+    	<Button 
+    	    android:text="Done"
+    	    android:id="@+id/open_neighborhoods" 
+		  	android:layout_height="100dp"
+		    android:layout_width="100dp"
+		    android:layout_alignParentRight="true"
+			android:onClick="openNeighborhood"/>
+    </RelativeLayout>
 </LinearLayout>
