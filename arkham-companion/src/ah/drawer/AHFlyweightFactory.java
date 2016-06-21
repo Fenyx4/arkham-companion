@@ -2,6 +2,7 @@ package ah.drawer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -12,6 +13,7 @@ public class AHFlyweightFactory {
 	
 	public final static AHFlyweightFactory INSTANCE = new AHFlyweightFactory();
 	private HashMap<Long,Expansion> expansionMap;
+	public final Random myRandom = new Random();
 	
 	//Gamestate
 	private HashMap<Long,Long> currentExpansions;
@@ -128,6 +130,31 @@ public class AHFlyweightFactory {
 	
 	}
 
+	public ArrayList<Card> getCards(long neiID)
+	{
+		ArrayList<Card> cards = new ArrayList<Card>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID};
+		String select = DatabaseHelper.cardNeiID+"=?";
+
+		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			cards.add(new Card(c.getLong(0),c.getLong(1)));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return cards;
+	}
 	public ArrayList<Encounter> getEncounters(long locID) 
 	{
 

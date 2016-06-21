@@ -1,7 +1,5 @@
 package ah.drawer.GUI;
 
-import java.util.Random;
-
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Encounter;
 import ah.drawer.Location;
@@ -44,7 +42,6 @@ public class LocationList extends Activity {
  
         final Activity act = this;
         final Bundle bundle = new Bundle();
-        final Random myRandom = new Random();
         // create the adapter using the cursor pointing to the desired data as well as the layout information
         SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.list_example_entry, cursor, columns, to);
         //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
@@ -68,7 +65,7 @@ public class LocationList extends Activity {
 							Log.i("Location", "Encounters: " + loc.getEncounters().size());
 							if( loc.getEncounters().size() != 0 )
 							{
-								encounter = loc.getEncounters().get(myRandom.nextInt(loc.getEncounters().size()));
+								encounter = loc.getEncounters().get(AHFlyweightFactory.INSTANCE.myRandom.nextInt(loc.getEncounters().size()));
 							}
 							
 							if(encounter != null)

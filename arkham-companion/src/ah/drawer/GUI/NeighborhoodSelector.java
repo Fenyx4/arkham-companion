@@ -68,7 +68,7 @@ public class NeighborhoodSelector extends Activity {
 							Log.i("Neighborhood", "Neighborhood Clicked");
 							bundle.putLong("neighborhood", nei.getID());
 
-							Intent i = new Intent(act, LocationList.class);
+							Intent i = new Intent(act, LocationDeckActivity.class);
 							i.putExtras(bundle);
 							act.startActivity(i);
 							}

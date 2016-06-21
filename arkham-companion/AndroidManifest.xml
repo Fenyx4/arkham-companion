@@ -15,6 +15,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GUI.NeighborhoodSelector" android:label="Neighborhood"></activity>
+        <activity android:name=".GUI.LocationDeckActivity" android:label="LocationDeck"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
 
     </application>
 

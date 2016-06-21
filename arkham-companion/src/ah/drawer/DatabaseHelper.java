@@ -35,16 +35,20 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	//Cards
 	static final String cardTable="Card";
 	static final String cardID = "cardID";
-	static final String cardEncID = "encID";
 	static final String cardNeiID = "neiID";
 	static final String cardExpID = "expID";
+	
+	//CardsToEncounter
+	static final String cardToEncTable = "CardToEncounter";
+	static final String cardToEncCardID = "cardID";
+	static final String cardToEncEncID = "encID";
 
 	static final String viewEmps="ViewEmps";
 	
 	public static DatabaseHelper instance; 
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,39); 
+		  super(context, dbName, null,40); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -75,12 +79,19 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		    		encText+" TEXT, "+encLocID+" INTEGER NOT NULL ,FOREIGN KEY ("+encLocID+") REFERENCES "+locTable+" ("+locID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-				  cardEncID+" INTEGER NOT NULL ,"+
+				  //cardEncID+" INTEGER NOT NULL ,"+
 				  cardExpID+" INTEGER NOT NULL ,"+
 				  cardNeiID+" INTEGER NOT NULL ,"+
-				  "FOREIGN KEY ("+cardExpID+") REFERENCES "+expTable+" ("+expID+") "+
-				  "FOREIGN KEY ("+cardNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+") "+
-				  "FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
+				  "FOREIGN KEY ("+cardExpID+") REFERENCES "+expTable+" ("+expID+"), "+
+				  "FOREIGN KEY ("+cardNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");//+
+				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
+		  
+		  db.execSQL("CREATE TABLE "+cardToEncTable+" ("+cardToEncCardID+" INTEGER NOT NULL , "+
+				  //cardEncID+" INTEGER NOT NULL ,"+
+				  cardToEncEncID+" INTEGER NOT NULL ,"+
+				  "PRIMARY KEY ("+cardToEncCardID+","+cardToEncEncID+"), "+
+				  "FOREIGN KEY ("+cardToEncCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
+				  "FOREIGN KEY ("+cardToEncEncID+") REFERENCES "+encounterTable+" ("+neiID+"));");//+
 		  
 		  //For referential integrity
 		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
@@ -113,6 +124,25 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				    " WHERE "+locID+"=new."+encLocID+" ) IS NULL)"+
 				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
 				    "  END;");
+		  
+		//For referential integrity
+		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_encid " +
+				    " BEFORE INSERT "+
+				    " ON "+cardToEncTable+
+				    " FOR EACH ROW BEGIN"+
+				    " SELECT CASE WHEN ((SELECT "+encID+" FROM "+encounterTable+
+				    " WHERE "+encID+"=new."+cardToEncEncID+" ) IS NULL)"+
+				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+				    "  END;");
+		  
+		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_cardid " +
+				    " BEFORE INSERT "+
+				    " ON "+cardToEncTable+
+				    " FOR EACH ROW BEGIN"+
+				    " SELECT CASE WHEN ((SELECT "+cardID+" FROM "+cardTable+
+				    " WHERE "+cardID+"=new."+cardToEncCardID+" ) IS NULL)"+
+				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+				    "  END;");
 
 		  Init.FetchExpansion(db);
 		  Init.FetchBase(db);
@@ -127,9 +157,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("DROP TABLE IF EXISTS "+locTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+neighborhoodTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+cardTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
 		  
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_locnei_neiid");
+		  db.execSQL("DROP TRIGGER IF EXISTS fk_encloc_locid");
+		  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_encid");
+		  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_cardid");
+
 		  db.execSQL("DROP VIEW IF EXISTS "+viewEmps);
 		  onCreate(db);
 	}
