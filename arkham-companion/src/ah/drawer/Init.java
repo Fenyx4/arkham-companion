@@ -798,34 +798,34 @@ public class Init {
 	public static void FetchNeighborhoods(SQLiteDatabase db)
 	{
 		
-		String sqlInsert = "INSERT INTO " + DatabaseHelper.neighborhoodTable + " (" + DatabaseHelper.neiID + "," + DatabaseHelper.neiExpID + "," + DatabaseHelper.neiName + ") VALUES ";//+	
+		String sqlInsert = "INSERT INTO " + DatabaseHelper.neighborhoodTable + " (" + DatabaseHelper.neiID + "," + DatabaseHelper.neiExpID + "," + DatabaseHelper.neiName + "," + DatabaseHelper.neiCardPath + ") VALUES ";//+	
 
 		//Base	
-		db.execSQL(sqlInsert + " (1,1,\"Downtown\")");	
-		db.execSQL(sqlInsert + " (2,1,\"Easttown\")");	
-		db.execSQL(sqlInsert + " (3,1,\"French Hill\")");	
-		db.execSQL(sqlInsert + " (4,1,\"Merchant District\")");	
-		db.execSQL(sqlInsert + " (5,1,\"Miskatonic University\")");	
-		db.execSQL(sqlInsert + " (6,1,\"Northside\")");	
-		db.execSQL(sqlInsert + " (7,1,\"Rivertown\")");	
-		db.execSQL(sqlInsert + " (8,1,\"Southside\")");	
-		db.execSQL(sqlInsert + " (9,1,\"Uptown\")");	
+		db.execSQL(sqlInsert + " (1,1,\"Downtown\",\"encounter/encounter_front_downtown.png\")");	
+		db.execSQL(sqlInsert + " (2,1,\"Easttown\",\"encounter/encounter_front_easttown.png\")");	
+		db.execSQL(sqlInsert + " (3,1,\"French Hill\",\"encounter/encounter_front_frenchhill.png\")");	
+		db.execSQL(sqlInsert + " (4,1,\"Merchant District\",\"encounter/encounter_front_merchant.png\")");	
+		db.execSQL(sqlInsert + " (5,1,\"Miskatonic University\",\"encounter/encounter_front_miskatonic.png\")");	
+		db.execSQL(sqlInsert + " (6,1,\"Northside\",\"encounter/encounter_front_northside.png\")");	
+		db.execSQL(sqlInsert + " (7,1,\"Rivertown\",\"encounter/encounter_front_rivertown.png\")");	
+		db.execSQL(sqlInsert + " (8,1,\"Southside\",\"encounter/encounter_front_southside.png\")");	
+		db.execSQL(sqlInsert + " (9,1,\"Uptown\",\"encounter/encounter_front_uptown.png\")");	
 		
 		//Dunwich
-		db.execSQL(sqlInsert + " (10,3,\"Backwoods Country\")");	
-		db.execSQL(sqlInsert + " (11,3,\"Blasted Heath\")");	
-		db.execSQL(sqlInsert + " (12,3,\"Village Commons\")");	
+		db.execSQL(sqlInsert + " (10,3,\"Backwoods Country\",\"encounter/encounter_front_backwoods.png\")");	
+		db.execSQL(sqlInsert + " (11,3,\"Blasted Heath\",\"encounter/encounter_front_blasted.png\")");	
+		db.execSQL(sqlInsert + " (12,3,\"Village Commons\",\"encounter/encounter_front_village.png\")");	
 
 		//Kingsport
-		db.execSQL(sqlInsert + " (13,5,\"Central Hill\")");	
-		db.execSQL(sqlInsert + " (14,5,\"Harborside\")");	
-		db.execSQL(sqlInsert + " (15,5,\"Kingsport Head\")");	
-		db.execSQL(sqlInsert + " (16,5,\"South Shore\")");	
+		db.execSQL(sqlInsert + " (13,5,\"Central Hill\",\"encounter/encounter_front_central.png\")");	
+		db.execSQL(sqlInsert + " (14,5,\"Harborside\",\"encounter/encounter_front_harborside.png\")");	
+		db.execSQL(sqlInsert + " (15,5,\"Kingsport Head\",\"encounter/encounter_front_kingsport.png\")");	
+		db.execSQL(sqlInsert + " (16,5,\"South Shore\",\"encounter/encounter_front_south.png\")");	
 
 		//Innsmouth	
-		db.execSQL(sqlInsert + " (17,7,\"Church Green\")");	
-		db.execSQL(sqlInsert + " (18,7,\"Factory District\")");	
-		db.execSQL(sqlInsert + " (19,7,\"Innsmouth Shore\")");	
+		db.execSQL(sqlInsert + " (17,7,\"Church Green\",\"encounter/encounter_front_church.png\")");	
+		db.execSQL(sqlInsert + " (18,7,\"Factory District\",\"encounter/encounter_front_factory.png\")");	
+		db.execSQL(sqlInsert + " (19,7,\"Innsmouth Shore\",\"encounter/encounter_front_innsmouth.png\")");	
 	}
 	
 	public static void FetchLocations(SQLiteDatabase db)
@@ -2285,7 +2285,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (109,311)");
 		db.execSQL(sqlInsertEnc + " (311,18,'A lovely young woman stumbles into you as you''re searching for the library. \"Pardon me,\" she says, \"my name is Constance Hawberk. Have you seen my father?\" Pass a <b>Luck (-1) check</b> to point her in the right direction. In return, she points you to the library and you gain 2 Clue tokens.')");
 		db.execSQL(sqlInsertCardEnc + " (109,312)");
-		db.execSQL(sqlInsertEnc + " (312,23,'A muffled cry and some thumping comes from a nearby closet. Pass a </b>Fight (-2) check<b> to open it and rescue whoever is inside, drawing a random Ally. If you fail, whatever trapped him attacks you too: A monster appears.')");
+		db.execSQL(sqlInsertEnc + " (312,23,'A muffled cry and some thumping comes from a nearby closet. Pass a <b>Fight (-2) check</b> to open it and rescue whoever is inside, drawing a random Ally. If you fail, whatever trapped him attacks you too: A monster appears.')");
 		db.execSQL(sqlInsertCard + " (110,3,4)");
 		db.execSQL(sqlInsertCardEnc + " (110,313)");
 		db.execSQL(sqlInsertEnc + " (313,11,'Entering the workroom, you see a smith working on an ancient heirloom. He says \"Your piece is finished, you vulture,\" and throws it at you in disgust. Make a <b>Speed (-2) check</b>. If you pass, you may search the Unique Item deck and take the first <i><b>Weapon</b></i> you find. If you fail, you lose 2 Stamina.')");

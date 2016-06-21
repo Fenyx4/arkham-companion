@@ -30,8 +30,10 @@ public class ExpansionSelector extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.expansion);
         
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
         lv1=(ListView)findViewById(R.id.ListView01);
-        Cursor cursor = new ExpansionCursor(AHFlyweightFactory.INSTANCE.getExpansions(this.getApplicationContext()));
+        Cursor cursor = new ExpansionCursor(AHFlyweightFactory.INSTANCE.getExpansions());
         	
         //Cursor cursor = getContentResolver().query(People.CONTENT_URI, new String[] {People._ID, People.NAME, People.NUMBER}, null, null, null);
         //startManagingCursor(cursor);

@@ -30,4 +30,9 @@ public class Card {
 	public long getExpID() {
 		return expID;
 	}
+
+	public Neighborhood getNeighborhood() {
+		return AHFlyweightFactory.INSTANCE.getNeighborhood(neiID);
+		
+	}
 }

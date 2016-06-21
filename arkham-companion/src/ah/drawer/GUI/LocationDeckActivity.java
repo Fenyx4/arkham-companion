@@ -5,14 +5,14 @@ import java.util.ArrayList;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
 import ah.drawer.Encounter;
+import ah.drawer.GameState;
+import ah.drawer.Neighborhood;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
@@ -49,8 +49,10 @@ public class LocationDeckActivity extends Activity {
 
         long neiID = extras.getLong("neighborhood");
         
+        GameState.INSTANCE.randomize(neiID);
+        
         Gallery gallery = (Gallery) findViewById(R.id.gallery);
-	    gallery.setAdapter(new CardAdapter(this, AHFlyweightFactory.INSTANCE.getCurrentCards(neiID)));
+	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
 
 	    gallery.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -220,7 +222,14 @@ public class LocationDeckActivity extends Activity {
 	        
 	        layout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
 	        //layout.setBackgroundColor(Color.CYAN);
-	        Bitmap front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_frenchhill);
+	        Neighborhood nei = theCard.getNeighborhood();
+	        Bitmap front;
+	        try {
+	        	front = BitmapFactory.decodeStream(getAssets().open(nei.getCardPath()));
+			} catch (IOException e) {
+				front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
+			}
+	        
 	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
 	        Bitmap result = overlay(front, GetExpansionIcon(theCard.getExpID()));
 	        

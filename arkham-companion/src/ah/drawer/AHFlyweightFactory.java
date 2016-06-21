@@ -15,6 +15,8 @@ public class AHFlyweightFactory {
 	private HashMap<Long,Expansion> expansionMap;
 	public final Random myRandom = new Random();
 	
+	private Context context;
+	
 	//Gamestate
 	private HashMap<Long,Long> currentExpansions;
 	
@@ -23,7 +25,7 @@ public class AHFlyweightFactory {
 		currentExpansions = new HashMap<Long,Long>();
 	}
 	
-	public ArrayList<Expansion> getExpansions(Context context)
+	public ArrayList<Expansion> getExpansions()
 	{
 		if(expansionMap == null)
 		{
@@ -242,7 +244,7 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName};
+		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath};
 
 		String expIDs = currentExpansions.keySet().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
@@ -257,7 +259,7 @@ public class AHFlyweightFactory {
 		while(!c.isAfterLast())
 		{
 			ID = c.getInt(0);
-			neighborhoods.add(new Neighborhood(ID,c.getString(1)));
+			neighborhoods.add(new Neighborhood(ID,c.getString(1), c.getString(2)));
 			
 			c.moveToNext();
 		}
@@ -316,6 +318,39 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return encounters;
+	}
+
+	public Neighborhood getNeighborhood(long neiID) 
+	{
+		Neighborhood nei = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath};
+		String select = DatabaseHelper.neiID+"=?";
+
+		Cursor c = db.query(DatabaseHelper.neighborhoodTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
+		
+		c.moveToFirst();
+		if(!c.isAfterLast())
+		{
+			nei = new Neighborhood(c.getLong(0), c.getString(1), c.getString(2) );
+		}
+		
+		c.close();
+		db.close();
+		
+		return nei;
+	}
+
+	public void Init(Context applicationContext) {
+		context = applicationContext;
+		
+		if(DatabaseHelper.instance == null)
+		{
+			DatabaseHelper.getInstance(applicationContext);
+		}
 	}
 	   
 }
