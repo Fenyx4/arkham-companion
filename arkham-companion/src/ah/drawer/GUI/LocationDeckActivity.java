@@ -19,6 +19,7 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -145,7 +147,7 @@ public class LocationDeckActivity extends Activity {
 		    	tv.setTextSize(18);
 		    	tv.setTypeface(Typeface.SERIF);
 		        tv.setPadding(leftPadding, firstTopPadding, rightPadding, titleBottomPadding);	       
-		        tv.setWidth(dm.widthPixels );
+		        tv.setWidth(dm.widthPixels);
 		        //tv.setHeight();
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
 		        
@@ -167,7 +169,11 @@ public class LocationDeckActivity extends Activity {
 		        //tv.setBackgroundColor(Color.GREEN);
 		        cardLayout.addView(tv);
 		        
-	        	LinearLayout encounterLayout = new LinearLayout(getApplicationContext());
+	        	RelativeLayout encounterLayout = new RelativeLayout(getApplicationContext());
+	        	//encounterLayout.setOrientation(LinearLayout.HORIZONTAL);
+		        encounterLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        encounterLayout.setPadding(0, 0, 0, 0);
+		        //encounterLayout.setBackgroundColor(Color.MAGENTA);
 
 		        tv = new TextView(mContext);
 		    	
@@ -177,24 +183,38 @@ public class LocationDeckActivity extends Activity {
 		    	}
 		        
 		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
+		        //tv.setText("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		    	tv.setGravity(Gravity.TOP);
 		    
 		    	tv.setTextSize(12);
 		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
-		        tv.setWidth(dm.widthPixels );
+		        tv.setPadding(leftPadding, textTopPadding, 0, textBottomPadding);	       
+		        tv.setWidth(dm.widthPixels-(rightPadding+15) );
 		        //tv.setHeight(dm.heightPixels);
-		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+		        tv.setLayoutParams(params);
+		        //params.addRule(RelativeLayout., RelativeLayout.TRUE);
 		        
 		        //tv.setBackgroundColor(Color.CYAN);
-		        
-		        //encounterLayout.addView(tv);
+		        tv.setId(1);
+		        encounterLayout.addView(tv);
 		        
 		        Button chooseEncounterBtn = new Button(getApplicationContext());
-		        chooseEncounterBtn.setText("Blah");
-		        //chooseEncounter.setHeight(20);
-		        //chooseEncounter.setWidth(20);
-		        chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        //chooseEncounterBtn.setText("Blah");
+		        chooseEncounterBtn.setGravity(Gravity.CENTER);
+		        chooseEncounterBtn.setPadding(0, 0, 10, 0);
+		        //chooseEncounterBtn.setHeight(10);
+		        //chooseEncounterBtn.setWidth(10);
+		        //chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		        //params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+		        //params.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+		        params.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
+		        //params.addRule(RelativeLayout.ALIGN_RIGHT, RelativeLayout.TRUE);
+		        params.addRule(RelativeLayout.RIGHT_OF, tv.getId());
+		        //chooseEncounterBtn.setLayoutParams(params);
+		        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
 		        
 		        chooseEncounterBtn.setOnClickListener(
 		        		new OnClickListener()
@@ -210,12 +230,11 @@ public class LocationDeckActivity extends Activity {
                 });
 		        
 		        
-		        //encounterLayout.addView(chooseEncounterBtn);
+		        encounterLayout.addView(chooseEncounterBtn,params);
 		        
-		        encounterLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        
-		        cardLayout.addView(tv);
+		        //cardLayout.addView(tv);
 		        //cardLayout.addView(chooseEncounterBtn);
+		        cardLayout.addView(encounterLayout);
 	        
 		        for(int i = 1; i < encounters.size(); i++)
 		        {
