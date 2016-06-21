@@ -111,6 +111,7 @@ public class LocationDeckActivity extends Activity {
 	    	int textBottomPadding = 0;
 	    	final Card theCard = cardArr.get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
+	    	//final LocationDeckActivity thisActivity = (LocationDeckActivity)parent;
 	    	
 		    LinearLayout cardLayout = new LinearLayout(getApplicationContext());
 	    	cardLayout.setOrientation(LinearLayout.VERTICAL);
@@ -198,7 +199,9 @@ public class LocationDeckActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 						GameState.INSTANCE.AddHistory(cardHx, enc);
+						GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
 						
+						finish();
 					}
                 });
 		        
