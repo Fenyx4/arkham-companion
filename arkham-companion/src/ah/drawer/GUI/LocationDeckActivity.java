@@ -19,7 +19,6 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -135,59 +134,41 @@ public class LocationDeckActivity extends Activity {
 	    	
 	        if(encounters.size() > 0)
 	        {
-	        	
+	        	//Header 1
 	        	RelativeLayout headerLayout = new RelativeLayout(getApplicationContext());
-	        	//encounterLayout.setOrientation(LinearLayout.HORIZONTAL);
-	        	//LinearLayout.LayoutParams linearParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f);
-	        	//linearParams.gravity(1);
 	        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-	        	headerLayout.setPadding(0, 0, 0, 0);
+	        	headerLayout.setPadding(0, 0, 0, -7);
 	        	headerLayout.setGravity(Gravity.CENTER);
-		        //encounterLayout.setBackgroundColor(Color.MAGENTA);
+	        	//headerLayout.setBackgroundColor(Color.MAGENTA);
+		        cardLayout.addView(headerLayout);
 		        
-		    	//Header 1
 		    	TextView tv = new TextView(mContext);
-		    	
+		    	tv.setTextSize(18);
+		    	tv.setTypeface(Typeface.SERIF);
+		        tv.setPadding(0, firstTopPadding, 5, titleBottomPadding);	       
+		        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		        //params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+		        
+		        tv.setLayoutParams(params);
+		        
 		    	if(csl != null)
 		    	{
 		    		tv.setTextColor(csl);
 		    	}
 		    	
 		    	tv.setText(encounters.get(0).getLocation().getLocationName());
-		    	//tv.setGravity(Gravity.CENTER|Gravity.TOP);
-		    
-		    	tv.setTextSize(18);
-		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(0, firstTopPadding, 5, titleBottomPadding);	       
-		        //tv.setWidth(dm.widthPixels);
-		        //tv.setHeight();
-		        //tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
-		        
-		        tv.setLayoutParams(params);
-		        //params.addRule(RelativeLayout., RelativeLayout.TRUE);
 		        
 		        //tv.setBackgroundColor(Color.CYAN);
 		        tv.setId(1);
-		        //tv.setBackgroundColor(Color.GREEN);
 		        headerLayout.addView(tv);
-		        cardLayout.addView(headerLayout);
+
 		        
 		        Button chooseEncounterBtn = new Button(getApplicationContext());
-		        //chooseEncounterBtn.setText("Blah");
 		        chooseEncounterBtn.setGravity(Gravity.CENTER);
 		        chooseEncounterBtn.setPadding(0, 0, 10, 0);
-		        //chooseEncounterBtn.setHeight(10);
-		        //chooseEncounterBtn.setWidth(10);
-		        //chooseEncounterBtn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		        //params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-		        //params.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
-		        params.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
-		        //params.addRule(RelativeLayout.ALIGN_RIGHT, RelativeLayout.TRUE);
-		        params.addRule(RelativeLayout.RIGHT_OF, tv.getId());
-		        //chooseEncounterBtn.setLayoutParams(params);
+		        RelativeLayout.LayoutParams btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
+		        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
 		        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
 		        
 		        chooseEncounterBtn.setOnClickListener(
@@ -205,14 +186,9 @@ public class LocationDeckActivity extends Activity {
 					}
                 });
 		        
-		        headerLayout.addView(chooseEncounterBtn,params);
-		        
-	        	//RelativeLayout encounterLayout = new RelativeLayout(getApplicationContext());
-	        	////encounterLayout.setOrientation(LinearLayout.HORIZONTAL);
-		       // encounterLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
-		        //encounterLayout.setPadding(0, 0, 0, 0);
-		        ////encounterLayout.setBackgroundColor(Color.MAGENTA);
+		        headerLayout.addView(chooseEncounterBtn,btnParams);
 
+		        //Encounter Text
 		        tv = new TextView(mContext);
 		    	
 		        if(csl != null)
@@ -221,71 +197,76 @@ public class LocationDeckActivity extends Activity {
 		    	}
 		        
 		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
-		        //tv.setText("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		        
 		    	tv.setGravity(Gravity.TOP);
 		    
 		    	tv.setTextSize(12);
 		    	tv.setTypeface(Typeface.SERIF);
 		        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
 		        tv.setWidth(dm.widthPixels);
-		        //tv.setHeight(dm.heightPixels);
 		        
-		        //params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		        //params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0f));
-		        //params.addRule(RelativeLayout., RelativeLayout.TRUE);
+		        
 		        
 		        //tv.setBackgroundColor(Color.CYAN);
 		        tv.setId(1);
 		        cardLayout.addView(tv);
-		        //encounterLayout.addView(tv);
-		        
-		        
-		        
-		        
-		        //encounterLayout.addView(chooseEncounterBtn,params);
-		        
-		        //cardLayout.addView(tv);
-		        //cardLayout.addView(chooseEncounterBtn);
-		        //cardLayout.addView(encounterLayout);
-	        
+		        	        
 		        for(int i = 1; i < encounters.size(); i++)
 		        {
+		        	final int idx = i;
 		        	//Header
-		        	tv = new TextView(mContext);
-			    	
-		        	if(csl != null)
+		        	headerLayout = new RelativeLayout(getApplicationContext());
+		        	headerLayout.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        	headerLayout.setPadding(0, 0, 0, -7);
+		        	headerLayout.setGravity(Gravity.CENTER);
+			        //encounterLayout.setBackgroundColor(Color.MAGENTA);
+			        cardLayout.addView(headerLayout);
+			        		        
+			    	tv = new TextView(mContext);
+			    	tv.setTextSize(18);
+			    	tv.setTypeface(Typeface.SERIF);
+			        tv.setPadding(leftPadding, titleTopPadding, 5, titleBottomPadding);	       
+			        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+			        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+			        
+			        tv.setLayoutParams(params);
+			        
+			    	if(csl != null)
 			    	{
 			    		tv.setTextColor(csl);
 			    	}
-		        	
+			    	
 			    	tv.setText(encounters.get(i).getLocation().getLocationName());
-			    	tv.setGravity(Gravity.CENTER|Gravity.TOP);
-			    
-			    	tv.setTextSize(18);
-			    	tv.setTypeface(Typeface.SERIF);
-			        tv.setPadding(leftPadding, titleTopPadding, rightPadding, titleBottomPadding);	       
-			        tv.setWidth(dm.widthPixels );
-			        //tv.setHeight();
-			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
 			        
-			      //TODO Remove
-			        tv.setOnClickListener(
-					        //chooseEncounterBtn.setOnClickListener(
-					        		new OnClickListener()
-			                {                	 
-			                	private Encounter enc = encounters.get(0);
-			                	private Card cardHx = theCard; 
+			        //tv.setBackgroundColor(Color.CYAN);
+			        tv.setId(i+1);
+			        headerLayout.addView(tv);
+			        
+			        chooseEncounterBtn = new Button(getApplicationContext());
+			        chooseEncounterBtn.setGravity(Gravity.CENTER);
+			        chooseEncounterBtn.setPadding(0, 0, 10, 0);
+			        btnParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+			        btnParams.addRule(RelativeLayout.ALIGN_BASELINE, tv.getId());
+			        btnParams.addRule(RelativeLayout.RIGHT_OF, tv.getId());
+			        chooseEncounterBtn.setBackgroundResource(R.drawable.end_right);
+			        
+			        chooseEncounterBtn.setOnClickListener(
+			        		new OnClickListener()
+	                {                	 
+	                	private Encounter enc = encounters.get(idx);
+	                	private Card cardHx = theCard; 
 
-								@Override
-								public void onClick(View v) {
-									GameState.INSTANCE.AddHistory(cardHx, enc);
-									
-								}
-			                });
+						@Override
+						public void onClick(View v) {
+							GameState.INSTANCE.AddHistory(cardHx, enc);
+							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+							
+							finish();
+						}
+	                });
 			        
-			        //tv.setBackgroundColor(Color.GREEN);
-			        cardLayout.addView(tv);
+			        headerLayout.addView(chooseEncounterBtn,btnParams);
 			        
 			        //Encounter Text
 			        tv = new TextView(mContext);
@@ -322,7 +303,9 @@ public class LocationDeckActivity extends Activity {
 						@Override
 						public void onClick(View v) {
 							GameState.INSTANCE.AddHistory(cardHx, enc);
+							GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
 							
+							finish();
 						}
 	                });
 			        
