@@ -157,7 +157,6 @@ public class AHFlyweightFactory {
 	}
 	public ArrayList<Encounter> getEncounters(long locID) 
 	{
-
 		ArrayList<Encounter> encounters = new ArrayList<Encounter>();
 		
 		DatabaseHelper dh = DatabaseHelper.instance;
@@ -260,6 +259,56 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return neighborhoods;
+	}
+
+	public Location getLocation(long locID) 
+	{
+		Location loc = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
+		String select = DatabaseHelper.locID+"=?";
+
+		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(locID)}, null, null, null);
+		
+		c.moveToFirst();
+		if(!c.isAfterLast())
+		{
+			loc = new Location(c.getLong(0), c.getString(1));
+		}
+		
+		c.close();
+		db.close();
+		
+		return loc;
+	}
+
+	public ArrayList<Encounter> getEncountersForCard(long cardID) 
+	{
+		ArrayList<Encounter> encounters = new ArrayList<Encounter>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.encID,DatabaseHelper.encLocID};
+		String select = DatabaseHelper.encID+" in (SELECT "+DatabaseHelper.cardToEncEncID+" FROM "+DatabaseHelper.cardToEncTable+ " WHERE "+DatabaseHelper.cardToEncCardID+"=?)";
+
+		Cursor c = db.query(DatabaseHelper.encounterTable, columns, select, new String[]{Long.toString(cardID)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			encounters.add(new Encounter(c.getLong(0),c.getLong(1)));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return encounters;
 	}
 	   
 }

@@ -21,5 +21,10 @@ public class Encounter
 	public long getLocID() {
 		return locID;
 	}
+	
+	public Location getLocation()
+	{
+		return AHFlyweightFactory.INSTANCE.getLocation(locID);
+	}
 
 }

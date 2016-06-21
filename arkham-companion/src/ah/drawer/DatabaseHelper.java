@@ -66,19 +66,19 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		 
-		  db.execSQL("CREATE TABLE "+expTable+" ("+expID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+		  db.execSQL("CREATE TABLE "+expTable+" ("+expID+ " INTEGER PRIMARY KEY, "+
 				  expName + " TEXT)");
 		  
-		  db.execSQL("CREATE TABLE "+neighborhoodTable+" ("+neiID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+		  db.execSQL("CREATE TABLE "+neighborhoodTable+" ("+neiID+" INTEGER PRIMARY KEY, "+
 				    		neiName+" TEXT, "+neiExpID+" INTEGER NOT NULL ,FOREIGN KEY ("+neiExpID+") REFERENCES "+expTable+" ("+expID+"));");
 		  
-		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY, "+
 				  locName + " TEXT, "+locNeiID+" INTEGER NOT NULL ,FOREIGN KEY ("+locNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");
 		  
-		  db.execSQL("CREATE TABLE "+encounterTable+" ("+encID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+		  db.execSQL("CREATE TABLE "+encounterTable+" ("+encID+" INTEGER PRIMARY KEY, "+
 		    		encText+" TEXT, "+encLocID+" INTEGER NOT NULL ,FOREIGN KEY ("+encLocID+") REFERENCES "+locTable+" ("+locID+"));");
 		  
-		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY, "+
 				  //cardEncID+" INTEGER NOT NULL ,"+
 				  cardExpID+" INTEGER NOT NULL ,"+
 				  cardNeiID+" INTEGER NOT NULL ,"+
@@ -93,56 +93,56 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "FOREIGN KEY ("+cardToEncCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
 				  "FOREIGN KEY ("+cardToEncEncID+") REFERENCES "+encounterTable+" ("+neiID+"));");//+
 		  
-		  //For referential integrity
-		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
-				    " BEFORE INSERT "+
-				    " ON "+neighborhoodTable+
-				    
-				    " FOR EACH ROW BEGIN"+
-				    " SELECT CASE WHEN ((SELECT "+expID+" FROM "+expTable+
-				    " WHERE "+expID+"=new."+neiExpID+" ) IS NULL)"+
-				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
-				    "  END;");
-		  
-		  //For referential integrity
-		  db.execSQL("CREATE TRIGGER fk_locnei_neiid " +
-				    " BEFORE INSERT "+
-				    " ON "+locTable+
-				    
-				    " FOR EACH ROW BEGIN"+
-				    " SELECT CASE WHEN ((SELECT "+neiID+" FROM "+neighborhoodTable+
-				    " WHERE "+neiID+"=new."+locNeiID+" ) IS NULL)"+
-				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
-				    "  END;");
-		  
-		  //For referential integrity
-		  db.execSQL("CREATE TRIGGER fk_encloc_locid " +
-				    " BEFORE INSERT "+
-				    " ON "+encounterTable+
-				    " FOR EACH ROW BEGIN"+
-				    " SELECT CASE WHEN ((SELECT "+locID+" FROM "+locTable+
-				    " WHERE "+locID+"=new."+encLocID+" ) IS NULL)"+
-				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
-				    "  END;");
-		  
-		//For referential integrity
-		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_encid " +
-				    " BEFORE INSERT "+
-				    " ON "+cardToEncTable+
-				    " FOR EACH ROW BEGIN"+
-				    " SELECT CASE WHEN ((SELECT "+encID+" FROM "+encounterTable+
-				    " WHERE "+encID+"=new."+cardToEncEncID+" ) IS NULL)"+
-				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
-				    "  END;");
-		  
-		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_cardid " +
-				    " BEFORE INSERT "+
-				    " ON "+cardToEncTable+
-				    " FOR EACH ROW BEGIN"+
-				    " SELECT CASE WHEN ((SELECT "+cardID+" FROM "+cardTable+
-				    " WHERE "+cardID+"=new."+cardToEncCardID+" ) IS NULL)"+
-				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
-				    "  END;");
+//		  //For referential integrity
+//		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
+//				    " BEFORE INSERT "+
+//				    " ON "+neighborhoodTable+
+//				    
+//				    " FOR EACH ROW BEGIN"+
+//				    " SELECT CASE WHEN ((SELECT "+expID+" FROM "+expTable+
+//				    " WHERE "+expID+"=new."+neiExpID+" ) IS NULL)"+
+//				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+//				    "  END;");
+//		  
+//		  //For referential integrity
+//		  db.execSQL("CREATE TRIGGER fk_locnei_neiid " +
+//				    " BEFORE INSERT "+
+//				    " ON "+locTable+
+//				    
+//				    " FOR EACH ROW BEGIN"+
+//				    " SELECT CASE WHEN ((SELECT "+neiID+" FROM "+neighborhoodTable+
+//				    " WHERE "+neiID+"=new."+locNeiID+" ) IS NULL)"+
+//				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+//				    "  END;");
+//		  
+//		  //For referential integrity
+//		  db.execSQL("CREATE TRIGGER fk_encloc_locid " +
+//				    " BEFORE INSERT "+
+//				    " ON "+encounterTable+
+//				    " FOR EACH ROW BEGIN"+
+//				    " SELECT CASE WHEN ((SELECT "+locID+" FROM "+locTable+
+//				    " WHERE "+locID+"=new."+encLocID+" ) IS NULL)"+
+//				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+//				    "  END;");
+//		  
+//		//For referential integrity
+//		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_encid " +
+//				    " BEFORE INSERT "+
+//				    " ON "+cardToEncTable+
+//				    " FOR EACH ROW BEGIN"+
+//				    " SELECT CASE WHEN ((SELECT "+encID+" FROM "+encounterTable+
+//				    " WHERE "+encID+"=new."+cardToEncEncID+" ) IS NULL)"+
+//				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+//				    "  END;");
+//		  
+//		  db.execSQL("CREATE TRIGGER fk_cardtoencenc_cardid " +
+//				    " BEFORE INSERT "+
+//				    " ON "+cardToEncTable+
+//				    " FOR EACH ROW BEGIN"+
+//				    " SELECT CASE WHEN ((SELECT "+cardID+" FROM "+cardTable+
+//				    " WHERE "+cardID+"=new."+cardToEncCardID+" ) IS NULL)"+
+//				    " THEN RAISE (ABORT,'Foreign Key Violation') END;"+
+//				    "  END;");
 
 		  Init.FetchExpansion(db);
 		  Init.FetchBase(db);

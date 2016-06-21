@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
 import ah.drawer.CardCursor;
+import ah.drawer.Encounter;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -82,6 +85,98 @@ public class LocationDeckActivity extends Activity {
 
 	    public View getView(int position, View convertView, ViewGroup parent) 
 	    {
+	    	Card theCard = cardArr.get(position);
+	    	ArrayList<Encounter> encounters = theCard.getEncounters();
+	    	
+		    LinearLayout layout = new LinearLayout(getApplicationContext());
+	    	layout.setOrientation(LinearLayout.VERTICAL);
+	    	
+	        DisplayMetrics dm = new DisplayMetrics();
+	        getWindowManager().getDefaultDisplay().getMetrics(dm);
+	    	
+	        if(encounters.size() > 0)
+	        {
+		    	//Header 1
+		    	TextView tv = new TextView(mContext);
+		    	
+		    	tv.setText(encounters.get(0).getLocation().getLocationName());
+		    	tv.setGravity(Gravity.CENTER|Gravity.TOP);
+		    
+		    	tv.setTextSize(18);
+		    	tv.setTypeface(Typeface.SERIF);
+		        tv.setPadding(45, 45, 45, 0);	       
+		        tv.setWidth(dm.widthPixels );
+		        //tv.setHeight();
+		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        
+		        //tv.setBackgroundColor(Color.GREEN);
+		        layout.addView(tv);
+		        
+		        tv = new TextView(mContext);
+		    	
+		    	tv.setText(encounters.get(0).getEncounterText());
+		    	tv.setGravity(Gravity.TOP);
+		    
+		    	tv.setTextSize(12);
+		    	tv.setTypeface(Typeface.SERIF);
+		        tv.setPadding(45, 0, 45, 0);	       
+		        tv.setWidth(dm.widthPixels );
+		        //tv.setHeight(dm.heightPixels);
+		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+		        
+		        //tv.setBackgroundColor(Color.CYAN);
+		        
+		        layout.addView(tv);
+	        
+		        for(int i = 1; i < encounters.size(); i++)
+		        {
+		        	//Header
+		        	tv = new TextView(mContext);
+			    	
+			    	tv.setText(encounters.get(i).getLocation().getLocationName());
+			    	tv.setGravity(Gravity.CENTER|Gravity.TOP);
+			    
+			    	tv.setTextSize(18);
+			    	tv.setTypeface(Typeface.SERIF);
+			        tv.setPadding(45, 10, 45, 0);	       
+			        tv.setWidth(dm.widthPixels );
+			        //tv.setHeight();
+			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+			        
+			        //tv.setBackgroundColor(Color.GREEN);
+			        layout.addView(tv);
+			        
+			        //Encounter Text
+			        tv = new TextView(mContext);
+			    	
+			    	tv.setText(encounters.get(i).getEncounterText());
+			    	tv.setGravity(Gravity.TOP);
+			    
+			    	tv.setTextSize(12);
+			    	tv.setTypeface(Typeface.SERIF);
+			        tv.setPadding(45, 0, 45, 0);	       
+			        tv.setWidth(dm.widthPixels );
+			        //tv.setHeight(dm.heightPixels);
+			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
+			        
+			        //tv.setBackgroundColor(Color.CYAN);
+			        
+			        layout.addView(tv);
+		        }
+		        
+		        // Last one takes up the remaining space
+		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
+	        }
+	        
+	        layout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+	        //layout.setBackgroundColor(Color.CYAN);
+	        layout.setBackgroundResource(R.drawable.encounter_front);
+	        
+	        return layout;
+	    }
+        
+	    public View getOldView(int position, View convertView, ViewGroup parent) 
+	    {
 	    	LinearLayout layout = new LinearLayout(getApplicationContext());
 	        layout.setOrientation(LinearLayout.VERTICAL);
 	        layout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
@@ -103,7 +198,8 @@ public class LocationDeckActivity extends Activity {
 	        	titolo = "Blah";
 	        }
 
-	        tv.setText(titolo);
+	        titolo = cardArr.get(position).toString();
+	        tv.setText(Html.fromHtml("Blah <b>blah</b> blah.<br/>You are mistaken for an inmate. Doctor Mintz has the guards subdue you and conducts an experiment. Make a Will (-1) [2] check to discover the results. If you pass, the injections seem to increase your capacity for learning. Draw 1 Skill. If you fail, his memory drug fails miserably, resulting in lost knowledge. You must discard one of the following (your choice), if able: 4 Clue tokens, or 2 Spells, or 1 Skill."));
 	        tv.setGravity(Gravity.TOP);
 
 	        // Utilizzo l'AssetManager per cambiare il font

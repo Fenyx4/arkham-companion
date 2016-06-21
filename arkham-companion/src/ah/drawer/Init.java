@@ -186,6 +186,8 @@ public class Init {
 		ContentValues cardToEncCV = new ContentValues();
 		
 		cardCV.put(DatabaseHelper.cardNeiID, getNeighborhoodID(db, "Downtown"));
+		cardCV.put(DatabaseHelper.cardID, 1);
+		cardCV.put(DatabaseHelper.cardExpID, 1);
 		long cardID = db.insert(DatabaseHelper.cardTable, DatabaseHelper.cardID, cardCV);
 		cardToEncCV.put(DatabaseHelper.cardToEncCardID, cardID);
 		
@@ -202,6 +204,7 @@ public class Init {
 		db.insert(DatabaseHelper.cardToEncTable, DatabaseHelper.cardToEncCardID, cardToEncCV);
 		
 		
+		cardCV.put(DatabaseHelper.cardID, 2);
 		cardID = db.insert(DatabaseHelper.cardTable, DatabaseHelper.cardID, cardCV);
 		cardToEncCV.put(DatabaseHelper.cardToEncCardID, cardID);
 		
@@ -218,6 +221,7 @@ public class Init {
 		db.insert(DatabaseHelper.cardToEncTable, DatabaseHelper.cardToEncCardID, cardToEncCV);
 		
 		
+		cardCV.put(DatabaseHelper.cardID, 3);
 		cardCV.put(DatabaseHelper.cardNeiID, getNeighborhoodID(db, "Northside"));
 		cardID = db.insert(DatabaseHelper.cardTable, DatabaseHelper.cardID, cardCV);
 		cardToEncCV.put(DatabaseHelper.cardToEncCardID, cardID);
@@ -235,6 +239,7 @@ public class Init {
 		db.insert(DatabaseHelper.cardToEncTable, DatabaseHelper.cardToEncCardID, cardToEncCV);
 		
 		
+		cardCV.put(DatabaseHelper.cardID, 4);
 		cardID = db.insert(DatabaseHelper.cardTable, DatabaseHelper.cardID, cardCV);
 		cardToEncCV.put(DatabaseHelper.cardToEncCardID, cardID);
 		
@@ -657,12 +662,17 @@ public class Init {
 
 	public static void FetchExpansion(SQLiteDatabase db) 
 	{
-		ContentValues cv=new ContentValues();
-		cv.put(DatabaseHelper.expName, "Base");
-		db.insert(DatabaseHelper.expTable, DatabaseHelper.expID, cv);
+//		ContentValues cv=new ContentValues();
+//		cv.put(DatabaseHelper.expName, "Base");
+//		db.insert(DatabaseHelper.expTable, DatabaseHelper.expID, cv);
+//		
+//		cv.put(DatabaseHelper.expName, "Curse of the Dark Pharoah");
+//		db.insert(DatabaseHelper.expTable, DatabaseHelper.expID, cv);
 		
-		cv.put(DatabaseHelper.expName, "Curse of the Dark Pharoah");
-		db.insert(DatabaseHelper.expTable, DatabaseHelper.expID, cv);
+		String sqlInsert = "INSERT INTO " + DatabaseHelper.expTable + " (" + DatabaseHelper.expID + "," + DatabaseHelper.expName + ") VALUES ";//+
+		   
+		db.execSQL(sqlInsert + " (1, \"Base\")");
+		db.execSQL(sqlInsert + " (2,\"Curse of the Dark Pharoah\")");
 		
 	}
 	

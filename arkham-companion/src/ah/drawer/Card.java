@@ -17,11 +17,11 @@ public class Card {
 	}
 	
 	public ArrayList<Encounter> getEncounters() {
-		return AHFlyweightFactory.INSTANCE.getEncounters(ID);
+		return AHFlyweightFactory.INSTANCE.getEncountersForCard(ID);
 	}
 	
     @Override public String toString()
     {
-    	return "Card: " + ID;
+    	return "CardID: " + ID + " NeiID: " + neiID;
     }
 }
