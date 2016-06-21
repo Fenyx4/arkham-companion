@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.xmlpull.v1.XmlPullParserException;
 
+import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Card;
 import ah.drawer.Encounter;
 import ah.drawer.GameState;
@@ -45,11 +46,11 @@ public class LocationDeckActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.locationdeck);
         
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
         Bundle extras = getIntent().getExtras();
 
         long neiID = extras.getLong("neighborhood");
-        
-        GameState.INSTANCE.randomize(neiID);
         
         Gallery gallery = (Gallery) findViewById(R.id.gallery);
 	    gallery.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));

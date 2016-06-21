@@ -1,6 +1,7 @@
 package ah.drawer.GUI;
 
 import ah.drawer.AHFlyweightFactory;
+import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
 import ah.drawer.NeighborhoodCursor;
 import ah.drawer.R;
@@ -23,6 +24,8 @@ public class NeighborhoodSelector extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
         //Init blah = new Init();
         lv1=(ListView)findViewById(R.id.ListView01);
@@ -82,6 +85,8 @@ public class NeighborhoodSelector extends Activity {
 						public void onClick(View arg0) {
 							Log.i("Neighborhood", "Neighborhood Clicked");
 							bundle.putLong("neighborhood", nei.getID());
+							
+					        GameState.INSTANCE.randomize(nei.getID());
 
 							Intent i = new Intent(act, LocationDeckActivity.class);
 							i.putExtras(bundle);

@@ -16,6 +16,8 @@ public class EncounterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.encounter);
         
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
         tv1=(TextView)findViewById(R.id.textView01);
         
         Bundle extras = getIntent().getExtras();

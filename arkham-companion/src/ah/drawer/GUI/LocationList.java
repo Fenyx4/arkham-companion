@@ -24,6 +24,8 @@ public class LocationList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
         //Init blah = new Init();
         lv1=(ListView)findViewById(R.id.ListView01);
         

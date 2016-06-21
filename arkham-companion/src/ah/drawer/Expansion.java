@@ -26,14 +26,14 @@ public class Expansion {
 
 	public boolean getApplied() {
 		
-		return AHFlyweightFactory.INSTANCE.getAppliedExpansions().containsKey(ID);
+		return GameState.INSTANCE.getAppliedExpansions().contains(ID);
 	}
 	
 	public String getCheckboxOffPath()
 	{
 		switch ((int)ID)
 		{
-			case 1: return "checkbox/btn_dh_check_off.png";
+			case 1: return "checkbox/btn_ba_check_off.png";
 			case 2: return "checkbox/btn_dp_check_off.png";
 			case 3: return "checkbox/btn_dh_check_off.png";
 			case 4: return "checkbox/btn_ky_check_off.png";
@@ -51,7 +51,7 @@ public class Expansion {
 	{
 		switch ((int)ID)
 		{
-			case 1: return "checkbox/btn_dh_check_on.png";
+			case 1: return "checkbox/btn_ba_check_on.png";
 			case 2: return "checkbox/btn_dp_check_on.png";
 			case 3: return "checkbox/btn_dh_check_on.png";
 			case 4: return "checkbox/btn_ky_check_on.png";

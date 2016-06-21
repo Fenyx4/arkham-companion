@@ -17,12 +17,8 @@ public class AHFlyweightFactory {
 	
 	private Context context;
 	
-	//Gamestate
-	private HashMap<Long,Long> currentExpansions;
-	
 	private AHFlyweightFactory() 
 	{
-		currentExpansions = new HashMap<Long,Long>();
 	}
 	
 	public ArrayList<Expansion> getExpansions()
@@ -53,26 +49,6 @@ public class AHFlyweightFactory {
 		return new ArrayList<Expansion>(expansionMap.values());
 	}
 	
-	public void applyExpansion(long expID, boolean isChecked) 
-	{
-		if(expansionMap.containsKey(expID))
-		{
-			if(!currentExpansions.containsKey(expID) && isChecked)
-			{
-				currentExpansions.put(expID,expID);
-			}
-			else if (currentExpansions.containsKey(expID) && !isChecked)
-			{
-				currentExpansions.remove(expID);
-			}
-		}
-	}
-	
-	public HashMap<Long,Long> getAppliedExpansions()
-	{
-		return currentExpansions;
-	}
-	
 	public ArrayList<Location> getCurrentLocations()
 	{
 		ArrayList<Location> locations = new ArrayList<Location>();
@@ -82,7 +58,7 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 		String select = DatabaseHelper.locNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
-		String expIDs = currentExpansions.keySet().toString();
+		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{expIDs}, null, null, null);
 		
@@ -142,7 +118,7 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID, DatabaseHelper.cardExpID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
-		String expIDs = currentExpansions.keySet().toString();
+		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
@@ -246,7 +222,7 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath};
 
-		String expIDs = currentExpansions.keySet().toString();
+		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		
 		//Always gonna have the base neighborhoods

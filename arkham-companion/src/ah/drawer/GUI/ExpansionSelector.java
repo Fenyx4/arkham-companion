@@ -5,6 +5,7 @@ import java.io.IOException;
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Expansion;
 import ah.drawer.ExpansionCursor;
+import ah.drawer.GameState;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -85,7 +86,7 @@ public class ExpansionSelector extends Activity {
 						@Override
 						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                         {
-							AHFlyweightFactory.INSTANCE.applyExpansion(exp.getID(), isChecked);
+							GameState.INSTANCE.applyExpansion(exp.getID(), isChecked);
 							//AHFlyweightFactory.INSTANCE.getCurrentLocations();
 						}
             		
