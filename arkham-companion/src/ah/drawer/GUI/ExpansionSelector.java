@@ -24,29 +24,6 @@ public class ExpansionSelector extends Activity {
         setContentView(R.layout.expansion);
         
         lv1=(ListView)findViewById(R.id.ListView01);
-        //openNeighborhood = (Button)findViewById(R.id.open_neighborhoods);
-        
-        /*final Activity act = this;
-        openNeighborhood.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(act, LocationList.class);
-				act.startActivity(i);
-			}
-			
-		
-		});*/
-        
-        //tv1=(TextView)findViewById(R.id.TextView01);
-        
-        
-		//tvo = new TextViewObserver(tv1, blah);
-        //Stat str = blah.globalstats.get("Strength");
-        
-        //lv1.setAdapter(new ArrayAdapter<Modifier>(this,android.R.layout.simple_list_item_1 , blah.modifiers));
-        
         Cursor cursor = new ExpansionCursor(AHFlyweightFactory.INSTANCE.getExpansions(this.getApplicationContext()));
         	
         //Cursor cursor = getContentResolver().query(People.CONTENT_URI, new String[] {People._ID, People.NAME, People.NUMBER}, null, null, null);
@@ -67,6 +44,7 @@ public class ExpansionSelector extends Activity {
             	if(columnIndex == 2) {
             		
             		CheckBox cb = (CheckBox) view;
+            		cb.setText(((ExpansionCursor)cursor).getExpansion().getName());
                     cb.setOnCheckedChangeListener(new OnCheckedChangeListener()
                     {
             			private Expansion exp = ((ExpansionCursor)cursor).getExpansion();

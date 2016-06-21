@@ -130,22 +130,26 @@ public class AHFlyweightFactory {
 	
 	}
 
-	public ArrayList<Card> getCards(long neiID)
+	public ArrayList<Card> getCurrentCards(long neiID)
 	{
 		ArrayList<Card> cards = new ArrayList<Card>();
 		
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID};
-		String select = DatabaseHelper.cardNeiID+"=?";
+		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID, DatabaseHelper.cardExpID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		String expIDs = currentExpansions.keySet().toString();
+		expIDs = expIDs.substring(1,expIDs.length()-1);
+		String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
 		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			cards.add(new Card(c.getLong(0),c.getLong(1)));
+			cards.add(new Card(c.getLong(0),c.getLong(1),c.getLong(2)));
 			
 			c.moveToNext();
 		}
@@ -239,10 +243,13 @@ public class AHFlyweightFactory {
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
 		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName};
-		String select = DatabaseHelper.neiExpID + " in (?)";
+
 		String expIDs = currentExpansions.keySet().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
-		Cursor c = db.query(DatabaseHelper.neighborhoodTable, columns, select, new String[]{expIDs}, null, null, null);
+		
+		//Always gonna have the base neighborhoods
+		String select = DatabaseHelper.neiExpID + " in ("+expIDs+") OR "+DatabaseHelper.neiExpID +"=1";
+		Cursor c = db.query(DatabaseHelper.neighborhoodTable, columns, select, null, null, null, null);
 		
 		Log.i("List",expIDs);
 		c.moveToFirst();

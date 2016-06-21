@@ -15,12 +15,12 @@ public class NeighborhoodCursor extends AbstractCursor {
 
 	@Override
 	public String[] getColumnNames() {
-		return new String[] { "_ID", "Name" };
+		return new String[] { "_ID", "Left", "Right" };
 	}
 
 	@Override
 	public int getCount() {
-		return blah.size();
+		return (blah.size()+1)/2;
 	}
 
 	@Override
@@ -60,9 +60,25 @@ public class NeighborhoodCursor extends AbstractCursor {
 		return 0;
 	}
 	
-	public Neighborhood getNeighborhood()
+	public Neighborhood getNeighborhood(int columnIdx)
 	{
-		return blah.get(mPos);
+		Neighborhood ret;
+		if(columnIdx == 1)
+		{
+			ret = blah.get(mPos*2);
+		}
+		else
+		{
+			if(mPos*2+1 < blah.size())
+			{
+				ret = blah.get(mPos*2+1);
+			}
+			else
+			{
+				ret = null;
+			}
+		}
+		return ret;
 	}
 
 	@Override
@@ -70,7 +86,18 @@ public class NeighborhoodCursor extends AbstractCursor {
 		if( arg0 == 1)
 		{
 			
-			return blah.get(mPos).toString();
+			return blah.get(mPos*2).toString();
+		}
+		else if(arg0 == 2)
+		{
+			if(mPos*2+1 < blah.size())
+			{
+				return blah.get(mPos*2+1).toString();
+			}
+			else
+			{
+				return "";
+			}
 		}
 		else
 		{

@@ -14,9 +14,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GUI.NeighborhoodSelector" android:label="Neighborhood"></activity>
+        <activity android:name=".GUI.NeighborhoodSelector" android:label="Neighborhood" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <activity android:name=".GUI.LocationDeckActivity" android:label="LocationDeck"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation="portrait"></activity>
 
     </application>
 

@@ -6,10 +6,12 @@ public class Card {
 	
 	private long ID;
 	private long neiID;
+	private long expID;
 	
-	public Card(long ID, long neiID) {
+	public Card(long ID, long neiID, long expID) {
 		this.ID = ID;
 		this.neiID = neiID;
+		this.expID = expID;
 	}
 	
 	public long getID() {
@@ -24,4 +26,8 @@ public class Card {
     {
     	return "CardID: " + ID + " NeiID: " + neiID;
     }
+
+	public long getExpID() {
+		return expID;
+	}
 }

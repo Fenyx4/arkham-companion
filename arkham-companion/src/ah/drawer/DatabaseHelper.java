@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance; 
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,40); 
+		  super(context, dbName, null,51); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -145,7 +145,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
 //				    "  END;");
 
 		  Init.FetchExpansion(db);
-		  Init.FetchBase(db);
+		  Init.FetchNeighborhoods(db);
+		  Init.FetchLocations(db);
+		  Init.FetchEncounters(db);
 	}
 
 	@Override

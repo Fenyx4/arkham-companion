@@ -11,7 +11,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.opengl.Matrix;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -42,7 +48,7 @@ public class LocationDeckActivity extends Activity {
         long neiID = extras.getLong("neighborhood");
         
         Gallery gallery = (Gallery) findViewById(R.id.gallery);
-	    gallery.setAdapter(new CardAdapter(this, AHFlyweightFactory.INSTANCE.getCards(neiID)));
+	    gallery.setAdapter(new CardAdapter(this, AHFlyweightFactory.INSTANCE.getCurrentCards(neiID)));
 
 	    gallery.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -50,6 +56,8 @@ public class LocationDeckActivity extends Activity {
 	        }
 	    });
         
+	    gallery.setSelected(true);
+	    gallery.setSelection(0);
     }
 
     public class CardAdapter extends BaseAdapter {
@@ -85,6 +93,13 @@ public class LocationDeckActivity extends Activity {
 
 	    public View getView(int position, View convertView, ViewGroup parent) 
 	    {
+	    	int leftPadding = 30;
+	    	int rightPadding = 30;
+	    	int firstTopPadding = 30;
+	    	int titleTopPadding = 10;
+	    	int titleBottomPadding = 0;
+	    	int textTopPadding = 0;
+	    	int textBottomPadding = 0;
 	    	Card theCard = cardArr.get(position);
 	    	ArrayList<Encounter> encounters = theCard.getEncounters();
 	    	
@@ -104,7 +119,7 @@ public class LocationDeckActivity extends Activity {
 		    
 		    	tv.setTextSize(18);
 		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(45, 45, 45, 0);	       
+		        tv.setPadding(leftPadding, firstTopPadding, rightPadding, titleBottomPadding);	       
 		        tv.setWidth(dm.widthPixels );
 		        //tv.setHeight();
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
@@ -114,12 +129,12 @@ public class LocationDeckActivity extends Activity {
 		        
 		        tv = new TextView(mContext);
 		    	
-		    	tv.setText(encounters.get(0).getEncounterText());
+		    	tv.setText(Html.fromHtml(encounters.get(0).getEncounterText()));
 		    	tv.setGravity(Gravity.TOP);
 		    
 		    	tv.setTextSize(12);
 		    	tv.setTypeface(Typeface.SERIF);
-		        tv.setPadding(45, 0, 45, 0);	       
+		        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
 		        tv.setWidth(dm.widthPixels );
 		        //tv.setHeight(dm.heightPixels);
 		        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
@@ -138,7 +153,7 @@ public class LocationDeckActivity extends Activity {
 			    
 			    	tv.setTextSize(18);
 			    	tv.setTypeface(Typeface.SERIF);
-			        tv.setPadding(45, 10, 45, 0);	       
+			        tv.setPadding(leftPadding, titleTopPadding, rightPadding, titleBottomPadding);	       
 			        tv.setWidth(dm.widthPixels );
 			        //tv.setHeight();
 			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
@@ -149,12 +164,12 @@ public class LocationDeckActivity extends Activity {
 			        //Encounter Text
 			        tv = new TextView(mContext);
 			    	
-			    	tv.setText(encounters.get(i).getEncounterText());
+			    	tv.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
 			    	tv.setGravity(Gravity.TOP);
 			    
 			    	tv.setTextSize(12);
 			    	tv.setTypeface(Typeface.SERIF);
-			        tv.setPadding(45, 0, 45, 0);	       
+			        tv.setPadding(leftPadding, textTopPadding, rightPadding, textBottomPadding);	       
 			        tv.setWidth(dm.widthPixels );
 			        //tv.setHeight(dm.heightPixels);
 			        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0f));
@@ -170,56 +185,81 @@ public class LocationDeckActivity extends Activity {
 	        
 	        layout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
 	        //layout.setBackgroundColor(Color.CYAN);
-	        layout.setBackgroundResource(R.drawable.encounter_front);
+	        Bitmap front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_frenchhill);
+	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
+	        Bitmap result = overlay(front, GetExpansionIcon(theCard.getExpID()));
+	        
+	        layout.setBackgroundDrawable(new BitmapDrawable(result));
+
+	        //layout.setBackgroundResource(R.drawable.encounter_front);
 	        
 	        return layout;
 	    }
-        
-	    public View getOldView(int position, View convertView, ViewGroup parent) 
+	    
+	    private Bitmap GetExpansionIcon(long expID) 
 	    {
-	    	LinearLayout layout = new LinearLayout(getApplicationContext());
-	        layout.setOrientation(LinearLayout.VERTICAL);
-	        layout.setLayoutParams(new Gallery.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
-	        layout.setBackgroundResource(R.drawable.encounter_front);
+	    	if(expID == 1)
+	    	{
+	    		return null;
+	    	}
+	    	else if (expID == 2)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.darkpharoahicon);
+	    	}
+	    	else if (expID ==3)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.dunwichhorroricon);
+	    	}
+	    	else if (expID == 4)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.kinginyellowicon);
+	    	}
+	    	else if (expID == 5)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.kingsporticon);
+	    	}
+	    	else if (expID == 6)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
+	    	}
+	    	else if (expID == 7)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.innsmouthicon);
+	    	}
+	    	else if (expID == 8)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.lurkericon);
+	    	}
+	    	else if (expID == 9)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.darkpharoahricon);
+	    	}
+	    	else if (expID == 10)
+	    	{
+	    		return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.miskatonic_icon);
+	    	}
+	    	else
+	    	{
+	    		return null;
+	    	}
+		}
+
+		private Bitmap overlay(Bitmap bmp1, Bitmap bmp2) 
+	    {
+			if(bmp2 ==null)
+			{
+				return bmp1;
+			}
+	    	//DisplayMetrics dm = new DisplayMetrics();
+	        //getWindowManager().getDefaultDisplay().getMetrics(dm);
 	        
-	        TextView tv = new TextView(mContext);
-
-	        String titolo = "";
-
-	        if (position == 0) {
-	            titolo = "The guards of the sanitarium are aware that there is an intruder. Make a Sneak (-1) check to escape. If you pass, move to the street. If you fail, you are arrested and taken to the Police Station.";
-	        } else if (position == 1) {
-	            titolo = "You are mistaken for an inmate. Doctor Mintz has the guards subdue you and conducts an experiment. Make a Will (-1) [2] check to discover the results. If you pass, the injections seem to increase your capacity for learning. Draw 1 Skill. If you fail, his memory drug fails miserably, resulting in lost knowledge. You must discard one of the following (your choice), if able: 4 Clue tokens, or 2 Spells, or 1 Skill.";
-	        } else if (position == 2) {
-	            titolo = "i Servizi";
-	        }
-	        else
-	        {
-	        	titolo = "Blah";
-	        }
-
-	        titolo = cardArr.get(position).toString();
-	        tv.setText(Html.fromHtml("Blah <b>blah</b> blah.<br/>You are mistaken for an inmate. Doctor Mintz has the guards subdue you and conducts an experiment. Make a Will (-1) [2] check to discover the results. If you pass, the injections seem to increase your capacity for learning. Draw 1 Skill. If you fail, his memory drug fails miserably, resulting in lost knowledge. You must discard one of the following (your choice), if able: 4 Clue tokens, or 2 Spells, or 1 Skill."));
-	        tv.setGravity(Gravity.TOP);
-
-	        // Utilizzo l'AssetManager per cambiare il font
-	        AssetManager assetManager = getResources().getAssets();
-	        //Typeface typeface = Typeface.createFromAsset(assetManager,
-	        //        "fonts/CALIFR.TTF");
-	        //tv.setTypeface(typeface);
-	        tv.setTextSize(12);
-	        tv.setPadding(45, 50, 45, 40); 
-	       
-	        DisplayMetrics dm = new DisplayMetrics();
-	        getWindowManager().getDefaultDisplay().getMetrics(dm);
-	       
-	        tv.setWidth(dm.widthPixels );
-	        //tv.setHeight(dm.heightPixels);
-	        tv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 1f));
-	    	
-	        layout.addView(tv);
-
-	        return layout;
+	        float top = bmp1.getHeight() - bmp2.getHeight()-10;
+	        float left = bmp1.getWidth() - bmp2.getWidth()-10;
+	        Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), bmp1.getConfig());
+	        Canvas canvas = new Canvas(bmOverlay);
+	        canvas.drawBitmap(bmp1, 0,0, null);
+	        canvas.drawBitmap(bmp2, left,top, null);
+	        return bmOverlay;
 	    }
 	}
 }

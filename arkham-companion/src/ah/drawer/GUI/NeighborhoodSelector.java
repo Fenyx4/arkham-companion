@@ -1,5 +1,7 @@
 package ah.drawer.GUI;
 
+import java.util.ArrayList;
+
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Neighborhood;
 import ah.drawer.NeighborhoodCursor;
@@ -7,13 +9,16 @@ import ah.drawer.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.LinearLayout.LayoutParams;
 
 public class NeighborhoodSelector extends Activity {
 	private ListView lv1;
@@ -43,9 +48,9 @@ public class NeighborhoodSelector extends Activity {
         //startManagingCursor(cursor);
  
         // the desired columns to be bound
-        String[] columns = new String[] { "Name" };
+        String[] columns = new String[] { "Left","Right" };
         // the XML defined views which the data will be bound to
-        int[] to = new int[] { R.id.name_entry };
+        int[] to = new int[] { R.id.name_entry, R.id.name_entry2 };
  
         final Activity act = this;
         final Bundle bundle = new Bundle();
@@ -54,14 +59,28 @@ public class NeighborhoodSelector extends Activity {
         //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
-            	if(columnIndex == 1) {
+            	final int colIdx = columnIndex;
+            	if(columnIndex == 1 || columnIndex == 2) {
             		//final LocationCursor locCurse = ((LocationCursor)cursor);
+            		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
+            
             		Button but = (Button) view;
+            		if(((NeighborhoodCursor)cursor).getNeighborhood(colIdx) == null)
+            		{
+            			but.setVisibility(View.INVISIBLE);
+            		}
+            		else
+            		{
+            			but.setVisibility(View.VISIBLE);
+            		}
+            		//but.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
+            		but.setBackgroundResource(R.drawable.neighbourhood_overlay);
             		but.setText(cursor.getString(columnIndex));
+            		but.setTypeface(tf);
             		
             		but.setOnClickListener(new OnClickListener()
             		{
-            			private Neighborhood nei = ((NeighborhoodCursor)cursor).getNeighborhood();
+            			private Neighborhood nei = ((NeighborhoodCursor)cursor).getNeighborhood(colIdx);
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
 						@Override
 						public void onClick(View arg0) {
