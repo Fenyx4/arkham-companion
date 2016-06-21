@@ -1,12 +1,21 @@
 package ah.drawer.GUI;
 
+import java.io.IOException;
+
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Expansion;
 import ah.drawer.ExpansionCursor;
 import ah.drawer.R;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -30,9 +39,9 @@ public class ExpansionSelector extends Activity {
         //startManagingCursor(cursor);
  
         // the desired columns to be bound
-        String[] columns = new String[] { "Checked", "Name" };
+        String[] columns = new String[] { "Checked" };
         // the XML defined views which the data will be bound to
-        int[] to = new int[] { R.id.number_entry,R.id.name_entry };
+        int[] to = new int[] { R.id.number_entry };
  
         //final Bundle bundle = new Bundle();
         //final Random myRandom = new Random();
@@ -42,8 +51,29 @@ public class ExpansionSelector extends Activity {
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
             	if(columnIndex == 2) {
+            		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             		
             		CheckBox cb = (CheckBox) view;
+            		
+            		StateListDrawable myStates = new StateListDrawable();
+            	    int stateChecked = android.R.attr.state_checked;
+
+            	    Bitmap checkOffBMP;
+					try {
+						checkOffBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOffPath()));
+					
+	            	    BitmapDrawable checkOffDrawable = new BitmapDrawable(checkOffBMP);
+	            	    myStates.addState(new int[]{ -stateChecked }, checkOffDrawable);
+	            	    Bitmap checkOnBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOnPath()));
+	            	    BitmapDrawable checkOnDrawable = new BitmapDrawable(checkOnBMP);
+	            	    myStates.addState(new int[]{ stateChecked }, checkOnDrawable);
+	            	    cb.setButtonDrawable(myStates);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+            		cb.setTypeface(tf);
             		cb.setText(((ExpansionCursor)cursor).getExpansion().getName());
                     cb.setOnCheckedChangeListener(new OnCheckedChangeListener()
                     {

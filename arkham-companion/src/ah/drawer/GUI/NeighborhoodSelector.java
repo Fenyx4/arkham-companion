@@ -1,7 +1,5 @@
 package ah.drawer.GUI;
 
-import java.util.ArrayList;
-
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.Neighborhood;
 import ah.drawer.NeighborhoodCursor;
@@ -15,10 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.LinearLayout.LayoutParams;
 
 public class NeighborhoodSelector extends Activity {
 	private ListView lv1;
