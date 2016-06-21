@@ -234,7 +234,7 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath};
+		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath, DatabaseHelper.neiButtonPath};
 
 		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
@@ -249,7 +249,7 @@ public class AHFlyweightFactory {
 		while(!c.isAfterLast())
 		{
 			ID = c.getInt(0);
-			neighborhoods.add(new Neighborhood(ID,c.getString(1), c.getString(2)));
+			neighborhoods.add(new Neighborhood(ID,c.getString(1), c.getString(2), c.getString(3)));
 			
 			c.moveToNext();
 		}
@@ -347,7 +347,7 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath};
+		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath, DatabaseHelper.neiButtonPath};
 		String select = DatabaseHelper.neiID+"=?";
 
 		Cursor c = db.query(DatabaseHelper.neighborhoodTable, columns, select, new String[]{Long.toString(neiID)}, null, null, null);
@@ -355,7 +355,7 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		if(!c.isAfterLast())
 		{
-			nei = new Neighborhood(c.getLong(0), c.getString(1), c.getString(2) );
+			nei = new Neighborhood(c.getLong(0), c.getString(1), c.getString(2), c.getString(3) );
 		}
 		
 		c.close();

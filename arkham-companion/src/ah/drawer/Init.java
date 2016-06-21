@@ -25,39 +25,40 @@ public class Init {
 		// 15 - Miskatonic + Kingsport + King in Yellow
 		// 16 - Miskatonic + Kingsport + Innsmouth
 		// 17 - Miskatonic + Kingsport + Lurker
+		// 18 - Miskatnoic + Black Goat
 	}
 	
 	public static void FetchNeighborhoods(SQLiteDatabase db)
 	{
 		
-		String sqlInsert = "INSERT INTO " + DatabaseHelper.neighborhoodTable + " (" + DatabaseHelper.neiID + "," + DatabaseHelper.neiExpID + "," + DatabaseHelper.neiName + "," + DatabaseHelper.neiCardPath + ") VALUES ";//+	
+		String sqlInsert = "INSERT INTO " + DatabaseHelper.neighborhoodTable + " (" + DatabaseHelper.neiID + "," + DatabaseHelper.neiExpID + "," + DatabaseHelper.neiName + "," + DatabaseHelper.neiCardPath + "," + DatabaseHelper.neiButtonPath + ") VALUES ";//+	
 
 		//Base	
-		db.execSQL(sqlInsert + " (1,1,\"Downtown\",\"encounter/encounter_front_downtown.png\")");	
-		db.execSQL(sqlInsert + " (2,1,\"Easttown\",\"encounter/encounter_front_easttown.png\")");	
-		db.execSQL(sqlInsert + " (3,1,\"French Hill\",\"encounter/encounter_front_frenchhill.png\")");	
-		db.execSQL(sqlInsert + " (4,1,\"Merchant District\",\"encounter/encounter_front_merchant.png\")");	
-		db.execSQL(sqlInsert + " (5,1,\"Miskatonic University\",\"encounter/encounter_front_miskatonic.png\")");	
-		db.execSQL(sqlInsert + " (6,1,\"Northside\",\"encounter/encounter_front_northside.png\")");	
-		db.execSQL(sqlInsert + " (7,1,\"Rivertown\",\"encounter/encounter_front_rivertown.png\")");	
-		db.execSQL(sqlInsert + " (8,1,\"Southside\",\"encounter/encounter_front_southside.png\")");	
-		db.execSQL(sqlInsert + " (9,1,\"Uptown\",\"encounter/encounter_front_uptown.png\")");	
+		db.execSQL(sqlInsert + " (1,1,\"Downtown\",\"encounter/encounter_front_downtown.png\",\"encounter/encounter_nei_btn_downtown.png\")");	
+		db.execSQL(sqlInsert + " (2,1,\"Easttown\",\"encounter/encounter_front_easttown.png\",\"encounter/encounter_nei_btn_easttown.png\")");	
+		db.execSQL(sqlInsert + " (3,1,\"French Hill\",\"encounter/encounter_front_frenchhill.png\",\"encounter/encounter_nei_btn_frenchhill.png\")");	
+		db.execSQL(sqlInsert + " (4,1,\"Merchant District\",\"encounter/encounter_front_merchant.png\",\"encounter/encounter_nei_btn_merchant.png\")");	
+		db.execSQL(sqlInsert + " (5,1,\"Miskatonic University\",\"encounter/encounter_front_miskatonic.png\",\"encounter/encounter_nei_btn_miskatonic.png\")");	
+		db.execSQL(sqlInsert + " (6,1,\"Northside\",\"encounter/encounter_front_northside.png\",\"encounter/encounter_nei_btn_northside.png\")");	
+		db.execSQL(sqlInsert + " (7,1,\"Rivertown\",\"encounter/encounter_front_rivertown.png\",\"encounter/encounter_nei_btn_rivertown.png\")");	
+		db.execSQL(sqlInsert + " (8,1,\"Southside\",\"encounter/encounter_front_southside.png\",\"encounter/encounter_nei_btn_southside.png\")");	
+		db.execSQL(sqlInsert + " (9,1,\"Uptown\",\"encounter/encounter_front_uptown.png\",\"encounter/encounter_nei_btn_uptown.png\")");	
 		
 		//Dunwich
-		db.execSQL(sqlInsert + " (10,3,\"Backwoods Country\",\"encounter/encounter_front_backwoods.png\")");	
-		db.execSQL(sqlInsert + " (11,3,\"Blasted Heath\",\"encounter/encounter_front_blasted.png\")");	
-		db.execSQL(sqlInsert + " (12,3,\"Village Commons\",\"encounter/encounter_front_village.png\")");	
+		db.execSQL(sqlInsert + " (10,3,\"Backwoods Country\",\"encounter/encounter_front_backwoods.png\",\"encounter/encounter_nei_btn_backwoods.png\")");	
+		db.execSQL(sqlInsert + " (11,3,\"Blasted Heath\",\"encounter/encounter_front_blasted.png\",\"encounter/encounter_nei_btn_blasted.png\")");	
+		db.execSQL(sqlInsert + " (12,3,\"Village Commons\",\"encounter/encounter_front_village.png\",\"encounter/encounter_nei_btn_village.png\")");	
 
 		//Kingsport
-		db.execSQL(sqlInsert + " (13,5,\"Central Hill\",\"encounter/encounter_front_central.png\")");	
-		db.execSQL(sqlInsert + " (14,5,\"Harborside\",\"encounter/encounter_front_harborside.png\")");	
-		db.execSQL(sqlInsert + " (15,5,\"Kingsport Head\",\"encounter/encounter_front_kingsport.png\")");	
-		db.execSQL(sqlInsert + " (16,5,\"South Shore\",\"encounter/encounter_front_south.png\")");	
+		db.execSQL(sqlInsert + " (13,5,\"Central Hill\",\"encounter/encounter_front_central.png\",\"encounter/encounter_nei_btn_central.png\")");	
+		db.execSQL(sqlInsert + " (14,5,\"Harborside\",\"encounter/encounter_front_harborside.png\",\"encounter/encounter_nei_btn_harborside.png\")");	
+		db.execSQL(sqlInsert + " (15,5,\"Kingsport Head\",\"encounter/encounter_front_kingsport.png\",\"encounter/encounter_nei_btn_kingsport.png\")");	
+		db.execSQL(sqlInsert + " (16,5,\"South Shore\",\"encounter/encounter_front_south.png\",\"encounter/encounter_nei_btn_south.png\")");	
 
 		//Innsmouth	
-		db.execSQL(sqlInsert + " (17,7,\"Church Green\",\"encounter/encounter_front_church.png\")");	
-		db.execSQL(sqlInsert + " (18,7,\"Factory District\",\"encounter/encounter_front_factory.png\")");	
-		db.execSQL(sqlInsert + " (19,7,\"Innsmouth Shore\",\"encounter/encounter_front_innsmouth.png\")");	
+		db.execSQL(sqlInsert + " (17,7,\"Church Green\",\"encounter/encounter_front_church.png\",\"encounter/encounter_nei_btn_church.png\")");	
+		db.execSQL(sqlInsert + " (18,7,\"Factory District\",\"encounter/encounter_front_factory.png\",\"encounter/encounter_nei_btn_factory.png\")");	
+		db.execSQL(sqlInsert + " (19,7,\"Innsmouth Shore\",\"encounter/encounter_front_innsmouth.png\",\"encounter/encounter_nei_btn_innsmouth.png\")");
 	}
 
 	public static void FetchLocations(SQLiteDatabase db)

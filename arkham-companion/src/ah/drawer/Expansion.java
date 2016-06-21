@@ -42,7 +42,7 @@ public class Expansion {
 			case 7: return "checkbox/btn_ih_check_off.png";
 			case 8: return "checkbox/btn_lt_check_off.png";
 			case 9: return "checkbox/btn_dp_check_off.png";
-			case 10: return "checkbox/btn_dh_check_off.png";
+			case 10: return "checkbox/btn_mh_check_off.png";
 			default: return "checkbox/btn_dh_check_off.png";
 		}
 	}
@@ -60,7 +60,7 @@ public class Expansion {
 			case 7: return "checkbox/btn_ih_check_on.png";
 			case 8: return "checkbox/btn_lt_check_on.png";
 			case 9: return "checkbox/btn_dp_check_on.png";
-			case 10: return "checkbox/btn_dh_check_on.png";
+			case 10: return "checkbox/btn_mh_check_on.png";
 			default: return "checkbox/btn_dh_check_on.png";
 		}
 	}

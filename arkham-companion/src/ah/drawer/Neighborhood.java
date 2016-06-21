@@ -5,11 +5,13 @@ public class Neighborhood {
 	private long ID;
 	private String neighborhoodName = "";
 	private String cardPath = "";
+	private String neighborhoodButtonPath = "";
 	
-	public Neighborhood(long ID, String neiName, String cardPath) {
+	public Neighborhood(long ID, String neiName, String cardPath, String neighborhoodButtonPath) {
 		this.ID = ID;
 		neighborhoodName = neiName;
 		this.cardPath = cardPath;
+		this.neighborhoodButtonPath = neighborhoodButtonPath;
 	}
 	
 	public long getID() {
@@ -32,6 +34,10 @@ public class Neighborhood {
 
 	public String getCardPath() {
 		return cardPath;
+	}
+
+	public String getNeighborhoodButtonPath() {
+		return neighborhoodButtonPath;
 	}
 
 }

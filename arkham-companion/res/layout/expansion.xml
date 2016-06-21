@@ -22,10 +22,10 @@
 		    android:layout_alignParentLeft="true"
 			android:onClick="openNeighborhood" />
     	<Button 
-    	    android:text="Done"
     	    android:id="@+id/open_neighborhoods" 
 		  	android:layout_height="100dp"
 		    android:layout_width="100dp"
+		    android:background="@drawable/ae_btn"
 		    android:layout_alignParentRight="true"
 			android:onClick="openNeighborhood"/>
     </RelativeLayout>

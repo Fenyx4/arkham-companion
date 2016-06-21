@@ -1,5 +1,7 @@
 package ah.drawer.GUI;
 
+import java.io.IOException;
+
 import ah.drawer.AHFlyweightFactory;
 import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
@@ -8,7 +10,10 @@ import ah.drawer.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +69,7 @@ public class NeighborhoodSelector extends Activity {
             		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             
             		Button but = (Button) view;
+            		Bitmap butBmp = null;
             		if(((NeighborhoodCursor)cursor).getNeighborhood(colIdx) == null)
             		{
             			but.setVisibility(View.INVISIBLE);
@@ -71,9 +77,22 @@ public class NeighborhoodSelector extends Activity {
             		else
             		{
             			but.setVisibility(View.VISIBLE);
+            			try {
+            	        	butBmp = BitmapFactory.decodeStream(getAssets().open(((NeighborhoodCursor)cursor).getNeighborhood(colIdx).getNeighborhoodButtonPath()));
+            			} catch (IOException e) {
+            				//butBmp = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
+            			}
             		}
             		//but.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-            		but.setBackgroundResource(R.drawable.neighbourhood_overlay);
+
+            		if(butBmp != null)
+            		{
+            			but.setBackgroundDrawable(new BitmapDrawable(butBmp));
+            		}
+            		else
+            		{
+            			but.setBackgroundResource(R.drawable.neighbourhood_overlay);
+        			}
             		but.setText(cursor.getString(columnIndex));
             		but.setTypeface(tf);
             		

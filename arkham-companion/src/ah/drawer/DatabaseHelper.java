@@ -15,12 +15,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String neiName="Name";
 	static final String neiExpID="ExpansionID";
 	static final String neiCardPath="CardPath";
+	static final String neiButtonPath="ButtonPath"; 
 
 	//Locations
 	static final String locTable="Location";
 	static final String locID="locID";
 	static final String locName="locName";
 	static final String locNeiID = "neiID";
+	static final String locSort = "sort";
 	
 	//Expansions
 	static final String expTable="Expansion";
@@ -52,10 +54,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	
 	public static DatabaseHelper instance;
 
-	public static String locSort = "sort"; 
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,72); 
+		  super(context, dbName, null,73); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -77,7 +78,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  expName + " TEXT)");
 		  
 		  db.execSQL("CREATE TABLE "+neighborhoodTable+" ("+neiID+" INTEGER PRIMARY KEY, "+
-				    		neiName+" TEXT, "+neiExpID+" INTEGER NOT NULL, " + neiCardPath + " TEXT, FOREIGN KEY ("+neiExpID+") REFERENCES "+expTable+" ("+expID+"));");
+				    		neiName+" TEXT, "+
+				    		neiExpID+" INTEGER NOT NULL, " + 
+				    		neiCardPath + " TEXT, "+
+				    		neiButtonPath + " TEXT, "+ 
+				    		"FOREIGN KEY ("+neiExpID+") REFERENCES "+expTable+" ("+expID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY, "+
 				  locName + " TEXT, "+
