@@ -79,7 +79,7 @@ public class AHFlyweightFactory {
 	
 	}
 	
-	public ArrayList<Location> getCurrentLocations(long neiID)
+	public ArrayList<Location> getCurrentNeighborhoodLocations(long neiID)
 	{
 		ArrayList<Location> locations = new ArrayList<Location>();
 		
@@ -90,6 +90,41 @@ public class AHFlyweightFactory {
 		String select = DatabaseHelper.locNeiID+"=?";
 		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
 		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{Long.toString(neiID)}, null, null, orderby);
+		
+		c.moveToFirst();
+		long ID;
+		while(!c.isAfterLast())
+		{
+			ID = c.getInt(0);
+			locations.add(new Location(ID,c.getString(1)));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return locations;
+	
+	}
+	
+	public ArrayList<Location> getCurrentOtherWorldLocations()
+	{
+		ArrayList<Location> locations = new ArrayList<Location>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
+
+		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		expIDs = expIDs.substring(1,expIDs.length()-1);
+		
+		
+		String select = DatabaseHelper.locNeiID+" IS NULL "
+		 + " AND " +DatabaseHelper.locExpID+ " in ("+expIDs+") AND " + DatabaseHelper.locID + "<>499";
+		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
+		Cursor c = db.query(DatabaseHelper.locTable, columns, select, null, null, null, orderby);
 		
 		c.moveToFirst();
 		long ID;
@@ -150,7 +185,7 @@ public class AHFlyweightFactory {
 		return cards;
 	}
 	
-	public ArrayList<OtherWorldCard> getCurrentOtherworldCards()
+	public ArrayList<OtherWorldCard> getCurrentOtherWorldCards()
 	{
 		ArrayList<OtherWorldCard> cards = new ArrayList<OtherWorldCard>();
 		
@@ -162,17 +197,11 @@ public class AHFlyweightFactory {
 		
 		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
-		//SELECT DISTINCT cardID, NeiID
-		//FROM cardTable
-		//WHERE neiID= neiID
-		//      AND cardID IN (SELECT cardID FROM cardToExpTable
-		//                 WHERE expID IN (expIDs)
-		//                 AND cardID NOT IN (SELECT cardID from cardToExpTable
-		//                                    WHERE expID NOT IN (expIDs)))
+
 		String select = DatabaseHelper.cardColorID+" IS NOT NULL "+
 		"AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
-		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") "+
-		"AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") OR "+ DatabaseHelper.cardToExpExpID +"=1" + 
+		" AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
 		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
@@ -449,7 +478,7 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName, DatabaseHelper.colorCardPath, DatabaseHelper.colorExpID};
+		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName, DatabaseHelper.colorCardPath, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
 		String select = DatabaseHelper.colorID+"=?";
 
 		Cursor c = db.query(DatabaseHelper.colorTable, columns, select, new String[]{Long.toString(colorID)}, null, null, null);
@@ -457,7 +486,7 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		if(!c.isAfterLast())
 		{
-			owc = new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) );
+			owc = new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getString(3), c.getLong(4) );
 		}
 		
 		c.close();
@@ -486,6 +515,37 @@ public class AHFlyweightFactory {
 		}
 		
 		return null;
+	}
+
+	public ArrayList<OtherWorldColor> getCurrentOtherWorldColors() {
+		 ArrayList<OtherWorldColor> colors = new ArrayList<OtherWorldColor>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName,DatabaseHelper.colorCardPath, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		expIDs = expIDs.substring(1,expIDs.length()-1);
+
+		String select = "(" + DatabaseHelper.colorExpID + " in ("+expIDs+") OR "+DatabaseHelper.colorExpID +"=1 ) AND colorID <> 0";
+		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
+
+		Cursor c = db.query(DatabaseHelper.colorTable, columns, select, null, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getString(3), c.getLong(4) ));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return colors;
 	}
 	   
 }

@@ -19,6 +19,7 @@
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:screenOrientation="portrait"></activity>
         <activity android:name=".GUI.LocationHxActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="LocationHx"></activity>
         <activity android:name=".GUI.OtherWorldDeckActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="OtherWorldDeck"></activity>
+        <activity android:name=".GUI.OtherworldSelector" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="OtherWorldSelector"></activity>
 
     </application>
 

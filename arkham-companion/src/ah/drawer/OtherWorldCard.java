@@ -23,4 +23,8 @@ public class OtherWorldCard extends ACard {
 		return getOtherWorldColor().getCardPath();
 	}
 
+	public long getColorID() {
+		return colorID;
+	}
+
 }

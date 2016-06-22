@@ -29,4 +29,9 @@ public class Location {
 		return locationName;
 	}
 
+	public String getLocationButtonPath() {
+		// TODO Auto-generated method stub
+		return "";
+	}
+
 }

@@ -109,6 +109,37 @@ public class GameState
 		
 		return otherWorldCards;
 	}
+	
+	public ArrayList<OtherWorldCard> getOtherWorldDeck(long[] colorIDs) {
+		if( colorIDs == null || colorIDs.length == 0 )
+		{
+			return getOtherWorldDeck();
+		}
+		else
+		{
+			ArrayList<OtherWorldCard> cards = getOtherWorldDeck();
+			ArrayList<OtherWorldCard> filteredCards = new ArrayList<OtherWorldCard>();
+
+			for(int i = 0; i < cards.size(); i++)
+			{
+				for(int j = 0; j < colorIDs.length; j++)
+				{
+					if(cards.get(i).getColorID() == colorIDs[j])
+					{
+						filteredCards.add(cards.get(i));
+					}
+				}
+			}
+			
+			//Grab stars are right
+			filteredCards.add(cards.get(cards.size()-1));
+			
+			return filteredCards;
+		}
+			
+	}
+	
+	
 	public boolean otherWorldCardSelected(long cardId) {
 		
 		while( otherWorldCards.size() != 0 && otherWorldCards.get(0).getID() != cardId)
@@ -126,7 +157,7 @@ public class GameState
 	
 	private void prepOtherWorldDeck()
 	{
-		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherworldCards();
+		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherWorldCards();
 		randomize(otherWorldCards);
 		//Where should stars are right go?
 		
