@@ -158,10 +158,20 @@ public class ExpansionSelector extends Activity {
             case R.id.new_game:
                 newGame();
                 return true;
+            case R.id.about_app:
+            	about();
+            	return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+    
+    private void about()
+    {
+    	Intent i = new Intent(this, AboutActivity.class);
+		this.startActivity(i);
+    }
+    
 
 	private void newGame() {
 		GameState.getInstance().newGame();
