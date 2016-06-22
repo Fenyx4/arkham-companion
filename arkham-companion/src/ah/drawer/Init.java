@@ -77,15 +77,37 @@ public class Init {
 	}
 
 	public static void FetchColors(SQLiteDatabase db) {
-		String sqlInsert = "INSERT INTO " + DatabaseHelper.colorTable + " (" + DatabaseHelper.colorID + "," + DatabaseHelper.colorExpID + "," 
-					+ DatabaseHelper.colorName + "," + DatabaseHelper.colorCardPath + "," + DatabaseHelper.colorButtonPath + ") VALUES ";//+	
+		String sqlInsertColor = "INSERT INTO " + DatabaseHelper.colorTable + " (" + DatabaseHelper.colorID + "," + DatabaseHelper.colorExpID + "," 
+					+ DatabaseHelper.colorName + "," + DatabaseHelper.colorButtonPath + ") VALUES ";//+
+		String sqlInsertPath = "INSERT INTO " + DatabaseHelper.pathTable + " (" + DatabaseHelper.pathID + "," + DatabaseHelper.path + ") VALUES ";//+
+		String sqlInsertColorToPath = "INSERT INTO " + DatabaseHelper.colorToPathTable + " (" + DatabaseHelper.colorToPathColorID + "," + DatabaseHelper.colorToPathPathID + ") VALUES ";//+
 
 		//Base
-		db.execSQL(sqlInsert + " (0,1,\"Colorless\",\"otherworld/otherworld_front_colorless.png\",\"encounter/otherworld_color_btn_colorless.png\")");
-		db.execSQL(sqlInsert + " (1,1,\"Yellow\",\"otherworld/otherworld_front_yellow.png\",\"encounter/otherworld_color_btn_yellow.png\")");
-		db.execSQL(sqlInsert + " (2,1,\"Red\",\"otherworld/otherworld_front_red.png\",\"encounter/otherworld_color_btn_red.png\")");
-		db.execSQL(sqlInsert + " (3,1,\"Blue\",\"otherworld/otherworld_front_blue.png\",\"encounter/otherworld_color_btn_blue.png\")");
-		db.execSQL(sqlInsert + " (4,1,\"Green\",\"otherworld/otherworld_front_green.png\",\"encounter/otherworld_color_btn_green.png\")");
+		db.execSQL(sqlInsertColor + " (0,1,\"Colorless\",\"encounter/otherworld_color_btn_colorless.png\")");
+		db.execSQL(sqlInsertPath + " (0,\"otherworld/otherworld_front_colorless.png\")");
+		db.execSQL(sqlInsertColorToPath + " (0,0)");
+		db.execSQL(sqlInsertColor + " (1,1,\"Yellow\",\"encounter/otherworld_color_btn_yellow.png\")");
+		db.execSQL(sqlInsertPath + " (1,\"otherworld/otherworld_front_yellow.png\")");
+		db.execSQL(sqlInsertColorToPath + " (1,1)");
+		db.execSQL(sqlInsertColor + " (2,1,\"Red\",\"encounter/otherworld_color_btn_red.png\")");
+		db.execSQL(sqlInsertPath + " (2,\"otherworld/otherworld_front_red.png\")");
+		db.execSQL(sqlInsertColorToPath + " (2,2)");
+		db.execSQL(sqlInsertColor + " (3,1,\"Blue\",\"encounter/otherworld_color_btn_blue.png\")");
+		db.execSQL(sqlInsertPath + " (3,\"otherworld/otherworld_front_blue.png\")");
+		db.execSQL(sqlInsertColorToPath + " (3,3)");
+		db.execSQL(sqlInsertColor + " (4,1,\"Green\",\"encounter/otherworld_color_btn_green.png\")");
+		db.execSQL(sqlInsertPath + " (4,\"otherworld/otherworld_front_green.png\")");
+		db.execSQL(sqlInsertColorToPath + " (4,4)");
+		
+		db.execSQL(sqlInsertPath + " (5,\"otherworld/otherworld_front_redyellow.png\")");
+		db.execSQL(sqlInsertColorToPath + " (1,5)");
+		db.execSQL(sqlInsertColorToPath + " (2,5)");
+		db.execSQL(sqlInsertPath + " (6,\"otherworld/otherworld_front_blueyellow.png\")");
+		db.execSQL(sqlInsertColorToPath + " (1,6)");
+		db.execSQL(sqlInsertColorToPath + " (3,6)");
+		db.execSQL(sqlInsertPath + " (7,\"otherworld/otherworld_front_redgreen.png\")");
+		db.execSQL(sqlInsertColorToPath + " (2,7)");
+		db.execSQL(sqlInsertColorToPath + " (4,7)");
 	}
 	
 	public static void FetchOtherWorldLocations(SQLiteDatabase db) {
@@ -209,6 +231,24 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (14963,500,'A monster appears!')");
 		db.execSQL(sqlInsertCardColor + " (4504,1)");
 		db.execSQL(sqlInsertCardColor + " (4504,2)");
+		
+		db.execSQL(sqlInsertCard + " (4505)");
+		db.execSQL(sqlInsertCardExp + " (4505,1)");
+		db.execSQL(sqlInsertCardEnc + " (4505,14964)");
+		db.execSQL(sqlInsertEnc + " (14964,504,'Shub Niggurath!')");
+		db.execSQL(sqlInsertCardEnc + " (4505,14965)");
+		db.execSQL(sqlInsertEnc + " (14965,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4505,1)");
+		db.execSQL(sqlInsertCardColor + " (4505,3)");
+		
+		db.execSQL(sqlInsertCard + " (4506)");
+		db.execSQL(sqlInsertCardExp + " (4506,1)");
+		db.execSQL(sqlInsertCardEnc + " (4506,14966)");
+		db.execSQL(sqlInsertEnc + " (14966,507,'Ithaqua!')");
+		db.execSQL(sqlInsertCardEnc + " (4506,14967)");
+		db.execSQL(sqlInsertEnc + " (14967,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4506,2)");
+		db.execSQL(sqlInsertCardColor + " (4506,4)");
 	}
 	
 	public static void FetchLocations(SQLiteDatabase db)

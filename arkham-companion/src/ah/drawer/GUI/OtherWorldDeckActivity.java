@@ -166,13 +166,22 @@ public class OtherWorldDeckActivity extends Activity {
 	    	
 	    	((ViewPager) pager).addView(layout);
 	    	
-	        Bitmap front;
+	        Bitmap front = null;
 	        try {
-	        	front = BitmapFactory.decodeStream(getAssets().open(theCard.getCardPath()));
+	        	String path = theCard.getCardPath();
+	        	if( path != null )
+	        	{
+	        		front = BitmapFactory.decodeStream(getAssets().open(path));	
+	        	}
+	        	
 			} catch (IOException e) {
-				front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
+				//front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
 			}
 	        
+	        if( front == null )
+	        {
+	        	front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
+	        }
 	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
 	        Bitmap result = overlayCard(front, theCard);
 	        

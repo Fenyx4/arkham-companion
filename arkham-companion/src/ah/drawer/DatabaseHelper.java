@@ -68,9 +68,18 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String colorTable = "Color";
 	static final String colorID = "colorID";
 	static final String colorName = "colorName";
-	static final String colorCardPath = "colorCardPath";
 	static final String colorExpID = "colorExpID";
 	static final String colorButtonPath = "colorButtonPath";
+	
+	//CardPath
+	static final String pathTable = "Path";
+	static final String pathID = "pathID";
+	static final String path = "path";
+	
+	//ColorsToCardPath
+	static final String colorToPathTable = "colorToPath";
+	static final String colorToPathColorID = "colorID";
+	static final String colorToPathPathID = "pathID";
 	
 
 	static final String viewEmps="ViewEmps";
@@ -78,7 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,98); 
+		  super(context, dbName, null,100); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -152,8 +161,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  
 		  db.execSQL("CREATE TABLE "+colorTable+" ("+colorID+" INTEGER PRIMARY KEY, "+
 		    		colorName+" TEXT, "+
-		    		colorExpID+" INTEGER NOT NULL, " + 
-		    		colorCardPath + " TEXT, "+
+		    		colorExpID+" INTEGER NOT NULL, " +
 		    		colorButtonPath + " TEXT, "+ 
 		    		"FOREIGN KEY ("+colorExpID+") REFERENCES "+expTable+" ("+expID+"));");
 		  
@@ -163,6 +171,16 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "PRIMARY KEY ("+locToColorColorID+","+locToColorLocID+"), "+
 				  "FOREIGN KEY ("+locToColorColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
 				  "FOREIGN KEY ("+locToColorLocID+") REFERENCES "+locTable+" ("+locID+"));");//+
+		  
+		  db.execSQL("CREATE TABLE "+pathTable+" ("+pathID+ " INTEGER PRIMARY KEY, "+
+				  path + " TEXT)");
+		  
+		  db.execSQL("CREATE TABLE "+colorToPathTable+" ("+
+				  //cardEncID+" INTEGER NOT NULL ,"+
+				  colorToPathColorID+" INTEGER NOT NULL, "+
+				  colorToPathPathID+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+colorToPathColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
+				  "FOREIGN KEY ("+colorToPathPathID+") REFERENCES "+pathTable+" ("+pathID+"));");//+
 		  
 //		  //For referential integrity
 //		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
@@ -238,6 +256,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+colorTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+locToColorTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+cardToColorTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+pathTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+colorToPathTable);
+		  
 		  
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_locnei_neiid");

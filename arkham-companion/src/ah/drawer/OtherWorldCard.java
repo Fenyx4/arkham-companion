@@ -25,7 +25,7 @@ public class OtherWorldCard extends ACard {
 	
 	public String getCardPath()
 	{
-		return AHFlyweightFactory.INSTANCE.getOtherWorldCardPath(colors);
+		return AHFlyweightFactory.INSTANCE.getOtherWorldCardPathForColoredCard(getID());
 	}
 
 }
