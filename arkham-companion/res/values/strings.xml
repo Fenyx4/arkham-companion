@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Location Picker</string>
-    <string name="app_name">AH - Drawer</string>
+    <string name="app_name">Arkham Companion</string>
     <string name="encounter_arrow_clicked">Deck shuffled&#8230;</string>
     <string name="location_deck_back">No Encounter selected.\n Deck not shuffled.\n Replacing cards&#8230;</string>
     <string name="otherword_arrow_clicked_true">Deck shuffled&#8230;</string>
