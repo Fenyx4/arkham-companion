@@ -45,6 +45,7 @@ public class GameState
 			gameID = currGameID;
 			currentExpansions = AHFlyweightFactory.INSTANCE.getGameExps(gameID);
 			encounterHx = AHFlyweightFactory.INSTANCE.getGameEncHx(gameID);
+			otherWorldCards = arrayListConvert(AHFlyweightFactory.INSTANCE.getDeck(-1, gameID));
 		}
 		
 		rand = new Random(System.currentTimeMillis());
@@ -234,7 +235,8 @@ public class GameState
 			//Skip Stars Are right
 			if(otherWorldCards.get(i).getID() != 4242)
 			{
-				otherWorldCards.remove(i);
+				ICard card = otherWorldCards.remove(i);
+				AHFlyweightFactory.INSTANCE.removeFromDeck(-1, gameID, card.getID());
 			}
 			else
 			{
@@ -242,7 +244,8 @@ public class GameState
 			}
 		}
 		//remove the selected card
-		otherWorldCards.remove(i);
+		ICard card = otherWorldCards.remove(i);
+		AHFlyweightFactory.INSTANCE.removeFromDeck(-1, gameID, card.getID());
 		//Shuffle if we're at the end of the deck or they selected Stars are right
 		if(otherWorldCards.size() == 0 || cardId == 4242)
 		{
@@ -256,6 +259,26 @@ public class GameState
 	{
 		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherWorldCards();
 		randomize(otherWorldCards);
+		ArrayList<ICard> deck = arrayListConvert(otherWorldCards);
+		AHFlyweightFactory.INSTANCE.setDeck(-1, gameID, deck);
+	}
+	
+	//TODO Must be a better way than this
+	@SuppressWarnings("unchecked")
+	private <T, E> ArrayList<T> arrayListConvert(ArrayList<E> orig)
+	{
+		if(orig == null)
+		{
+			return null;
+		}
+		ArrayList<T> ret = new ArrayList<T>();
+		
+		for(int i = 0; i < orig.size(); i++)
+		{
+			ret.add((T)orig.get(i));
+		}
+		
+		return ret;
 	}
 
 	public void newGame() {
@@ -266,6 +289,7 @@ public class GameState
 		
 		rand = new Random(System.currentTimeMillis());
 		gameID = AHFlyweightFactory.INSTANCE.createNewGame();
+		otherWorldCards = null;
 	}
 
 	public void removeHx(int position) {

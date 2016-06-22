@@ -887,6 +887,75 @@ public class AHFlyweightFactory {
 		
 		db.execSQL("DELETE FROM "+DatabaseHelper.encounterHxTable+" WHERE "+DatabaseHelper.encHxID+"="+enc.getHxID());
 	}
+
+	public void setDeck(int deckID, long gameID, ArrayList<ICard> cards) {
 		
-	   
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		db.execSQL("DELETE FROM "+DatabaseHelper.deckToCardTable+" WHERE "+DatabaseHelper.deckToCardDeckID+"="+deckID + " AND "+DatabaseHelper.deckToCardGameID+" = "+gameID);
+		
+		ContentValues contentValues = new ContentValues();
+		for(int i = 0; i < cards.size(); i++)
+		{
+			ICard card = cards.get(i);
+			contentValues.put(DatabaseHelper.deckToCardDeckID, deckID);
+			contentValues.put(DatabaseHelper.deckToCardGameID, gameID);
+			contentValues.put(DatabaseHelper.deckToCardCardID, card.getID());
+			contentValues.put(DatabaseHelper.deckToCardOrder, i);
+			
+			db.insert(DatabaseHelper.deckToCardTable, null, contentValues);
+		}
+	}
+		
+	public ArrayList<ICard> getDeck(int deckID, long gameID)
+	{
+		ArrayList<ICard> deck = new ArrayList<ICard>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		//Need to order it by location
+		String table = DatabaseHelper.deckToCardTable+" LEFT JOIN "+DatabaseHelper.cardTable+
+		" ON "+DatabaseHelper.deckToCardTable+"."+DatabaseHelper.deckToCardCardID+"="+DatabaseHelper.cardTable+"."+DatabaseHelper.cardID;
+		String[] columns = new String[]{DatabaseHelper.cardTable+"."+DatabaseHelper.cardID,DatabaseHelper.cardTable+"."+DatabaseHelper.cardNeiID};
+		String select = DatabaseHelper.deckToCardTable+"."+DatabaseHelper.deckToCardDeckID + " = "+deckID+" AND "+DatabaseHelper.deckToCardTable+"."+DatabaseHelper.deckToCardGameID + " = "+gameID;
+		String orderby = DatabaseHelper.deckToCardTable+"."+DatabaseHelper.deckToCardOrder+" ASC";
+		
+		Cursor c = db.query(table, columns, select, null, null, null, orderby);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			if( c.isNull(1) )
+			{
+				deck.add(new OtherWorldCard(c.getLong(0)));
+			}
+			else
+			{
+				deck.add(new NeighborhoodCard(c.getLong(0), c.getLong(1)));
+			}
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		if( deck.size() == 0)
+		{
+			return null;
+		}
+		return deck;
+	
+	}
+
+	public void removeFromDeck(int deckID, long gameID, long cardID) {
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		db.execSQL("DELETE FROM "+DatabaseHelper.deckToCardTable+" WHERE "+DatabaseHelper.deckToCardDeckID+"="+deckID + " AND "+DatabaseHelper.deckToCardGameID+" = "+gameID+
+				" AND "+DatabaseHelper.deckToCardCardID+" = "+ cardID);
+		
+	}
 }

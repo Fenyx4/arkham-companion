@@ -99,6 +99,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String encHxEncID = "encHxEncID";
 	static final String encHxInverseOrder = "encHxOrder";
 	
+	//DeckToCards
+	static final String deckToCardTable = "deckToCardTable";
+	static final String deckToCardDeckID = "deckToCardDeckID";
+	static final String deckToCardGameID = "deckToCardGameID";
+	static final String deckToCardCardID = "deckToCardCardID";
+	static final String deckToCardOrder = "deckToCardOrder";
 	
 	
 
@@ -107,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null, 130); 
+		  super(context, dbName, null, 131); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -220,6 +226,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "FOREIGN KEY ("+encHxGameID+") REFERENCES "+gameTable+" ("+gameID+"), "+
 				  "FOREIGN KEY ("+encHxEncID+") REFERENCES "+encounterTable+" ("+encID+"));");//+
 		  
+		  db.execSQL("CREATE TABLE "+deckToCardTable+" ("+
+				  deckToCardDeckID+ " INTEGER NOT NULL, "+
+				  deckToCardGameID+" INTEGER NOT NULL, "+
+				  deckToCardCardID+" INTEGER NOT NULL, "+
+				  deckToCardOrder+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+deckToCardGameID+") REFERENCES "+gameTable+" ("+gameID+"), "+
+				  "FOREIGN KEY ("+deckToCardCardID+") REFERENCES "+cardTable+" ("+cardID+"));");//+
+		  
 //		  //For referential integrity
 //		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
 //				    " BEFORE INSERT "+
@@ -299,6 +313,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	  db.execSQL("DROP TABLE IF EXISTS "+gameTable);
 	  db.execSQL("DROP TABLE IF EXISTS "+gameToExpTable);
 	  db.execSQL("DROP TABLE IF EXISTS "+encounterHxTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+deckToCardTable);
 	  
 	  
 	  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
