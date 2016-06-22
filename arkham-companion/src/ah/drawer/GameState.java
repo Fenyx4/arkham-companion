@@ -10,6 +10,7 @@ public class GameState
 	public final static GameState INSTANCE = new GameState();
 	//Sorted arrays for each neighborhood representing the deck of cards
 	private HashMap<Long,ArrayList<NeighborhoodCard>> neighborhoodCardsList;
+	private ArrayList<OtherWorldCard> otherWorldCards = null;
 	private Random rand;
 	private ArrayList<Encounter> encounterHx = null;
 	private ArrayList<ICard> cardHx = null;
@@ -99,5 +100,40 @@ public class GameState
 	public ArrayList<ICard> getCardHx()
 	{
 		return cardHx;
+	}
+	public ArrayList<OtherWorldCard> getOtherWorldDeck() {
+		if (otherWorldCards == null)
+		{
+			prepOtherWorldDeck();
+		}
+		
+		return otherWorldCards;
+	}
+	public void otherWorldCardSelected(long cardId) {
+		
+		while( otherWorldCards.size() != 0 && otherWorldCards.get(0).getID() != cardId)
+		{
+			otherWorldCards.remove(0);
+		}
+		otherWorldCards.remove(0);
+		if(otherWorldCards.size() == 0)
+		{
+			prepOtherWorldDeck();
+		}
+	}
+	
+	private void prepOtherWorldDeck()
+	{
+		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherworldCards();
+		randomize(otherWorldCards);
+		//Where should stars are right go?
+		
+		int numberOfCardsAfterStars = rand.nextInt(otherWorldCards.size());
+		for(int i = 0; i < numberOfCardsAfterStars; i++)
+		{
+			otherWorldCards.remove(otherWorldCards.size()-1);
+		}
+		
+		otherWorldCards.add(AHFlyweightFactory.INSTANCE.getStarsAreRight());
 	}
 }

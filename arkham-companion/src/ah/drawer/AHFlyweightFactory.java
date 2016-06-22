@@ -150,7 +150,7 @@ public class AHFlyweightFactory {
 		return cards;
 	}
 	
-	public ArrayList<OtherWorldCard> getCurrentOtherworldCards(long colorID)
+	public ArrayList<OtherWorldCard> getCurrentOtherworldCards()
 	{
 		ArrayList<OtherWorldCard> cards = new ArrayList<OtherWorldCard>();
 		
@@ -169,14 +169,14 @@ public class AHFlyweightFactory {
 		//                 WHERE expID IN (expIDs)
 		//                 AND cardID NOT IN (SELECT cardID from cardToExpTable
 		//                                    WHERE expID NOT IN (expIDs)))
-		String select = DatabaseHelper.cardColorID+"=? "+
-		"AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		String select = DatabaseHelper.cardColorID+" IS NOT NULL "+
+		"AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") "+
 		"AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
 		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
-		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, new String[]{Long.toString(colorID)}, null, null, null);
+		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, null, null, null, null);
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
@@ -190,6 +190,43 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return cards;
+	}
+	
+	public OtherWorldCard getStarsAreRight()
+	{
+		OtherWorldCard card = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardColorID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		//String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		//expIDs = expIDs.substring(1,expIDs.length()-1);
+		
+		//SELECT DISTINCT cardID, NeiID
+		//FROM cardTable
+		//WHERE neiID= neiID
+		//      AND cardID IN (SELECT cardID FROM cardToExpTable
+		//                 WHERE expID IN (expIDs)
+		//                 AND cardID NOT IN (SELECT cardID from cardToExpTable
+		//                                    WHERE expID NOT IN (expIDs)))
+		String select = DatabaseHelper.cardID+" = 4242";
+		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
+
+		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, null, null, null, null);
+		
+		c.moveToFirst();
+		if(!c.isAfterLast())
+		{
+			card = new OtherWorldCard(c.getLong(0),c.getLong(1));
+		}
+		
+		c.close();
+		db.close();
+		
+		return card;
 	}
 	
 	public ArrayList<Encounter> getEncounters(long locID) 

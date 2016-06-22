@@ -130,4 +130,10 @@ public class NeighborhoodSelector extends Activity {
     	Intent i = new Intent(this, LocationHxActivity.class);
 		this.startActivity(i);
     }
+    
+    public void openOW(View view)
+    {
+    	Intent i = new Intent(this, OtherWorldDeckActivity.class);
+		this.startActivity(i);
+    }
 }

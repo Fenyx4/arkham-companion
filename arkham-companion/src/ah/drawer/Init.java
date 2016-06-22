@@ -76,6 +76,127 @@ public class Init {
 		db.execSQL(sqlInsert + " (19,7,\"Innsmouth Shore\",\"encounter/encounter_front_innsmouth.png\",\"encounter/encounter_nei_btn_innsmouth.png\")");
 	}
 
+	public static void FetchColors(SQLiteDatabase db) {
+		String sqlInsert = "INSERT INTO " + DatabaseHelper.colorTable + " (" + DatabaseHelper.colorID + "," + DatabaseHelper.colorExpID + "," 
+					+ DatabaseHelper.colorName + "," + DatabaseHelper.colorCardPath + "," + DatabaseHelper.colorButtonPath + ") VALUES ";//+	
+
+		//Base
+		db.execSQL(sqlInsert + " (0,1,\"Colorless\",\"otherworld/otherworld_front_colorless.png\",\"encounter/otherworld_color_btn_colorless.png\")");
+		db.execSQL(sqlInsert + " (1,1,\"Yellow\",\"otherworld/otherworld_front_yellow.png\",\"encounter/otherworld_color_btn_yellow.png\")");
+		db.execSQL(sqlInsert + " (2,1,\"Red\",\"otherworld/otherworld_front_red.png\",\"encounter/otherworld_color_btn_red.png\")");
+		db.execSQL(sqlInsert + " (3,1,\"Blue\",\"otherworld/otherworld_front_blue.png\",\"encounter/otherworld_color_btn_blue.png\")");
+		db.execSQL(sqlInsert + " (4,1,\"Green\",\"otherworld/otherworld_front_green.png\",\"encounter/otherworld_color_btn_green.png\")");
+	}
+	
+	public static void FetchOtherWorldLocations(SQLiteDatabase db) {
+		String sqlInsert = "INSERT INTO " + DatabaseHelper.locTable + " (" + DatabaseHelper.locID + "," + DatabaseHelper.locExpID + "," + DatabaseHelper.locName + "," 
+				+ DatabaseHelper.locButtonPath + "," + DatabaseHelper.locSort + ") VALUES ";//+	
+
+		//Base	
+		db.execSQL(sqlInsert + " (499,1,\"The Stars are Right\",\"\",0)");
+		db.execSQL(sqlInsert + " (500,1,\"Other\",\"\",12)");
+		db.execSQL(sqlInsert + " (501,1,\"Abyss\",\"encounter/otherworld_loc_btn_abyss.png\",1)");
+		db.execSQL(sqlInsert + " (502,1,\"Another Dimension\",\"encounter/otherworld_loc_btn_anotherdimension.png\",0)");
+		db.execSQL(sqlInsert + " (503,1,\"City of the Great Race\",\"encounter/otherworld_loc_btn_city.png\",2)");
+		db.execSQL(sqlInsert + " (504,1,\"Yuggoth\",\"encounter/otherworld_loc_btn_yuggoth.png\",7)");
+		db.execSQL(sqlInsert + " (505,1,\"Celeano\",\"encounter/otherworld_loc_btn_celeano.png\",4)");
+		db.execSQL(sqlInsert + " (506,1,\"The Dreamlands\",\"encounter/otherworld_loc_btn_dreamlands.png\",5)");
+		db.execSQL(sqlInsert + " (507,1,\"Plateau of Leng\",\"encounter/otherworld_loc_btn_leng.png\",6)");
+		db.execSQL(sqlInsert + " (508,1,\"R'lyeh\",\"encounter/otherworld_loc_btn_rlyeh.png\",3)");
+		
+		//Dunwich
+		db.execSQL(sqlInsert + " (509,3,\"Another Time\",\"encounter/otherworld_loc_btn_anothertime.png\",8)");
+		db.execSQL(sqlInsert + " (510,3,\"Lost Carcosa\",\"encounter/otherworld_loc_btn_lostcarcosa.png\",9)");
+		
+		//Kingsport
+		db.execSQL(sqlInsert + " (511,5,\"Unknown Kadath\",\"encounter/otherworld_loc_btn_kadath.png\",10)");
+		db.execSQL(sqlInsert + " (512,5,\"The Underworld\",\"encounter/otherworld_loc_btn_underworld.png\",11)");
+		
+		sqlInsert = "INSERT INTO " + DatabaseHelper.locToColorTable + " (" + DatabaseHelper.locToColorLocID + "," + DatabaseHelper.locToColorColorID + ") VALUES ";
+		
+		//Yellow, Red, Blue, Green
+		db.execSQL(sqlInsert + " (499,0)");
+		db.execSQL(sqlInsert + " (501,3)");
+		db.execSQL(sqlInsert + " (501,2)");
+		db.execSQL(sqlInsert + " (502,1)");
+		db.execSQL(sqlInsert + " (502,2)");
+		db.execSQL(sqlInsert + " (502,3)");
+		db.execSQL(sqlInsert + " (502,4)");
+		db.execSQL(sqlInsert + " (503,4)");
+		db.execSQL(sqlInsert + " (503,1)");
+		db.execSQL(sqlInsert + " (504,3)");
+		db.execSQL(sqlInsert + " (504,1)");
+		db.execSQL(sqlInsert + " (505,3)");
+		db.execSQL(sqlInsert + " (505,4)");
+		db.execSQL(sqlInsert + " (506,1)");
+		db.execSQL(sqlInsert + " (506,2)");
+		db.execSQL(sqlInsert + " (506,3)");
+		db.execSQL(sqlInsert + " (506,4)");
+		db.execSQL(sqlInsert + " (507,4)");
+		db.execSQL(sqlInsert + " (507,2)");
+		db.execSQL(sqlInsert + " (508,2)");
+		db.execSQL(sqlInsert + " (508,1)");
+		db.execSQL(sqlInsert + " (509,2)");
+		db.execSQL(sqlInsert + " (509,4)");
+		db.execSQL(sqlInsert + " (510,3)");
+		db.execSQL(sqlInsert + " (510,1)");
+		db.execSQL(sqlInsert + " (511,1)");
+		db.execSQL(sqlInsert + " (511,2)");
+		db.execSQL(sqlInsert + " (512,3)");
+		db.execSQL(sqlInsert + " (512,4)");
+	}
+	
+	public static void FetchOtherWorldEncounter(SQLiteDatabase db)
+	{
+		String sqlInsertCard = "INSERT INTO " + DatabaseHelper.cardTable + " (" + DatabaseHelper.cardID + "," + DatabaseHelper.cardColorID + ") VALUES ";//+
+		String sqlInsertCardExp = "INSERT INTO " + DatabaseHelper.cardToExpTable + " (" + DatabaseHelper.cardToExpCardID + "," + DatabaseHelper.cardToExpExpID + ") VALUES ";//+
+		String sqlInsertCardEnc = "INSERT INTO " + DatabaseHelper.cardToEncTable + " (" + DatabaseHelper.cardToEncCardID + "," + DatabaseHelper.cardToEncEncID + ") VALUES ";//+
+		String sqlInsertEnc = "INSERT INTO " + DatabaseHelper.encounterTable + " (" + DatabaseHelper.encID + "," + DatabaseHelper.encLocID + "," + DatabaseHelper.encText + ") VALUES ";//+
+		
+		db.execSQL(sqlInsertCard + " (4242,0)");
+		db.execSQL(sqlInsertCardExp + " (4242,1)");
+		db.execSQL(sqlInsertCardEnc + " (4242,14242)");
+		db.execSQL(sqlInsertEnc + " (14242,499,'Shuffle the Gate deck and keep drawing until you get an encounter of the right color.')");
+		
+		
+		db.execSQL(sqlInsertCard + " (4500,1)");
+		db.execSQL(sqlInsertCardExp + " (4500,1)");
+		db.execSQL(sqlInsertCardEnc + " (4500,14950)");
+		db.execSQL(sqlInsertEnc + " (14950,508,'You run for the boat. Pass a <b>Speed (-1) [2] check</b> to reach it in time. If you do, you escape with vital information. Gain 5 Clue tokens. If you fail, stay here next turn, hiding from your pursuer.')");
+		db.execSQL(sqlInsertCardEnc + " (4500,14951)");
+		db.execSQL(sqlInsertEnc + " (14951,504,'Breathing hard, you stay huddled against the rock until the sounds of pursuit fade into the distance. No encounter.')");
+		db.execSQL(sqlInsertCardEnc + " (4500,14952)");
+		db.execSQL(sqlInsertEnc + " (14952,500,'Your mind is flooded with knowledge. Make a <b>Lore (-2) check</b>. If you pass it, draw 1 Spell, but lose 1 Sanity.')");
+		
+		db.execSQL(sqlInsertCard + " (4501,2)");
+		db.execSQL(sqlInsertCardExp + " (4501,1)");
+		db.execSQL(sqlInsertCardEnc + " (4501,14953)");
+		db.execSQL(sqlInsertEnc + " (14953,501,'The stone arch breaks! Pass a <b>Speed (-1) check</b> to dive out of the way or roll a die and lose that much Stamina.')");
+		db.execSQL(sqlInsertCardEnc + " (4501,14954)");
+		db.execSQL(sqlInsertEnc + " (14954,506,'The ice bridge begins to crack. <b>Pass a Luck (-1) check</b> or fall into the icy depths. If you fall, you are <i>lost in time and space.</i>')");
+		db.execSQL(sqlInsertCardEnc + " (4501,14955)");
+		db.execSQL(sqlInsertEnc + " (14955,500,'The humidity and heat is exhausting. Lose 1 Stamina.')");
+		
+		
+		db.execSQL(sqlInsertCard + " (4502,4)");
+		db.execSQL(sqlInsertCardExp + " (4502,1)");
+		db.execSQL(sqlInsertCardEnc + " (4502,14956)");
+		db.execSQL(sqlInsertEnc + " (14956,503,'You find yourself in an ancient and abandoned temple. Pass a <b>Luck (-1) check</b> to find a golden statue worth $10. However, if you take it, you are <i>Cursed</i>.')");
+		db.execSQL(sqlInsertCardEnc + " (4502,14957)");
+		db.execSQL(sqlInsertEnc + " (14957,505,'Your red-eyed reflection in the mirror captures your attention. Stay here next turn.')");
+		db.execSQL(sqlInsertCardEnc + " (4502,14958)");
+		db.execSQL(sqlInsertEnc + " (14958,500,'The rope seems to extend upwards forever, but it''s the only way out of the crevasse you find yourself in. Pass a <b>Fight (-1) check</b> to climb it and return to Arkham. If you fail, you fall, losing 2 Stamina and staying here next turn.')");
+		
+		db.execSQL(sqlInsertCard + " (4503,3)");
+		db.execSQL(sqlInsertCardExp + " (4503,1)");
+		db.execSQL(sqlInsertCardEnc + " (4503,14959)");
+		db.execSQL(sqlInsertEnc + " (14959,506,'You wander in the frozen wastes. No encounter.')");
+		db.execSQL(sqlInsertCardEnc + " (4503,14960)");
+		db.execSQL(sqlInsertEnc + " (14960,501,'You rest a bit beside a small, glowing pool filled with black, blind fish. Pass a <b>Luck (-1) check</b> to notice an unusual object in the water. Fishing it out, you draw 1 Unique Item and gain $3.')");
+		db.execSQL(sqlInsertCardEnc + " (4503,14961)");
+		db.execSQL(sqlInsertEnc + " (14961,500,'Pass a <b>Luck (-1) check</b> to discover a cache of ancient papers containing valuable information about the Mythos. Gain 1 Clue token for every success you rolled on your Luck check.')");
+	}
+	
 	public static void FetchLocations(SQLiteDatabase db)
 	{
 		
@@ -4628,6 +4749,8 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (39,132)");
 		db.execSQL(sqlInsertEnc + " (132,10,'A sheaf of papers with hieroglyphics translations blows past you on the wind. Make a <b>Speed (-1) check</b>. If you fail, a young lady runs past you after them. If you pass, you catch them and are thanked profusely by <b>Sarah Danforth</b>, an archaeology student from Miskatonic. Take her Ally card. If it is not available, gain 1 Clue token instead as she chats with you about the visiting museum exhibit.')");
 	}
+
+
 	
 	
 }

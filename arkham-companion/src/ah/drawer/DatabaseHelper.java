@@ -20,9 +20,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	//Locations
 	static final String locTable="Location";
 	static final String locID="locID";
+	static final String locExpID="locExpID"; // Only needed for OW
 	static final String locName="locName";
-	static final String locNeiID = "neiID";
+	static final String locNeiID = "neiID"; // Null if OW
 	static final String locSort = "sort";
+	static final String locButtonPath = "locButtonPath";
 	
 	//Expansions
 	static final String expTable="Expansion";
@@ -52,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String cardToEncCardID = "cardID";
 	static final String cardToEncEncID = "encID";
 	  
-	//CardsToEncounter
+	//LocToColors
 	static final String locToColorTable = "LocationToColor";
 	static final String locToColorColorID = "colorID";
 	static final String locToColorLocID = "locID";  
@@ -63,6 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String colorName = "colorName";
 	static final String colorCardPath = "colorCardPath";
 	static final String colorExpID = "colorExpID";
+	static final String colorButtonPath = "colorButtonPath";
 	
 
 	static final String viewEmps="ViewEmps";
@@ -70,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,83); 
+		  super(context, dbName, null,97); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -102,7 +105,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY, "+
 				  locName + " TEXT, "+
 				  locNeiID+" INTEGER NULL, "+
+				  locExpID+" INTEGER NULL, "+
+				  locButtonPath + " TEXT NULL, "+ 
 				  locSort+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+locExpID+") REFERENCES "+expTable+" ("+expID+"), " +
 				  "FOREIGN KEY ("+locNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+encounterTable+" ("+encID+" INTEGER PRIMARY KEY, "+
@@ -135,6 +141,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		    		colorName+" TEXT, "+
 		    		colorExpID+" INTEGER NOT NULL, " + 
 		    		colorCardPath + " TEXT, "+
+		    		colorButtonPath + " TEXT, "+ 
 		    		"FOREIGN KEY ("+colorExpID+") REFERENCES "+expTable+" ("+expID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+locToColorTable+" ("+
@@ -198,7 +205,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  Init.FetchExpansion(db);
 		  Init.FetchNeighborhoods(db);
 		  Init.FetchLocations(db);
+		  Init.FetchColors(db);
 		  Init.FetchEncounters(db);
+		  
+		  Init.FetchOtherWorldLocations(db);
+		  Init.FetchOtherWorldEncounter(db);
 	}
 
 	@Override

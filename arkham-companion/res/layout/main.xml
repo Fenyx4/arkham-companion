@@ -19,7 +19,8 @@
 		  	android:layout_height="100dp"
 		    android:layout_width="100dp"
 		    android:background="@drawable/ow_btn"
-		    android:layout_alignParentLeft="true"/>
+		    android:layout_alignParentLeft="true"
+		    android:onClick="openOW"/>
     	<Button 
     	    android:id="@+id/open_encounterhx" 
 		  	android:layout_height="100dp"
