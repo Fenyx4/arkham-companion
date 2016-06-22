@@ -140,11 +140,15 @@ public class GameState
 		{
 			currentExpansions.put(expID,expID);
 			AHFlyweightFactory.INSTANCE.addGameEx(expID, gameID);
+			neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
+			otherWorldCards = null;
 		}
 		else if (currentExpansions.containsKey(expID) && !isChecked)
 		{
 			currentExpansions.remove(expID);
 			AHFlyweightFactory.INSTANCE.removeGameEx(expID, gameID);
+			neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
+			otherWorldCards = null;
 		}
 	}
 	
