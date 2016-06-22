@@ -4,6 +4,7 @@ public class Encounter
 {
 	private long ID;
 	private long locID;
+	private ICard card;
 	
 	public Encounter(long encID, long locID) 
 	{
@@ -48,6 +49,14 @@ public class Encounter
 		
 		return result;
 	  }
+
+	public ICard getCard() {
+		if(card == null)
+		{
+			card = AHFlyweightFactory.INSTANCE.getCardByEncID(ID);
+		}
+		return card;
+	}
 	
 
 }

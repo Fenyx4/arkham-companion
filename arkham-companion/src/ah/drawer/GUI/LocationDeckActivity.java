@@ -44,7 +44,7 @@ public class LocationDeckActivity extends Activity {
         long neiID = extras.getLong("neighborhood");
         
         ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-        viewpager.setAdapter(new CardAdapter(this, GameState.INSTANCE.getDeckByNeighborhood(neiID)));
+        viewpager.setAdapter(new CardAdapter(this, GameState.getInstance().getDeckByNeighborhood(neiID)));
 
         //viewpager.setBackgroundColor(Color.CYAN);
         
@@ -98,11 +98,10 @@ public class LocationDeckActivity extends Activity {
 		    	OnClickListener listener = new OnClickListener()
                 {                	 
                 	private Encounter enc = encounters.get(idx);
-                	private NeighborhoodCard cardHx = theCard; 
 
 					public void onClick(View v) {
-						GameState.INSTANCE.AddHistory(cardHx, enc);
-						GameState.INSTANCE.randomizeNeighborhood(theCard.getNeighborhood().getID());
+						GameState.getInstance().AddHistory(enc);
+						GameState.getInstance().randomizeNeighborhood(theCard.getNeighborhood().getID());
 						
 						Toast.makeText(LocationDeckActivity.this, R.string.encounter_arrow_clicked, Toast.LENGTH_SHORT).show();
 						finish();

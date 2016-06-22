@@ -36,6 +36,9 @@ public class OtherworldSelector extends Activity {
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
+        //Need to init here for some reason...
+        GameState.getInstance();
+        
         //Init blah = new Init();
         lv1=(ListView)findViewById(R.id.locationListView);
         
@@ -106,10 +109,10 @@ public class OtherworldSelector extends Activity {
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
             			public void onClick(View arg0) {
             				ArrayList<OtherWorldColor> owcs = loc.getOtherWorldColors();
-            				GameState.INSTANCE.clearSelectedOtherWorldColor();
+            				GameState.getInstance().clearSelectedOtherWorldColor();
             				for(int i = 0; i < owcs.size(); i++)
             				{
-            					GameState.INSTANCE.addSelectedOtherWorldColor(owcs.get(i));
+            					GameState.getInstance().addSelectedOtherWorldColor(owcs.get(i));
             				}
             				
             				for(int i = 0; i < lv2.getChildCount(); i++)
@@ -192,7 +195,7 @@ public class OtherworldSelector extends Activity {
             		}
             		//but.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
 
-            		final boolean checked = GameState.INSTANCE.isSelectedOtherWorldColor(owc);
+            		final boolean checked = GameState.getInstance().isSelectedOtherWorldColor(owc);
             		if(checked)
             		{
             			but.setChecked(true);
@@ -209,7 +212,7 @@ public class OtherworldSelector extends Activity {
     	    	    lv2.post(new Runnable() { 
     		    	    //  @Override 
     		    	      public void run() { 
-    		    	    	  but.setChecked(GameState.INSTANCE.isSelectedOtherWorldColor(owc));
+    		    	    	  but.setChecked(GameState.getInstance().isSelectedOtherWorldColor(owc));
     		    	      } 
     		    	    }); 
             		
@@ -234,12 +237,12 @@ public class OtherworldSelector extends Activity {
 							if(isChecked)
 							{
 								checkbox.setText(owc.toString()+ " On");
-								GameState.INSTANCE.addSelectedOtherWorldColor(owc);
+								GameState.getInstance().addSelectedOtherWorldColor(owc);
 							}
 							else
 							{
 								checkbox.setText(owc.toString()+ " Off");
-								GameState.INSTANCE.removeSelectedOtherWorldColor(owc);
+								GameState.getInstance().removeSelectedOtherWorldColor(owc);
 							}
 						}
             			
@@ -252,7 +255,7 @@ public class OtherworldSelector extends Activity {
 //							Log.i("Neighborhood", "Neighborhood Clicked");
 //							bundle2.putLong("neighborhood", loc.getID());
 //							
-//					        //GameState.INSTANCE.randomizeNeighborhood(nei.getID());
+//					        //GameState.getInstance().randomizeNeighborhood(nei.getID());
 //
 //							Intent i = new Intent(act, OtherWorldDeckActivity.class);
 //							i.putExtras(bundle);
@@ -277,6 +280,7 @@ public class OtherworldSelector extends Activity {
     public void openNeighborhood(View view)
     {
     	Intent i = new Intent(this, NeighborhoodSelector.class);
+    	i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		this.startActivity(i);
     }
     

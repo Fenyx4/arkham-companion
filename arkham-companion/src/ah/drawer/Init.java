@@ -224,7 +224,7 @@ public class Init {
 //		db.execSQL(sqlInsertCardColor + " (4503,3)");
 		
 		db.execSQL(sqlInsertCard + " (4504)");
-		db.execSQL(sqlInsertCardExp + " (4504,1)");
+		db.execSQL(sqlInsertCardExp + " (4504,2)");
 		db.execSQL(sqlInsertCardEnc + " (4504,14962)");
 		db.execSQL(sqlInsertEnc + " (14962,508,'<b><i>That is not dead which can eternal lie, and with strange eons even death may die!</i></b><br/><br/>You must immediately fight Cthulhu! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Sanity or 0 Stamina, you are <b>devoured</b>. If you defeat Cthulhu, he retreats back into slumber and you may escape to Arkham immediately. The gate to R''lyeh is sealed behind you, and you may take it as a trophy.<br/><br/>If Cthulhu is the Ancient One in play, do not fill up his doom track before this combat; also, successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Cthulhu''s doom track back to their doom token side and continue play.')");
 		db.execSQL(sqlInsertCardEnc + " (4504,14963)");
@@ -233,7 +233,7 @@ public class Init {
 		db.execSQL(sqlInsertCardColor + " (4504,2)");
 		
 		db.execSQL(sqlInsertCard + " (4505)");
-		db.execSQL(sqlInsertCardExp + " (4505,1)");
+		db.execSQL(sqlInsertCardExp + " (4505,2)");
 		db.execSQL(sqlInsertCardEnc + " (4505,14964)");
 		db.execSQL(sqlInsertEnc + " (14964,504,'<b><i>Abundance to the Black Goat of the Woods</b></i><br/><br/>You must immediately fight Shub-Niggurath! Since there is only one player in this combat, you need one success to remove a doom token. If you are out of monster trophies, you are <b>devoured</b>. If you defeat Shub-Niggurath, she retreats into the void and you may escape to Arkham immediately. The gate to Yuggoth is sealed behind you, and you may take it as a trophy.<br/><br/>If Shub-Niggurath is the Ancient One in play, do not fill up her doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Shub-Niggurath''s doom track back to their doom token side and continue play.')");
 		db.execSQL(sqlInsertCardEnc + " (4505,14965)");
@@ -242,7 +242,7 @@ public class Init {
 		db.execSQL(sqlInsertCardColor + " (4505,3)");
 		
 		db.execSQL(sqlInsertCard + " (4506)");
-		db.execSQL(sqlInsertCardExp + " (4506,1)");
+		db.execSQL(sqlInsertCardExp + " (4506,2)");
 		db.execSQL(sqlInsertCardEnc + " (4506,14966)");
 		db.execSQL(sqlInsertEnc + " (14966,507,'<b><i>''Ware the walker of the icy wastes!</i></b><br/><br/>You must immediately fight Ithaqua! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Stamina, you are <b>devoured</b>. If you defeat Ithaqua, he disperses into an icy wind and you may escape to Arkham immediately. The gate to the Plateau of Leng is sealed behind you, and you may take it as a trophy.<br/><br/>If Ithaqua is the Ancient One in play, do not fill up his doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Ithaqua''s doom track back to their doom token side and continue play.')");
 		db.execSQL(sqlInsertCardEnc + " (4506,14967)");
@@ -1033,7 +1033,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (6010,1)");
 		db.execSQL(sqlInsertCardColor + " (6010,4)");
 		db.execSQL(sqlInsertCardEnc + " (6010,30027)");
-		db.execSQL(sqlInsertEnc + " (30027,500,'Carefully, you avoid the gaze of a gigantic eye watching an alter. You may try to pass a <b>Sneak (-1) check</b> to steal a scroll from the dais. Draw 1 Spell. If you fail, you are racked by pain and lose 3 Sanity.')");
+		db.execSQL(sqlInsertEnc + " (30027,500,'Carefully, you avoid the gaze of a gigantic eye watching an altar. You may try to pass a <b>Sneak (-1) check</b> to steal a scroll from the dais. Draw 1 Spell. If you fail, you are racked by pain and lose 3 Sanity.')");
 		db.execSQL(sqlInsertCardEnc + " (6010,30028)");
 		db.execSQL(sqlInsertEnc + " (30028,503,'Sometimes, violence <b>is</b> the answer. Pass a <b>Fight (-1) check</b> to break free of your captors and return to Arkham.')");
 		db.execSQL(sqlInsertCardEnc + " (6010,30029)");
@@ -1046,7 +1046,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (6011,30031)");
 		db.execSQL(sqlInsertEnc + " (30031,503,'The conical entity tries to teach you some magic. Pass a <b>Lore (-2) [2] check</b> to draw 2 Spells.')");
 		db.execSQL(sqlInsertCardEnc + " (6011,30032)");
-		db.execSQL(sqlInsertEnc + " (30032,505,'You find secret lore hidden in the mosaics  on the wall. Make a <b>Lore (+2) check</b> and gain Clue tokens equal to your successes.')");
+		db.execSQL(sqlInsertEnc + " (30032,505,'You find secret lore hidden in the mosaics on the wall. Make a <b>Lore (+2) check</b> and gain Clue tokens equal to your successes.')");
 		db.execSQL(sqlInsertCard + " (6012)");
 		db.execSQL(sqlInsertCardExp + " (6012,1)");
 		db.execSQL(sqlInsertCardColor + " (6012,4)");
@@ -1062,7 +1062,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (6013,30036)");
 		db.execSQL(sqlInsertEnc + " (30036,500,'A strange song conjures up images of a life you could have lived. Gain Clue tokens equal to your focus.')");
 		db.execSQL(sqlInsertCardEnc + " (6013,30037)");
-		db.execSQL(sqlInsertEnc + " (30037,507,'The icy winds tear at your flesh, and the palins seem endless. Pass a <b>Fight (-1) check</b> or lose 1 Stamina, and pass a <b>Will (-1) check</b> or lose 1 Sanity. If Ithaqua is the Ancient One, the modifiers for these rolls are both reduced to -3.')");
+		db.execSQL(sqlInsertEnc + " (30037,507,'The icy winds tear at your flesh, and the plains seem endless. Pass a <b>Fight (-1) check</b> or lose 1 Stamina, and pass a <b>Will (-1) check</b> or lose 1 Sanity. If Ithaqua is the Ancient One, the modifiers for these rolls are both reduced to -3.')");
 		db.execSQL(sqlInsertCardEnc + " (6013,30038)");
 		db.execSQL(sqlInsertEnc + " (30038,503,'They''ve been collecting people! Make a <b>Lore (-2) [2] check</b> to determine how to release the victims. If you pass, you may search the Ally deck and take any Ally of your choice. If you fail, you are taken captive yourself, and are <i>delayed</i>.')");
 		db.execSQL(sqlInsertCard + " (6014)");
@@ -1530,7 +1530,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (6065,30186)");
 		db.execSQL(sqlInsertEnc + " (30186,500,'A strange euphoria begins to overtake you. You are irrationally certain things will be okay. Gain 1 Sanity. Then make a <b>Luck (-1) check</b>. If you fail, overconfidence leads you astray and you are <i>delayed</i>.')");
 		db.execSQL(sqlInsertCardEnc + " (6065,30187)");
-		db.execSQL(sqlInsertEnc + " (30187,509,'You are in the Congregational Church during December of 1722. An angry mob has gathered outside while those within are racing to hide a strange collection of artifacts. Make a </b>Sneak (-1) check</i>''. If you pass, gain 1 Unique Item. If you fail, the people inside the church turn on you. Lose 2 Stamina.')");
+		db.execSQL(sqlInsertEnc + " (30187,509,'You are in the Congregational Church during December of 1722. An angry mob has gathered outside while those within are racing to hide a strange collection of artifacts. Make a <b>Sneak (-1) check</b>. If you pass, gain 1 Unique Item. If you fail, the people inside the church turn on you. Lose 2 Stamina.')");
 		db.execSQL(sqlInsertCardEnc + " (6065,30188)");
 		db.execSQL(sqlInsertEnc + " (30188,512,'Nodens wishes to thwart the forces of the Ancient One. You may choose 1 monster in Kingsport and 1 in Dunwich, each with 2 or less toughness, and remove them from the board. Then discard 1 item, if able, which Nodens claims as tribute.')");
 		db.execSQL(sqlInsertCard + " (6066)");
@@ -2278,6 +2278,61 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (20200,509,'You find yourself in Victorian England, but a man tells you he has a machine that can return you to your own time. Make a <b>Luck (-1) check</b> to see if the machine works. If you pass, return to Arkham. If you fail, you are <i>delayed</i> as the machine sends you to the wrong time.')");
 		db.execSQL(sqlInsertCardEnc + " (5070,20201)");
 		db.execSQL(sqlInsertEnc + " (20201,506,'You''ve found yourself in the Fantastic Realms and the terrain twists back upon itself in physically impossible ways. Make a <b>Will (-1) check</b> to navigate your way out again. If you fail, lose 1 Sanity and you are <i>delayed</i>.')");
+		db.execSQL(sqlInsertCard + " (5071)");
+		db.execSQL(sqlInsertCardExp + " (5071,9)");
+		db.execSQL(sqlInsertCardColor + " (5071,2)");
+		db.execSQL(sqlInsertCardEnc + " (5071,20202)");
+		db.execSQL(sqlInsertEnc + " (20202,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardEnc + " (5071,20203)");
+		db.execSQL(sqlInsertEnc + " (20203,507,'Through the haze and mist, you make out human forms and hurry toward them, seeking rescue. Make a <b>Luck (-2) check</b>. If you pass, they are an expedition from Miskatonic U. Gain 1 Stamina and 1 Sanity and return to Arkham. If you fail, they lower their hoods and remove their goggles, revealing themselves as something other than human! Lose 2 Sanity.')");
+		db.execSQL(sqlInsertCardEnc + " (5071,20204)");
+		db.execSQL(sqlInsertEnc + " (20204,501,'This place is alive with malevolent intent. It likes it when you inflict pain upon yourself. Discard any amount of Stamina, all at once; for each Stamina token you discarded, pass a <b>Will (-1) check</b> to gain 2 Clue tokens.')");
+		db.execSQL(sqlInsertCard + " (5072)");
+		db.execSQL(sqlInsertCardExp + " (5072,9)");
+		db.execSQL(sqlInsertCardColor + " (5072,2)");
+		db.execSQL(sqlInsertCardEnc + " (5072,20205)");
+		db.execSQL(sqlInsertEnc + " (20205,500,'You can hear it breathing... make a <b>Will (-1) check</b>. If you fail, you scream in terror, giving yourself away. Lose 1 Sanity and 2 Stamina.')");
+		db.execSQL(sqlInsertCardEnc + " (5072,20206)");
+		db.execSQL(sqlInsertEnc + " (20206,507,'Whether you are still on earth or not is impossible to say... it may be the wind that threatens to sweep you into the sky, or it might be a lack of gravity! Make a <b>Fight (+0) check</b> or you are <i>lost in time and space</i>.')");
+		db.execSQL(sqlInsertCardEnc + " (5072,20207)");
+		db.execSQL(sqlInsertEnc + " (20207,508,'A miracle! A boat appears, hailing from the nearby island of Ponape. Pass a <b>Will (-3) check</b> to convince them to take you back to the normal world. If you pass, immediately return to Arkham.')");
+		db.execSQL(sqlInsertCard + " (5073)");
+		db.execSQL(sqlInsertCardExp + " (5073,9)");
+		db.execSQL(sqlInsertCardColor + " (5073,2)");
+		db.execSQL(sqlInsertCardEnc + " (5073,20208)");
+		db.execSQL(sqlInsertEnc + " (20208,500,'What was that!? Make a <b>Sneak (+3) check</b> or you will find out as you are <b>devoured</b> by it.')");
+		db.execSQL(sqlInsertCardEnc + " (5073,20209)");
+		db.execSQL(sqlInsertEnc + " (20209,506,'From this strange mindscape you can see into the dreams of those sleeping in Arkham. Make a <b>Speed (-1) check</b>. If you pass, you catch the delicate wisps of their thoughts, and gain 2 Clue tokens. If you fail, their slumbering minds lash out at you, and you lose 2 Sanity.')");
+		db.execSQL(sqlInsertCardEnc + " (5073,20210)");
+		db.execSQL(sqlInsertEnc + " (20210,501,'The faces of those you have failed erupt from the earth around you, accusing, pleading, hating. Pass a <b>Lore (-1) [2] check</b> to take the Psychic card, if it is available. If you roll only 1 success, you must take either the Tainted or Harried card, if either is available, and if you roll no successes, you must take both the Harried card, if it is available, and Tainted card, if it is available.')");
+		db.execSQL(sqlInsertCard + " (5074)");
+		db.execSQL(sqlInsertCardExp + " (5074,9)");
+		db.execSQL(sqlInsertCardColor + " (5074,2)");
+		db.execSQL(sqlInsertCardEnc + " (5074,20211)");
+		db.execSQL(sqlInsertEnc + " (20211,500,'It was a diabolical trap, you suddenly realize... now that you''re inside it! Make a <b>Lore (-1) check</b> or you are <i>delayed</i>.')");
+		db.execSQL(sqlInsertCardEnc + " (5074,20212)");
+		db.execSQL(sqlInsertEnc + " (20212,507,'From these alien heights, everything seems so clear... gain 1 Clue token, then pass a <b>Will (+1) check</b> to snap out of your reverie and descend to a safe elevation. If you fail, lose 1 Stamina and continue making the check until you pass or are knocked unconscious. Each check after the first, the modifier decreases by one (0 on the second check, -1 on the third, and so on).')");
+		db.execSQL(sqlInsertCardEnc + " (5074,20213)");
+		db.execSQL(sqlInsertEnc + " (20213,506,'It''s lovely here, and perfect... so perfect you might stay forever. Make a <b>Will (+3) check</b>. If you pass, gain 2 Sanity. If you fail, you are <b>devoured</b>.')");
+		db.execSQL(sqlInsertCard + " (5075)");
+		db.execSQL(sqlInsertCardExp + " (5075,9)");
+		db.execSQL(sqlInsertCardColor + " (5075,2)");
+		db.execSQL(sqlInsertCardEnc + " (5075,20214)");
+		db.execSQL(sqlInsertEnc + " (20214,500,'The mad scientist cackles as he pulls down on the lever of his machine. Pass a <b>Speed (+1) check</b> to reach the giant gem that powers it in time and gain $4. If you fail, you are thrown through a portal. Draw another Gate card and move to the first area of the first Other World listed on that card. Then have another encounter there.')");
+		db.execSQL(sqlInsertCardEnc + " (5075,20215)");
+		db.execSQL(sqlInsertEnc + " (20215,508,'As you stumble across this inhuman isle, you feel a rumbling beneath your feet. It has begun to sink beneath the waves! Pass a <b>Speed (-2) check</b> or you are <i>lost in time and space</i>. If you pass, immediately return to Arkham.')");
+		db.execSQL(sqlInsertCardEnc + " (5075,20216)");
+		db.execSQL(sqlInsertEnc + " (20216,506,'You come upon the borderlands. Pass a <b>Lore (-2) check</b> to gain 1 Stamina and 1 Sanity and return to Arkham. If you fail, move to the Plateau of Leng and your turn ends.')");
+		db.execSQL(sqlInsertCard + " (5076)");
+		db.execSQL(sqlInsertCardExp + " (5076,9)");
+		db.execSQL(sqlInsertCardColor + " (5076,2)");
+		db.execSQL(sqlInsertCardEnc + " (5076,20217)");
+		db.execSQL(sqlInsertEnc + " (20217,500,'The chess game with the strange serpent seems to go on for days. Pass a <b>Lore (+2) check</b> to gain $1 for each success you roll. If you fail, you are <i>delayed</i>.')");
+		db.execSQL(sqlInsertCardEnc + " (5076,20218)");
+		db.execSQL(sqlInsertEnc + " (20218,508,'Something horrid and vast, a creature all of green and tentacles yet horribly human, lies in state in the mausoleum before you. Creatures cast from the same mold, yet merely man-sized, swarm over it in the hundreds. Gain 2 Clue tokens and lose 2 Sanity, then pass a <b>Sneak (-1) check</b>. If you fail, a monster appears!')");
+		db.execSQL(sqlInsertCardEnc + " (5076,20219)");
+		db.execSQL(sqlInsertEnc + " (20219,501,'This place seduces you into madness with hints of escape. Discard any amount of Sanity, all at once; for each Sanity token you discarded, make a <b>Fight (-1) check</b> to gain 2 Clue tokens.')");
+
 	}
 
 	private static void fetchBlue(SQLiteDatabase db, String sqlInsertCard,
@@ -2401,7 +2456,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (4519,15005)");
 		db.execSQL(sqlInsertEnc + " (15005,504,'You peer through a strange machine of glass and stone, its lenses pointed towrds the dark, sunless sky. There, impossibly far away, you behold the Earth. Gain 2 Clue tokens, but make a <b>Will (-3) check</b> or lose 1 Sanity.')");
 		db.execSQL(sqlInsertCardEnc + " (4519,15006)");
-		db.execSQL(sqlInsertEnc + " (15006,501,'You look into a pool of water and see someone! Choose another investigator and make a <b>Will (-2) check</b>.<br />Successes:<br />0) He is drawn into the Abyss.<br />1-2) You and he switch places.<br />3+) You move to his location, and the gate through which you entered the Abyss is sealed.')");
+		db.execSQL(sqlInsertEnc + " (15006,501,'You look into a pool of water and see someone! Choose another investigator and make a <b>Will (-2) check</b>. Successes:<br />0) He is drawn into the Abyss.<br />1-2) You and he switch places.<br />3+) You move to his location, and the gate through which you entered the Abyss is sealed.')");
 		db.execSQL(sqlInsertCard + " (4520)");
 		db.execSQL(sqlInsertCardExp + " (4520,2)");
 		db.execSQL(sqlInsertCardColor + " (4520,3)");
@@ -2433,7 +2488,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (4523,2)");
 		db.execSQL(sqlInsertCardColor + " (4523,3)");
 		db.execSQL(sqlInsertCardEnc + " (4523,15016)");
-		db.execSQL(sqlInsertEnc + " (15016,500,'You find a scrap of paper bearing the words, \"This world was inhabited at one time by another race who, in practicing black magic, lost their foothold and were expelled from the allegorical garden...\" Lose up to 2 Clue tokens due to this misleading information, if able.')");
+		db.execSQL(sqlInsertEnc + " (15016,500,'A scrap of paper flutters inti your hands, with the words \"This world was inhabited at one time by another race who, in practicing black magic, lost their foothold and were expelled from the allegorical garden...\" Lose up to 2 Clue tokens due to this misleading information, if able.')");
 		db.execSQL(sqlInsertCardEnc + " (4523,15017)");
 		db.execSQL(sqlInsertEnc + " (15017,506,'You stumble upon a nightmare, and must relive your past battles with horrible creatures. One of your monster trophies, chosen at random, returns to life and <i>surprises</i> you!')");
 		db.execSQL(sqlInsertCardEnc + " (4523,15018)");
@@ -2919,6 +2974,61 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (15168,500,'Discard this card and draw again.')");
 		db.execSQL(sqlInsertCardEnc + " (4576,15169)");
 		db.execSQL(sqlInsertEnc + " (15169,512,'A ghoul offers you a splendid diadem of blazing gold. Will you accept it?<br />If you do not accept the crown, the ghoul lashes out in rage. Pass a <b>Fight (+1) check</b> or reduce your maximum Stamina by 1.<br />If you do accept the crown, gain $8 and reduce your maximum Sanity by 1.')");
+		db.execSQL(sqlInsertCard + " (4577)");
+		db.execSQL(sqlInsertCardExp + " (4577,9)");
+		db.execSQL(sqlInsertCardColor + " (4577,3)");
+		db.execSQL(sqlInsertCardEnc + " (4577,15170)");
+		db.execSQL(sqlInsertEnc + " (15170,500,'Make a <b>Luck (-1) check</b>. If you fail, a monster appears! If you pass, you may draw 2 monsters from the cup and choose which one appears. Return the other monster to the cup.')");
+		db.execSQL(sqlInsertCardEnc + " (4577,15171)");
+		db.execSQL(sqlInsertEnc + " (15171,504,'You peer through a strange machine of glass and stone, its lenses pointed towrds the dark, sunless sky. There, impossibly far away, you behold the Earth. Gain 2 Clue tokens, but make a <b>Will (-3) check</b> or lose 1 Sanity.')");
+		db.execSQL(sqlInsertCardEnc + " (4577,15172)");
+		db.execSQL(sqlInsertEnc + " (15172,501,'You look into a pool of water and see someone! Choose another investigator and make a <b>Will (-2) check</b>.<br />Successes:<br />0) He is drawn into the Abyss.<br />1-2) You and he switch places.<br />3+) You move to his location, and, if the gate through which you entered the Abyss is still open, it is sealed.')");
+		db.execSQL(sqlInsertCard + " (4578)");
+		db.execSQL(sqlInsertCardExp + " (4578,9)");
+		db.execSQL(sqlInsertCardColor + " (4578,3)");
+		db.execSQL(sqlInsertCardEnc + " (4578,15173)");
+		db.execSQL(sqlInsertEnc + " (15173,500,'The stench of fecundity and blood surrounds you. A monster appears! If you do not evade it or defeat it on the first round of combat, a second monster appears that you must evade or defeat after the first one!')");
+		db.execSQL(sqlInsertCardEnc + " (4578,15174)");
+		db.execSQL(sqlInsertEnc + " (15174,505,'You wander through endless rows of tablets, scrolls, and tomes. If you wish, you may spend 1 Sanity and 1 Stamina to make a <b>Luck (+0) check</b>. If you pass, you may search the Common Item, Unique Item, or Exhibit Item deck for any single <i><b>Tome</b></i> card and take that card.')");
+		db.execSQL(sqlInsertCardEnc + " (4578,15175)");
+		db.execSQL(sqlInsertEnc + " (15175,501,'Something impossibly huge and ominous lurches across the horizon. Pass a <b>Luck (-1) check</b>, or its gaze, with eyes the size of planets, falls upon you, and you lose 2 Sanity.')");
+		db.execSQL(sqlInsertCard + " (4579)");
+		db.execSQL(sqlInsertCardExp + " (4579,9)");
+		db.execSQL(sqlInsertCardColor + " (4579,3)");
+		db.execSQL(sqlInsertCardEnc + " (4579,15176)");
+		db.execSQL(sqlInsertEnc + " (15176,500,'You find the body of a long-dead explorer. Make a <b>Luck (-2) check</b>. For each success, you may draw and keep one card from the Common Item deck.')");
+		db.execSQL(sqlInsertCardEnc + " (4579,15177)");
+		db.execSQL(sqlInsertEnc + " (15177,504,'Scuttling surrounds you in the dark as the creatures attack. Lose 1 Stamina. Alternatively, you may light a torch to drive them back and lose no Stamina, but upon seeing them, your mind recoils, and you lose 2 Sanity.')");
+		db.execSQL(sqlInsertCardEnc + " (4579,15178)");
+		db.execSQL(sqlInsertEnc + " (15178,506,'If humans dream of monsters, do monsters dream of us? A monster appears! Treat it as if it has the <b>Ambush</b> special ability. This monster seems terrified by your very humanity. Make a <b>Will (-1) check</b>. For each success you roll, you gain a +1 to all checks during this combat.')");
+		db.execSQL(sqlInsertCard + " (4580)");
+		db.execSQL(sqlInsertCardExp + " (4580,9)");
+		db.execSQL(sqlInsertCardColor + " (4580,3)");
+		db.execSQL(sqlInsertCardEnc + " (4580,15179)");
+		db.execSQL(sqlInsertEnc + " (15179,500,'Make a <b>Fight (+0)</b> or <b>Will (+0) check</b>. If you pass, you push through the walls of fatigue and confusion and realize what must be done. You may seal the gate through which you entered, but only by sacrificing yourself. If you choose to seal the gate, you are <b>devoured</b>.')");
+		db.execSQL(sqlInsertCardEnc + " (4580,15180)");
+		db.execSQL(sqlInsertEnc + " (15180,504,'Make a <b>Lore (-1) check</b> to realize that you have come upon the \"shining trapezohedron,\" and utter the proper protective spell. If you fail, lose 1 Sanity and set your Will slider to the lowest possible number.')");
+		db.execSQL(sqlInsertCardEnc + " (4580,15181)");
+		db.execSQL(sqlInsertEnc + " (15181,505,'No sound is allowed in the great library but the rustling of pages and the whisper of thoughts. Make a <b>Sneak (-2) check</b> or you are <i>delayed</i>.')");
+		db.execSQL(sqlInsertCard + " (4581)");
+		db.execSQL(sqlInsertCardExp + " (4581,9)");
+		db.execSQL(sqlInsertCardColor + " (4581,3)");
+		db.execSQL(sqlInsertCardEnc + " (4581,15182)");
+		db.execSQL(sqlInsertEnc + " (15182,500,'You find a scrap of paper bearing the words, \"This world was inhabited at one time by another race who, in practising black magic, lost their foothold and were expelled from the allegorical garden...\" Lose up to 2 Clue tokens due to this misleading information, if able.')");
+		db.execSQL(sqlInsertCardEnc + " (4581,15183)");
+		db.execSQL(sqlInsertEnc + " (15183,506,'You stumble upon a nightmare, and must relive your past battles with horrible creatures. One of your monster trophies, chosen at random, returns to life. Treat this monster as if it has the <b>Ambush</b> special ability. If you do not defeat this monster, return it to the cup. If you do not have a monster trophy, nothing happens.')");
+		db.execSQL(sqlInsertCardEnc + " (4581,15184)");
+		db.execSQL(sqlInsertEnc + " (15184,501,'A horrible scene captures your gaze. Creatures that mortals would call angels and devils cavort together, their bodies and laughter mingling in an unholy fusion. If you join their dance, take both the Tainted card, if it is available, and the Anointed card, if it is available.')");
+		db.execSQL(sqlInsertCard + " (4582)");
+		db.execSQL(sqlInsertCardExp + " (4582,9)");
+		db.execSQL(sqlInsertCardColor + " (4582,3)");
+		db.execSQL(sqlInsertCardEnc + " (4582,15185)");
+		db.execSQL(sqlInsertEnc + " (15185,500,'Something followed you here... if there are any monsters in the same location as the gate you entered, they appear. If they are not defeated, they remain in their original location.')");
+		db.execSQL(sqlInsertCardEnc + " (4582,15186)");
+		db.execSQL(sqlInsertEnc + " (15186,506,'Humans are not the only creatures to dream. Make a <b>Speed (-1) check</b> and a monster appears. If you failed the check, treat the monster as if it has the <b>Ambush</b> special ability.')");
+		db.execSQL(sqlInsertCardEnc + " (4582,15187)");
+		db.execSQL(sqlInsertEnc + " (15187,505,'The unwelcome are shown no mercy. Make a <b>Lore (-1) check</b> or a monster appears! Treat this monster as if it has the <b>Ambush</b> special ability.')");
+
 	}
 	
 	public static void FetchLocations(SQLiteDatabase db)

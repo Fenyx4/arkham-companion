@@ -1,8 +1,11 @@
 package ah.drawer;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -57,7 +60,7 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 		String select = DatabaseHelper.locNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		Cursor c = db.query(DatabaseHelper.locTable, columns, select, new String[]{expIDs}, null, null, orderby);
 		
@@ -117,12 +120,12 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.locID,DatabaseHelper.locName};
 
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		
 		
 		String select = DatabaseHelper.locNeiID+" IS NULL "
-		 + " AND " +DatabaseHelper.locExpID+ " in ("+expIDs+") AND " + DatabaseHelper.locID + "<>499";
+		 + " AND (" +DatabaseHelper.locExpID+ " in ("+expIDs+") OR " + DatabaseHelper.locExpID+ "=1)  AND " + DatabaseHelper.locID + "<>499";
 		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
 		Cursor c = db.query(DatabaseHelper.locTable, columns, select, null, null, null, orderby);
 		
@@ -153,7 +156,7 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardNeiID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		//SELECT DISTINCT cardID, NeiID
 		//FROM cardTable
@@ -195,15 +198,15 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.cardID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 
 		//Has a color
 		String select = "EXISTS (SELECT " + DatabaseHelper.cardToColorCardID + " FROM " + DatabaseHelper.cardToColorTable + " WHERE " + DatabaseHelper.cardToColorCardID + "=" + DatabaseHelper.cardID + ")" +
 		//Not Stars are right and in the right expansions
 		" AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
-		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") OR "+ DatabaseHelper.cardToExpExpID +"=1" + 
-		" AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		//" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") OR "+ DatabaseHelper.cardToExpExpID +"=1" + 
+		" WHERE "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
 		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
@@ -233,7 +236,7 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.cardID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
-		//String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		//String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		//expIDs = expIDs.substring(1,expIDs.length()-1);
 		
 		//SELECT DISTINCT cardID, NeiID
@@ -345,14 +348,14 @@ public class AHFlyweightFactory {
 		
 		String[] columns = new String[]{DatabaseHelper.neiID,DatabaseHelper.neiName, DatabaseHelper.neiCardPath, DatabaseHelper.neiButtonPath};
 
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 		
+		Log.i("List",expIDs);
 		//Always gonna have the base neighborhoods
 		String select = DatabaseHelper.neiExpID + " in ("+expIDs+") OR "+DatabaseHelper.neiExpID +"=1";
 		Cursor c = db.query(DatabaseHelper.neighborhoodTable, columns, select, null, null, null, null);
 		
-		Log.i("List",expIDs);
 		c.moveToFirst();
 		long ID;
 		while(!c.isAfterLast())
@@ -528,7 +531,7 @@ public class AHFlyweightFactory {
 		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
-		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
+		String expIDs = GameState.getInstance().getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 
 		String select = "(" + DatabaseHelper.colorExpID + " in ("+expIDs+") OR "+DatabaseHelper.colorExpID +"=1 ) AND colorID <> 0";
@@ -659,5 +662,223 @@ public class AHFlyweightFactory {
 		
 		return path;
 	}
+
+	public HashMap<Long, Long> getGameExps(long gameID) 
+	{
+		HashMap<Long, Long> currentExps = new HashMap<Long, Long>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.gameToExpExpID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		String select = DatabaseHelper.gameToExpGameID + " IN (?)";
+		
+		Cursor c = db.query(DatabaseHelper.gameToExpTable, columns, select, new String[]{Long.toString(gameID)}, null, null, null);
+		
+		c.moveToFirst();
+		Long expID;
+		while(!c.isAfterLast())
+		{
+			expID = c.getLong(0);
+			if(!currentExps.containsKey(expID))
+			{
+				currentExps.put(expID, expID);
+			}
+		
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+
+		return currentExps;
+	}
+
+	public ArrayList<Encounter> getGameEncHx(long gameID) 
+	{
+		ArrayList<Encounter> encounters = new ArrayList<Encounter>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		//Need to order it by location
+		String table = DatabaseHelper.encounterTable+" LEFT JOIN "+DatabaseHelper.encounterHxTable+
+		" ON "+DatabaseHelper.encounterTable+"."+DatabaseHelper.encID+"="+DatabaseHelper.encounterHxTable+"."+DatabaseHelper.encHxEncID;
+		String[] columns = new String[]{DatabaseHelper.encounterTable+"."+DatabaseHelper.encID,DatabaseHelper.encounterTable+"."+DatabaseHelper.encLocID};
+		String select = DatabaseHelper.encHxGameID + " IN (?)";
+		String orderby = DatabaseHelper.encounterHxTable+"."+DatabaseHelper.encHxInverseOrder+" DESC";
+		
+		Cursor c = db.query(table, columns, select, new String[]{Long.toString(gameID)}, null, null, orderby);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			encounters.add(new Encounter(c.getLong(0),c.getLong(1)));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return encounters;
+	}
+
+	public void addGameEx(long expID, long gameID) 
+	{
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(DatabaseHelper.gameToExpExpID, expID);
+		contentValues.put(DatabaseHelper.gameToExpGameID, gameID);
+		
+		db.insert(DatabaseHelper.gameToExpTable, null, contentValues);		
+	}
+
+	public Long getMostRecentGameID() 
+	{
+		Long gameID = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		//Need to order it by location
+		String table = DatabaseHelper.gameTable;
+		String[] columns = new String[]{" Max(" + DatabaseHelper.gameID + ") "};
+		//String select = " Max(" + DatabaseHelper.gameID + ") ";
+		
+		Cursor c = db.query(table, columns, null, null, null, null, null);
+		
+		c.moveToFirst();
+		if(!c.isAfterLast())
+		{
+			gameID = c.getLong(0);
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return gameID;
+	}
+
+	public long createNewGame() {
+		Long maxGameID = getMostRecentGameID();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		Date date = new Date();
+		
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(DatabaseHelper.gameID, maxGameID+1);
+		contentValues.put(DatabaseHelper.gameDate, dateFormat.format(date));
+		
+		return db.insert(DatabaseHelper.gameTable, null, contentValues);	
+	}
+
+	public void removeGameEx(long expID, long gameID) {
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+			 
+		db.delete(DatabaseHelper.gameToExpTable, DatabaseHelper.gameToExpGameID+"=? AND "+DatabaseHelper.gameToExpExpID+"=?", new String[]{Long.toString(gameID), Long.toString(expID)});
+
+		
+	}
+
+	public ICard getCardByEncID(long encID) {
+		ICard card = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String table = DatabaseHelper.encounterTable+" LEFT JOIN "+DatabaseHelper.cardToEncTable+
+		" ON "+DatabaseHelper.encounterTable+"."+DatabaseHelper.encID+"="+DatabaseHelper.cardToEncTable+"."+DatabaseHelper.cardToEncEncID+
+		" LEFT JOIN " + DatabaseHelper.cardTable + " ON " + DatabaseHelper.cardToEncTable+"."+DatabaseHelper.cardToEncCardID + "=" + DatabaseHelper.cardTable+"."+DatabaseHelper.cardID;
+		String[] columns = new String[]{DatabaseHelper.cardTable+"."+DatabaseHelper.cardID,DatabaseHelper.cardTable+"."+DatabaseHelper.cardNeiID};
+		String select = DatabaseHelper.encounterTable+"."+DatabaseHelper.encID + "=?";
+		
+		Cursor c = db.query(table, columns, select, new String[]{Long.toString(encID)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			Long cardID = c.getLong(0);
+			if( c.isNull(1) )
+			{
+				card = new OtherWorldCard(cardID);
+			}
+			else
+			{
+				card = new NeighborhoodCard(cardID, c.getLong(1));
+			}
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return card;
+	}
+
+	public void clearEncounterHx(long gameID) {
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+			 
+		db.delete(DatabaseHelper.encounterHxTable, DatabaseHelper.encHxGameID+"=?", new String[]{Long.toString(gameID)});
+	}
+
+	public void addEncounterHx(Encounter enc, long gameID) {
+		Long maxOrder = getHighestOrderForGameID(gameID);
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(DatabaseHelper.encHxInverseOrder, maxOrder+1);
+		contentValues.put(DatabaseHelper.encHxGameID, gameID);
+		contentValues.put(DatabaseHelper.encHxEncID, enc.getID());
+		
+		db.insert(DatabaseHelper.encounterHxTable, null, contentValues);
+		
+	}
+
+	private Long getHighestOrderForGameID(long gameID) {
+		Long order = null;
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		//Need to order it by location
+		String table = DatabaseHelper.encounterHxTable;
+		String[] columns = new String[]{" Max(" + DatabaseHelper.encHxInverseOrder + ") "};
+		String select = DatabaseHelper.encHxGameID + "=?";
+		
+		Cursor c = db.query(table, columns, select, new String[]{Long.toString(gameID)}, null, null, null);
+		
+		c.moveToFirst();
+		if(!c.isAfterLast())
+		{
+			order = c.getLong(0);
+			
+			c.moveToNext();
+		}
+		else
+		{
+			order = (long) 0;
+		}
+		
+		c.close();
+		db.close();
+		
+		return order;
+	}
+		
 	   
 }

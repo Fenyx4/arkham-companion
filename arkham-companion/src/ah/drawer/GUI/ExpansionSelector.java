@@ -33,6 +33,8 @@ public class ExpansionSelector extends Activity {
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
+        //GameState.getInstance().onRestoreInstanceState(savedInstanceState);
+        
         lv1=(ListView)findViewById(R.id.ListView01);
         Cursor cursor = new ExpansionCursor(AHFlyweightFactory.INSTANCE.getExpansions());
         	
@@ -86,7 +88,7 @@ public class ExpansionSelector extends Activity {
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
 						public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                         {
-							GameState.INSTANCE.applyExpansion(exp.getID(), isChecked);
+							GameState.getInstance().applyExpansion(exp.getID(), isChecked);
 							//AHFlyweightFactory.INSTANCE.getCurrentLocations();
 						}
             		
@@ -104,6 +106,28 @@ public class ExpansionSelector extends Activity {
         lv1.setAdapter(mAdapter);
      
     }
+    
+//    @Override
+//    public void onSaveInstanceState(Bundle savedInstanceState) {
+//      super.onSaveInstanceState(savedInstanceState);
+//      GameState.getInstance().onSaveInstanceState(savedInstanceState);
+//      // Save UI state changes to the savedInstanceState.
+//      // This bundle will be passed to onCreate if the process is
+//      // killed and restarted.
+////      savedInstanceState.putBoolean("MyBoolean", true);
+////      savedInstanceState.putDouble("myDouble", 1.9);
+////      savedInstanceState.putInt("MyInt", 1);
+////      savedInstanceState.putString("MyString", "Welcome back to Android");
+//      // etc.
+//    }
+    
+//    @Override
+//    public void onRestoreInstanceState(Bundle savedInstanceState) {
+//      super.onRestoreInstanceState(savedInstanceState);
+//      // Restore UI state from the savedInstanceState.
+//      // This bundle has also been passed to onCreate.
+//      GameState.getInstance().onRestoreInstanceState(savedInstanceState);
+//    }
     
     public void openNeighborhood(View view)
     {

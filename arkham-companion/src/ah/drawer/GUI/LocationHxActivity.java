@@ -39,7 +39,7 @@ public class LocationHxActivity extends Activity {
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
         ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-        viewpager.setAdapter(new EncounterHxAdapter(this, GameState.INSTANCE.getEncounterHx()));
+        viewpager.setAdapter(new EncounterHxAdapter(this, GameState.getInstance().getEncounterHx()));
 
 //	    gallery.setOnItemClickListener(new OnItemClickListener() {
 //	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -74,7 +74,7 @@ public class LocationHxActivity extends Activity {
 	    @Override
 	    public Object instantiateItem( View pager, int position )
 	    {
-	    	final ICard theCard = GameState.INSTANCE.getCardHx().get(position);
+	    	final ICard theCard = GameState.getInstance().getEncounterHx().get(position).getCard();
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
 
 	    	final LinearLayout layout = (LinearLayout)mInflater.inflate(R.layout.cardlistitem, null);

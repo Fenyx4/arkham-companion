@@ -8,27 +8,86 @@ import java.util.Set;
 
 public class GameState 
 {
-	public final static GameState INSTANCE = new GameState();
+	private final static GameState INSTANCE = new GameState();
+	private static boolean loaded = false;
 	//Sorted arrays for each neighborhood representing the deck of cards
 	private HashMap<Long,ArrayList<NeighborhoodCard>> neighborhoodCardsList;
 	private ArrayList<OtherWorldCard> otherWorldCards = null;
 	private Random rand;
 	private ArrayList<Encounter> encounterHx = null;
-	private ArrayList<ICard> cardHx = null;
 	private HashMap<Long,OtherWorldColor> currentColors = null;
+	
+	private long gameID;
 	
 	//The expansions selected for this play session
 	private HashMap<Long,Long> currentExpansions;
+	
+	public static GameState getInstance()
+	{
+		if(!loaded)
+		{
+			INSTANCE.Load();
+			loaded = true;
+		}
+		
+		return INSTANCE;
+	}
+	
+	private void Load()
+	{
+		Long currGameID = AHFlyweightFactory.INSTANCE.getMostRecentGameID();
+		if(currGameID == null)
+		{
+			gameID = AHFlyweightFactory.INSTANCE.createNewGame();
+		}
+		else
+		{
+			gameID = currGameID;
+			currentExpansions = AHFlyweightFactory.INSTANCE.getGameExps(gameID);
+			encounterHx = AHFlyweightFactory.INSTANCE.getGameEncHx(gameID);
+		}
+	}
 	
 	private GameState()
 	{
 		currentExpansions = new HashMap<Long,Long>();
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
-		cardHx = new ArrayList<ICard>();
 		currentColors = new HashMap<Long,OtherWorldColor>();
 		rand = new Random(522348);
 	}
+	
+//	public void onSaveInstanceState(Bundle savedInstanceState) 
+//	{
+//	  // Save UI state changes to the savedInstanceState.
+//	  // This bundle will be passed to onCreate if the process is
+//	  // killed and restarted.
+//		for (Long expID : currentExpansions.keySet())
+//		{
+//			savedInstanceState.putBoolean("Exp"+expID.toString(), true);	
+//		}
+//	  //savedInstanceState.putBoolean("MyBoolean", true);
+//	  //savedInstanceState.putDouble("myDouble", 1.9);
+//	  //savedInstanceState.putInt("MyInt", 1);
+//	  //savedInstanceState.putString("MyString", "Welcome back to Android");
+//	  // etc.
+//	}
+	
+//	public void onRestoreInstanceState(Bundle savedInstanceState) {
+//		if(savedInstanceState != null)
+//		{
+//	  // Restore UI state from the savedInstanceState.
+//	  // This bundle has also been passed to onCreate.
+//			for( Expansion exp : AHFlyweightFactory.INSTANCE.getExpansions())
+//			{
+//				if (savedInstanceState.getBoolean("Exp"+Long.toString(exp.getID())))
+//				{
+//					applyExpansion(exp.getID(), true);
+//				}
+//					
+//			}
+//		}
+//	}
 	
 	public ArrayList<NeighborhoodCard> getDeckByNeighborhood(long neiID)
 	{
@@ -78,22 +137,25 @@ public class GameState
 		if(!currentExpansions.containsKey(expID) && isChecked)
 		{
 			currentExpansions.put(expID,expID);
+			AHFlyweightFactory.INSTANCE.addGameEx(expID, gameID);
 		}
 		else if (currentExpansions.containsKey(expID) && !isChecked)
 		{
 			currentExpansions.remove(expID);
+			AHFlyweightFactory.INSTANCE.removeGameEx(expID, gameID);
 		}
 		
 		//Clear the deck lists
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
-		cardHx = new ArrayList<ICard>();
+		AHFlyweightFactory.INSTANCE.clearEncounterHx(gameID);
 	}
 	
-	public void AddHistory(ICard card, Encounter enc) 
+	public void AddHistory(Encounter enc) 
 	{
-		cardHx.add(0,card);
 		encounterHx.add(0, enc);
+
+		AHFlyweightFactory.INSTANCE.addEncounterHx(enc, gameID);
 	}
 	
 	public ArrayList<Encounter> getEncounterHx()
@@ -101,10 +163,6 @@ public class GameState
 		return encounterHx;
 	}
 	
-	public ArrayList<ICard> getCardHx()
-	{
-		return cardHx;
-	}
 	public ArrayList<OtherWorldCard> getAllOtherWorldDeck() {
 		if (otherWorldCards == null)
 		{

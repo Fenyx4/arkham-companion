@@ -28,7 +28,7 @@ public class Expansion {
 
 	public boolean getApplied() {
 		
-		return GameState.INSTANCE.getAppliedExpansions().contains(ID);
+		return GameState.getInstance().getAppliedExpansions().contains(ID);
 	}
 	
 	//Icon for this expansion. Can be null (i.e. Base)

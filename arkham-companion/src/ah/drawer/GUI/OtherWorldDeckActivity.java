@@ -45,7 +45,7 @@ public class OtherWorldDeckActivity extends Activity {
         //long[] colorIDs = extras.getLongArray("otherworld"); //.getLong("otherworld");
         
         ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-        viewpager.setAdapter(new CardAdapter(this, GameState.INSTANCE.getFilteredOtherWorldDeck()));
+        viewpager.setAdapter(new CardAdapter(this, GameState.getInstance().getFilteredOtherWorldDeck()));
 
         //viewpager.setBackgroundColor(Color.CYAN);
         
@@ -108,8 +108,8 @@ public class OtherWorldDeckActivity extends Activity {
                 	private OtherWorldCard cardHx = theCard; 
 
 					public void onClick(View v) {
-						GameState.INSTANCE.AddHistory(cardHx, enc);
-						if(GameState.INSTANCE.otherWorldCardSelected(cardHx.getID()))
+						GameState.getInstance().AddHistory(enc);
+						if(GameState.getInstance().otherWorldCardSelected(cardHx.getID()))
 						{
 							Toast.makeText(OtherWorldDeckActivity.this, R.string.otherword_arrow_clicked_true, Toast.LENGTH_SHORT).show();
 						}

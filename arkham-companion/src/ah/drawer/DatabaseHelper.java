@@ -81,13 +81,32 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String colorToPathColorID = "colorID";
 	static final String colorToPathPathID = "pathID";
 	
+	//GameState
+	//Game
+	static final String gameTable = "gameTable";
+	static final String gameID = "gameID";
+	static final String gameDate = "gameDate";
+	
+	//GameToExp
+	static final String gameToExpTable = "gameToExpTable";
+	static final String gameToExpGameID = "gameToExpGameID";
+	static final String gameToExpExpID = "gameToExpExpID";
+	
+	//EncounterHx
+	static final String encounterHxTable = "encounterHxTable";
+	static final String encHxGameID = "encHxGameID";
+	static final String encHxEncID = "encHxEncID";
+	static final String encHxInverseOrder = "encHxOrder";
+	
+	
+	
 
 	static final String viewEmps="ViewEmps";
 	
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,112); 
+		  super(context, dbName, null,117); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -182,6 +201,23 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "FOREIGN KEY ("+colorToPathColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
 				  "FOREIGN KEY ("+colorToPathPathID+") REFERENCES "+pathTable+" ("+pathID+"));");//+
 		  
+		  // --- Game State
+		  db.execSQL("CREATE TABLE "+gameTable+" ("+gameID+ " INTEGER PRIMARY KEY, "+
+				  gameDate + " TEXT)");
+
+		  db.execSQL("CREATE TABLE "+gameToExpTable+" ("+
+				  gameToExpGameID+" INTEGER NOT NULL, "+
+				  gameToExpExpID+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+gameToExpGameID+") REFERENCES "+gameTable+" ("+gameID+"), "+
+				  "FOREIGN KEY ("+gameToExpExpID+") REFERENCES "+expTable+" ("+expID+"));");//+
+
+		  db.execSQL("CREATE TABLE "+encounterHxTable+" ("+
+				  encHxGameID+" INTEGER NOT NULL, "+
+				  encHxEncID+" INTEGER NOT NULL, "+
+				  encHxInverseOrder+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+encHxGameID+") REFERENCES "+gameTable+" ("+gameID+"), "+
+				  "FOREIGN KEY ("+encHxEncID+") REFERENCES "+encounterTable+" ("+encID+"));");//+
+		  
 //		  //For referential integrity
 //		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
 //				    " BEFORE INSERT "+
@@ -259,6 +295,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("DROP TABLE IF EXISTS "+cardToColorTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+pathTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+colorToPathTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+gameTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+gameToExpTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+encounterHxTable);
 		  
 		  
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");

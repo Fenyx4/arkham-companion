@@ -3,6 +3,7 @@ package ah.drawer.GUI;
 import java.io.IOException;
 
 import ah.drawer.AHFlyweightFactory;
+import ah.drawer.GameState;
 import ah.drawer.Neighborhood;
 import ah.drawer.NeighborhoodCursor;
 import ah.drawer.R;
@@ -30,6 +31,11 @@ public class NeighborhoodSelector extends Activity {
         setContentView(R.layout.main);
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
+        //Need to init here for some reason...
+        GameState.getInstance();
+        
+        //GameState.INSTANCE.onRestoreInstanceState(savedInstanceState);
         
         //Init blah = new Init();
         lv1=(ListView)findViewById(R.id.ListView01);
@@ -125,6 +131,12 @@ public class NeighborhoodSelector extends Activity {
      
     }
     
+    @Override
+    public void onStart()
+    {
+    	super.onStart();
+    }
+    
     public void openEncHx(View view)
     {
     	Intent i = new Intent(this, LocationHxActivity.class);
@@ -134,6 +146,7 @@ public class NeighborhoodSelector extends Activity {
     public void openOW(View view)
     {
     	Intent i = new Intent(this, OtherworldSelector.class);
+    	i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		this.startActivity(i);
     }
 }
