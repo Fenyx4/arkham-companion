@@ -356,12 +356,12 @@ public class OtherworldSelector extends Activity {
 
 	    Bitmap checkOffBMP;
 		checkOffBMP = BitmapFactory.decodeResource(this.getResources(), off);
-		checkOffBMP = Bitmap.createScaledBitmap(checkOffBMP, 35, 35, false);
+		checkOffBMP = Bitmap.createScaledBitmap(checkOffBMP, 70, 70, false);
 		//checkOffBMP.setDensity(20);
 	    BitmapDrawable checkOffDrawable = new BitmapDrawable(checkOffBMP);
 	    myStates.addState(new int[]{ -stateChecked }, checkOffDrawable);
 	    Bitmap checkOnBMP = BitmapFactory.decodeResource(this.getResources(), on);
-	    checkOnBMP = Bitmap.createScaledBitmap(checkOnBMP, 35, 35, false);
+	    checkOnBMP = Bitmap.createScaledBitmap(checkOnBMP, 70, 70, false);
 	    BitmapDrawable checkOnDrawable = new BitmapDrawable(checkOnBMP);
 	    myStates.addState(new int[]{ stateChecked }, checkOnDrawable);
 	    colorCheckbox.setButtonDrawable(myStates);
