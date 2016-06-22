@@ -228,6 +228,12 @@ public class GameState
 	
 	public boolean otherWorldCardSelected(long cardId) {
 		
+		//Shuffle if they selected Stars are right
+		if(cardId == 4242)
+		{
+			prepOtherWorldDeck();
+			return true;
+		}
 		//Keep removing cards until we hit the end of the deck or we find the card selected
 		int i = 0;
 		while( otherWorldCards.size() != i && otherWorldCards.get(i).getID() != cardId)
@@ -244,10 +250,13 @@ public class GameState
 			}
 		}
 		//remove the selected card
-		ICard card = otherWorldCards.remove(i);
-		AHFlyweightFactory.INSTANCE.removeFromDeck(-1, gameID, card.getID());
-		//Shuffle if we're at the end of the deck or they selected Stars are right
-		if(otherWorldCards.size() == 0 || cardId == 4242)
+		if(otherWorldCards.size() > i)
+		{
+			ICard card = otherWorldCards.remove(i);
+			AHFlyweightFactory.INSTANCE.removeFromDeck(-1, gameID, card.getID());
+		}
+		//Shuffle if we're at the end of the deck
+		if(otherWorldCards.size() == 0)
 		{
 			prepOtherWorldDeck();
 			return true;
