@@ -14,6 +14,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -92,6 +93,12 @@ public class LocationHxActivity extends Activity {
 		    	
 		    	text = (TextView)mInflater.inflate(R.layout.encountertext, null);
 		    	text.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
+		    	
+		    	if( !encounters.get(i).equals(encArr.get(position)))
+		    	{
+		    		header.setBackgroundColor(R.color.shaded_hx);
+		    		text.setBackgroundColor(R.color.shaded_hx);
+		    	}
 		    	
 		    
 		    	layout.addView(header);

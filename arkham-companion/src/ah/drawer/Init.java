@@ -33,6 +33,13 @@ public class Init {
 		// 23 - Miskatonic + Dunwich + Innsmouth
 		// 24 - Miskatonic + Dunwich + Lurker
 		// 25 - Miskatonic + Dunwich
+		// 26 - Miskatonic + Innsmouth + Dark Pharoah
+		// 27 - Miskatonic + Innsmouth + Black Goat
+		// 28 - Miskatonic + Innsmouth + Kingsport
+		// 29 - Miskatonic + Innsmouth + King in Yellow
+		// 30 - Miskatonic + Innsmouth + Dunwich
+		// 31 - Miskatonic + Innsmouth + Lurker
+		// 32 - Miskatonic + Innsmouth
 
 	}
 	
