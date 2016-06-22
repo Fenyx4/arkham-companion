@@ -9,17 +9,22 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 public class AHFlyweightFactory {
 	
 	public final static AHFlyweightFactory INSTANCE = new AHFlyweightFactory();
 	private HashMap<Long,Expansion> expansionMap;
+	private HashMap<Long,ICard> cardMap;
+	private HashMap<Long,OtherWorldColor> colorMap;
 	
 	private Context context;
 	
 	private AHFlyweightFactory() 
 	{
+		cardMap = new HashMap<Long, ICard>();
+		colorMap = new HashMap<Long, OtherWorldColor>();
 	}
 	
 	public ArrayList<Expansion> getExpansions()
@@ -177,7 +182,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			cards.add(new NeighborhoodCard(c.getLong(0),c.getLong(1)));
+			if(cardMap.containsKey(c.getLong(0)))
+			{
+				cards.add((NeighborhoodCard)cardMap.get(c.getLong(0)));
+			}
+			else
+			{
+				cardMap.put(c.getLong(0), new NeighborhoodCard(c.getLong(0),c.getLong(1)));
+				cards.add((NeighborhoodCard)cardMap.get(c.getLong(0)));
+			}
 			
 			c.moveToNext();
 		}
@@ -215,7 +228,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			cards.add(new OtherWorldCard(c.getLong(0)));
+			if(cardMap.containsKey(c.getLong(0)))
+			{
+				cards.add((OtherWorldCard)cardMap.get(c.getLong(0)));
+			}
+			else
+			{
+				cardMap.put(c.getLong(0), new OtherWorldCard(c.getLong(0)));
+				cards.add((OtherWorldCard)cardMap.get(c.getLong(0)));
+			}
 			
 			c.moveToNext();
 		}
@@ -254,7 +275,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		if(!c.isAfterLast())
 		{
-			card = new OtherWorldCard(c.getLong(0));
+			if(cardMap.containsKey(c.getLong(0)))
+			{
+				card = (OtherWorldCard)cardMap.get(c.getLong(0));
+			}
+			else
+			{
+				card = new OtherWorldCard(c.getLong(0));
+				cardMap.put(c.getLong(0), card);
+			}
 		}
 		
 		c.close();
@@ -480,22 +509,30 @@ public class AHFlyweightFactory {
 	{
 		OtherWorldColor owc = null;
 		
-		DatabaseHelper dh = DatabaseHelper.instance;
-		SQLiteDatabase db = dh.getReadableDatabase();
-		
-		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
-		String select = DatabaseHelper.colorID+"=?";
-
-		Cursor c = db.query(DatabaseHelper.colorTable, columns, select, new String[]{Long.toString(colorID)}, null, null, null);
-		
-		c.moveToFirst();
-		if(!c.isAfterLast())
+		if(colorMap.containsKey(colorID))
 		{
-			owc = new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) );
+			owc = colorMap.get(colorID);
 		}
-		
-		c.close();
-		db.close();
+		else
+		{
+			DatabaseHelper dh = DatabaseHelper.instance;
+			SQLiteDatabase db = dh.getReadableDatabase();
+			
+			String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
+			String select = DatabaseHelper.colorID+"=?";
+	
+			Cursor c = db.query(DatabaseHelper.colorTable, columns, select, new String[]{Long.toString(colorID)}, null, null, null);
+			
+			c.moveToFirst();
+			if(!c.isAfterLast())
+			{
+				owc = new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) );
+				colorMap.put(colorID, owc);
+			}
+			
+			c.close();
+			db.close();
+		}
 		
 		return owc;
 	}
@@ -542,7 +579,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+			if(colorMap.containsKey(c.getLong(0)))
+			{
+				colors.add(colorMap.get(c.getLong(0)));
+			}
+			else
+			{
+				colorMap.put(c.getLong(0), new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+				colors.add(colorMap.get(c.getLong(0)));
+			}
 			
 			c.moveToNext();
 		}
@@ -571,7 +616,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+			if(colorMap.containsKey(c.getLong(0)))
+			{
+				colors.add(colorMap.get(c.getLong(0)));
+			}
+			else
+			{
+				colorMap.put(c.getLong(0), new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+				colors.add(colorMap.get(c.getLong(0)));
+			}
 			
 			c.moveToNext();
 		}
@@ -600,7 +653,15 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+			if(colorMap.containsKey(c.getLong(0)))
+			{
+				colors.add(colorMap.get(c.getLong(0)));
+			}
+			else
+			{
+				colorMap.put(c.getLong(0), new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getLong(3) ));
+				colors.add(colorMap.get(c.getLong(0)));
+			}
 			
 			c.moveToNext();
 		}
@@ -792,6 +853,12 @@ public class AHFlyweightFactory {
 	}
 
 	public ICard getCardByEncID(long encID) {
+		
+		if(cardMap.containsKey(encID))
+		{
+			return cardMap.get(encID);
+		}
+		
 		ICard card = null;
 		
 		DatabaseHelper dh = DatabaseHelper.instance;
@@ -812,10 +879,12 @@ public class AHFlyweightFactory {
 			if( c.isNull(1) )
 			{
 				card = new OtherWorldCard(cardID);
+				cardMap.put(cardID, card);
 			}
 			else
 			{
 				card = new NeighborhoodCard(cardID, c.getLong(1));
+				cardMap.put(cardID, card);
 			}
 			
 			c.moveToNext();
@@ -895,17 +964,45 @@ public class AHFlyweightFactory {
 		
 		db.execSQL("DELETE FROM "+DatabaseHelper.deckToCardTable+" WHERE "+DatabaseHelper.deckToCardDeckID+"="+deckID + " AND "+DatabaseHelper.deckToCardGameID+" = "+gameID);
 		
-		ContentValues contentValues = new ContentValues();
-		for(int i = 0; i < cards.size(); i++)
-		{
-			ICard card = cards.get(i);
-			contentValues.put(DatabaseHelper.deckToCardDeckID, deckID);
-			contentValues.put(DatabaseHelper.deckToCardGameID, gameID);
-			contentValues.put(DatabaseHelper.deckToCardCardID, card.getID());
-			contentValues.put(DatabaseHelper.deckToCardOrder, i);
-			
-			db.insert(DatabaseHelper.deckToCardTable, null, contentValues);
-		}
+		String sql = "INSERT INTO "+DatabaseHelper.deckToCardTable+" "+
+		        "("+DatabaseHelper.deckToCardDeckID+", "+DatabaseHelper.deckToCardGameID+", "+DatabaseHelper.deckToCardCardID+", "+DatabaseHelper.deckToCardOrder+") VALUES (?, ?, ?, ?)";
+
+		SQLiteStatement stmt = db.compileStatement(sql);
+        
+        try
+        {
+        	db.beginTransaction();
+        	for(int i = 0; i < cards.size(); i++)
+        	{
+        		ICard card = cards.get(i);
+        		
+        		stmt.bindDouble(1, deckID);
+        		stmt.bindDouble(2, gameID);
+        		stmt.bindDouble(3, card.getID());
+        		stmt.bindDouble(4, i);
+        		
+        		stmt.executeInsert();
+        	}
+        	db.setTransactionSuccessful();
+        }
+        finally
+        {
+        	db.endTransaction();
+        }
+//		ContentValues contentValues = new ContentValues();
+//		db.beginTransaction();
+//		for(int i = 0; i < cards.size(); i++)
+//		{
+//			ICard card = cards.get(i);
+//			contentValues.put(DatabaseHelper.deckToCardDeckID, deckID);
+//			contentValues.put(DatabaseHelper.deckToCardGameID, gameID);
+//			contentValues.put(DatabaseHelper.deckToCardCardID, card.getID());
+//			contentValues.put(DatabaseHelper.deckToCardOrder, i);
+//			
+//			db.insert(DatabaseHelper.deckToCardTable, null, contentValues);
+//		}
+//		db.setTransactionSuccessful();
+//		db.endTransaction();
 	}
 		
 	public ArrayList<ICard> getDeck(int deckID, long gameID)
@@ -929,11 +1026,27 @@ public class AHFlyweightFactory {
 		{
 			if( c.isNull(1) )
 			{
-				deck.add(new OtherWorldCard(c.getLong(0)));
+				if(cardMap.containsKey(c.getLong(0)))
+				{
+					deck.add((OtherWorldCard)cardMap.get(c.getLong(0)));
+				}
+				else
+				{
+					cardMap.put(c.getLong(0), new OtherWorldCard(c.getLong(0)));
+					deck.add((OtherWorldCard)cardMap.get(c.getLong(0)));
+				}
 			}
 			else
 			{
-				deck.add(new NeighborhoodCard(c.getLong(0), c.getLong(1)));
+				if(cardMap.containsKey(c.getLong(0)))
+				{
+					deck.add((NeighborhoodCard)cardMap.get(c.getLong(0)));
+				}
+				else
+				{
+					cardMap.put(c.getLong(0), new NeighborhoodCard(c.getLong(0), c.getLong(1)));
+					deck.add((NeighborhoodCard)cardMap.get(c.getLong(0)));
+				}
 			}
 			
 			c.moveToNext();
