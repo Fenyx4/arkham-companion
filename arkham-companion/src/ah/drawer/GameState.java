@@ -109,7 +109,7 @@ public class GameState
 		
 		return otherWorldCards;
 	}
-	public void otherWorldCardSelected(long cardId) {
+	public boolean otherWorldCardSelected(long cardId) {
 		
 		while( otherWorldCards.size() != 0 && otherWorldCards.get(0).getID() != cardId)
 		{
@@ -119,7 +119,9 @@ public class GameState
 		if(otherWorldCards.size() == 0)
 		{
 			prepOtherWorldDeck();
+			return true;
 		}
+		return false;
 	}
 	
 	private void prepOtherWorldDeck()
