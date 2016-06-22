@@ -78,7 +78,8 @@ public class ExpansionSelector extends Activity {
             		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             		
             		CheckBox cb = (CheckBox) view;
-            		
+            		//Checkbox view is reused when scrolling. Removed previous check listener or things will check and uncheck randomly.
+            		cb.setOnCheckedChangeListener(null);
             		Expansion exp = ((ExpansionCursor)cursor).getExpansion();
             		cb.setChecked(exp.getApplied());
             		
