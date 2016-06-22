@@ -33,5 +33,26 @@ public abstract class ACard implements ICard {
 		
 		return expIDs;
 	}
+	
+	@Override 
+	public boolean equals(Object aThat) {
+	    //check for self-comparison
+	    if ( this == aThat ) return true;
+
+	    // instanceof checks for null already
+	    if ( !(aThat instanceof ICard) ) return false;
+
+	    ICard that = (ICard)aThat;
+
+	   
+	    return ID == that.getID();
+	  }
+	
+	@Override public int hashCode() {
+		int result = 17;
+		result = 31 * result + (int) (ID ^ (ID >>> 32));
+		
+		return result;
+	  }
 
 }

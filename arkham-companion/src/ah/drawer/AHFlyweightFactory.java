@@ -192,14 +192,16 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardColorID};
+		String[] columns = new String[]{DatabaseHelper.cardID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
 		String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 
-		String select = DatabaseHelper.cardColorID+" IS NOT NULL "+
-		"AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		//Has a color
+		String select = "EXISTS (SELECT " + DatabaseHelper.cardToColorCardID + " FROM " + DatabaseHelper.cardToColorTable + " WHERE " + DatabaseHelper.cardToColorCardID + "=" + DatabaseHelper.cardID + ")" +
+		//Not Stars are right and in the right expansions
+		" AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") OR "+ DatabaseHelper.cardToExpExpID +"=1" + 
 		" AND "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
@@ -210,7 +212,7 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			cards.add(new OtherWorldCard(c.getLong(0),c.getLong(1)));
+			cards.add(new OtherWorldCard(c.getLong(0)));
 			
 			c.moveToNext();
 		}
@@ -228,7 +230,7 @@ public class AHFlyweightFactory {
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
 		
-		String[] columns = new String[]{DatabaseHelper.cardID,DatabaseHelper.cardColorID};
+		String[] columns = new String[]{DatabaseHelper.cardID};
 		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
 		
 		//String expIDs = GameState.INSTANCE.getAppliedExpansions().toString();
@@ -249,7 +251,7 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		if(!c.isAfterLast())
 		{
-			card = new OtherWorldCard(c.getLong(0),c.getLong(1));
+			card = new OtherWorldCard(c.getLong(0));
 		}
 		
 		c.close();
@@ -546,6 +548,73 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return colors;
+	}
+	
+	public ArrayList<OtherWorldColor> getOtherWorldColors(long locID) {
+		 ArrayList<OtherWorldColor> colors = new ArrayList<OtherWorldColor>();
+		
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName,DatabaseHelper.colorCardPath, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		String select = DatabaseHelper.colorID + " IN (" + " SELECT " + DatabaseHelper.locToColorColorID + " FROM " + DatabaseHelper.locToColorTable +
+				" WHERE " + DatabaseHelper.locToColorLocID + "=?)";
+		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
+
+		Cursor c = db.query(DatabaseHelper.colorTable, columns, select, new String[]{Long.toString(locID)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getString(3), c.getLong(4) ));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return colors;
+	}
+
+	public ArrayList<OtherWorldColor> getOtherWorldColorsForCard(long cardid) {
+		 ArrayList<OtherWorldColor> colors = new ArrayList<OtherWorldColor>();
+			
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		String[] columns = new String[]{DatabaseHelper.colorID,DatabaseHelper.colorName,DatabaseHelper.colorCardPath, DatabaseHelper.colorButtonPath, DatabaseHelper.colorExpID};
+		//String select = DatabaseHelper.cardNeiID+" in (SELECT " + DatabaseHelper.neiID + " FROM " + DatabaseHelper.neighborhoodTable + " WHERE " + DatabaseHelper.neiExpID + " in (?))";
+		
+		String select = DatabaseHelper.colorID + " IN (" + " SELECT " + DatabaseHelper.cardToColorColorID + " FROM " + DatabaseHelper.cardToColorTable +
+				" WHERE " + DatabaseHelper.cardToColorCardID + "=?)";
+		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
+
+		Cursor c = db.query(DatabaseHelper.colorTable, columns, select, new String[]{Long.toString(cardid)}, null, null, null);
+		
+		c.moveToFirst();
+		while(!c.isAfterLast())
+		{
+			colors.add(new OtherWorldColor(c.getLong(0), c.getString(1), c.getString(2), c.getString(3), c.getLong(4) ));
+			
+			c.moveToNext();
+		}
+		
+		c.close();
+		db.close();
+		
+		return colors;
+	}
+
+	public String getOtherWorldCardPath(ArrayList<OtherWorldColor> colors) {
+		// TODO Auto-generated method stub
+		if(colors == null || colors.size() <= 0)
+		{
+			return null;
+		}
+		return colors.get(0).getCardPath();
 	}
 	   
 }

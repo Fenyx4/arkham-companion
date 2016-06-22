@@ -1,30 +1,31 @@
 package ah.drawer;
 
+import java.util.ArrayList;
+
 public class OtherWorldCard extends ACard {
 
-	private long colorID;
+	private ArrayList<OtherWorldColor> colors;
 	
-	public OtherWorldCard(long ID, long colorID) {
+	public OtherWorldCard(long ID) {
 		super(ID);
-		this.colorID = colorID;
 	}
 	
     @Override public String toString()
     {
-    	return "CardID: " + getID() + " ColorID: " + colorID;
+    	return "CardID: " + getID();
     }
 
-	public OtherWorldColor getOtherWorldColor() {
-		return AHFlyweightFactory.INSTANCE.getOtherWorldColor(colorID);	
+	public ArrayList<OtherWorldColor> getOtherWorldColors() {
+		if(colors == null)
+		{
+			colors = AHFlyweightFactory.INSTANCE.getOtherWorldColorsForCard(getID());	
+		}
+		return colors;
 	}
 	
 	public String getCardPath()
 	{
-		return getOtherWorldColor().getCardPath();
-	}
-
-	public long getColorID() {
-		return colorID;
+		return AHFlyweightFactory.INSTANCE.getOtherWorldCardPath(colors);
 	}
 
 }

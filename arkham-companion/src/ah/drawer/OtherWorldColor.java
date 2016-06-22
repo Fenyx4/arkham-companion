@@ -42,4 +42,24 @@ public class OtherWorldColor {
     	return getName();
     }
 
+	@Override 
+	public boolean equals(Object aThat) {
+	    //check for self-comparison
+	    if ( this == aThat ) return true;
+
+	    // instanceof checks for null already
+	    if ( !(aThat instanceof OtherWorldColor) ) return false;
+
+	    OtherWorldColor that = (OtherWorldColor)aThat;
+
+	   
+	    return colorID == that.getID();
+	  }
+	
+	@Override public int hashCode() {
+		int result = 17;
+		result = 31 * result + (int) (colorID ^ (colorID >>> 32));
+		
+		return result;
+	  }
 }

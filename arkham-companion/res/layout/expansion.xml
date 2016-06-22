@@ -20,7 +20,7 @@
 		    android:layout_width="100dp"
 		    android:background="@drawable/ow_btn"
 		    android:layout_alignParentLeft="true"
-			android:onClick="openNeighborhood" />
+			android:onClick="openOW" />
     	<Button 
     	    android:id="@+id/open_neighborhoods" 
 		  	android:layout_height="100dp"

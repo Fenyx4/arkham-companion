@@ -42,7 +42,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String cardTable="Card";
 	static final String cardID = "cardID";
 	static final String cardNeiID = "neiID";
-	static final String cardColorID = "colorID";
+	//static final String cardColorID = "colorID";
+	
+	//CardToColors
+	static final String cardToColorTable="CardToColor";
+	static final String cardToColorColorID="cardToColorColorID";
+	static final String cardToColorCardID="cardToColorCardID";
 	
 	//CardsToExpansion
 	static final String cardToExpTable = "CardToExpansion";
@@ -73,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,97); 
+		  super(context, dbName, null,98); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -117,9 +122,17 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY, "+
 				  //cardEncID+" INTEGER NOT NULL ,"+
 				  cardNeiID+" INTEGER NULL ,"+
-				  cardColorID+" INTEGER NULL ,"+
-				  "FOREIGN KEY ("+cardColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
+				  //cardColorID+" INTEGER NULL ,"+
+				  //"FOREIGN KEY ("+cardColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
 				  "FOREIGN KEY ("+cardNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");//+
+				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
+		  
+		  db.execSQL("CREATE TABLE "+cardToColorTable+" ("+
+				  //cardEncID+" INTEGER NOT NULL ,"+
+				  cardToColorCardID+" INTEGER NOT NULL, "+
+				  cardToColorColorID+" INTEGER NOT NULL, "+
+				  "FOREIGN KEY ("+cardToColorCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
+				  "FOREIGN KEY ("+cardToColorColorID+") REFERENCES "+colorTable+" ("+colorID+"));");//+
 				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+cardToExpTable+" ("+

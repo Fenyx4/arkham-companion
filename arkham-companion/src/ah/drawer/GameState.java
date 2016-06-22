@@ -1,6 +1,7 @@
 package ah.drawer;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Set;
@@ -14,6 +15,7 @@ public class GameState
 	private Random rand;
 	private ArrayList<Encounter> encounterHx = null;
 	private ArrayList<ICard> cardHx = null;
+	private HashMap<Long,OtherWorldColor> currentColors = null;
 	
 	//The expansions selected for this play session
 	private HashMap<Long,Long> currentExpansions;
@@ -24,8 +26,10 @@ public class GameState
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
 		cardHx = new ArrayList<ICard>();
+		currentColors = new HashMap<Long,OtherWorldColor>();
 		rand = new Random(522348);
 	}
+	
 	public ArrayList<NeighborhoodCard> getDeckByNeighborhood(long neiID)
 	{
 		if(neighborhoodCardsList.containsKey(neiID))
@@ -101,7 +105,7 @@ public class GameState
 	{
 		return cardHx;
 	}
-	public ArrayList<OtherWorldCard> getOtherWorldDeck() {
+	public ArrayList<OtherWorldCard> getAllOtherWorldDeck() {
 		if (otherWorldCards == null)
 		{
 			prepOtherWorldDeck();
@@ -110,24 +114,53 @@ public class GameState
 		return otherWorldCards;
 	}
 	
-	public ArrayList<OtherWorldCard> getOtherWorldDeck(long[] colorIDs) {
-		if( colorIDs == null || colorIDs.length == 0 )
+	public void addSelectedOtherWorldColor(OtherWorldColor color)
+	{
+		if(!currentColors.containsKey(color.getID()))
 		{
-			return getOtherWorldDeck();
+				currentColors.put(color.getID(), color);
+		}
+	}
+	
+	public void removeSelectedOtherWorldColor(OtherWorldColor color)
+	{
+		if(currentColors.containsKey(color.getID()))
+		{
+				currentColors.remove(color.getID());
+		}
+	}
+	
+	public void clearSelectedOtherWorldColor()
+	{
+		currentColors.clear();
+	}
+	
+	public boolean isSelectedOtherWorldColor(OtherWorldColor owc)
+	{
+		if( currentColors == null )
+		{
+			return false;
+		}
+		
+		return currentColors.containsKey(owc.getID());
+	}
+	
+	public ArrayList<OtherWorldCard> getFilteredOtherWorldDeck() {
+		Collection<OtherWorldColor> colorIDs = currentColors.values();
+		if( colorIDs == null || colorIDs.size() == 0 )
+		{
+			return getAllOtherWorldDeck();
 		}
 		else
 		{
-			ArrayList<OtherWorldCard> cards = getOtherWorldDeck();
+			ArrayList<OtherWorldCard> cards = getAllOtherWorldDeck();
 			ArrayList<OtherWorldCard> filteredCards = new ArrayList<OtherWorldCard>();
 
 			for(int i = 0; i < cards.size(); i++)
 			{
-				for(int j = 0; j < colorIDs.length; j++)
+				if(colorIDs.containsAll(cards.get(i).getOtherWorldColors()))
 				{
-					if(cards.get(i).getColorID() == colorIDs[j])
-					{
-						filteredCards.add(cards.get(i));
-					}
+					filteredCards.add(cards.get(i));
 				}
 			}
 			

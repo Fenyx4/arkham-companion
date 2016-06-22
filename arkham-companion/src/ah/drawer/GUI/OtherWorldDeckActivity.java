@@ -40,12 +40,12 @@ public class OtherWorldDeckActivity extends Activity {
         
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
         
-        Bundle extras = getIntent().getExtras();
+       // Bundle extras = getIntent().getExtras();
 
-        long[] colorIDs = extras.getLongArray("otherworld"); //.getLong("otherworld");
+        //long[] colorIDs = extras.getLongArray("otherworld"); //.getLong("otherworld");
         
         ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-        viewpager.setAdapter(new CardAdapter(this, GameState.INSTANCE.getOtherWorldDeck(colorIDs)));
+        viewpager.setAdapter(new CardAdapter(this, GameState.INSTANCE.getFilteredOtherWorldDeck()));
 
         //viewpager.setBackgroundColor(Color.CYAN);
         

@@ -110,4 +110,10 @@ public class ExpansionSelector extends Activity {
     	Intent i = new Intent(this, NeighborhoodSelector.class);
 		this.startActivity(i);
     }
+    
+    public void openOW(View view)
+    {
+    	Intent i = new Intent(this, OtherworldSelector.class);
+		this.startActivity(i);
+    }
 }

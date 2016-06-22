@@ -148,18 +148,20 @@ public class Init {
 	
 	public static void FetchOtherWorldEncounter(SQLiteDatabase db)
 	{
-		String sqlInsertCard = "INSERT INTO " + DatabaseHelper.cardTable + " (" + DatabaseHelper.cardID + "," + DatabaseHelper.cardColorID + ") VALUES ";//+
+		String sqlInsertCard = "INSERT INTO " + DatabaseHelper.cardTable + " (" + DatabaseHelper.cardID + ") VALUES ";//+
 		String sqlInsertCardExp = "INSERT INTO " + DatabaseHelper.cardToExpTable + " (" + DatabaseHelper.cardToExpCardID + "," + DatabaseHelper.cardToExpExpID + ") VALUES ";//+
 		String sqlInsertCardEnc = "INSERT INTO " + DatabaseHelper.cardToEncTable + " (" + DatabaseHelper.cardToEncCardID + "," + DatabaseHelper.cardToEncEncID + ") VALUES ";//+
 		String sqlInsertEnc = "INSERT INTO " + DatabaseHelper.encounterTable + " (" + DatabaseHelper.encID + "," + DatabaseHelper.encLocID + "," + DatabaseHelper.encText + ") VALUES ";//+
+		String sqlInsertCardColor = "INSERT INTO " + DatabaseHelper.cardToColorTable + " (" + DatabaseHelper.cardToColorCardID + "," + DatabaseHelper.cardToColorColorID + ") VALUES ";//+
 		
-		db.execSQL(sqlInsertCard + " (4242,0)");
+		db.execSQL(sqlInsertCard + " (4242)");
 		db.execSQL(sqlInsertCardExp + " (4242,1)");
 		db.execSQL(sqlInsertCardEnc + " (4242,14242)");
 		db.execSQL(sqlInsertEnc + " (14242,499,'Shuffle the Gate deck and keep drawing until you get an encounter of the right color.')");
+		db.execSQL(sqlInsertCardColor + " (4242,0)");
 		
 		
-		db.execSQL(sqlInsertCard + " (4500,1)");
+		db.execSQL(sqlInsertCard + " (4500)");
 		db.execSQL(sqlInsertCardExp + " (4500,1)");
 		db.execSQL(sqlInsertCardEnc + " (4500,14950)");
 		db.execSQL(sqlInsertEnc + " (14950,508,'You run for the boat. Pass a <b>Speed (-1) [2] check</b> to reach it in time. If you do, you escape with vital information. Gain 5 Clue tokens. If you fail, stay here next turn, hiding from your pursuer.')");
@@ -167,8 +169,9 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (14951,504,'Breathing hard, you stay huddled against the rock until the sounds of pursuit fade into the distance. No encounter.')");
 		db.execSQL(sqlInsertCardEnc + " (4500,14952)");
 		db.execSQL(sqlInsertEnc + " (14952,500,'Your mind is flooded with knowledge. Make a <b>Lore (-2) check</b>. If you pass it, draw 1 Spell, but lose 1 Sanity.')");
+		db.execSQL(sqlInsertCardColor + " (4500,1)");
 		
-		db.execSQL(sqlInsertCard + " (4501,2)");
+		db.execSQL(sqlInsertCard + " (4501)");
 		db.execSQL(sqlInsertCardExp + " (4501,1)");
 		db.execSQL(sqlInsertCardEnc + " (4501,14953)");
 		db.execSQL(sqlInsertEnc + " (14953,501,'The stone arch breaks! Pass a <b>Speed (-1) check</b> to dive out of the way or roll a die and lose that much Stamina.')");
@@ -176,9 +179,9 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (14954,506,'The ice bridge begins to crack. <b>Pass a Luck (-1) check</b> or fall into the icy depths. If you fall, you are <i>lost in time and space.</i>')");
 		db.execSQL(sqlInsertCardEnc + " (4501,14955)");
 		db.execSQL(sqlInsertEnc + " (14955,500,'The humidity and heat is exhausting. Lose 1 Stamina.')");
+		db.execSQL(sqlInsertCardColor + " (4501,2)");
 		
-		
-		db.execSQL(sqlInsertCard + " (4502,4)");
+		db.execSQL(sqlInsertCard + " (4502)");
 		db.execSQL(sqlInsertCardExp + " (4502,1)");
 		db.execSQL(sqlInsertCardEnc + " (4502,14956)");
 		db.execSQL(sqlInsertEnc + " (14956,503,'You find yourself in an ancient and abandoned temple. Pass a <b>Luck (-1) check</b> to find a golden statue worth $10. However, if you take it, you are <i>Cursed</i>.')");
@@ -186,8 +189,9 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (14957,505,'Your red-eyed reflection in the mirror captures your attention. Stay here next turn.')");
 		db.execSQL(sqlInsertCardEnc + " (4502,14958)");
 		db.execSQL(sqlInsertEnc + " (14958,500,'The rope seems to extend upwards forever, but it''s the only way out of the crevasse you find yourself in. Pass a <b>Fight (-1) check</b> to climb it and return to Arkham. If you fail, you fall, losing 2 Stamina and staying here next turn.')");
+		db.execSQL(sqlInsertCardColor + " (4502,4)");
 		
-		db.execSQL(sqlInsertCard + " (4503,3)");
+		db.execSQL(sqlInsertCard + " (4503)");
 		db.execSQL(sqlInsertCardExp + " (4503,1)");
 		db.execSQL(sqlInsertCardEnc + " (4503,14959)");
 		db.execSQL(sqlInsertEnc + " (14959,506,'You wander in the frozen wastes. No encounter.')");
@@ -195,6 +199,16 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (14960,501,'You rest a bit beside a small, glowing pool filled with black, blind fish. Pass a <b>Luck (-1) check</b> to notice an unusual object in the water. Fishing it out, you draw 1 Unique Item and gain $3.')");
 		db.execSQL(sqlInsertCardEnc + " (4503,14961)");
 		db.execSQL(sqlInsertEnc + " (14961,500,'Pass a <b>Luck (-1) check</b> to discover a cache of ancient papers containing valuable information about the Mythos. Gain 1 Clue token for every success you rolled on your Luck check.')");
+		db.execSQL(sqlInsertCardColor + " (4503,3)");
+		
+		db.execSQL(sqlInsertCard + " (4504)");
+		db.execSQL(sqlInsertCardExp + " (4504,1)");
+		db.execSQL(sqlInsertCardEnc + " (4504,14962)");
+		db.execSQL(sqlInsertEnc + " (14962,508,'Cthulhu')");
+		db.execSQL(sqlInsertCardEnc + " (4504,14963)");
+		db.execSQL(sqlInsertEnc + " (14963,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4504,1)");
+		db.execSQL(sqlInsertCardColor + " (4504,2)");
 	}
 	
 	public static void FetchLocations(SQLiteDatabase db)
