@@ -202,12 +202,12 @@ public class AHFlyweightFactory {
 		expIDs = expIDs.substring(1,expIDs.length()-1);
 
 		//Has a color
-		String select = "EXISTS (SELECT " + DatabaseHelper.cardToColorCardID + " FROM " + DatabaseHelper.cardToColorTable + " WHERE " + DatabaseHelper.cardToColorCardID + "=" + DatabaseHelper.cardID + ")" +
-		//Not Stars are right and in the right expansions
-		" AND "+DatabaseHelper.cardID+" <> 4242 AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
+		String select = "(EXISTS (SELECT " + DatabaseHelper.cardToColorCardID + " FROM " + DatabaseHelper.cardToColorTable + " WHERE " + DatabaseHelper.cardToColorCardID + "=" + DatabaseHelper.cardID + ")" +
+		// in the right expansions or stars are right
+		" AND "+DatabaseHelper.cardID+" in (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
 		//" WHERE "+DatabaseHelper.cardToExpExpID+ " in ("+expIDs+") OR "+ DatabaseHelper.cardToExpExpID +"=1" + 
 		" WHERE "+DatabaseHelper.cardToExpCardID+" NOT IN (SELECT "+DatabaseHelper.cardToExpCardID+" FROM "+DatabaseHelper.cardToExpTable+
-		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+"))) ";
+		" WHERE "+DatabaseHelper.cardToExpExpID+ " NOT IN ("+expIDs+")))) OR "+DatabaseHelper.cardID+" = 4242";
 		//String select = DatabaseHelper.cardNeiID+"=? AND "+DatabaseHelper.cardExpID+" in ("+expIDs+")";
 
 		Cursor c = db.query(DatabaseHelper.cardTable, columns, select, null, null, null, null);

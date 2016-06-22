@@ -212,14 +212,12 @@ public class GameState
 
 			for(int i = 0; i < cards.size(); i++)
 			{
-				if(colorIDs.containsAll(cards.get(i).getOtherWorldColors()))
+				//If is stars are right or matches all colors
+				if(cards.get(i).getID() == 4242 || colorIDs.containsAll(cards.get(i).getOtherWorldColors()))
 				{
 					filteredCards.add(cards.get(i));
 				}
 			}
-			
-			//Grab stars are right
-			filteredCards.add(cards.get(cards.size()-1));
 			
 			return filteredCards;
 		}
@@ -229,12 +227,24 @@ public class GameState
 	
 	public boolean otherWorldCardSelected(long cardId) {
 		
-		while( otherWorldCards.size() != 0 && otherWorldCards.get(0).getID() != cardId)
+		//Keep removing cards until we hit the end of the deck or we find the card selected
+		int i = 0;
+		while( otherWorldCards.size() != i && otherWorldCards.get(i).getID() != cardId)
 		{
-			otherWorldCards.remove(0);
+			//Skip Stars Are right
+			if(otherWorldCards.get(i).getID() != 4242)
+			{
+				otherWorldCards.remove(i);
+			}
+			else
+			{
+				i++;
+			}
 		}
-		otherWorldCards.remove(0);
-		if(otherWorldCards.size() == 0)
+		//remove the selected card
+		otherWorldCards.remove(i);
+		//Shuffle if we're at the end of the deck or they selected Stars are right
+		if(otherWorldCards.size() == 0 || cardId == 4242)
 		{
 			prepOtherWorldDeck();
 			return true;
@@ -246,15 +256,6 @@ public class GameState
 	{
 		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherWorldCards();
 		randomize(otherWorldCards);
-		//Where should stars are right go?
-		
-		int numberOfCardsAfterStars = rand.nextInt(otherWorldCards.size());
-		for(int i = 0; i < numberOfCardsAfterStars; i++)
-		{
-			otherWorldCards.remove(otherWorldCards.size()-1);
-		}
-		
-		otherWorldCards.add(AHFlyweightFactory.INSTANCE.getStarsAreRight());
 	}
 
 	public void newGame() {
