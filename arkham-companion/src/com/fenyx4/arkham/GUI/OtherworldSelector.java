@@ -15,10 +15,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.StateListDrawable;
 import com.fenyx4.arkham.Location;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -49,21 +47,7 @@ public class OtherworldSelector extends Activity {
         //Init blah = new Init();
         lv1=(ListView)findViewById(R.id.locationListView);
         
-        //Bundle extras = getIntent().getExtras();
-
-        //long expID = extras.getLong("expID");
-        
-        //tv1=(TextView)findViewById(R.id.TextView01);
-        
-		//tvo = new TextViewObserver(tv1, blah);
-        //Stat str = blah.globalstats.get("Strength");
-        
-        //lv1.setAdapter(new ArrayAdapter<Modifier>(this,android.R.layout.simple_list_item_1 , blah.modifiers));
-        
         Cursor cursor = new LocationCursor(AHFlyweightFactory.INSTANCE.getCurrentOtherWorldLocations());
-        	
-        //Cursor cursor = getContentResolver().query(People.CONTENT_URI, new String[] {People._ID, People.NAME, People.NUMBER}, null, null, null);
-        //startManagingCursor(cursor);
  
         // the desired columns to be bound
         String[] columns = new String[] { "Left","Right" };
@@ -74,16 +58,16 @@ public class OtherworldSelector extends Activity {
  
         // create the adapter using the cursor pointing to the desired data as well as the layout information
         SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.location_button, cursor, columns, to);
-        //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
+
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
             	final int colIdx = columnIndex;
             	if(columnIndex == 1 || columnIndex == 2) {
-            		//final LocationCursor locCurse = ((LocationCursor)cursor);
             		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             
-            		Button but = (Button) view;
-            		Location otherWorld = ((LocationCursor)cursor).getLocation(columnIndex);
+            		final Button but = (Button) view;
+            		final Location otherWorld = ((LocationCursor)cursor).getLocation(columnIndex);
+            		// Hide it if it doesn't have an otherworld (for the one on right)
             		if(otherWorld == null)
             		{
             			but.setVisibility(View.INVISIBLE);
@@ -93,28 +77,32 @@ public class OtherworldSelector extends Activity {
             			but.setVisibility(View.VISIBLE);
             		}
 
-            		//but.setBackgroundResource(R.drawable.otherworld_loc_btn);
-            		Bitmap bmp;
-            		if(bmpCache.get((int) otherWorld.getID(), null) != null)
-            		{
-            			bmp = bmpCache.get((int) otherWorld.getID());
-            		}
-            		else
-            		{
-            			if(bmpCache.get(-1, null) != null)
-            			{
-            				bmp = bmpCache.get(-1);
-            			}
-            			else
-            			{
-            				bmp = BitmapFactory.decodeResource(myself.getResources(), R.drawable.otherworld_loc_btn);
-            				bmpCache.append(-1, bmp);
-            			}
-            			bmp = myself.overlayBtn(bmp, otherWorld);
-            			
-            			//bmpCache.append((int) otherWorld.getID(), bmp);
-            		}
-            		but.setBackgroundDrawable(new BitmapDrawable(bmp));
+            		but.setBackgroundResource(R.drawable.otherworld_loc_btn);
+            		view.post(new Runnable() { 
+			    	    //  @Override 
+			    	      public void run() { 
+			    	    	  //colorCheckbox.setChecked(GameState.getInstance().isSelectedOtherWorldColor(owc));
+			            		Bitmap bmp;
+			            		if(bmpCache.get((int) otherWorld.getID(), null) != null)
+			            		{
+			            			bmp = bmpCache.get((int) otherWorld.getID());
+			            		}
+			            		else
+			            		{
+			            			if(bmpCache.get(-1, null) != null)
+			            			{
+			            				bmp = bmpCache.get(-1);
+			            			}
+			            			else
+			            			{
+			            				bmp = BitmapFactory.decodeResource(myself.getResources(), R.drawable.otherworld_loc_btn);
+			            				bmpCache.append(-1, bmp);
+			            			}
+			            			bmp = myself.overlayBtn(bmp, otherWorld, but);
+			            		}
+			            		but.setBackgroundDrawable(new BitmapDrawable(bmp));
+						  } 
+			    	    }); 
             		
             		but.setText(cursor.getString(columnIndex));
             		but.setTypeface(tf);
@@ -193,21 +181,8 @@ public class OtherworldSelector extends Activity {
         // set this adapter as your ListActivity's adapter
         lv1.setAdapter(mAdapter);
         
-        // -----------------
         
-        //lv2=(ListView)findViewById(R.id.colorListView);
-        
-        //Bundle extras = getIntent().getExtras();
-
-        //long expID = extras.getLong("expID");
-        
-        //tv1=(TextView)findViewById(R.id.TextView01);
-        
-		//tvo = new TextViewObserver(tv1, blah);
-        //Stat str = blah.globalstats.get("Strength");
-        
-        //lv1.setAdapter(new ArrayAdapter<Modifier>(this,android.R.layout.simple_list_item_1 , blah.modifiers));
-        
+        // ------ Setup Color pips at bottom ----------- //
         ArrayList<OtherWorldColor> colors = AHFlyweightFactory.INSTANCE.getCurrentOtherWorldColors();
         
         LinearLayout colorLayout = (LinearLayout)findViewById(R.id.colorLinearLayout);
@@ -408,13 +383,28 @@ public class OtherworldSelector extends Activity {
     }
     
     private SparseArray<Bitmap> bmpCache = new SparseArray<Bitmap> ();
-    private Bitmap overlayBtn(Bitmap bmp1, Location loc)
+    private Bitmap overlayBtn(Bitmap bmp1, Location loc, Button but)
     {
+    	bmp1.getWidth();
+    	bmp1.getHeight();
+    	float widthDeform = but.getWidth();
+    	float heightDeform = but.getHeight();
+    	widthDeform = widthDeform/bmp1.getWidth();
+    	heightDeform = heightDeform/bmp1.getHeight();
     	Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bmOverlay);
     	canvas.drawBitmap(bmp1, 0,0, null);
     	Matrix mtx;
-    	float resizeWidthPercentage = 166.0f/225.0f;
+    	float resizeToFitWidth = 166.0f/225.0f;
+    	float resizeToFitHeight = 166.0f/225.0f;
+    	if(widthDeform > heightDeform)
+    	{
+    		resizeToFitWidth = (resizeToFitWidth/widthDeform)*heightDeform;
+    	}
+    	else if (widthDeform < heightDeform)
+    	{
+    		resizeToFitHeight = (resizeToFitHeight/heightDeform)*widthDeform;
+    	}
     	Paint paint = new Paint();
         paint.setFilterBitmap(true);
     	
@@ -424,7 +414,7 @@ public class OtherworldSelector extends Activity {
     	for(int i = 0; i < owcs.size(); i++)
     	{
     		mtx = new Matrix();
-    		mtx.setScale(resizeWidthPercentage, resizeWidthPercentage);
+    		mtx.setScale(resizeToFitWidth, resizeToFitHeight);
     		if(bmpCache.get((int)owcs.get(i).getID()+100, null) != null)
 			{
     			colorBmp = bmpCache.get((int)owcs.get(i).getID()+100);
@@ -459,8 +449,8 @@ public class OtherworldSelector extends Activity {
 	    	{
 	    		rightMargin = rightMargin + colorBmp.getWidth() + 5;
 	    	}
-	        float top = (topMargin)*resizeWidthPercentage;
-	        float left = bmp1.getWidth() - (colorBmp.getWidth()+rightMargin)*resizeWidthPercentage;
+	        float top = (topMargin)*resizeToFitHeight;
+	        float left = bmp1.getWidth() - (colorBmp.getWidth()+rightMargin)*resizeToFitWidth;
 	        mtx.postTranslate(left, top);
 	        canvas.drawBitmap(colorBmp, mtx, paint);
 	    	//retBmp = overlay(retBmp, colorBmp, topMargin, rightMargin);
