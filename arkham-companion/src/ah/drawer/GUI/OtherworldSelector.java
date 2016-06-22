@@ -1,6 +1,5 @@
 package ah.drawer.GUI;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import ah.drawer.AHFlyweightFactory;
@@ -9,16 +8,21 @@ import ah.drawer.LocationCursor;
 import ah.drawer.OtherWorldColor;
 import ah.drawer.R;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
 import ah.drawer.Location;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.FloatMath;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -61,25 +65,24 @@ public class OtherworldSelector extends Activity {
         //startManagingCursor(cursor);
  
         // the desired columns to be bound
-        String[] columns = new String[] { "Name" };
+        String[] columns = new String[] { "Left","Right" };
         // the XML defined views which the data will be bound to
-        int[] to = new int[] { R.id.location };
+        int[] to = new int[] { R.id.name_entry, R.id.name_entry2 };
         
-		final Context myself = this;
+		final OtherworldSelector myself = this;
  
         // create the adapter using the cursor pointing to the desired data as well as the layout information
         SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.location_button, cursor, columns, to);
         //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
-            	
-            	if(columnIndex == 1) {
+            	final int colIdx = columnIndex;
+            	if(columnIndex == 1 || columnIndex == 2) {
             		//final LocationCursor locCurse = ((LocationCursor)cursor);
             		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
             
             		Button but = (Button) view;
-            		Bitmap butBmp = null;
-            		Location otherWorld = ((LocationCursor)cursor).getLocation();
+            		Location otherWorld = ((LocationCursor)cursor).getLocation(columnIndex);
             		if(otherWorld == null)
             		{
             			but.setVisibility(View.INVISIBLE);
@@ -87,29 +90,37 @@ public class OtherworldSelector extends Activity {
             		else
             		{
             			but.setVisibility(View.VISIBLE);
-            			try {
-            	        	butBmp = BitmapFactory.decodeStream(getAssets().open(otherWorld.getLocationButtonPath()));
-            			} catch (IOException e) {
-            				//butBmp = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
-            			}
             		}
-            		//but.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
 
-            		if(butBmp != null)
+            		//but.setBackgroundResource(R.drawable.otherworld_loc_btn);
+            		Bitmap bmp;
+            		if(bmpCache.get((int) otherWorld.getID(), null) != null)
             		{
-            			but.setBackgroundDrawable(new BitmapDrawable(butBmp));
+            			bmp = bmpCache.get((int) otherWorld.getID());
             		}
             		else
             		{
-            			//TODO Change to default OW button
-            			but.setBackgroundResource(R.drawable.neighbourhood_overlay);
-        			}
+            			if(bmpCache.get(-1, null) != null)
+            			{
+            				bmp = bmpCache.get(-1);
+            			}
+            			else
+            			{
+            				bmp = BitmapFactory.decodeResource(myself.getResources(), R.drawable.otherworld_loc_btn);
+            				bmpCache.append(-1, bmp);
+            			}
+            			bmp = myself.overlayBtn(bmp, otherWorld);
+            			
+            			//bmpCache.append((int) otherWorld.getID(), bmp);
+            		}
+            		but.setBackgroundDrawable(new BitmapDrawable(bmp));
+            		
             		but.setText(cursor.getString(columnIndex));
             		but.setTypeface(tf);
             		
             		but.setOnClickListener(new OnClickListener()
             		{
-            			private ah.drawer.Location loc = ((LocationCursor)cursor).getLocation();
+            			private ah.drawer.Location loc = ((LocationCursor)cursor).getLocation(colIdx);
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
             			public void onClick(View arg0) {
             				ArrayList<OtherWorldColor> owcs = loc.getOtherWorldColors();
@@ -335,122 +346,6 @@ public class OtherworldSelector extends Activity {
         	}
         }
         	
-//        //Cursor cursor = getContentResolver().query(People.CONTENT_URI, new String[] {People._ID, People.NAME, People.NUMBER}, null, null, null);
-//        //startManagingCursor(cursor);
-// 
-//        // the desired columns to be bound
-//        columns = new String[] { "Name" };
-//        // the XML defined views which the data will be bound to
-//        to = new int[] { R.id.color };
-// 
-//        // create the adapter using the cursor pointing to the desired data as well as the layout information
-//        mAdapter = new SimpleCursorAdapter(this, R.layout.color_toggle, cursor, columns, to);
-//        //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
-//        mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
-//            public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
-//            	
-//            	if(columnIndex == 1) {
-//            		//final LocationCursor locCurse = ((LocationCursor)cursor);
-//            		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/se-caslon-ant.ttf");
-//            
-//            		final OtherWorldColor owc = ((ColorCursor)cursor).getOtherWorldColor();
-//            		final CheckBox but = (CheckBox) view;
-//            		but.setTag(owc);
-//            		Bitmap butBmp = null;
-//            		if(owc == null)
-//            		{
-//            			but.setVisibility(View.INVISIBLE);
-//            		}
-//            		else
-//            		{
-//            			but.setVisibility(View.VISIBLE);
-//            			try {
-//            	        	butBmp = BitmapFactory.decodeStream(getAssets().open(owc.getButtonPath()));
-//            			} catch (IOException e) {
-//            				//butBmp = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
-//            			}
-//            		}
-//            		//but.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-//
-//            		final boolean checked = GameState.getInstance().isSelectedOtherWorldColor(owc);
-//            		if(checked)
-//            		{
-//            			but.setChecked(true);
-//						but.setText(owc.toString()+ " On");
-//            		}
-//					else
-//					{
-//						but.setChecked(false);
-//						but.setText(owc.toString()+ " Off");
-//					}
-//            		
-//            		// post a runnable to the parent view's message queue so its run after 
-//    	    	    // the view is drawn 
-//    	    	    lv2.post(new Runnable() { 
-//    		    	    //  @Override 
-//    		    	      public void run() { 
-//    		    	    	  but.setChecked(GameState.getInstance().isSelectedOtherWorldColor(owc));
-//    		    	      } 
-//    		    	    }); 
-//            		
-//            		if(butBmp != null)
-//            		{
-//            			but.setBackgroundDrawable(new BitmapDrawable(butBmp));
-//            		}
-//            		else
-//            		{
-//            			//TODO Change to default COLOR button
-//            			but.setBackgroundResource(R.drawable.neighbourhood_overlay);
-//        			}
-//            		but.setText(cursor.getString(columnIndex));
-//            		but.setTypeface(tf);
-//            		
-//            		but.setOnClickListener(new OnClickListener()
-//            		{
-//
-//            			public void onClick(View arg0) {
-//							CheckBox checkbox = (CheckBox)arg0; 
-//					        boolean isChecked = checkbox.isChecked();
-//							if(isChecked)
-//							{
-//								checkbox.setText(owc.toString()+ " On");
-//								GameState.getInstance().addSelectedOtherWorldColor(owc);
-//							}
-//							else
-//							{
-//								checkbox.setText(owc.toString()+ " Off");
-//								GameState.getInstance().removeSelectedOtherWorldColor(owc);
-//							}
-//						}
-//            			
-//            		});
-////            		but.setOnClickListener(new OnClickListener()
-////            		{
-////            			private ah.drawer.OtherWorldColor loc = ((ColorCursor)cursor).getOtherWorldColor();
-////            			//private ArrayList<Encounter> encounters = loc.getEncounters();
-////						public void onClick(View arg0) {
-////							Log.i("Neighborhood", "Neighborhood Clicked");
-////							bundle2.putLong("neighborhood", loc.getID());
-////							
-////					        //GameState.getInstance().randomizeNeighborhood(nei.getID());
-////
-////							Intent i = new Intent(act, OtherWorldDeckActivity.class);
-////							i.putExtras(bundle);
-////							act.startActivity(i);
-////							}
-////            		
-////            		});
-//            		
-//            		return true;
-//            	}
-//        	            
-//                return false;
-//            }
-//        });
-//
-//        	 
-//        // set this adapter as your ListActivity's adapter
-//        lv2.setAdapter(mAdapter);
      
     }
     
@@ -503,4 +398,80 @@ public class OtherworldSelector extends Activity {
     	//i.putExtras(bundle);
 		this.startActivity(i);
     }
+    
+    private SparseArray<Bitmap> bmpCache = new SparseArray<Bitmap> ();
+    private Bitmap overlayBtn(Bitmap bmp1, Location loc)
+    {
+    	Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(bmOverlay);
+    	canvas.drawBitmap(bmp1, 0,0, null);
+    	Matrix mtx;
+    	float resizeWidthPercentage = (bmp1.getWidth()-250)/305.0f;
+    	Paint paint = new Paint();
+        paint.setFilterBitmap(true);
+    	
+    	Bitmap colorBmp = null;
+    	
+    	ArrayList<OtherWorldColor> owcs = loc.getOtherWorldColors();
+    	for(int i = 0; i < owcs.size(); i++)
+    	{
+    		mtx = new Matrix();
+    		mtx.setScale(resizeWidthPercentage, resizeWidthPercentage);
+    		if(bmpCache.get((int)owcs.get(i).getID()+100, null) != null)
+			{
+    			colorBmp = bmpCache.get((int)owcs.get(i).getID()+100);
+			}
+			else
+			{
+	    		switch ((int)owcs.get(i).getID())
+	    		{
+		    		case 1: //yellow
+		    			colorBmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.yellow_on);
+		    			break;
+		    		case 2: //red
+		    			colorBmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.red_on);
+		    			break;
+		    		case 3: //blue
+		    			colorBmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.blue_on);
+		    			break;
+		    		case 4: //green
+		    			colorBmp = BitmapFactory.decodeResource(this.getResources(), R.drawable.green_on);
+		    			break;
+	    		}
+	    		
+	    		bmpCache.append((int)owcs.get(i).getID()+100, colorBmp);
+			}
+    		int topMargin = 10;
+    		int rightMargin = 10;
+	    	if(i/2 == 0)
+	    	{
+	    		topMargin = topMargin + colorBmp.getHeight() + 5;
+	    	}
+	    	if(i%2 == 0)
+	    	{
+	    		rightMargin = rightMargin + colorBmp.getWidth() + 5;
+	    	}
+	        float top = (topMargin)*resizeWidthPercentage;
+	        float left = bmp1.getWidth() - (colorBmp.getWidth()+rightMargin)*resizeWidthPercentage;
+	        mtx.postTranslate(left, top);
+	        canvas.drawBitmap(colorBmp, mtx, paint);
+	    	//retBmp = overlay(retBmp, colorBmp, topMargin, rightMargin);
+    	}
+    	
+    	return bmOverlay;
+    }
+    
+	protected int getIndependentWidth(int origWidth)
+	{
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm); 
+		return (int) FloatMath.ceil((origWidth*dm.widthPixels)/480.0f);
+	}
+	
+	protected int getIndependentHeight(int origHeight)
+	{
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm); 	
+		return (int) FloatMath.ceil((origHeight*dm.heightPixels)/800.0f);
+	}
 }
