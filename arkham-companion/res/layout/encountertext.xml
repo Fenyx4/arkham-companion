@@ -12,6 +12,6 @@
         android:typeface="serif"
         android:textSize="12sp"
         android:textColor="@color/encounter_title"
-        android:text="Jonas Rigg is curious about the exhibit of Egyptian antiquities. If you choose to tell him what you know, he picks up your tab at the end of the night. You are restored to your maximum Sanity, but are &lt;i&gt;delayed&lt;/i&gt;." >
+        android:text="Encounter Text" >
     
 </TextView>

@@ -13,6 +13,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
@@ -93,7 +94,11 @@ public class LocationDeckActivity extends Activity {
 	    	{
 	    		final int idx = i;
 		    	RelativeLayout header = (RelativeLayout)mInflater.inflate(R.layout.encounterheader, null);
-		    	((TextView)header.findViewById(R.id.titleTV1)).setText(encounters.get(i).getLocation().getLocationName());
+		    	TextView title = (TextView)header.findViewById(R.id.titleTV1);
+		    	title.setText(encounters.get(i).getLocation().getLocationName());
+		    	Typeface tf = Typeface.createFromAsset(getAssets(),
+		                "fonts/se-caslon-ant.ttf");
+		        title.setTypeface(tf);
 		    	Button chooseEncounterBtn = ((Button)header.findViewById(R.id.button1));
 		    	OnClickListener listener = new OnClickListener()
                 {                	 
