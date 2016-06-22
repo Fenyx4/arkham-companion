@@ -46,14 +46,14 @@ public class LocationHxActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        
         ArrayList<EncounterHx> encHx = GameState.getInstance().getEncounterHx();
         
         if(encHx.size() != 0)
         {       
         	noHx = false;
 		    setContentView(R.layout.locationdeck);
-		    
-		    AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
 		    
 		    ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
 		    encAdapter = new EncounterHxAdapter(this, encHx);
