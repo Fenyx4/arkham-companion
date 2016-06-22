@@ -1,12 +1,12 @@
-package ah.drawer.GUI;
+package com.fenyx4.arkham.GUI;
 
 import java.util.ArrayList;
 
-import ah.drawer.AHFlyweightFactory;
-import ah.drawer.GameState;
-import ah.drawer.LocationCursor;
-import ah.drawer.OtherWorldColor;
-import ah.drawer.R;
+import com.fenyx4.arkham.AHFlyweightFactory;
+import com.fenyx4.arkham.GameState;
+import com.fenyx4.arkham.LocationCursor;
+import com.fenyx4.arkham.OtherWorldColor;
+import com.fenyx4.arkham.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -18,7 +18,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
-import ah.drawer.Location;
+import com.fenyx4.arkham.Location;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
@@ -120,7 +120,7 @@ public class OtherworldSelector extends Activity {
             		
             		but.setOnClickListener(new OnClickListener()
             		{
-            			private ah.drawer.Location loc = ((LocationCursor)cursor).getLocation(colIdx);
+            			private Location loc = ((LocationCursor)cursor).getLocation(colIdx);
             			//private ArrayList<Encounter> encounters = loc.getEncounters();
             			public void onClick(View arg0) {
             				ArrayList<OtherWorldColor> owcs = loc.getOtherWorldColors();

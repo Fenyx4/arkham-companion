@@ -1,7 +1,7 @@
-package ah.drawer.GUI;
+package com.fenyx4.arkham.GUI;
 
-import ah.drawer.AHFlyweightFactory;
-import ah.drawer.R;
+import com.fenyx4.arkham.AHFlyweightFactory;
+import com.fenyx4.arkham.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
