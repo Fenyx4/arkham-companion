@@ -27,6 +27,7 @@
 		>
 	        	<CheckBox 
     	    android:id="@+id/red_pip" 
+    	    android:button="@drawable/checkbox_redpips"
 		  	android:layout_height="40dp"
 		    android:layout_width="40dp"/>
        	</LinearLayout>
@@ -38,6 +39,7 @@
 		>
 	        	<CheckBox 
     	    android:id="@+id/blue_pip" 
+    	    android:button="@drawable/checkbox_bluepips"
 		  	android:layout_height="40dp"
 		    android:layout_width="40dp"/>
     	</LinearLayout>
@@ -49,6 +51,7 @@
 		>
 	        	<CheckBox 
     	    android:id="@+id/yellow_pip" 
+    	    android:button="@drawable/checkbox_yellowpips"
 		  	android:layout_height="40dp"
 		    android:layout_width="40dp"/>
        	</LinearLayout>
@@ -60,6 +63,7 @@
 		>
 	        	<CheckBox 
     	    android:id="@+id/green_pip" 
+    	    android:button="@drawable/checkbox_greenpips"
 		  	android:layout_height="40dp"
 		    android:layout_width="40dp"/>
        	</LinearLayout>

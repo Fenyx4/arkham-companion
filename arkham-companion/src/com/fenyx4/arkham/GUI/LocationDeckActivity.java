@@ -15,8 +15,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -203,7 +205,9 @@ public class LocationDeckActivity extends Activity {
 	        
 	        //Bitmap expansion = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.blackgoaticon);
 	        Bitmap result = overlayCard(front, theCard);
-	        
+//	        byte[] chunk = front.getNinePatchChunk(); 
+//	        NinePatchDrawable ninePatch = new NinePatchDrawable(getResources(), front, chunk, new Rect(), null);
+//	        layout.setBackgroundDrawable(ninePatch);
 	        layout.setBackgroundDrawable(new BitmapDrawable(result));
 	    	
 	    	return layout;

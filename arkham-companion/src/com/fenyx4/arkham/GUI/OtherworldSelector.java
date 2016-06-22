@@ -15,6 +15,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
@@ -351,20 +352,27 @@ public class OtherworldSelector extends Activity {
     
     private void setupColorCheckBox(CheckBox colorCheckbox, int off,
 			int on) {
-    	StateListDrawable myStates = new StateListDrawable();
-	    int stateChecked = android.R.attr.state_checked;
-
-	    Bitmap checkOffBMP;
-		checkOffBMP = BitmapFactory.decodeResource(this.getResources(), off);
-		checkOffBMP = Bitmap.createScaledBitmap(checkOffBMP, 70, 70, false);
-		//checkOffBMP.setDensity(20);
-	    BitmapDrawable checkOffDrawable = new BitmapDrawable(checkOffBMP);
-	    myStates.addState(new int[]{ -stateChecked }, checkOffDrawable);
-	    Bitmap checkOnBMP = BitmapFactory.decodeResource(this.getResources(), on);
-	    checkOnBMP = Bitmap.createScaledBitmap(checkOnBMP, 70, 70, false);
-	    BitmapDrawable checkOnDrawable = new BitmapDrawable(checkOnBMP);
-	    myStates.addState(new int[]{ stateChecked }, checkOnDrawable);
-	    colorCheckbox.setButtonDrawable(myStates);
+    	return;
+//    	StateListDrawable myStates = new StateListDrawable();
+//	    int stateChecked = android.R.attr.state_checked;
+//
+//	    Bitmap checkOffBMP;
+//		//checkOffBMP = BitmapFactory.decodeResource(this.getResources(), off);
+//	    BitmapFactory.Options opts = new BitmapFactory.Options();
+//	    opts.inScaled = true;
+//	    opts.inDensity = 120;//DisplayMetrics.DENSITY_MEDIUM;
+//	    Rect padding = new Rect();
+//	    opts.inTargetDensity = this.getResources().getDisplayMetrics().densityDpi;
+//	    checkOffBMP = BitmapFactory.decodeResource(this.getResources(), off, opts);
+//		//checkOffBMP = Bitmap.createScaledBitmap(checkOffBMP, 70, 70, false);
+//		//checkOffBMP.setDensity(20);
+//	    BitmapDrawable checkOffDrawable = new BitmapDrawable(checkOffBMP);
+//	    myStates.addState(new int[]{ -stateChecked }, checkOffDrawable);
+//	    Bitmap checkOnBMP = BitmapFactory.decodeResource(this.getResources(), on, opts);
+//	    //checkOnBMP = Bitmap.createScaledBitmap(checkOnBMP, 70, 70, false);
+//	    BitmapDrawable checkOnDrawable = new BitmapDrawable(checkOnBMP);
+//	    myStates.addState(new int[]{ stateChecked }, checkOnDrawable);
+//	    colorCheckbox.setButtonDrawable(myStates);
 		
 	}
 
@@ -406,7 +414,7 @@ public class OtherworldSelector extends Activity {
         Canvas canvas = new Canvas(bmOverlay);
     	canvas.drawBitmap(bmp1, 0,0, null);
     	Matrix mtx;
-    	float resizeWidthPercentage = (bmp1.getWidth()-250)/305.0f;
+    	float resizeWidthPercentage = 166.0f/225.0f;
     	Paint paint = new Paint();
         paint.setFilterBitmap(true);
     	
