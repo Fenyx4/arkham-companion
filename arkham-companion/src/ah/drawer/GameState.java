@@ -14,7 +14,7 @@ public class GameState
 	private HashMap<Long,ArrayList<NeighborhoodCard>> neighborhoodCardsList;
 	private ArrayList<OtherWorldCard> otherWorldCards = null;
 	private Random rand;
-	private ArrayList<Encounter> encounterHx = null;
+	private ArrayList<EncounterHx> encounterHx = null;
 	private HashMap<Long,OtherWorldColor> currentColors = null;
 	
 	private long gameID;
@@ -54,7 +54,7 @@ public class GameState
 	{
 		currentExpansions = new HashMap<Long,Long>();
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
-		encounterHx = new ArrayList<Encounter>();
+		encounterHx = new ArrayList<EncounterHx>();
 		currentColors = new HashMap<Long,OtherWorldColor>();
 	}
 	
@@ -149,12 +149,12 @@ public class GameState
 	
 	public void AddHistory(Encounter enc) 
 	{
-		encounterHx.add(0, enc);
-
-		AHFlyweightFactory.INSTANCE.addEncounterHx(enc, gameID);
+		long hxID = AHFlyweightFactory.INSTANCE.addEncounterHx(enc, gameID);
+		
+		encounterHx.add(0, new EncounterHx(enc.getID(), enc.getLocID(), hxID));
 	}
 	
-	public ArrayList<Encounter> getEncounterHx()
+	public ArrayList<EncounterHx> getEncounterHx()
 	{
 		return encounterHx;
 	}
@@ -242,7 +242,7 @@ public class GameState
 		return false;
 	}
 	
-	private void prepOtherWorldDeck()
+	public void prepOtherWorldDeck()
 	{
 		otherWorldCards = AHFlyweightFactory.INSTANCE.getCurrentOtherWorldCards();
 		randomize(otherWorldCards);
@@ -260,10 +260,15 @@ public class GameState
 	public void newGame() {
 		//Clear the deck lists
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
-		encounterHx = new ArrayList<Encounter>();
+		encounterHx = new ArrayList<EncounterHx>();
 		currentExpansions = new HashMap<Long,Long>();
 		
 		rand = new Random(System.currentTimeMillis());
 		gameID = AHFlyweightFactory.INSTANCE.createNewGame();
+	}
+
+	public void removeHx(int position) {
+		AHFlyweightFactory.INSTANCE.removeEncounterHx(encounterHx.get(position));
+		encounterHx = AHFlyweightFactory.INSTANCE.getGameEncHx(gameID);
 	}
 }

@@ -20,8 +20,13 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.DisplayMetrics;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -59,7 +64,32 @@ public class OtherWorldDeckActivity extends Activity {
     	Toast.makeText(OtherWorldDeckActivity.this, R.string.location_deck_back, Toast.LENGTH_SHORT).show();
     	super.onBackPressed();
     }
-
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+   		MenuInflater inflater = getMenuInflater();
+   		inflater.inflate(R.layout.deck_menu, menu);
+   		return true;
+    }
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.shuffle:
+                shuffleDeck();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    public void shuffleDeck()
+    {
+    	GameState.getInstance().prepOtherWorldDeck();
+    	ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
+        viewpager.setAdapter(new CardAdapter(this, GameState.getInstance().getFilteredOtherWorldDeck()));
+    }
 
     public class CardAdapter extends PagerAdapter {
 	    //int mGalleryItemBackground;
@@ -104,6 +134,7 @@ public class OtherWorldDeckActivity extends Activity {
 	    		final int idx = i;
 		    	RelativeLayout header = (RelativeLayout)mInflater.inflate(R.layout.encounterheader, null);
 		    	TextView title = (TextView)header.findViewById(R.id.titleTV1);
+		    	title.setPadding(getIndependentWidth(title.getPaddingLeft()), getIndependentHeight(title.getPaddingTop()), getIndependentWidth(title.getPaddingRight()), getIndependentHeight(title.getPaddingBottom()));
 		    	title.setText(encounters.get(i).getLocation().getLocationName());
 		    	Typeface tf = Typeface.createFromAsset(getAssets(),
 		                "fonts/se-caslon-ant.ttf");
@@ -157,6 +188,7 @@ public class OtherWorldDeckActivity extends Activity {
 		    	
 		    	
 		    	text = (TextView)mInflater.inflate(R.layout.encountertext, null);
+		    	text.setPadding(getIndependentWidth(text.getPaddingLeft()), getIndependentHeight(text.getPaddingTop()), getIndependentWidth(text.getPaddingRight()), getIndependentHeight(text.getPaddingBottom()));
 		    	text.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
 		    	
 		    
@@ -266,5 +298,19 @@ public class OtherWorldDeckActivity extends Activity {
 	        canvas.drawBitmap(bmp2, mtx, paint);
 	        return bmOverlay;
 	    }
+	    
+		protected int getIndependentWidth(int origWidth)
+		{
+			DisplayMetrics dm = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(dm); 
+			return (int) FloatMath.ceil((origWidth*dm.widthPixels)/480.0f);
+		}
+		
+		protected int getIndependentHeight(int origHeight)
+		{
+			DisplayMetrics dm = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(dm); 	
+			return (int) FloatMath.ceil((origHeight*dm.heightPixels)/800.0f);
+		}
 	}
 }

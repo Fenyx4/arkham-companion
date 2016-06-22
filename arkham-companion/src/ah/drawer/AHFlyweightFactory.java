@@ -125,7 +125,7 @@ public class AHFlyweightFactory {
 		
 		
 		String select = DatabaseHelper.locNeiID+" IS NULL "
-		 + " AND (" +DatabaseHelper.locExpID+ " in ("+expIDs+") OR " + DatabaseHelper.locExpID+ "=1)  AND " + DatabaseHelper.locID + "<>499";
+		 + " AND (" +DatabaseHelper.locExpID+ " in ("+expIDs+") OR " + DatabaseHelper.locExpID+ "=1)  AND " + DatabaseHelper.locID + "<>499 AND " + DatabaseHelper.locID + "<>500";
 		String orderby = DatabaseHelper.locSort+" ASC, "+DatabaseHelper.locName+" ASC";
 		Cursor c = db.query(DatabaseHelper.locTable, columns, select, null, null, null, orderby);
 		
@@ -696,9 +696,9 @@ public class AHFlyweightFactory {
 		return currentExps;
 	}
 
-	public ArrayList<Encounter> getGameEncHx(long gameID) 
+	public ArrayList<EncounterHx> getGameEncHx(long gameID) 
 	{
-		ArrayList<Encounter> encounters = new ArrayList<Encounter>();
+		ArrayList<EncounterHx> encounters = new ArrayList<EncounterHx>();
 		
 		DatabaseHelper dh = DatabaseHelper.instance;
 		SQLiteDatabase db = dh.getReadableDatabase();
@@ -706,7 +706,7 @@ public class AHFlyweightFactory {
 		//Need to order it by location
 		String table = DatabaseHelper.encounterTable+" LEFT JOIN "+DatabaseHelper.encounterHxTable+
 		" ON "+DatabaseHelper.encounterTable+"."+DatabaseHelper.encID+"="+DatabaseHelper.encounterHxTable+"."+DatabaseHelper.encHxEncID;
-		String[] columns = new String[]{DatabaseHelper.encounterTable+"."+DatabaseHelper.encID,DatabaseHelper.encounterTable+"."+DatabaseHelper.encLocID};
+		String[] columns = new String[]{DatabaseHelper.encounterTable+"."+DatabaseHelper.encID,DatabaseHelper.encounterTable+"."+DatabaseHelper.encLocID,DatabaseHelper.encounterHxTable+"."+DatabaseHelper.encHxID};
 		String select = DatabaseHelper.encHxGameID + " IN (?)";
 		String orderby = DatabaseHelper.encounterHxTable+"."+DatabaseHelper.encHxInverseOrder+" DESC";
 		
@@ -715,7 +715,7 @@ public class AHFlyweightFactory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			encounters.add(new Encounter(c.getLong(0),c.getLong(1)));
+			encounters.add(new EncounterHx(c.getLong(0),c.getLong(1),c.getLong(2)));
 			
 			c.moveToNext();
 		}
@@ -834,7 +834,7 @@ public class AHFlyweightFactory {
 		db.delete(DatabaseHelper.encounterHxTable, DatabaseHelper.encHxGameID+"=?", new String[]{Long.toString(gameID)});
 	}
 
-	public void addEncounterHx(Encounter enc, long gameID) {
+	public long addEncounterHx(Encounter enc, long gameID) {
 		Long maxOrder = getHighestOrderForGameID(gameID);
 		
 		DatabaseHelper dh = DatabaseHelper.instance;
@@ -845,7 +845,7 @@ public class AHFlyweightFactory {
 		contentValues.put(DatabaseHelper.encHxGameID, gameID);
 		contentValues.put(DatabaseHelper.encHxEncID, enc.getID());
 		
-		db.insert(DatabaseHelper.encounterHxTable, null, contentValues);
+		return db.insert(DatabaseHelper.encounterHxTable, null, contentValues);
 		
 	}
 
@@ -878,6 +878,14 @@ public class AHFlyweightFactory {
 		db.close();
 		
 		return order;
+	}
+
+	public void removeEncounterHx(EncounterHx enc) {
+				
+		DatabaseHelper dh = DatabaseHelper.instance;
+		SQLiteDatabase db = dh.getReadableDatabase();
+		
+		db.execSQL("DELETE FROM "+DatabaseHelper.encounterHxTable+" WHERE "+DatabaseHelper.encHxID+"="+enc.getHxID());
 	}
 		
 	   

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import ah.drawer.AHFlyweightFactory;
+import ah.drawer.EncounterHx;
 import ah.drawer.ICard;
 import ah.drawer.Encounter;
 import ah.drawer.GameState;
@@ -21,8 +22,13 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
+import android.util.DisplayMetrics;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,16 +39,31 @@ import android.widget.LinearLayout.LayoutParams;
 public class LocationHxActivity extends Activity {
 	//private Encounter encounter;
 	
+	EncounterHxAdapter encAdapter;
+	boolean noHx = true;
     /** Called when the activity is first created. */
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.locationdeck);
         
-        AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+        ArrayList<EncounterHx> encHx = GameState.getInstance().getEncounterHx();
         
-        ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
-        viewpager.setAdapter(new EncounterHxAdapter(this, GameState.getInstance().getEncounterHx()));
+        if(encHx.size() != 0)
+        {       
+        	noHx = false;
+		    setContentView(R.layout.locationdeck);
+		    
+		    AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
+		    
+		    ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
+		    encAdapter = new EncounterHxAdapter(this, encHx);
+		    viewpager.setAdapter(encAdapter);
+        }
+        else
+        {
+        	noHx = true;
+        	setContentView(R.layout.empty_hx);
+        }
 
 //	    gallery.setOnItemClickListener(new OnItemClickListener() {
 //	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -51,16 +72,55 @@ public class LocationHxActivity extends Activity {
 //	    });
         
     }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	if(noHx)
+    	{
+    		return false;
+    	}
+    	else
+    	{
+    		MenuInflater inflater = getMenuInflater();
+    		inflater.inflate(R.layout.location_hx_menu, menu);
+    		return true;
+    	}
+    }
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.delete_card:
+                deleteCard();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    private void deleteCard()
+    {
+    	ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
+    	encAdapter.remove(viewpager.getCurrentItem());
+    	encAdapter.notifyDataSetChanged();
+    	
+    	if(encAdapter.getCount() == 0)
+    	{
+    		noHx = true;
+        	setContentView(R.layout.empty_hx);
+    	}
+    }
 
     public class EncounterHxAdapter extends PagerAdapter {
 	    //int mGalleryItemBackground;
 	    private Context mContext;
 
-	    private ArrayList<Encounter> encArr;
+	    private ArrayList<EncounterHx> encArr;
 	    
 	    private LayoutInflater mInflater;
 
-	    public EncounterHxAdapter(Context c, ArrayList<Encounter> encArr) 
+	    public EncounterHxAdapter(Context c, ArrayList<EncounterHx> encArr) 
 	    {
 	        mContext = c;
 	        this.encArr = encArr;
@@ -72,6 +132,11 @@ public class LocationHxActivity extends Activity {
 
 	    public int getCount() {
 	        return encArr.size();
+	    }
+	    
+	    @Override
+	    public int getItemPosition(Object object) {
+	        return POSITION_NONE;
 	    }
 	    
 	    @Override
@@ -88,6 +153,7 @@ public class LocationHxActivity extends Activity {
 	    	{
 		    	RelativeLayout header = (RelativeLayout)mInflater.inflate(R.layout.encounterheader, null);
 		    	TextView title = (TextView)header.findViewById(R.id.titleTV1);
+		    	title.setPadding(getIndependentWidth(title.getPaddingLeft()), getIndependentHeight(title.getPaddingTop()), getIndependentWidth(title.getPaddingRight()), getIndependentHeight(title.getPaddingBottom()));
 		    	title.setText(encounters.get(i).getLocation().getLocationName());
 		    	Typeface tf = Typeface.createFromAsset(getAssets(),
 		                "fonts/se-caslon-ant.ttf");
@@ -98,6 +164,7 @@ public class LocationHxActivity extends Activity {
 		    	
 		    	text = (TextView)mInflater.inflate(R.layout.encountertext, null);
 		    	text.setText(Html.fromHtml(encounters.get(i).getEncounterText()));
+		    	text.setPadding(getIndependentWidth(text.getPaddingLeft()), getIndependentHeight(text.getPaddingTop()), getIndependentWidth(text.getPaddingRight()), getIndependentHeight(text.getPaddingBottom()));
 		    	
 		    	if( !encounters.get(i).equals(encArr.get(position)))
 		    	{
@@ -132,6 +199,12 @@ public class LocationHxActivity extends Activity {
 	        layout.setBackgroundDrawable(new BitmapDrawable(result));
 	    	
 	    	return layout;
+	    }
+	    
+	    public void remove(int position)
+	    {
+	    	GameState.getInstance().removeHx(position);
+	    	encArr.remove(position);
 	    }
 	    
 	    @Override
@@ -203,5 +276,19 @@ public class LocationHxActivity extends Activity {
 	        canvas.drawBitmap(bmp2, mtx, paint);
 	        return bmOverlay;
 	    }
+		
+		protected int getIndependentWidth(int origWidth)
+		{
+			DisplayMetrics dm = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(dm); 
+			return (int) FloatMath.ceil((origWidth*dm.widthPixels)/480.0f);
+		}
+		
+		protected int getIndependentHeight(int origHeight)
+		{
+			DisplayMetrics dm = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(dm); 	
+			return (int) FloatMath.ceil((origHeight*dm.heightPixels)/800.0f);
+		}
 	}
 }

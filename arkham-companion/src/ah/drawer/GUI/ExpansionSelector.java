@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.StateListDrawable;
@@ -70,11 +71,16 @@ public class ExpansionSelector extends Activity {
 
             	    Bitmap checkOffBMP;
 					try {
-						checkOffBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOffPath()));
+						BitmapFactory.Options opts = new BitmapFactory.Options();
+					    opts.inScaled = true;
+					    opts.inDensity = 120;//DisplayMetrics.DENSITY_MEDIUM;
+					    Rect padding = new Rect();
+					    opts.inTargetDensity = view.getResources().getDisplayMetrics().densityDpi;
+						checkOffBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOffPath()), padding, opts);
 					
 	            	    BitmapDrawable checkOffDrawable = new BitmapDrawable(checkOffBMP);
 	            	    myStates.addState(new int[]{ -stateChecked }, checkOffDrawable);
-	            	    Bitmap checkOnBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOnPath()));
+	            	    Bitmap checkOnBMP = BitmapFactory.decodeStream(getAssets().open(((ExpansionCursor)cursor).getExpansion().getCheckboxOnPath()), padding, opts);
 	            	    BitmapDrawable checkOnDrawable = new BitmapDrawable(checkOnBMP);
 	            	    myStates.addState(new int[]{ stateChecked }, checkOnDrawable);
 	            	    cb.setButtonDrawable(myStates);

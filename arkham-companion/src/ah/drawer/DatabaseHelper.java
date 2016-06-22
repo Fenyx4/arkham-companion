@@ -94,6 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	
 	//EncounterHx
 	static final String encounterHxTable = "encounterHxTable";
+	static final String encHxID = "encHxID";
 	static final String encHxGameID = "encHxGameID";
 	static final String encHxEncID = "encHxEncID";
 	static final String encHxInverseOrder = "encHxOrder";
@@ -106,7 +107,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,125); 
+		  super(context, dbName, null,128); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -212,6 +213,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "FOREIGN KEY ("+gameToExpExpID+") REFERENCES "+expTable+" ("+expID+"));");//+
 
 		  db.execSQL("CREATE TABLE "+encounterHxTable+" ("+
+				  encHxID+ " INTEGER PRIMARY KEY, "+
 				  encHxGameID+" INTEGER NOT NULL, "+
 				  encHxEncID+" INTEGER NOT NULL, "+
 				  encHxInverseOrder+" INTEGER NOT NULL, "+
@@ -280,33 +282,32 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	}
 
 	@Override
-	public void onUpgrade(SQLiteDatabase db, int arg1, int arg2) {
-		// TODO Auto-generated method stub
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-		  db.execSQL("DROP TABLE IF EXISTS "+encounterTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+expTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+locTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+neighborhoodTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+cardTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+cardToExpTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+colorTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+locToColorTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+cardToColorTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+pathTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+colorToPathTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+gameTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+gameToExpTable);
-		  db.execSQL("DROP TABLE IF EXISTS "+encounterHxTable);
-		  
-		  
-		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
-		  db.execSQL("DROP TRIGGER IF EXISTS fk_locnei_neiid");
-		  db.execSQL("DROP TRIGGER IF EXISTS fk_encloc_locid");
-		  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_encid");
-		  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_cardid");
+	  db.execSQL("DROP TABLE IF EXISTS "+encounterTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+expTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+locTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+neighborhoodTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+cardTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+cardToExpTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+colorTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+locToColorTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+cardToColorTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+pathTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+colorToPathTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+gameTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+gameToExpTable);
+	  db.execSQL("DROP TABLE IF EXISTS "+encounterHxTable);
+	  
+	  
+	  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
+	  db.execSQL("DROP TRIGGER IF EXISTS fk_locnei_neiid");
+	  db.execSQL("DROP TRIGGER IF EXISTS fk_encloc_locid");
+	  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_encid");
+	  db.execSQL("DROP TRIGGER IF EXISTS fk_cardtoencenc_cardid");
 
-		  db.execSQL("DROP VIEW IF EXISTS "+viewEmps);
-		  onCreate(db);
+	  db.execSQL("DROP VIEW IF EXISTS "+viewEmps);
+	  onCreate(db);
 	}
 }
