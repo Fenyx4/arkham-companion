@@ -144,11 +144,6 @@ public class GameState
 			currentExpansions.remove(expID);
 			AHFlyweightFactory.INSTANCE.removeGameEx(expID, gameID);
 		}
-		
-		//Clear the deck lists
-		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
-		encounterHx = new ArrayList<Encounter>();
-		AHFlyweightFactory.INSTANCE.clearEncounterHx(gameID);
 	}
 	
 	public void AddHistory(Encounter enc) 
@@ -259,5 +254,14 @@ public class GameState
 		}
 		
 		otherWorldCards.add(AHFlyweightFactory.INSTANCE.getStarsAreRight());
+	}
+
+	public void newGame() {
+		//Clear the deck lists
+		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
+		encounterHx = new ArrayList<Encounter>();
+		currentExpansions = new HashMap<Long,Long>();
+		
+		gameID = AHFlyweightFactory.INSTANCE.createNewGame();
 	}
 }

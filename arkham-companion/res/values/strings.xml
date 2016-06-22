@@ -6,4 +6,5 @@
     <string name="location_deck_back">Replacing cards&#8230;</string>
     <string name="otherword_arrow_clicked_true">Deck shuffled&#8230;</string>
     <string name="otherword_arrow_clicked_false">Discarding cards&#8230;</string>
+    <string name="new_game">New Game</string>
 </resources>
