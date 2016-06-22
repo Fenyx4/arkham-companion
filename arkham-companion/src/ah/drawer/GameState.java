@@ -37,7 +37,7 @@ public class GameState
 	{
 		Long currGameID = AHFlyweightFactory.INSTANCE.getMostRecentGameID();
 		if(currGameID == null)
-		{
+		{			
 			gameID = AHFlyweightFactory.INSTANCE.createNewGame();
 		}
 		else
@@ -46,6 +46,8 @@ public class GameState
 			currentExpansions = AHFlyweightFactory.INSTANCE.getGameExps(gameID);
 			encounterHx = AHFlyweightFactory.INSTANCE.getGameEncHx(gameID);
 		}
+		
+		rand = new Random(System.currentTimeMillis());
 	}
 	
 	private GameState()
@@ -54,7 +56,6 @@ public class GameState
 		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
 		currentColors = new HashMap<Long,OtherWorldColor>();
-		rand = new Random(522348);
 	}
 	
 //	public void onSaveInstanceState(Bundle savedInstanceState) 
@@ -262,6 +263,7 @@ public class GameState
 		encounterHx = new ArrayList<Encounter>();
 		currentExpansions = new HashMap<Long,Long>();
 		
+		rand = new Random(System.currentTimeMillis());
 		gameID = AHFlyweightFactory.INSTANCE.createNewGame();
 	}
 }
