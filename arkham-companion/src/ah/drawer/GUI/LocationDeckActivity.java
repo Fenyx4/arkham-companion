@@ -13,6 +13,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -217,7 +219,7 @@ public class LocationDeckActivity extends Activity {
 	    	return retBmp;
 	    }
 	    
-		private Bitmap overlay(Bitmap bmp1, Bitmap bmp2, int rightMargin) 
+	    private Bitmap overlay(Bitmap bmp1, Bitmap bmp2, int rightMargin) 
 	    {
 			if(bmp2 ==null)
 			{
@@ -226,12 +228,20 @@ public class LocationDeckActivity extends Activity {
 	    	//DisplayMetrics dm = new DisplayMetrics();
 	        //getWindowManager().getDefaultDisplay().getMetrics(dm);
 	        
-	        float top = bmp1.getHeight() - bmp2.getHeight()-10;
-	        float left = bmp1.getWidth() - bmp2.getWidth()-rightMargin;
+
 	        Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), bmp1.getConfig());
 	        Canvas canvas = new Canvas(bmOverlay);
 	        canvas.drawBitmap(bmp1, 0,0, null);
-	        canvas.drawBitmap(bmp2, left,top, null);
+	        Matrix mtx = new Matrix();
+	        //float resizeHeightPercentage = bmp1.getHeight()/491.0f;
+	        float resizeWidthPercentage = bmp1.getWidth()/305.0f;
+	        float top = bmp1.getHeight() - (bmp2.getHeight()+10)*resizeWidthPercentage;
+	        float left = bmp1.getWidth() - (bmp2.getWidth()+rightMargin)*resizeWidthPercentage;
+	        mtx.setScale(resizeWidthPercentage, resizeWidthPercentage);
+	        mtx.postTranslate(left, top);
+	        Paint paint = new Paint();
+	        paint.setFilterBitmap(true);
+	        canvas.drawBitmap(bmp2, mtx, paint);
 	        return bmOverlay;
 	    }
 	}
