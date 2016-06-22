@@ -2244,7 +2244,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (5067,5)");
 		db.execSQL(sqlInsertCardColor + " (5067,2)");
 		db.execSQL(sqlInsertCardEnc + " (5067,20191)");
-		db.execSQL(sqlInsertEnc + " (20191,500,'You recognize this landscape from a painting you saw recently. Mkae a <b>Lore (-2) check</b> to remember the details of the artwork. If you pass you recall a strange object depicted and can find that location. Gain 1 Unique Item.')");
+		db.execSQL(sqlInsertEnc + " (20191,500,'You recognize this landscape from a painting you saw recently. Make a <b>Lore (-2) check</b> to remember the details of the artwork. If you pass you recall a strange object depicted and can find that location. Gain 1 Unique Item.')");
 		db.execSQL(sqlInsertCardEnc + " (5067,20192)");
 		db.execSQL(sqlInsertEnc + " (20192,509,'You have the opportunity to consult the Oracle at Delphi in Ancient Greece. If you wish, make a <b>Lore (-1) check</b> to interpret their message. Gain 1 Clue token for each success. If you fail the check, you are <i>Cursed</i>.')");
 		db.execSQL(sqlInsertCardEnc + " (5067,20193)");
@@ -4121,7 +4121,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (555,1810)");
 		db.execSQL(sqlInsertEnc + " (1810,53,'A local man is trying to pick up his sack of groceries but his malformed hands are unable to pick it up. Lose 1 Sanity as you hand the sack to him and look into his large, unblinking eyes.')");
 		db.execSQL(sqlInsertCardEnc + " (555,1811)");
-		db.execSQL(sqlInsertEnc + " (1811,54,'In the middle of the night, there''s too many heavy footsteps and scraping noises to sleep. Mkae a <b>Will (-1) check</b> to see if you can doze off. If you fail, you need to get some night air to relax. Move to the streets.')");
+		db.execSQL(sqlInsertEnc + " (1811,54,'In the middle of the night, there''s too many heavy footsteps and scraping noises to sleep. Make a <b>Will (-1) check</b> to see if you can doze off. If you fail, you need to get some night air to relax. Move to the streets.')");
 		db.execSQL(sqlInsertCardEnc + " (555,1812)");
 		db.execSQL(sqlInsertEnc + " (1812,57,'While the workers are in the factory, you''re able to look through their lockers. Make a <b>Sneak (-2) check</b> and gain 1 Clue token for each success.')");
 		db.execSQL(sqlInsertCard + " (556,18)");
@@ -4160,7 +4160,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (559,1822)");
 		db.execSQL(sqlInsertEnc + " (1822,53,'An old, hunched Innsmouth man is trying to pay for his groceries with an unusual object and doesn''t understand that the grocery only accepts cash. You may spend $3 to pay for the groceries. If you do, he gives you the object. Gain 1 Unique Item.')");
 		db.execSQL(sqlInsertCardEnc + " (559,1823)");
-		db.execSQL(sqlInsertEnc + " (1823,54,'Joe Sargent tells you he''s running some errands and he''d be happy to pick something up for you if he can find it. Mkae a <b>Luck (-1) check</b>. Draw a number of Common Items equal to the number of successes rolled. You may choose 1 to purchase. Discard any items that are not purchased.')");
+		db.execSQL(sqlInsertEnc + " (1823,54,'Joe Sargent tells you he''s running some errands and he''d be happy to pick something up for you if he can find it. Make a <b>Luck (-1) check</b>. Draw a number of Common Items equal to the number of successes rolled. You may choose 1 to purchase. Discard any items that are not purchased.')");
 		db.execSQL(sqlInsertCardEnc + " (559,1824)");
 		db.execSQL(sqlInsertEnc + " (1824,57,'Part of your clothing has gotten wrapped up in one of the gears of the foundry. Make a <b>Fight (+0) check</b> to free yourself. If you fail, lose 1 Stamina as the gears bite into you.')");
 		db.execSQL(sqlInsertCard + " (560,18)");
@@ -4876,7 +4876,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (536,1753)");
 		db.execSQL(sqlInsertEnc + " (1753,49,'The waves crashing against the reef are enormous. Make a <b>Fight (-1) check</b> to keep from being crushed by them. If you fail, lose 1 Stamina and choose 1 item to discard.')");
 		db.execSQL(sqlInsertCardEnc + " (536,1754)");
-		db.execSQL(sqlInsertEnc + " (1754,52,'You see the debris of some wrecked boat floating in the water. Mkae a <b>Luck (-2) check</b>. If you pass, you spot something useful amid the splintered wood and torn canvas. Gain 1 Common Item.')");
+		db.execSQL(sqlInsertEnc + " (1754,52,'You see the debris of some wrecked boat floating in the water. Make a <b>Luck (-2) check</b>. If you pass, you spot something useful amid the splintered wood and torn canvas. Gain 1 Common Item.')");
 		db.execSQL(sqlInsertCardEnc + " (536,1755)");
 		db.execSQL(sqlInsertEnc + " (1755,58,'You''ve been down here so long you fear you''re losing your sense of reality and your sense of self. You must either lose 2 Sanity or draw 1 Innsmouth Look card.')");
 		db.execSQL(sqlInsertCard + " (537,19)");
@@ -5985,7 +5985,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (351,10)");
 		db.execSQL(sqlInsertCardExp + " (351,5)");
 		db.execSQL(sqlInsertCardEnc + " (351,1201)");
-		db.execSQL(sqlInsertEnc + " (1201,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Mkae a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
+		db.execSQL(sqlInsertEnc + " (1201,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Make a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
 		db.execSQL(sqlInsertCardEnc + " (351,1202)");
 		db.execSQL(sqlInsertEnc + " (1202,40,'You see a door marked \"Private\" leading down to a small storage room. You may make a <b>Sneak (-1) check</b> to go through undetected. If you pass, you discover a number of historical documents and photos concerning the old church that used to be here. Gain 1 Clue token. If you fail, you are escorted out. Move to the streets.')");
 		db.execSQL(sqlInsertCardEnc + " (351,1203)");
@@ -5995,7 +5995,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (352,5)");
 		db.execSQL(sqlInsertCardExp + " (352,9)");
 		db.execSQL(sqlInsertCardEnc + " (352,1204)");
-		db.execSQL(sqlInsertEnc + " (1204,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Mkae a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
+		db.execSQL(sqlInsertEnc + " (1204,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Make a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
 		db.execSQL(sqlInsertCardEnc + " (352,1205)");
 		db.execSQL(sqlInsertEnc + " (1205,40,'Despite your protests, the doctors are certain that you should not be allowed to leave the hospital. You are <i>delayed</i>, but may then gain 2 Stamina, 2 Sanity, or 1 of each.')");
 		db.execSQL(sqlInsertCardEnc + " (352,1206)");
@@ -6003,7 +6003,7 @@ public class Init {
 		db.execSQL(sqlInsertCard + " (353,13)");
 		db.execSQL(sqlInsertCardExp + " (353,5)");
 		db.execSQL(sqlInsertCardEnc + " (353,1207)");
-		db.execSQL(sqlInsertEnc + " (1207,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Mkae a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
+		db.execSQL(sqlInsertEnc + " (1207,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Make a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
 		db.execSQL(sqlInsertCardEnc + " (353,1208)");
 		db.execSQL(sqlInsertEnc + " (1208,40,'You explore an ancient crypt in the cemetary and come across a giant mass of white grave worms. Lose 2 Sanity. In addition, any Crawling Ones in Arkham (including the Sky and the Outskirts) move here and encounter you.')");
 		db.execSQL(sqlInsertCardEnc + " (353,1209)");
@@ -6013,7 +6013,7 @@ public class Init {
 		db.execSQL(sqlInsertCardExp + " (354,5)");
 		db.execSQL(sqlInsertCardExp + " (354,3)");
 		db.execSQL(sqlInsertCardEnc + " (354,1210)");
-		db.execSQL(sqlInsertEnc + " (1210,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Mkae a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
+		db.execSQL(sqlInsertEnc + " (1210,38,'Earnestly, you try to convince Gladys Pickman to allow you to look through her home for old books. Make a <b>Will (-1) check</b>. If you fail, nothing happens. If you pass, you may then pass a <b>Luck (-1) check</b> to take the first <i><b>Tome</b></i> from the Unique Item deck.')");
 		db.execSQL(sqlInsertCardEnc + " (354,1211)");
 		db.execSQL(sqlInsertEnc + " (1211,40,'The staff asks you to take a box of unclaimed lost-and-found items to the new church for the benefit of the poor. As a reward, you''re encouraged to claim something from the box for yourself. Draw 3 Common Items, choose 1 to keep, and discard the others.')");
 		db.execSQL(sqlInsertCardEnc + " (354,1212)");
@@ -6796,7 +6796,7 @@ public class Init {
 		db.execSQL(sqlInsertCard + " (288,7)");
 		db.execSQL(sqlInsertCardExp + " (288,5)");
 		db.execSQL(sqlInsertCardEnc + " (288,994)");
-		db.execSQL(sqlInsertEnc + " (994,4,'As you trudge through the darkness, your eye catches a strange glint of blue-black. Steeping closer, you can make out a familiar rune engraved in the protruding rock. You place your hand on it and try to remember how to break the ward. Make a <b>Lore (-2) check</b>. If you pass, draw a Spell. If you fail, you are <i>delayed</i> and lose 1 Stamina.')");
+		db.execSQL(sqlInsertEnc + " (994,4,'As you trudge through the darkness, your eye catches a strange glint of blue-black. Stepping closer, you can make out a familiar rune engraved in the protruding rock. You place your hand on it and try to remember how to break the ward. Make a <b>Lore (-2) check</b>. If you pass, draw a Spell. If you fail, you are <i>delayed</i> and lose 1 Stamina.')");
 		db.execSQL(sqlInsertCardEnc + " (288,995)");
 		db.execSQL(sqlInsertEnc + " (995,6,'As you step forward into the store, a man in tattered clothing wordlessly hands you a map with strange notations on it. You may move to the Black Cave. If so, gain $2.')");
 		db.execSQL(sqlInsertCardEnc + " (288,996)");
@@ -8661,7 +8661,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (100,365)");
 		db.execSQL(sqlInsertEnc + " (365,18,'You hear the quiet sounds of an intruder. If you investigate, you find a woman dressed in black. She attacks you as soon as she sees you. Pass a <b>Fight (-1) check</b> to subdue her long enough to explain your investigation. You find out that her name is <b>Ruby Standish</b> and that she was robbing the Lodge. However, upon hearing your tale, she agrees to join you. Take her Ally card. If it is not available, draw a Unique Item instead.')");
 		db.execSQL(sqlInsertCardEnc + " (100,366)");
-		db.execSQL(sqlInsertEnc + " (366,23,'You find an old journal, largely devoured by vermin. Mkae a <b>Luck (-3) check</b> to see if certain vital pages remain intact. If you pass, draw 2 Spells and keep 1.')");
+		db.execSQL(sqlInsertEnc + " (366,23,'You find an old journal, largely devoured by vermin. Make a <b>Luck (-3) check</b> to see if certain vital pages remain intact. If you pass, draw 2 Spells and keep 1.')");
 		db.execSQL(sqlInsertCard + " (77,3)");
 		db.execSQL(sqlInsertCardExp + " (77,2)");
 		db.execSQL(sqlInsertCardEnc + " (77,367)");
