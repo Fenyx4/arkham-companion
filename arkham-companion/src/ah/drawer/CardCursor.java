@@ -6,9 +6,9 @@ import android.database.AbstractCursor;
 
 public class CardCursor extends AbstractCursor {
 	
-	private ArrayList<Card> cards;
+	private ArrayList<ICard> cards;
 	
-	public CardCursor(ArrayList<Card> cards)
+	public CardCursor(ArrayList<ICard> cards)
 	{
 		this.cards = cards;
 	}
@@ -60,7 +60,7 @@ public class CardCursor extends AbstractCursor {
 		return 0;
 	}
 	
-	public Card getCard()
+	public ICard getCard()
 	{
 		return cards.get(mPos);
 	}

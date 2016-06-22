@@ -9,10 +9,10 @@ public class GameState
 {
 	public final static GameState INSTANCE = new GameState();
 	//Sorted arrays for each neighborhood representing the deck of cards
-	private HashMap<Long,ArrayList<Card>> encounterCardsList;
+	private HashMap<Long,ArrayList<NeighborhoodCard>> neighborhoodCardsList;
 	private Random rand;
 	private ArrayList<Encounter> encounterHx = null;
-	private ArrayList<Card> cardHx = null;
+	private ArrayList<ICard> cardHx = null;
 	
 	//The expansions selected for this play session
 	private HashMap<Long,Long> currentExpansions;
@@ -20,32 +20,32 @@ public class GameState
 	private GameState()
 	{
 		currentExpansions = new HashMap<Long,Long>();
-		encounterCardsList = new HashMap<Long,ArrayList<Card>>();
+		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
-		cardHx = new ArrayList<Card>();
+		cardHx = new ArrayList<ICard>();
 		rand = new Random(522348);
 	}
-	public ArrayList<Card> getDeckByNeighborhood(long neiID)
+	public ArrayList<NeighborhoodCard> getDeckByNeighborhood(long neiID)
 	{
-		if(encounterCardsList.containsKey(neiID))
+		if(neighborhoodCardsList.containsKey(neiID))
 		{
-			return encounterCardsList.get(neiID);
+			return neighborhoodCardsList.get(neiID);
 		}
 		else
 		{
-			ArrayList<Card> cards = AHFlyweightFactory.INSTANCE.getCurrentCards(neiID);
+			ArrayList<NeighborhoodCard> cards = AHFlyweightFactory.INSTANCE.getCurrentNeighborhoodsCards(neiID);
 			randomize(cards);
 			
-			encounterCardsList.put(neiID, cards);
+			neighborhoodCardsList.put(neiID, cards);
 			return cards;
 		}
 	}
 	
 	public void randomizeNeighborhood(long neiID)
 	{
-		if(encounterCardsList.containsKey(neiID))
+		if(neighborhoodCardsList.containsKey(neiID))
 		{
-			randomize(encounterCardsList.get(neiID));
+			randomize(neighborhoodCardsList.get(neiID));
 		}
 	}
 	
@@ -80,12 +80,12 @@ public class GameState
 		}
 		
 		//Clear the deck lists
-		encounterCardsList = new HashMap<Long,ArrayList<Card>>();
+		neighborhoodCardsList = new HashMap<Long,ArrayList<NeighborhoodCard>>();
 		encounterHx = new ArrayList<Encounter>();
-		cardHx = new ArrayList<Card>();
+		cardHx = new ArrayList<ICard>();
 	}
 	
-	public void AddHistory(Card card, Encounter enc) 
+	public void AddHistory(ICard card, Encounter enc) 
 	{
 		cardHx.add(0,card);
 		encounterHx.add(0, enc);
@@ -96,7 +96,7 @@ public class GameState
 		return encounterHx;
 	}
 	
-	public ArrayList<Card> getCardHx()
+	public ArrayList<ICard> getCardHx()
 	{
 		return cardHx;
 	}

@@ -4,10 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import ah.drawer.AHFlyweightFactory;
-import ah.drawer.Card;
 import ah.drawer.Encounter;
 import ah.drawer.GameState;
-import ah.drawer.Neighborhood;
+import ah.drawer.NeighborhoodCard;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Context;
@@ -62,11 +61,11 @@ public class LocationDeckActivity extends Activity {
 	    //int mGalleryItemBackground;
 	    private Context mContext;
 
-	    private ArrayList<Card> cardArr;
+	    private ArrayList<NeighborhoodCard> cardArr;
 	    
 	    private LayoutInflater mInflater;
 
-	    public CardAdapter(Context c, ArrayList<Card> cardArr) 
+	    public CardAdapter(Context c, ArrayList<NeighborhoodCard> cardArr) 
 	    {
 	        mContext = c;
 	        this.cardArr = cardArr;
@@ -83,7 +82,7 @@ public class LocationDeckActivity extends Activity {
 	    @Override
 	    public Object instantiateItem( View pager, int position )
 	    {
-	    	final Card theCard = cardArr.get(position);
+	    	final NeighborhoodCard theCard = cardArr.get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
 
 	    	final LinearLayout layout = (LinearLayout)mInflater.inflate(R.layout.cardlistitem, null);
@@ -99,7 +98,7 @@ public class LocationDeckActivity extends Activity {
 		    	OnClickListener listener = new OnClickListener()
                 {                	 
                 	private Encounter enc = encounters.get(idx);
-                	private Card cardHx = theCard; 
+                	private NeighborhoodCard cardHx = theCard; 
 
 					public void onClick(View v) {
 						GameState.INSTANCE.AddHistory(cardHx, enc);
@@ -155,10 +154,9 @@ public class LocationDeckActivity extends Activity {
 	    	
 	    	((ViewPager) pager).addView(layout);
 	    	
-	    	Neighborhood nei = theCard.getNeighborhood();
 	        Bitmap front;
 	        try {
-	        	front = BitmapFactory.decodeStream(getAssets().open(nei.getCardPath()));
+	        	front = BitmapFactory.decodeStream(getAssets().open(theCard.getCardPath()));
 			} catch (IOException e) {
 				front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
 			}
@@ -183,7 +181,7 @@ public class LocationDeckActivity extends Activity {
 	        return view.equals( object );
 	    }
 	    
-	    private Bitmap overlayCard(Bitmap bmp1, Card card)
+	    private Bitmap overlayCard(Bitmap bmp1, NeighborhoodCard card)
 	    {
 	    	Bitmap retBmp = bmp1;
 	    	int totalWidth = 0;

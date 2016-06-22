@@ -2,18 +2,16 @@ package ah.drawer;
 
 import java.util.ArrayList;
 
-public class Card {
+public abstract class ACard implements ICard {
 	
 	private long ID;
-	private long neiID;
-	//private ArrayList<Long> expIDs;
-	
-	public Card(long ID, long neiID) {
+	public ACard(long ID)
+	{
 		this.ID = ID;
-		this.neiID = neiID;
 	}
 	
-	public long getID() {
+	public long getID()
+	{
 		return ID;
 	}
 	
@@ -21,12 +19,12 @@ public class Card {
 		return AHFlyweightFactory.INSTANCE.getEncountersForCard(ID);
 	}
 	
-    @Override public String toString()
+	@Override public String toString()
     {
-    	return "CardID: " + ID + " NeiID: " + neiID;
+    	return "CardID: " + ID; // + " NeiID: " + neiID;
     }
-
-    ArrayList<Long> expIDs = null;
+	
+	ArrayList<Long> expIDs = null;
 	public ArrayList<Long> getExpIDs() {
 		if(expIDs == null)
 		{
@@ -36,8 +34,4 @@ public class Card {
 		return expIDs;
 	}
 
-	public Neighborhood getNeighborhood() {
-		return AHFlyweightFactory.INSTANCE.getNeighborhood(neiID);
-		
-	}
 }

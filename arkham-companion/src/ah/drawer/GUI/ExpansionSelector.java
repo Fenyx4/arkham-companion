@@ -47,6 +47,7 @@ public class ExpansionSelector extends Activity {
         //final Bundle bundle = new Bundle();
         //final Random myRandom = new Random();
         // create the adapter using the cursor pointing to the desired data as well as the layout information
+        //TODO replace the deprecated conctructor
         SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.checkboxlist, cursor, columns, to);
         //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {

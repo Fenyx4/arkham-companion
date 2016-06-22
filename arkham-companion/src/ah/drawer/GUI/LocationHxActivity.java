@@ -4,17 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import ah.drawer.AHFlyweightFactory;
-import ah.drawer.Card;
+import ah.drawer.ICard;
 import ah.drawer.Encounter;
 import ah.drawer.GameState;
-import ah.drawer.Neighborhood;
 import ah.drawer.R;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -76,7 +74,7 @@ public class LocationHxActivity extends Activity {
 	    @Override
 	    public Object instantiateItem( View pager, int position )
 	    {
-	    	final Card theCard = GameState.INSTANCE.getCardHx().get(position);
+	    	final ICard theCard = GameState.INSTANCE.getCardHx().get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
 
 	    	final LinearLayout layout = (LinearLayout)mInflater.inflate(R.layout.cardlistitem, null);
@@ -114,10 +112,9 @@ public class LocationHxActivity extends Activity {
 	    	
 	    	((ViewPager) pager).addView(layout);
 	    	
-	    	Neighborhood nei = theCard.getNeighborhood();
 	        Bitmap front;
 	        try {
-	        	front = BitmapFactory.decodeStream(getAssets().open(nei.getCardPath()));
+	        	front = BitmapFactory.decodeStream(getAssets().open(theCard.getCardPath()));
 			} catch (IOException e) {
 				front = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.encounter_front);
 			}
@@ -142,7 +139,7 @@ public class LocationHxActivity extends Activity {
 	        return view.equals( object );
 	    }
 	   
-	    private Bitmap overlayCard(Bitmap bmp1, Card card)
+	    private Bitmap overlayCard(Bitmap bmp1, ICard card)
 	    {
 	    	Bitmap retBmp = bmp1;
 	    	int totalWidth = 0;

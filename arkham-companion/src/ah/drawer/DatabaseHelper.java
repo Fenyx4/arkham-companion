@@ -40,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String cardTable="Card";
 	static final String cardID = "cardID";
 	static final String cardNeiID = "neiID";
+	static final String cardColorID = "colorID";
 	
 	//CardsToExpansion
 	static final String cardToExpTable = "CardToExpansion";
@@ -50,13 +51,26 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	static final String cardToEncTable = "CardToEncounter";
 	static final String cardToEncCardID = "cardID";
 	static final String cardToEncEncID = "encID";
+	  
+	//CardsToEncounter
+	static final String locToColorTable = "LocationToColor";
+	static final String locToColorColorID = "colorID";
+	static final String locToColorLocID = "locID";  
+	
+	//Colors
+	static final String colorTable = "Color";
+	static final String colorID = "colorID";
+	static final String colorName = "colorName";
+	static final String colorCardPath = "colorCardPath";
+	static final String colorExpID = "colorExpID";
+	
 
 	static final String viewEmps="ViewEmps";
 	
 	public static DatabaseHelper instance;
 	
 	private DatabaseHelper(Context context) {
-		  super(context, dbName, null,81); 
+		  super(context, dbName, null,83); 
 		  }
 	
 	static public DatabaseHelper getInstance(Context context)
@@ -87,7 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  
 		  db.execSQL("CREATE TABLE "+locTable+" ("+locID+ " INTEGER PRIMARY KEY, "+
 				  locName + " TEXT, "+
-				  locNeiID+" INTEGER NOT NULL, "+
+				  locNeiID+" INTEGER NULL, "+
 				  locSort+" INTEGER NOT NULL, "+
 				  "FOREIGN KEY ("+locNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");
 		  
@@ -96,14 +110,16 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  
 		  db.execSQL("CREATE TABLE "+cardTable+" ("+cardID+" INTEGER PRIMARY KEY, "+
 				  //cardEncID+" INTEGER NOT NULL ,"+
-				  cardNeiID+" INTEGER NOT NULL ,"+
+				  cardNeiID+" INTEGER NULL ,"+
+				  cardColorID+" INTEGER NULL ,"+
+				  "FOREIGN KEY ("+cardColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
 				  "FOREIGN KEY ("+cardNeiID+") REFERENCES "+neighborhoodTable+" ("+neiID+"));");//+
 				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
 		  
 		  db.execSQL("CREATE TABLE "+cardToExpTable+" ("+
 				  //cardEncID+" INTEGER NOT NULL ,"+
-				  cardToExpCardID+" INTEGER NOT NULL ,"+
-				  cardToExpExpID+" INTEGER NOT NULL ,"+
+				  cardToExpCardID+" INTEGER NOT NULL, "+
+				  cardToExpExpID+" INTEGER NOT NULL, "+
 				  "FOREIGN KEY ("+cardToExpCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
 				  "FOREIGN KEY ("+cardToExpExpID+") REFERENCES "+expTable+" ("+expID+"));");//+
 				  //"FOREIGN KEY ("+cardEncID+") REFERENCES "+encounterTable+" ("+encID+"));");
@@ -114,6 +130,19 @@ public class DatabaseHelper extends SQLiteOpenHelper
 				  "PRIMARY KEY ("+cardToEncCardID+","+cardToEncEncID+"), "+
 				  "FOREIGN KEY ("+cardToEncCardID+") REFERENCES "+cardTable+" ("+cardID+"), "+
 				  "FOREIGN KEY ("+cardToEncEncID+") REFERENCES "+encounterTable+" ("+encID+"));");//+
+		  
+		  db.execSQL("CREATE TABLE "+colorTable+" ("+colorID+" INTEGER PRIMARY KEY, "+
+		    		colorName+" TEXT, "+
+		    		colorExpID+" INTEGER NOT NULL, " + 
+		    		colorCardPath + " TEXT, "+
+		    		"FOREIGN KEY ("+colorExpID+") REFERENCES "+expTable+" ("+expID+"));");
+		  
+		  db.execSQL("CREATE TABLE "+locToColorTable+" ("+
+				  locToColorColorID+" INTEGER NOT NULL , "+
+				  locToColorLocID+" INTEGER NOT NULL ,"+
+				  "PRIMARY KEY ("+locToColorColorID+","+locToColorLocID+"), "+
+				  "FOREIGN KEY ("+locToColorColorID+") REFERENCES "+colorTable+" ("+colorID+"), "+
+				  "FOREIGN KEY ("+locToColorLocID+") REFERENCES "+locTable+" ("+locID+"));");//+
 		  
 //		  //For referential integrity
 //		  db.execSQL("CREATE TRIGGER fk_neiexp_expid " +
@@ -183,6 +212,8 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		  db.execSQL("DROP TABLE IF EXISTS "+cardTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+cardToExpTable);
 		  db.execSQL("DROP TABLE IF EXISTS "+cardToEncTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+colorTable);
+		  db.execSQL("DROP TABLE IF EXISTS "+locToColorTable);
 		  
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_neiexp_expid");
 		  db.execSQL("DROP TRIGGER IF EXISTS fk_locnei_neiid");
