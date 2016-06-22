@@ -10,7 +10,7 @@
         android:paddingBottom="0dp"
         android:gravity="top"
         android:typeface="serif"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textColor="@color/encounter_title"
         android:text="Encounter Text" >
 </TextView>
