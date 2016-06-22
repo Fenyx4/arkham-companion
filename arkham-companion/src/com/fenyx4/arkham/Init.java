@@ -223,6 +223,9 @@ public class Init {
 //		db.execSQL(sqlInsertEnc + " (14961,500,'Pass a <b>Luck (-1) check</b> to discover a cache of ancient papers containing valuable information about the Mythos. Gain 1 Clue token for every success you rolled on your Luck check.')");
 //		db.execSQL(sqlInsertCardColor + " (4503,3)");
 		
+		addMulticoloredRevised(db);
+		
+		// Multicolored original
 		db.execSQL(sqlInsertCard + " (4504)");
 		db.execSQL(sqlInsertCardExp + " (4504,2)");
 		db.execSQL(sqlInsertCardEnc + " (4504,14962)");
@@ -235,7 +238,7 @@ public class Init {
 		db.execSQL(sqlInsertCard + " (4505)");
 		db.execSQL(sqlInsertCardExp + " (4505,2)");
 		db.execSQL(sqlInsertCardEnc + " (4505,14964)");
-		db.execSQL(sqlInsertEnc + " (14964,504,'<b><i>Abundance to the Black Goat of the Woods</b></i><br/><br/>You must immediately fight Shub-Niggurath! Since there is only one player in this combat, you need one success to remove a doom token. If you are out of monster trophies, you are <b>devoured</b>. If you defeat Shub-Niggurath, she retreats into the void and you may escape to Arkham immediately. The gate to Yuggoth is sealed behind you, and you may take it as a trophy.<br/><br/>If Shub-Niggurath is the Ancient One in play, do not fill up her doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Shub-Niggurath''s doom track back to their doom token side and continue play.')");
+		db.execSQL(sqlInsertEnc + " (14964,504,'<b><i>Abundance to the Black Goat of the Woods</b></i><br/><br/>You must immediately fight Shub-Niggurath! Since there is only one player in this combat, you need one success to remove a doom token. If you are out of monster trophies, you are <b>devoured</b>. If you defeat Shub-Niggurath, she retreats into the void and you may escape to Arkham immediately. The gate to Yuggoth is sealed behind you, and you may take it as a trophy.<br/><br/>If Shub-Niggurath is the Ancient One in play, do not fill up her doom track before this combat; also, successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Shub-Niggurath''s doom track back to their doom token side and continue play.')");
 		db.execSQL(sqlInsertCardEnc + " (4505,14965)");
 		db.execSQL(sqlInsertEnc + " (14965,500,'A monster appears!')");
 		db.execSQL(sqlInsertCardColor + " (4505,1)");
@@ -244,7 +247,7 @@ public class Init {
 		db.execSQL(sqlInsertCard + " (4506)");
 		db.execSQL(sqlInsertCardExp + " (4506,2)");
 		db.execSQL(sqlInsertCardEnc + " (4506,14966)");
-		db.execSQL(sqlInsertEnc + " (14966,507,'<b><i>''Ware the walker of the icy wastes!</i></b><br/><br/>You must immediately fight Ithaqua! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Stamina, you are <b>devoured</b>. If you defeat Ithaqua, he disperses into an icy wind and you may escape to Arkham immediately. The gate to the Plateau of Leng is sealed behind you, and you may take it as a trophy.<br/><br/>If Ithaqua is the Ancient One in play, do not fill up his doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Ithaqua''s doom track back to their doom token side and continue play.')");
+		db.execSQL(sqlInsertEnc + " (14966,507,'<b><i>''Ware the walker of the icy wastes!</i></b><br/><br/>You must immediately fight Ithaqua! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Stamina, you are <b>devoured</b>. If you defeat Ithaqua, he disperses into an icy wind and you may escape to Arkham immediately. The gate to the Plateau of Leng is sealed behind you, and you may take it as a trophy.<br/><br/>If Ithaqua is the Ancient One in play, do not fill up his doom track before this combat; also, successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Ithaqua''s doom track back to their doom token side and continue play.')");
 		db.execSQL(sqlInsertCardEnc + " (4506,14967)");
 		db.execSQL(sqlInsertEnc + " (14967,500,'A monster appears!')");
 		db.execSQL(sqlInsertCardColor + " (4506,2)");
@@ -1638,6 +1641,41 @@ public class Init {
 		db.execSQL(sqlInsertEnc + " (30219,505,'The book you are reading is a vacuous tome of oblivion, and it begins to suck you into its pages! Make a <b>Fight (+1) check</b> or you are <b>devoured</b>. Spells may be discarded as if they were Clue tokens for this check.')");
 
 
+	}
+
+	public static void addMulticoloredRevised(SQLiteDatabase db) {
+		String sqlInsertCard = "INSERT INTO " + DatabaseHelper.cardTable + " (" + DatabaseHelper.cardID + ") VALUES ";//+
+		String sqlInsertCardExp = "INSERT INTO " + DatabaseHelper.cardToExpTable + " (" + DatabaseHelper.cardToExpCardID + "," + DatabaseHelper.cardToExpExpID + ") VALUES ";//+
+		String sqlInsertCardEnc = "INSERT INTO " + DatabaseHelper.cardToEncTable + " (" + DatabaseHelper.cardToEncCardID + "," + DatabaseHelper.cardToEncEncID + ") VALUES ";//+
+		String sqlInsertEnc = "INSERT INTO " + DatabaseHelper.encounterTable + " (" + DatabaseHelper.encID + "," + DatabaseHelper.encLocID + "," + DatabaseHelper.encText + ") VALUES ";//+
+		String sqlInsertCardColor = "INSERT INTO " + DatabaseHelper.cardToColorTable + " (" + DatabaseHelper.cardToColorCardID + "," + DatabaseHelper.cardToColorColorID + ") VALUES ";//+
+		// Multicolored Revised
+		db.execSQL(sqlInsertCard + " (4501)");
+		db.execSQL(sqlInsertCardExp + " (4501,9)");
+		db.execSQL(sqlInsertCardEnc + " (4501,14950)");
+		db.execSQL(sqlInsertEnc + " (14950,508,'<b><i>That is not dead which can eternal lie, and with strange eons even death may die!</i></b><br/><br/>You must immediately fight Cthulhu! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Sanity or 0 Stamina, you are <b>devoured</b>. If you defeat Cthulhu, he retreats back into slumber and you may escape to Arkham immediately. The gate to R''lyeh is sealed behind you, and you may take it as a trophy.<br/><br/>If Cthulhu is the Ancient One in play, do not fill up his doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Cthulhu''s doom track back to their doom token side and continue play.')");
+		db.execSQL(sqlInsertCardEnc + " (4501,14951)");
+		db.execSQL(sqlInsertEnc + " (14951,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4501,1)");
+		db.execSQL(sqlInsertCardColor + " (4501,2)");
+		
+		db.execSQL(sqlInsertCard + " (4502)");
+		db.execSQL(sqlInsertCardExp + " (4502,9)");
+		db.execSQL(sqlInsertCardEnc + " (4502,14952)");
+		db.execSQL(sqlInsertEnc + " (14952,504,'<b><i>Abundance to the Black Goat of the Woods</b></i><br/><br/>You must immediately fight Shub-Niggurath! Since there is only one player in this combat, you need one success to remove a doom token. If you are out of monster trophies, you are <b>devoured</b>. If you defeat Shub-Niggurath, she retreats into the void and you may escape to Arkham immediately. The gate to Yuggoth is sealed behind you, and you may take it as a trophy.<br/><br/>If Shub-Niggurath is the Ancient One in play, do not fill up her doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Shub-Niggurath''s doom track back to their doom token side and continue play.')");
+		db.execSQL(sqlInsertCardEnc + " (4502,14953)");
+		db.execSQL(sqlInsertEnc + " (14953,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4502,1)");
+		db.execSQL(sqlInsertCardColor + " (4502,3)");
+		
+		db.execSQL(sqlInsertCard + " (4503)");
+		db.execSQL(sqlInsertCardExp + " (4503,9)");
+		db.execSQL(sqlInsertCardEnc + " (4503,14954)");
+		db.execSQL(sqlInsertEnc + " (14954,507,'<b><i>''Ware the walker of the icy wastes!</i></b><br/><br/>You must immediately fight Ithaqua! Since there is only one player in this combat, you need one success to remove a doom token. If you reach 0 Stamina, you are <b>devoured</b>. If you defeat Ithaqua, he disperses into an icy wind and you may escape to Arkham immediately. The gate to the Plateau of Leng is sealed behind you, and you may take it as a trophy.<br/><br/>If Ithaqua is the Ancient One in play, do not fill up his doom track before this combat; also successes allow you to temporarily flip over the doom tokens to their elder sign sides instead of removing them. Once the battle is over, regardless of the outcome, flip all of the tokens on Ithaqua''s doom track back to their doom token side and continue play.')");
+		db.execSQL(sqlInsertCardEnc + " (4503,14955)");
+		db.execSQL(sqlInsertEnc + " (14955,500,'A monster appears!')");
+		db.execSQL(sqlInsertCardColor + " (4503,2)");
+		db.execSQL(sqlInsertCardColor + " (4503,4)");
 	}
 
 	private static void fetchRed(SQLiteDatabase db, String sqlInsertCard,
