@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ This file is part of Arkham Companion.
+ 
+ Arkham Companion is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ Arkham Companion is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with Arkham Companion.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+ <selector xmlns:android="http://schemas.android.com/apk/res/android">
+     <!-- Enabled states -->
+<!--     <item android:state_checked="true" android:state_window_focused="false"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_on" />
+ 
+    <item android:state_checked="false" android:state_window_focused="false"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_off" />
+         
+    <item android:state_checked="true" android:state_pressed="true"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_on" />
+ 
+    <item android:state_checked="false" android:state_pressed="true"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_off" />
+ 
+    <item android:state_checked="true" android:state_focused="true"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_on" />
+ 
+    <item android:state_checked="false" android:state_focused="true"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_off" />
+ 
+    <item android:state_checked="false"
+         android:state_enabled="true"
+         android:drawable="@drawable/btn_dh_check_off" />
+ 
+    <item android:state_checked="true"
+ 
+         android:state_enabled="true"
+ 
+         android:drawable="@drawable/btn_dh_check_on" />
+ 
+ 
+ 
+ 
+ -->
+    <!-- Disabled states -->
+ <!-- 
+ 
+ 
+    <item android:state_checked="true" android:state_window_focused="false"
+ 
+         android:drawable="@drawable/btn_check_on_disable" />
+ 
+    <item android:state_checked="false" android:state_window_focused="false"
+ 
+         android:drawable="@drawable/btn_check_off_disable" />
+ 
+
+ 
+    <item android:state_checked="true" android:state_focused="true"
+ 
+         android:drawable="@drawable/btn_check_on_disable_focused" />
+ 
+    <item android:state_checked="false" android:state_focused="true"
+ 
+         android:drawable="@drawable/btn_check_off_disable_focused" />
+ 
+ 
+ 
+    <item android:state_checked="false" android:drawable="@drawable/btn_check_off_disable" />
+ 
+    <item android:state_checked="true" android:drawable="@drawable/btn_check_on_disable" />
+ 
+ 
+-->
+</selector>
