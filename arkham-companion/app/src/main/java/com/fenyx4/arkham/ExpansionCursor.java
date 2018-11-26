@@ -22,11 +22,11 @@ import android.database.AbstractCursor;
 
 public class ExpansionCursor extends AbstractCursor {
 	
-	private ArrayList<Expansion> blah;
+	private ArrayList<Expansion> expansions;
 	
 	public ExpansionCursor(ArrayList<Expansion> exps)
 	{
-		blah = exps;
+		expansions = exps;
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class ExpansionCursor extends AbstractCursor {
 
 	@Override
 	public int getCount() {
-		return blah.size();
+		return expansions.size();
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class ExpansionCursor extends AbstractCursor {
 		}
 		else if(arg0 == 2)
 		{
-			if(blah.get(mPos).getApplied())
+			if(expansions.get(mPos).getApplied())
 			{
 				return 1;
 			}
@@ -89,7 +89,7 @@ public class ExpansionCursor extends AbstractCursor {
 	
 	public Expansion getExpansion()
 	{
-		return blah.get(mPos);
+		return expansions.get(mPos);
 	}
 
 	@Override
@@ -97,7 +97,7 @@ public class ExpansionCursor extends AbstractCursor {
 		if( arg0 == 1)
 		{
 			
-			return blah.get(mPos).toString();
+			return expansions.get(mPos).toString();
 		}
 		else
 		{
@@ -109,7 +109,7 @@ public class ExpansionCursor extends AbstractCursor {
 	@Override
 	public boolean isNull(int arg0) {
 		
-		return blah.get(arg0) == null;
+		return expansions.get(arg0) == null;
 	}
 
 }
