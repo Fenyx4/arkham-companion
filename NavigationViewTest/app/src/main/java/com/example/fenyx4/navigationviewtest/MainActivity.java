@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         AHFlyweightFactory.INSTANCE.Init(this.getApplicationContext());
-        
+
         setContentView(R.layout.activity_main);
 
 
