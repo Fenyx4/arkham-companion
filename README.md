@@ -8,3 +8,5 @@ Dropbox: https://www.dropbox.com/sh/lnu1zne3s0vjhk8/G7wh6hiJgi
 It helps speed up setup and play as it automatically filters by expansion and, for Other World, by color. Arkham Companion shuffles the decks for you and keeps a history of your encounters.  
 
 Arkham Horror and its expansion titles are trademarks and/or registered trademarks of Fantasy Flight Publishing, Inc.  Arkham Horror, its expansions and the card text from Arkham Horror and its expansions are copyright Fantasy Flight Publishing, Inc.
+
+Forum thread about the app: https://ffg-forum-archive.entropicdreams.com/topic/74583-arkham-companion-android-app/page/1/
