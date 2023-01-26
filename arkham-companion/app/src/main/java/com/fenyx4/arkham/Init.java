@@ -8153,7 +8153,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (118,420)");
 		db.execSQL(sqlInsertEnc + " (420,25,'A monster appears! If you pass a <b>Combat check</b> against it, you find its skin is covered with the scrawl of archaic runes, and may draw 1 Spell.')");
 		db.execSQL(sqlInsertCard + " (119,4)");
-		db.execSQL(sqlInsertCardExp + " (119,5)");
+		db.execSQL(sqlInsertCardExp + " (119,7)");
 		db.execSQL(sqlInsertCardEnc + " (119,421)");
 		db.execSQL(sqlInsertEnc + " (421,16,'\"Listen,\" says Joey \"The Rat\". \"These just fell off the back of the boat, you get me?\" Draw 2 Common Items. You may purchase one of them for $1 more than its list price.')");
 		db.execSQL(sqlInsertCardEnc + " (119,422)");
@@ -8241,7 +8241,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (129,453)");
 		db.execSQL(sqlInsertEnc + " (453,25,'You come across a man examining some old bones. Pass a <b>Sneak (-1) check</b> to get close enough to see what he''s doing. He finally notices you and is impressed with your skills, introducing himself as <b>John Legrasse</b>. Take his Ally card if it''s available, otherwise he shares a meal with you. Restore your Sanity and Stamina to their maximum value.')");
 		db.execSQL(sqlInsertCard + " (130,4)");
-		db.execSQL(sqlInsertCardExp + " (130,3)");
+		db.execSQL(sqlInsertCardExp + " (130,7)");
 		db.execSQL(sqlInsertCardEnc + " (130,454)");
 		db.execSQL(sqlInsertEnc + " (454,16,'Walking along the river at night, you bump into a man smoking a stoagie and wearing a trenchcoat. \"You look like a person with problems. It just so happens that my business is making problems go away.\" You may pay $6 to automatically defeat any 1 non-Spawn monster on the board.')");
 		db.execSQL(sqlInsertCardEnc + " (130,455)");
@@ -8249,7 +8249,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (130,456)");
 		db.execSQL(sqlInsertEnc + " (456,25,'A monster appears! If you do not defeat it you are <i>Cursed</i>.')");
 		db.execSQL(sqlInsertCard + " (131,4)");
-		db.execSQL(sqlInsertCardExp + " (131,5)");
+		db.execSQL(sqlInsertCardExp + " (131,7)");
 		db.execSQL(sqlInsertCardEnc + " (131,457)");
 		db.execSQL(sqlInsertEnc + " (457,16,'Your footsteps on the wooden dock are echoed by splashing noises below that keep pace with you. Make a <b>Will (+0) check</b>. If you fail, lose 2 Sanity and move to the street. If you pass, lose 1 Sanity but stay where you are.')");
 		db.execSQL(sqlInsertCardEnc + " (131,458)");
@@ -8265,7 +8265,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (132,462)");
 		db.execSQL(sqlInsertEnc + " (462,25,'A group of hooded cultists are having a meeting among the standing stones on the island. Pass a <b>Sneak (-1) check</b> to overhear some of what they have to say. Gain 2 Clue tokens.')");
 		db.execSQL(sqlInsertCard + " (133,4)");
-		db.execSQL(sqlInsertCardExp + " (133,5)");
+		db.execSQL(sqlInsertCardExp + " (133,7)");
 		db.execSQL(sqlInsertCardEnc + " (133,463)");
 		db.execSQL(sqlInsertEnc + " (463,16,'The men unloading those boxes have stooped postures and wide, staring eyes. If you try to investigate what they''re doing, make a <b>Sneak (-2) check</b>. If you pass, you find 1 Unique Item in a crate. If you fail, lose 2 Stamina and 1 Sanity.')");
 		db.execSQL(sqlInsertCardEnc + " (133,464)");
@@ -9302,7 +9302,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (18,54)");
 		db.execSQL(sqlInsertEnc + " (54,10,'A gate and a monster appear!')");
 		db.execSQL(sqlInsertCard + " (19,1)");
-		db.execSQL(sqlInsertCardExp + " (19,5)");
+		db.execSQL(sqlInsertCardExp + " (19,7)");
 		db.execSQL(sqlInsertCardEnc + " (19,55)");
 		db.execSQL(sqlInsertEnc + " (55,2,'Doctor Mintz has a maniacal gleam in his eye as he approaches. Pass a <b>Fight (-2) check</b> to escape. If you fail, lose 1 Stamina and gain 1 Sanity under his new treatment.')");
 		db.execSQL(sqlInsertCardEnc + " (19,56)");
@@ -9334,7 +9334,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (22,66)");
 		db.execSQL(sqlInsertEnc + " (66,10,'Make a <b>Will (-1) check</b>. If you pass it, <b>Anna Kaslow</b> the fortune teller, offers her help in your investigation. Take her Ally card if it is still available. Otherwise, gain 2 Clue tokens. If you fail, nothing happens.')");
 		db.execSQL(sqlInsertCard + " (23,1)");
-		db.execSQL(sqlInsertCardExp + " (23,5)");
+		db.execSQL(sqlInsertCardExp + " (23,7)");
 		db.execSQL(sqlInsertCardEnc + " (23,67)");
 		db.execSQL(sqlInsertEnc + " (67,2,'You hear Nurse Heather use your name in a discussion with an orderly. They must know you''re here! Make a <b>Sneak (-1) check</b> to eavesdrop. If you pass, gain 1 Clue token. If you fail, you''re thrown out. Move to the street.')");
 		db.execSQL(sqlInsertCardEnc + " (23,68)");
@@ -9366,7 +9366,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (26,78)");
 		db.execSQL(sqlInsertEnc + " (78,10,'A group of boys play baseball on the public diamond, shouting and laughing. You stop to watch for a while, and find yourself both refreshed and heartened. Gain 1 Stamina and 1 Sanity.')");
 		db.execSQL(sqlInsertCard + " (27,1)");
-		db.execSQL(sqlInsertCardExp + " (27,5)");
+		db.execSQL(sqlInsertCardExp + " (27,7)");
 		db.execSQL(sqlInsertCardEnc + " (27,79)");
 		db.execSQL(sqlInsertEnc + " (79,2,'An irate orderly shoves a babbling madman at you, shouting \"You deal with him!\" before storming off. Pass a <b>Will (-2) check</b> to calm him down enough to decipher his ravings and gain 2 Clue tokens.')");
 		db.execSQL(sqlInsertCardEnc + " (27,80)");
@@ -9390,7 +9390,7 @@ public class Init {
 		db.execSQL(sqlInsertCardEnc + " (29,87)");
 		db.execSQL(sqlInsertEnc + " (87,10,'You touch Founder''s Rock. Make a <b>Luck (-1) check</b>. If you pass, there is an electrifying shock that opens your mind to the elder things of eons past. Lose 1 Stamina, but gain 2 Clue tokens and draw 1 Spell. If you fail, you find a strange carving. As you finger the grooves, a gate opens here and you are drawn through it.')");
 		db.execSQL(sqlInsertCard + " (30,1)");
-		db.execSQL(sqlInsertCardExp + " (30,5)");
+		db.execSQL(sqlInsertCardExp + " (30,7)");
 		db.execSQL(sqlInsertCardEnc + " (30,88)");
 		db.execSQL(sqlInsertEnc + " (88,2,'You sneak into a finger-painting session. Gain 1 Sanity.')");
 		db.execSQL(sqlInsertCardEnc + " (30,89)");
