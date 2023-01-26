@@ -1,0 +1,570 @@
+[
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 1,
+        "locName": "Administration Building",
+        "neiID": 5,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 2,
+        "locName": "Arkham Asylum",
+        "neiID": 1,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 3,
+        "locName": "Bank of Arkham",
+        "neiID": 1,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 4,
+        "locName": "Black Cave",
+        "neiID": 7,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 5,
+        "locName": "Curiositie Shoppe",
+        "neiID": 6,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 6,
+        "locName": "General Store",
+        "neiID": 7,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 7,
+        "locName": "Graveyard",
+        "neiID": 7,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 8,
+        "locName": "Hibb's Roadhouse",
+        "neiID": 2,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 9,
+        "locName": "Historical Society",
+        "neiID": 8,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 10,
+        "locName": "Independence Square",
+        "neiID": 1,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 11,
+        "locName": "Inner Sanctum",
+        "neiID": 3,
+        "sort": 2
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 12,
+        "locName": "Library",
+        "neiID": 5,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 13,
+        "locName": "Ma's Boarding House",
+        "neiID": 8,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 14,
+        "locName": "Newspaper",
+        "neiID": 6,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 15,
+        "locName": "Police Station",
+        "neiID": 2,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 16,
+        "locName": "River Docks",
+        "neiID": 4,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 17,
+        "locName": "Science Building",
+        "neiID": 5,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 18,
+        "locName": "Silver Twilight Lodge",
+        "neiID": 3,
+        "sort": 1
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 19,
+        "locName": "South Church",
+        "neiID": 8,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 20,
+        "locName": "Cold Spring Glen",
+        "neiID": 10,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 21,
+        "locName": "St. Mary's Hospital",
+        "neiID": 9,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 22,
+        "locName": "The Unnamable",
+        "neiID": 4,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 23,
+        "locName": "The Witch House",
+        "neiID": 3,
+        "sort": 3
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 24,
+        "locName": "Train Station",
+        "neiID": 6,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 25,
+        "locName": "Unvisited Isle",
+        "neiID": 4,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 26,
+        "locName": "Velma's Diner",
+        "neiID": 2,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 27,
+        "locName": "Woods",
+        "neiID": 9,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 28,
+        "locName": "Ye Olde Magick Shoppe",
+        "neiID": 9,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 29,
+        "locName": "Bishop's Brook Bridge",
+        "neiID": 12,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 30,
+        "locName": "Darke's Carnival",
+        "neiID": 12,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 31,
+        "locName": "Devil's Hopyard",
+        "neiID": 11,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 32,
+        "locName": "Dunwich Village",
+        "neiID": 12,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 33,
+        "locName": "Gardners' Place",
+        "neiID": 11,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 34,
+        "locName": "Harney Jones' Shack",
+        "neiID": 11,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 35,
+        "locName": "Whateley Farm",
+        "neiID": 10,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 36,
+        "locName": "Wizard's Hill",
+        "neiID": 10,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 37,
+        "locName": "607 Water St.",
+        "neiID": 14,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 38,
+        "locName": "7th House on the Left",
+        "neiID": 13,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 39,
+        "locName": "Artists' Colony",
+        "neiID": 16,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 40,
+        "locName": "Congregational Hospital",
+        "neiID": 13,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 41,
+        "locName": "Hall School",
+        "neiID": 16,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 42,
+        "locName": "Neil's Curiosity Shop",
+        "neiID": 16,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 43,
+        "locName": "North Point Lighthouse",
+        "neiID": 14,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 44,
+        "locName": "St. Erasmus's Home",
+        "neiID": 13,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 45,
+        "locName": "Strange High House",
+        "neiID": 15,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 46,
+        "locName": "The Causeway",
+        "neiID": 15,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 47,
+        "locName": "The Rope and Anchor",
+        "neiID": 14,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 48,
+        "locName": "Wireless Station",
+        "neiID": 15,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 49,
+        "locName": "Devil Reef",
+        "neiID": 19,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 51,
+        "locName": "Esoteric Order of Dagon",
+        "neiID": 17,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 52,
+        "locName": "Falcon Point",
+        "neiID": 19,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 53,
+        "locName": "First National Grocery",
+        "neiID": 18,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 54,
+        "locName": "Gilman House Hotel",
+        "neiID": 18,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 55,
+        "locName": "Innsmouth Jail",
+        "neiID": 17,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 56,
+        "locName": "Jail Cell",
+        "neiID": 17,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 57,
+        "locName": "Marsh Refinery",
+        "neiID": 18,
+        "sort": 0
+    },
+    {
+        "locButtonPath": null,
+        "locExpID": null,
+        "locID": 58,
+        "locName": "Y'ha-nthlei",
+        "neiID": 19,
+        "sort": 0
+    },
+    {
+        "locButtonPath": "",
+        "locExpID": 1,
+        "locID": 499,
+        "locName": "The Stars are Right",
+        "neiID": null,
+        "sort": 0
+    },
+    {
+        "locButtonPath": "",
+        "locExpID": 1,
+        "locID": 500,
+        "locName": "Other",
+        "neiID": null,
+        "sort": 12
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_abyss.png",
+        "locExpID": 1,
+        "locID": 501,
+        "locName": "Abyss",
+        "neiID": null,
+        "sort": 1
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_anotherdimension.png",
+        "locExpID": 1,
+        "locID": 502,
+        "locName": "Another Dimension",
+        "neiID": null,
+        "sort": 0
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_city.png",
+        "locExpID": 1,
+        "locID": 503,
+        "locName": "City of the Great Race",
+        "neiID": null,
+        "sort": 2
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_yuggoth.png",
+        "locExpID": 1,
+        "locID": 504,
+        "locName": "Yuggoth",
+        "neiID": null,
+        "sort": 7
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_celeano.png",
+        "locExpID": 1,
+        "locID": 505,
+        "locName": "Celeano",
+        "neiID": null,
+        "sort": 4
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_dreamlands.png",
+        "locExpID": 1,
+        "locID": 506,
+        "locName": "The Dreamlands",
+        "neiID": null,
+        "sort": 5
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_leng.png",
+        "locExpID": 1,
+        "locID": 507,
+        "locName": "Plateau of Leng",
+        "neiID": null,
+        "sort": 6
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_rlyeh.png",
+        "locExpID": 1,
+        "locID": 508,
+        "locName": "R'lyeh",
+        "neiID": null,
+        "sort": 3
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_anothertime.png",
+        "locExpID": 3,
+        "locID": 509,
+        "locName": "Another Time",
+        "neiID": null,
+        "sort": 8
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_lostcarcosa.png",
+        "locExpID": 3,
+        "locID": 510,
+        "locName": "Lost Carcosa",
+        "neiID": null,
+        "sort": 9
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_kadath.png",
+        "locExpID": 5,
+        "locID": 511,
+        "locName": "Unknown Kadath",
+        "neiID": null,
+        "sort": 10
+    },
+    {
+        "locButtonPath": "encounter/otherworld_loc_btn_underworld.png",
+        "locExpID": 5,
+        "locID": 512,
+        "locName": "The Underworld",
+        "neiID": null,
+        "sort": 11
+    }
+]

@@ -1,0 +1,135 @@
+[
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_downtown.png",
+        "CardPath": "encounter/encounter_front_downtown.png",
+        "ExpansionID": 1,
+        "Name": "Downtown",
+        "NeighborhoodID": 1
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_easttown.png",
+        "CardPath": "encounter/encounter_front_easttown.png",
+        "ExpansionID": 1,
+        "Name": "Easttown",
+        "NeighborhoodID": 2
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_frenchhill.png",
+        "CardPath": "encounter/encounter_front_frenchhill.png",
+        "ExpansionID": 1,
+        "Name": "French Hill",
+        "NeighborhoodID": 3
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_merchant.png",
+        "CardPath": "encounter/encounter_front_merchant.png",
+        "ExpansionID": 1,
+        "Name": "Merchant District",
+        "NeighborhoodID": 4
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_miskatonic.png",
+        "CardPath": "encounter/encounter_front_miskatonic.png",
+        "ExpansionID": 1,
+        "Name": "Miskatonic University",
+        "NeighborhoodID": 5
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_northside.png",
+        "CardPath": "encounter/encounter_front_northside.png",
+        "ExpansionID": 1,
+        "Name": "Northside",
+        "NeighborhoodID": 6
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_rivertown.png",
+        "CardPath": "encounter/encounter_front_rivertown.png",
+        "ExpansionID": 1,
+        "Name": "Rivertown",
+        "NeighborhoodID": 7
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_southside.png",
+        "CardPath": "encounter/encounter_front_southside.png",
+        "ExpansionID": 1,
+        "Name": "Southside",
+        "NeighborhoodID": 8
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_uptown.png",
+        "CardPath": "encounter/encounter_front_uptown.png",
+        "ExpansionID": 1,
+        "Name": "Uptown",
+        "NeighborhoodID": 9
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_backwoods.png",
+        "CardPath": "encounter/encounter_front_backwoods.png",
+        "ExpansionID": 3,
+        "Name": "Backwoods Country",
+        "NeighborhoodID": 10
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_blasted.png",
+        "CardPath": "encounter/encounter_front_blasted.png",
+        "ExpansionID": 3,
+        "Name": "Blasted Heath",
+        "NeighborhoodID": 11
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_village.png",
+        "CardPath": "encounter/encounter_front_village.png",
+        "ExpansionID": 3,
+        "Name": "Village Commons",
+        "NeighborhoodID": 12
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_central.png",
+        "CardPath": "encounter/encounter_front_central.png",
+        "ExpansionID": 5,
+        "Name": "Central Hill",
+        "NeighborhoodID": 13
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_harborside.png",
+        "CardPath": "encounter/encounter_front_harborside.png",
+        "ExpansionID": 5,
+        "Name": "Harborside",
+        "NeighborhoodID": 14
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_kingsport.png",
+        "CardPath": "encounter/encounter_front_kingsport.png",
+        "ExpansionID": 5,
+        "Name": "Kingsport Head",
+        "NeighborhoodID": 15
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_south.png",
+        "CardPath": "encounter/encounter_front_south.png",
+        "ExpansionID": 5,
+        "Name": "South Shore",
+        "NeighborhoodID": 16
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_church.png",
+        "CardPath": "encounter/encounter_front_church.png",
+        "ExpansionID": 7,
+        "Name": "Church Green",
+        "NeighborhoodID": 17
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_factory.png",
+        "CardPath": "encounter/encounter_front_factory.png",
+        "ExpansionID": 7,
+        "Name": "Factory District",
+        "NeighborhoodID": 18
+    },
+    {
+        "ButtonPath": "encounter/encounter_nei_btn_innsmouth.png",
+        "CardPath": "encounter/encounter_front_innsmouth.png",
+        "ExpansionID": 7,
+        "Name": "Innsmouth Shore",
+        "NeighborhoodID": 19
+    }
+]

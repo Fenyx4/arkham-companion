@@ -1,0 +1,46 @@
+[
+    {
+        "colorID": 0,
+        "pathID": 0
+    },
+    {
+        "colorID": 1,
+        "pathID": 1
+    },
+    {
+        "colorID": 2,
+        "pathID": 2
+    },
+    {
+        "colorID": 3,
+        "pathID": 3
+    },
+    {
+        "colorID": 4,
+        "pathID": 4
+    },
+    {
+        "colorID": 1,
+        "pathID": 5
+    },
+    {
+        "colorID": 2,
+        "pathID": 5
+    },
+    {
+        "colorID": 1,
+        "pathID": 6
+    },
+    {
+        "colorID": 3,
+        "pathID": 6
+    },
+    {
+        "colorID": 2,
+        "pathID": 7
+    },
+    {
+        "colorID": 4,
+        "pathID": 7
+    }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "expID": 1,
+        "expIconPath": null,
+        "expName": "Base"
+    },
+    {
+        "expID": 2,
+        "expIconPath": "encounter/icon_exp_dp.png",
+        "expName": "Curse of the Dark Pharoah"
+    },
+    {
+        "expID": 3,
+        "expIconPath": "encounter/icon_exp_dh.png",
+        "expName": "Dunwich Horror"
+    },
+    {
+        "expID": 4,
+        "expIconPath": "encounter/icon_exp_ky.png",
+        "expName": "The King in Yellow"
+    },
+    {
+        "expID": 5,
+        "expIconPath": "encounter/icon_exp_kh.png",
+        "expName": "Kingsport Horror"
+    },
+    {
+        "expID": 6,
+        "expIconPath": "encounter/icon_exp_bg.png",
+        "expName": "Black Goat of the Woods"
+    },
+    {
+        "expID": 7,
+        "expIconPath": "encounter/icon_exp_ih.png",
+        "expName": "Innsmouth Horror"
+    },
+    {
+        "expID": 8,
+        "expIconPath": "encounter/icon_exp_lt.png",
+        "expName": "Lurker at the Threshold"
+    },
+    {
+        "expID": 9,
+        "expIconPath": "encounter/icon_exp_dpr.png",
+        "expName": "Curse of the Dark Pharoah Revised"
+    },
+    {
+        "expID": 10,
+        "expIconPath": "encounter/icon_exp_mh.png",
+        "expName": "Miskatonic Horror"
+    }
+]

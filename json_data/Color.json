@@ -1,0 +1,32 @@
+[
+    {
+        "colorButtonPath": "encounter/otherworld_color_btn_colorless.png",
+        "colorExpID": 1,
+        "colorID": 0,
+        "colorName": "Colorless"
+    },
+    {
+        "colorButtonPath": "encounter/otherworld_color_btn_yellow.png",
+        "colorExpID": 1,
+        "colorID": 1,
+        "colorName": "Yellow"
+    },
+    {
+        "colorButtonPath": "encounter/otherworld_color_btn_red.png",
+        "colorExpID": 1,
+        "colorID": 2,
+        "colorName": "Red"
+    },
+    {
+        "colorButtonPath": "encounter/otherworld_color_btn_blue.png",
+        "colorExpID": 1,
+        "colorID": 3,
+        "colorName": "Blue"
+    },
+    {
+        "colorButtonPath": "encounter/otherworld_color_btn_green.png",
+        "colorExpID": 1,
+        "colorID": 4,
+        "colorName": "Green"
+    }
+]

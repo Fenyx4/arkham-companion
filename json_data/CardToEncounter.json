@@ -1,0 +1,12406 @@
+[
+    {
+        "cardID": 1,
+        "encID": 1
+    },
+    {
+        "cardID": 1,
+        "encID": 2
+    },
+    {
+        "cardID": 1,
+        "encID": 3
+    },
+    {
+        "cardID": 2,
+        "encID": 4
+    },
+    {
+        "cardID": 2,
+        "encID": 5
+    },
+    {
+        "cardID": 2,
+        "encID": 6
+    },
+    {
+        "cardID": 3,
+        "encID": 7
+    },
+    {
+        "cardID": 3,
+        "encID": 8
+    },
+    {
+        "cardID": 3,
+        "encID": 9
+    },
+    {
+        "cardID": 4,
+        "encID": 10
+    },
+    {
+        "cardID": 4,
+        "encID": 11
+    },
+    {
+        "cardID": 4,
+        "encID": 12
+    },
+    {
+        "cardID": 5,
+        "encID": 13
+    },
+    {
+        "cardID": 5,
+        "encID": 14
+    },
+    {
+        "cardID": 5,
+        "encID": 15
+    },
+    {
+        "cardID": 6,
+        "encID": 16
+    },
+    {
+        "cardID": 6,
+        "encID": 17
+    },
+    {
+        "cardID": 6,
+        "encID": 18
+    },
+    {
+        "cardID": 7,
+        "encID": 19
+    },
+    {
+        "cardID": 7,
+        "encID": 20
+    },
+    {
+        "cardID": 7,
+        "encID": 21
+    },
+    {
+        "cardID": 8,
+        "encID": 22
+    },
+    {
+        "cardID": 8,
+        "encID": 23
+    },
+    {
+        "cardID": 8,
+        "encID": 24
+    },
+    {
+        "cardID": 9,
+        "encID": 25
+    },
+    {
+        "cardID": 9,
+        "encID": 26
+    },
+    {
+        "cardID": 9,
+        "encID": 27
+    },
+    {
+        "cardID": 10,
+        "encID": 28
+    },
+    {
+        "cardID": 10,
+        "encID": 29
+    },
+    {
+        "cardID": 10,
+        "encID": 30
+    },
+    {
+        "cardID": 11,
+        "encID": 31
+    },
+    {
+        "cardID": 11,
+        "encID": 32
+    },
+    {
+        "cardID": 11,
+        "encID": 33
+    },
+    {
+        "cardID": 12,
+        "encID": 34
+    },
+    {
+        "cardID": 12,
+        "encID": 35
+    },
+    {
+        "cardID": 12,
+        "encID": 36
+    },
+    {
+        "cardID": 13,
+        "encID": 37
+    },
+    {
+        "cardID": 13,
+        "encID": 38
+    },
+    {
+        "cardID": 13,
+        "encID": 39
+    },
+    {
+        "cardID": 14,
+        "encID": 40
+    },
+    {
+        "cardID": 14,
+        "encID": 41
+    },
+    {
+        "cardID": 14,
+        "encID": 42
+    },
+    {
+        "cardID": 15,
+        "encID": 43
+    },
+    {
+        "cardID": 15,
+        "encID": 44
+    },
+    {
+        "cardID": 15,
+        "encID": 45
+    },
+    {
+        "cardID": 16,
+        "encID": 46
+    },
+    {
+        "cardID": 16,
+        "encID": 47
+    },
+    {
+        "cardID": 16,
+        "encID": 48
+    },
+    {
+        "cardID": 17,
+        "encID": 49
+    },
+    {
+        "cardID": 17,
+        "encID": 50
+    },
+    {
+        "cardID": 17,
+        "encID": 51
+    },
+    {
+        "cardID": 18,
+        "encID": 52
+    },
+    {
+        "cardID": 18,
+        "encID": 53
+    },
+    {
+        "cardID": 18,
+        "encID": 54
+    },
+    {
+        "cardID": 19,
+        "encID": 55
+    },
+    {
+        "cardID": 19,
+        "encID": 56
+    },
+    {
+        "cardID": 19,
+        "encID": 57
+    },
+    {
+        "cardID": 20,
+        "encID": 58
+    },
+    {
+        "cardID": 20,
+        "encID": 59
+    },
+    {
+        "cardID": 20,
+        "encID": 60
+    },
+    {
+        "cardID": 21,
+        "encID": 61
+    },
+    {
+        "cardID": 21,
+        "encID": 62
+    },
+    {
+        "cardID": 21,
+        "encID": 63
+    },
+    {
+        "cardID": 22,
+        "encID": 64
+    },
+    {
+        "cardID": 22,
+        "encID": 65
+    },
+    {
+        "cardID": 22,
+        "encID": 66
+    },
+    {
+        "cardID": 23,
+        "encID": 67
+    },
+    {
+        "cardID": 23,
+        "encID": 68
+    },
+    {
+        "cardID": 23,
+        "encID": 69
+    },
+    {
+        "cardID": 24,
+        "encID": 70
+    },
+    {
+        "cardID": 24,
+        "encID": 71
+    },
+    {
+        "cardID": 24,
+        "encID": 72
+    },
+    {
+        "cardID": 25,
+        "encID": 73
+    },
+    {
+        "cardID": 25,
+        "encID": 74
+    },
+    {
+        "cardID": 25,
+        "encID": 75
+    },
+    {
+        "cardID": 26,
+        "encID": 76
+    },
+    {
+        "cardID": 26,
+        "encID": 77
+    },
+    {
+        "cardID": 26,
+        "encID": 78
+    },
+    {
+        "cardID": 27,
+        "encID": 79
+    },
+    {
+        "cardID": 27,
+        "encID": 80
+    },
+    {
+        "cardID": 27,
+        "encID": 81
+    },
+    {
+        "cardID": 28,
+        "encID": 82
+    },
+    {
+        "cardID": 28,
+        "encID": 83
+    },
+    {
+        "cardID": 28,
+        "encID": 84
+    },
+    {
+        "cardID": 29,
+        "encID": 85
+    },
+    {
+        "cardID": 29,
+        "encID": 86
+    },
+    {
+        "cardID": 29,
+        "encID": 87
+    },
+    {
+        "cardID": 30,
+        "encID": 88
+    },
+    {
+        "cardID": 30,
+        "encID": 89
+    },
+    {
+        "cardID": 30,
+        "encID": 90
+    },
+    {
+        "cardID": 31,
+        "encID": 91
+    },
+    {
+        "cardID": 31,
+        "encID": 92
+    },
+    {
+        "cardID": 31,
+        "encID": 93
+    },
+    {
+        "cardID": 32,
+        "encID": 94
+    },
+    {
+        "cardID": 32,
+        "encID": 95
+    },
+    {
+        "cardID": 32,
+        "encID": 96
+    },
+    {
+        "cardID": 33,
+        "encID": 97
+    },
+    {
+        "cardID": 33,
+        "encID": 98
+    },
+    {
+        "cardID": 33,
+        "encID": 99
+    },
+    {
+        "cardID": 34,
+        "encID": 100
+    },
+    {
+        "cardID": 34,
+        "encID": 101
+    },
+    {
+        "cardID": 34,
+        "encID": 102
+    },
+    {
+        "cardID": -1,
+        "encID": 103
+    },
+    {
+        "cardID": -1,
+        "encID": 104
+    },
+    {
+        "cardID": -1,
+        "encID": 105
+    },
+    {
+        "cardID": 35,
+        "encID": 106
+    },
+    {
+        "cardID": 35,
+        "encID": 107
+    },
+    {
+        "cardID": 35,
+        "encID": 108
+    },
+    {
+        "cardID": -2,
+        "encID": 109
+    },
+    {
+        "cardID": -2,
+        "encID": 110
+    },
+    {
+        "cardID": -2,
+        "encID": 111
+    },
+    {
+        "cardID": 36,
+        "encID": 112
+    },
+    {
+        "cardID": 36,
+        "encID": 113
+    },
+    {
+        "cardID": 36,
+        "encID": 114
+    },
+    {
+        "cardID": -3,
+        "encID": 115
+    },
+    {
+        "cardID": -3,
+        "encID": 116
+    },
+    {
+        "cardID": -3,
+        "encID": 117
+    },
+    {
+        "cardID": 37,
+        "encID": 118
+    },
+    {
+        "cardID": 37,
+        "encID": 119
+    },
+    {
+        "cardID": 37,
+        "encID": 120
+    },
+    {
+        "cardID": -4,
+        "encID": 121
+    },
+    {
+        "cardID": -4,
+        "encID": 122
+    },
+    {
+        "cardID": -4,
+        "encID": 123
+    },
+    {
+        "cardID": 38,
+        "encID": 124
+    },
+    {
+        "cardID": 38,
+        "encID": 125
+    },
+    {
+        "cardID": 38,
+        "encID": 126
+    },
+    {
+        "cardID": -5,
+        "encID": 127
+    },
+    {
+        "cardID": -5,
+        "encID": 128
+    },
+    {
+        "cardID": -5,
+        "encID": 129
+    },
+    {
+        "cardID": 39,
+        "encID": 130
+    },
+    {
+        "cardID": 39,
+        "encID": 131
+    },
+    {
+        "cardID": 39,
+        "encID": 132
+    },
+    {
+        "cardID": -6,
+        "encID": 133
+    },
+    {
+        "cardID": -6,
+        "encID": 134
+    },
+    {
+        "cardID": -6,
+        "encID": 135
+    },
+    {
+        "cardID": 40,
+        "encID": 136
+    },
+    {
+        "cardID": 40,
+        "encID": 137
+    },
+    {
+        "cardID": 40,
+        "encID": 138
+    },
+    {
+        "cardID": 41,
+        "encID": 139
+    },
+    {
+        "cardID": 41,
+        "encID": 140
+    },
+    {
+        "cardID": 41,
+        "encID": 141
+    },
+    {
+        "cardID": 42,
+        "encID": 142
+    },
+    {
+        "cardID": 42,
+        "encID": 143
+    },
+    {
+        "cardID": 42,
+        "encID": 144
+    },
+    {
+        "cardID": 43,
+        "encID": 145
+    },
+    {
+        "cardID": 43,
+        "encID": 146
+    },
+    {
+        "cardID": 43,
+        "encID": 147
+    },
+    {
+        "cardID": 44,
+        "encID": 148
+    },
+    {
+        "cardID": 44,
+        "encID": 149
+    },
+    {
+        "cardID": 44,
+        "encID": 150
+    },
+    {
+        "cardID": 45,
+        "encID": 151
+    },
+    {
+        "cardID": 45,
+        "encID": 152
+    },
+    {
+        "cardID": 45,
+        "encID": 153
+    },
+    {
+        "cardID": 46,
+        "encID": 154
+    },
+    {
+        "cardID": 46,
+        "encID": 155
+    },
+    {
+        "cardID": 46,
+        "encID": 156
+    },
+    {
+        "cardID": 47,
+        "encID": 157
+    },
+    {
+        "cardID": 47,
+        "encID": 158
+    },
+    {
+        "cardID": 47,
+        "encID": 159
+    },
+    {
+        "cardID": 48,
+        "encID": 160
+    },
+    {
+        "cardID": 48,
+        "encID": 161
+    },
+    {
+        "cardID": 48,
+        "encID": 162
+    },
+    {
+        "cardID": 49,
+        "encID": 163
+    },
+    {
+        "cardID": 49,
+        "encID": 164
+    },
+    {
+        "cardID": 49,
+        "encID": 165
+    },
+    {
+        "cardID": 50,
+        "encID": 166
+    },
+    {
+        "cardID": 50,
+        "encID": 167
+    },
+    {
+        "cardID": 50,
+        "encID": 168
+    },
+    {
+        "cardID": 51,
+        "encID": 169
+    },
+    {
+        "cardID": 51,
+        "encID": 170
+    },
+    {
+        "cardID": 51,
+        "encID": 171
+    },
+    {
+        "cardID": 52,
+        "encID": 172
+    },
+    {
+        "cardID": 52,
+        "encID": 173
+    },
+    {
+        "cardID": 52,
+        "encID": 174
+    },
+    {
+        "cardID": 53,
+        "encID": 175
+    },
+    {
+        "cardID": 53,
+        "encID": 176
+    },
+    {
+        "cardID": 53,
+        "encID": 177
+    },
+    {
+        "cardID": 54,
+        "encID": 178
+    },
+    {
+        "cardID": 54,
+        "encID": 179
+    },
+    {
+        "cardID": 54,
+        "encID": 180
+    },
+    {
+        "cardID": 55,
+        "encID": 181
+    },
+    {
+        "cardID": 55,
+        "encID": 182
+    },
+    {
+        "cardID": 55,
+        "encID": 183
+    },
+    {
+        "cardID": 56,
+        "encID": 184
+    },
+    {
+        "cardID": 56,
+        "encID": 185
+    },
+    {
+        "cardID": 56,
+        "encID": 186
+    },
+    {
+        "cardID": 57,
+        "encID": 187
+    },
+    {
+        "cardID": 57,
+        "encID": 188
+    },
+    {
+        "cardID": 57,
+        "encID": 189
+    },
+    {
+        "cardID": 58,
+        "encID": 190
+    },
+    {
+        "cardID": 58,
+        "encID": 191
+    },
+    {
+        "cardID": 58,
+        "encID": 192
+    },
+    {
+        "cardID": 59,
+        "encID": 193
+    },
+    {
+        "cardID": 59,
+        "encID": 194
+    },
+    {
+        "cardID": 59,
+        "encID": 195
+    },
+    {
+        "cardID": 60,
+        "encID": 196
+    },
+    {
+        "cardID": 60,
+        "encID": 197
+    },
+    {
+        "cardID": 60,
+        "encID": 198
+    },
+    {
+        "cardID": 61,
+        "encID": 199
+    },
+    {
+        "cardID": 61,
+        "encID": 200
+    },
+    {
+        "cardID": 61,
+        "encID": 201
+    },
+    {
+        "cardID": 62,
+        "encID": 202
+    },
+    {
+        "cardID": 62,
+        "encID": 203
+    },
+    {
+        "cardID": 62,
+        "encID": 204
+    },
+    {
+        "cardID": 63,
+        "encID": 205
+    },
+    {
+        "cardID": 63,
+        "encID": 206
+    },
+    {
+        "cardID": 63,
+        "encID": 207
+    },
+    {
+        "cardID": 64,
+        "encID": 208
+    },
+    {
+        "cardID": 64,
+        "encID": 209
+    },
+    {
+        "cardID": 64,
+        "encID": 210
+    },
+    {
+        "cardID": 65,
+        "encID": 211
+    },
+    {
+        "cardID": 65,
+        "encID": 212
+    },
+    {
+        "cardID": 65,
+        "encID": 213
+    },
+    {
+        "cardID": 66,
+        "encID": 214
+    },
+    {
+        "cardID": 66,
+        "encID": 215
+    },
+    {
+        "cardID": 66,
+        "encID": 216
+    },
+    {
+        "cardID": 67,
+        "encID": 217
+    },
+    {
+        "cardID": 67,
+        "encID": 218
+    },
+    {
+        "cardID": 67,
+        "encID": 219
+    },
+    {
+        "cardID": 68,
+        "encID": 220
+    },
+    {
+        "cardID": 68,
+        "encID": 221
+    },
+    {
+        "cardID": 68,
+        "encID": 222
+    },
+    {
+        "cardID": 69,
+        "encID": 223
+    },
+    {
+        "cardID": 69,
+        "encID": 224
+    },
+    {
+        "cardID": 69,
+        "encID": 225
+    },
+    {
+        "cardID": 70,
+        "encID": 226
+    },
+    {
+        "cardID": 70,
+        "encID": 227
+    },
+    {
+        "cardID": 70,
+        "encID": 228
+    },
+    {
+        "cardID": 71,
+        "encID": 229
+    },
+    {
+        "cardID": 71,
+        "encID": 230
+    },
+    {
+        "cardID": 71,
+        "encID": 231
+    },
+    {
+        "cardID": 72,
+        "encID": 232
+    },
+    {
+        "cardID": 72,
+        "encID": 233
+    },
+    {
+        "cardID": 72,
+        "encID": 234
+    },
+    {
+        "cardID": 73,
+        "encID": 235
+    },
+    {
+        "cardID": 73,
+        "encID": 236
+    },
+    {
+        "cardID": 73,
+        "encID": 237
+    },
+    {
+        "cardID": 74,
+        "encID": 238
+    },
+    {
+        "cardID": 74,
+        "encID": 239
+    },
+    {
+        "cardID": 74,
+        "encID": 240
+    },
+    {
+        "cardID": 75,
+        "encID": 241
+    },
+    {
+        "cardID": 75,
+        "encID": 242
+    },
+    {
+        "cardID": 75,
+        "encID": 243
+    },
+    {
+        "cardID": 76,
+        "encID": 244
+    },
+    {
+        "cardID": 76,
+        "encID": 245
+    },
+    {
+        "cardID": 76,
+        "encID": 246
+    },
+    {
+        "cardID": -7,
+        "encID": 247
+    },
+    {
+        "cardID": -7,
+        "encID": 248
+    },
+    {
+        "cardID": -7,
+        "encID": 249
+    },
+    {
+        "cardID": -8,
+        "encID": 250
+    },
+    {
+        "cardID": -8,
+        "encID": 251
+    },
+    {
+        "cardID": -8,
+        "encID": 252
+    },
+    {
+        "cardID": -9,
+        "encID": 253
+    },
+    {
+        "cardID": -9,
+        "encID": 254
+    },
+    {
+        "cardID": -9,
+        "encID": 255
+    },
+    {
+        "cardID": -10,
+        "encID": 256
+    },
+    {
+        "cardID": -10,
+        "encID": 257
+    },
+    {
+        "cardID": -10,
+        "encID": 258
+    },
+    {
+        "cardID": -11,
+        "encID": 259
+    },
+    {
+        "cardID": -11,
+        "encID": 260
+    },
+    {
+        "cardID": -11,
+        "encID": 261
+    },
+    {
+        "cardID": -12,
+        "encID": 262
+    },
+    {
+        "cardID": -12,
+        "encID": 263
+    },
+    {
+        "cardID": -12,
+        "encID": 264
+    },
+    {
+        "cardID": 80,
+        "encID": 265
+    },
+    {
+        "cardID": 80,
+        "encID": 266
+    },
+    {
+        "cardID": 80,
+        "encID": 267
+    },
+    {
+        "cardID": 81,
+        "encID": 268
+    },
+    {
+        "cardID": 81,
+        "encID": 269
+    },
+    {
+        "cardID": 81,
+        "encID": 270
+    },
+    {
+        "cardID": 82,
+        "encID": 271
+    },
+    {
+        "cardID": 82,
+        "encID": 272
+    },
+    {
+        "cardID": 82,
+        "encID": 273
+    },
+    {
+        "cardID": 93,
+        "encID": 274
+    },
+    {
+        "cardID": 93,
+        "encID": 275
+    },
+    {
+        "cardID": 93,
+        "encID": 276
+    },
+    {
+        "cardID": 94,
+        "encID": 277
+    },
+    {
+        "cardID": 94,
+        "encID": 278
+    },
+    {
+        "cardID": 94,
+        "encID": 279
+    },
+    {
+        "cardID": 96,
+        "encID": 280
+    },
+    {
+        "cardID": 96,
+        "encID": 281
+    },
+    {
+        "cardID": 96,
+        "encID": 282
+    },
+    {
+        "cardID": 99,
+        "encID": 283
+    },
+    {
+        "cardID": 99,
+        "encID": 284
+    },
+    {
+        "cardID": 99,
+        "encID": 285
+    },
+    {
+        "cardID": 101,
+        "encID": 286
+    },
+    {
+        "cardID": 101,
+        "encID": 287
+    },
+    {
+        "cardID": 101,
+        "encID": 288
+    },
+    {
+        "cardID": 102,
+        "encID": 289
+    },
+    {
+        "cardID": 102,
+        "encID": 290
+    },
+    {
+        "cardID": 102,
+        "encID": 291
+    },
+    {
+        "cardID": 103,
+        "encID": 292
+    },
+    {
+        "cardID": 103,
+        "encID": 293
+    },
+    {
+        "cardID": 103,
+        "encID": 294
+    },
+    {
+        "cardID": 104,
+        "encID": 295
+    },
+    {
+        "cardID": 104,
+        "encID": 296
+    },
+    {
+        "cardID": 104,
+        "encID": 297
+    },
+    {
+        "cardID": 105,
+        "encID": 298
+    },
+    {
+        "cardID": 105,
+        "encID": 299
+    },
+    {
+        "cardID": 105,
+        "encID": 300
+    },
+    {
+        "cardID": 106,
+        "encID": 301
+    },
+    {
+        "cardID": 106,
+        "encID": 302
+    },
+    {
+        "cardID": 106,
+        "encID": 303
+    },
+    {
+        "cardID": 107,
+        "encID": 304
+    },
+    {
+        "cardID": 107,
+        "encID": 305
+    },
+    {
+        "cardID": 107,
+        "encID": 306
+    },
+    {
+        "cardID": 108,
+        "encID": 307
+    },
+    {
+        "cardID": 108,
+        "encID": 308
+    },
+    {
+        "cardID": 108,
+        "encID": 309
+    },
+    {
+        "cardID": 109,
+        "encID": 310
+    },
+    {
+        "cardID": 109,
+        "encID": 311
+    },
+    {
+        "cardID": 109,
+        "encID": 312
+    },
+    {
+        "cardID": 110,
+        "encID": 313
+    },
+    {
+        "cardID": 110,
+        "encID": 314
+    },
+    {
+        "cardID": 110,
+        "encID": 315
+    },
+    {
+        "cardID": 111,
+        "encID": 316
+    },
+    {
+        "cardID": 111,
+        "encID": 317
+    },
+    {
+        "cardID": 111,
+        "encID": 318
+    },
+    {
+        "cardID": 90,
+        "encID": 319
+    },
+    {
+        "cardID": 90,
+        "encID": 320
+    },
+    {
+        "cardID": 90,
+        "encID": 321
+    },
+    {
+        "cardID": 91,
+        "encID": 322
+    },
+    {
+        "cardID": 91,
+        "encID": 323
+    },
+    {
+        "cardID": 91,
+        "encID": 324
+    },
+    {
+        "cardID": 95,
+        "encID": 325
+    },
+    {
+        "cardID": 95,
+        "encID": 326
+    },
+    {
+        "cardID": 95,
+        "encID": 327
+    },
+    {
+        "cardID": 98,
+        "encID": 328
+    },
+    {
+        "cardID": 98,
+        "encID": 329
+    },
+    {
+        "cardID": 98,
+        "encID": 330
+    },
+    {
+        "cardID": 83,
+        "encID": 331
+    },
+    {
+        "cardID": 83,
+        "encID": 332
+    },
+    {
+        "cardID": 83,
+        "encID": 333
+    },
+    {
+        "cardID": 84,
+        "encID": 334
+    },
+    {
+        "cardID": 84,
+        "encID": 335
+    },
+    {
+        "cardID": 84,
+        "encID": 336
+    },
+    {
+        "cardID": 85,
+        "encID": 337
+    },
+    {
+        "cardID": 85,
+        "encID": 338
+    },
+    {
+        "cardID": 85,
+        "encID": 339
+    },
+    {
+        "cardID": 86,
+        "encID": 340
+    },
+    {
+        "cardID": 86,
+        "encID": 341
+    },
+    {
+        "cardID": 86,
+        "encID": 342
+    },
+    {
+        "cardID": 112,
+        "encID": 343
+    },
+    {
+        "cardID": 112,
+        "encID": 344
+    },
+    {
+        "cardID": 112,
+        "encID": 345
+    },
+    {
+        "cardID": 113,
+        "encID": 346
+    },
+    {
+        "cardID": 113,
+        "encID": 347
+    },
+    {
+        "cardID": 113,
+        "encID": 348
+    },
+    {
+        "cardID": 114,
+        "encID": 349
+    },
+    {
+        "cardID": 114,
+        "encID": 350
+    },
+    {
+        "cardID": 114,
+        "encID": 351
+    },
+    {
+        "cardID": 115,
+        "encID": 352
+    },
+    {
+        "cardID": 115,
+        "encID": 353
+    },
+    {
+        "cardID": 115,
+        "encID": 354
+    },
+    {
+        "cardID": 89,
+        "encID": 355
+    },
+    {
+        "cardID": 89,
+        "encID": 356
+    },
+    {
+        "cardID": 89,
+        "encID": 357
+    },
+    {
+        "cardID": 92,
+        "encID": 358
+    },
+    {
+        "cardID": 92,
+        "encID": 359
+    },
+    {
+        "cardID": 92,
+        "encID": 360
+    },
+    {
+        "cardID": 97,
+        "encID": 361
+    },
+    {
+        "cardID": 97,
+        "encID": 362
+    },
+    {
+        "cardID": 97,
+        "encID": 363
+    },
+    {
+        "cardID": 100,
+        "encID": 364
+    },
+    {
+        "cardID": 100,
+        "encID": 365
+    },
+    {
+        "cardID": 100,
+        "encID": 366
+    },
+    {
+        "cardID": 77,
+        "encID": 367
+    },
+    {
+        "cardID": 77,
+        "encID": 368
+    },
+    {
+        "cardID": 77,
+        "encID": 369
+    },
+    {
+        "cardID": 78,
+        "encID": 370
+    },
+    {
+        "cardID": 78,
+        "encID": 371
+    },
+    {
+        "cardID": 78,
+        "encID": 372
+    },
+    {
+        "cardID": 79,
+        "encID": 373
+    },
+    {
+        "cardID": 79,
+        "encID": 374
+    },
+    {
+        "cardID": 79,
+        "encID": 375
+    },
+    {
+        "cardID": 87,
+        "encID": 376
+    },
+    {
+        "cardID": 87,
+        "encID": 377
+    },
+    {
+        "cardID": 87,
+        "encID": 378
+    },
+    {
+        "cardID": 88,
+        "encID": 379
+    },
+    {
+        "cardID": 88,
+        "encID": 380
+    },
+    {
+        "cardID": 88,
+        "encID": 381
+    },
+    {
+        "cardID": -13,
+        "encID": 382
+    },
+    {
+        "cardID": -13,
+        "encID": 383
+    },
+    {
+        "cardID": -13,
+        "encID": 384
+    },
+    {
+        "cardID": -14,
+        "encID": 385
+    },
+    {
+        "cardID": -14,
+        "encID": 386
+    },
+    {
+        "cardID": -14,
+        "encID": 387
+    },
+    {
+        "cardID": -15,
+        "encID": 388
+    },
+    {
+        "cardID": -15,
+        "encID": 389
+    },
+    {
+        "cardID": -15,
+        "encID": 390
+    },
+    {
+        "cardID": -16,
+        "encID": 391
+    },
+    {
+        "cardID": -16,
+        "encID": 392
+    },
+    {
+        "cardID": -16,
+        "encID": 393
+    },
+    {
+        "cardID": -17,
+        "encID": 394
+    },
+    {
+        "cardID": -17,
+        "encID": 395
+    },
+    {
+        "cardID": -17,
+        "encID": 396
+    },
+    {
+        "cardID": -22,
+        "encID": 397
+    },
+    {
+        "cardID": -22,
+        "encID": 398
+    },
+    {
+        "cardID": -22,
+        "encID": 399
+    },
+    {
+        "cardID": -21,
+        "encID": 400
+    },
+    {
+        "cardID": -21,
+        "encID": 401
+    },
+    {
+        "cardID": -21,
+        "encID": 402
+    },
+    {
+        "cardID": -20,
+        "encID": 403
+    },
+    {
+        "cardID": -20,
+        "encID": 404
+    },
+    {
+        "cardID": -20,
+        "encID": 405
+    },
+    {
+        "cardID": -19,
+        "encID": 406
+    },
+    {
+        "cardID": -19,
+        "encID": 407
+    },
+    {
+        "cardID": -19,
+        "encID": 408
+    },
+    {
+        "cardID": -18,
+        "encID": 409
+    },
+    {
+        "cardID": -18,
+        "encID": 410
+    },
+    {
+        "cardID": -18,
+        "encID": 411
+    },
+    {
+        "cardID": 116,
+        "encID": 412
+    },
+    {
+        "cardID": 116,
+        "encID": 413
+    },
+    {
+        "cardID": 116,
+        "encID": 414
+    },
+    {
+        "cardID": 117,
+        "encID": 415
+    },
+    {
+        "cardID": 117,
+        "encID": 416
+    },
+    {
+        "cardID": 117,
+        "encID": 417
+    },
+    {
+        "cardID": 118,
+        "encID": 418
+    },
+    {
+        "cardID": 118,
+        "encID": 419
+    },
+    {
+        "cardID": 118,
+        "encID": 420
+    },
+    {
+        "cardID": 119,
+        "encID": 421
+    },
+    {
+        "cardID": 119,
+        "encID": 422
+    },
+    {
+        "cardID": 119,
+        "encID": 423
+    },
+    {
+        "cardID": 120,
+        "encID": 424
+    },
+    {
+        "cardID": 120,
+        "encID": 425
+    },
+    {
+        "cardID": 120,
+        "encID": 426
+    },
+    {
+        "cardID": 121,
+        "encID": 427
+    },
+    {
+        "cardID": 121,
+        "encID": 428
+    },
+    {
+        "cardID": 121,
+        "encID": 429
+    },
+    {
+        "cardID": 122,
+        "encID": 430
+    },
+    {
+        "cardID": 122,
+        "encID": 431
+    },
+    {
+        "cardID": 122,
+        "encID": 432
+    },
+    {
+        "cardID": 123,
+        "encID": 433
+    },
+    {
+        "cardID": 123,
+        "encID": 434
+    },
+    {
+        "cardID": 123,
+        "encID": 435
+    },
+    {
+        "cardID": 124,
+        "encID": 436
+    },
+    {
+        "cardID": 124,
+        "encID": 437
+    },
+    {
+        "cardID": 124,
+        "encID": 438
+    },
+    {
+        "cardID": 125,
+        "encID": 439
+    },
+    {
+        "cardID": 125,
+        "encID": 440
+    },
+    {
+        "cardID": 125,
+        "encID": 441
+    },
+    {
+        "cardID": 126,
+        "encID": 442
+    },
+    {
+        "cardID": 126,
+        "encID": 443
+    },
+    {
+        "cardID": 126,
+        "encID": 444
+    },
+    {
+        "cardID": 127,
+        "encID": 445
+    },
+    {
+        "cardID": 127,
+        "encID": 446
+    },
+    {
+        "cardID": 127,
+        "encID": 447
+    },
+    {
+        "cardID": 128,
+        "encID": 448
+    },
+    {
+        "cardID": 128,
+        "encID": 449
+    },
+    {
+        "cardID": 128,
+        "encID": 450
+    },
+    {
+        "cardID": 129,
+        "encID": 451
+    },
+    {
+        "cardID": 129,
+        "encID": 452
+    },
+    {
+        "cardID": 129,
+        "encID": 453
+    },
+    {
+        "cardID": 130,
+        "encID": 454
+    },
+    {
+        "cardID": 130,
+        "encID": 455
+    },
+    {
+        "cardID": 130,
+        "encID": 456
+    },
+    {
+        "cardID": 131,
+        "encID": 457
+    },
+    {
+        "cardID": 131,
+        "encID": 458
+    },
+    {
+        "cardID": 131,
+        "encID": 459
+    },
+    {
+        "cardID": 132,
+        "encID": 460
+    },
+    {
+        "cardID": 132,
+        "encID": 461
+    },
+    {
+        "cardID": 132,
+        "encID": 462
+    },
+    {
+        "cardID": 133,
+        "encID": 463
+    },
+    {
+        "cardID": 133,
+        "encID": 464
+    },
+    {
+        "cardID": 133,
+        "encID": 465
+    },
+    {
+        "cardID": 134,
+        "encID": 466
+    },
+    {
+        "cardID": 134,
+        "encID": 467
+    },
+    {
+        "cardID": 134,
+        "encID": 468
+    },
+    {
+        "cardID": 135,
+        "encID": 469
+    },
+    {
+        "cardID": 135,
+        "encID": 470
+    },
+    {
+        "cardID": 135,
+        "encID": 471
+    },
+    {
+        "cardID": 136,
+        "encID": 472
+    },
+    {
+        "cardID": 136,
+        "encID": 473
+    },
+    {
+        "cardID": 136,
+        "encID": 474
+    },
+    {
+        "cardID": 137,
+        "encID": 475
+    },
+    {
+        "cardID": 137,
+        "encID": 476
+    },
+    {
+        "cardID": 137,
+        "encID": 477
+    },
+    {
+        "cardID": 138,
+        "encID": 478
+    },
+    {
+        "cardID": 138,
+        "encID": 479
+    },
+    {
+        "cardID": 138,
+        "encID": 480
+    },
+    {
+        "cardID": 139,
+        "encID": 481
+    },
+    {
+        "cardID": 139,
+        "encID": 482
+    },
+    {
+        "cardID": 139,
+        "encID": 483
+    },
+    {
+        "cardID": 140,
+        "encID": 484
+    },
+    {
+        "cardID": 140,
+        "encID": 485
+    },
+    {
+        "cardID": 140,
+        "encID": 486
+    },
+    {
+        "cardID": 141,
+        "encID": 487
+    },
+    {
+        "cardID": 141,
+        "encID": 488
+    },
+    {
+        "cardID": 141,
+        "encID": 489
+    },
+    {
+        "cardID": 142,
+        "encID": 490
+    },
+    {
+        "cardID": 142,
+        "encID": 491
+    },
+    {
+        "cardID": 142,
+        "encID": 492
+    },
+    {
+        "cardID": 143,
+        "encID": 493
+    },
+    {
+        "cardID": 143,
+        "encID": 494
+    },
+    {
+        "cardID": 143,
+        "encID": 495
+    },
+    {
+        "cardID": 144,
+        "encID": 496
+    },
+    {
+        "cardID": 144,
+        "encID": 497
+    },
+    {
+        "cardID": 144,
+        "encID": 498
+    },
+    {
+        "cardID": 145,
+        "encID": 499
+    },
+    {
+        "cardID": 145,
+        "encID": 500
+    },
+    {
+        "cardID": 145,
+        "encID": 501
+    },
+    {
+        "cardID": 146,
+        "encID": 502
+    },
+    {
+        "cardID": 146,
+        "encID": 503
+    },
+    {
+        "cardID": 146,
+        "encID": 504
+    },
+    {
+        "cardID": 147,
+        "encID": 505
+    },
+    {
+        "cardID": 147,
+        "encID": 506
+    },
+    {
+        "cardID": 147,
+        "encID": 507
+    },
+    {
+        "cardID": 149,
+        "encID": 508
+    },
+    {
+        "cardID": 149,
+        "encID": 509
+    },
+    {
+        "cardID": 149,
+        "encID": 510
+    },
+    {
+        "cardID": 150,
+        "encID": 511
+    },
+    {
+        "cardID": 150,
+        "encID": 512
+    },
+    {
+        "cardID": 150,
+        "encID": 513
+    },
+    {
+        "cardID": 151,
+        "encID": 514
+    },
+    {
+        "cardID": 151,
+        "encID": 515
+    },
+    {
+        "cardID": 151,
+        "encID": 516
+    },
+    {
+        "cardID": 152,
+        "encID": 517
+    },
+    {
+        "cardID": 152,
+        "encID": 518
+    },
+    {
+        "cardID": 152,
+        "encID": 519
+    },
+    {
+        "cardID": 153,
+        "encID": 520
+    },
+    {
+        "cardID": 153,
+        "encID": 521
+    },
+    {
+        "cardID": 153,
+        "encID": 522
+    },
+    {
+        "cardID": 154,
+        "encID": 523
+    },
+    {
+        "cardID": 154,
+        "encID": 524
+    },
+    {
+        "cardID": 154,
+        "encID": 525
+    },
+    {
+        "cardID": 155,
+        "encID": 526
+    },
+    {
+        "cardID": 155,
+        "encID": 527
+    },
+    {
+        "cardID": 155,
+        "encID": 528
+    },
+    {
+        "cardID": -27,
+        "encID": 529
+    },
+    {
+        "cardID": -27,
+        "encID": 530
+    },
+    {
+        "cardID": -27,
+        "encID": 531
+    },
+    {
+        "cardID": -26,
+        "encID": 532
+    },
+    {
+        "cardID": -26,
+        "encID": 533
+    },
+    {
+        "cardID": -26,
+        "encID": 534
+    },
+    {
+        "cardID": -25,
+        "encID": 535
+    },
+    {
+        "cardID": -25,
+        "encID": 536
+    },
+    {
+        "cardID": -25,
+        "encID": 537
+    },
+    {
+        "cardID": -24,
+        "encID": 538
+    },
+    {
+        "cardID": -24,
+        "encID": 539
+    },
+    {
+        "cardID": -24,
+        "encID": 540
+    },
+    {
+        "cardID": -23,
+        "encID": 541
+    },
+    {
+        "cardID": -23,
+        "encID": 542
+    },
+    {
+        "cardID": -23,
+        "encID": 543
+    },
+    {
+        "cardID": 156,
+        "encID": 544
+    },
+    {
+        "cardID": 156,
+        "encID": 545
+    },
+    {
+        "cardID": 156,
+        "encID": 546
+    },
+    {
+        "cardID": 157,
+        "encID": 547
+    },
+    {
+        "cardID": 157,
+        "encID": 548
+    },
+    {
+        "cardID": 157,
+        "encID": 549
+    },
+    {
+        "cardID": 158,
+        "encID": 550
+    },
+    {
+        "cardID": 158,
+        "encID": 551
+    },
+    {
+        "cardID": 158,
+        "encID": 552
+    },
+    {
+        "cardID": 159,
+        "encID": 553
+    },
+    {
+        "cardID": 159,
+        "encID": 554
+    },
+    {
+        "cardID": 159,
+        "encID": 555
+    },
+    {
+        "cardID": 160,
+        "encID": 556
+    },
+    {
+        "cardID": 160,
+        "encID": 557
+    },
+    {
+        "cardID": 160,
+        "encID": 558
+    },
+    {
+        "cardID": 161,
+        "encID": 559
+    },
+    {
+        "cardID": 161,
+        "encID": 560
+    },
+    {
+        "cardID": 161,
+        "encID": 561
+    },
+    {
+        "cardID": 162,
+        "encID": 562
+    },
+    {
+        "cardID": 162,
+        "encID": 563
+    },
+    {
+        "cardID": 162,
+        "encID": 564
+    },
+    {
+        "cardID": 163,
+        "encID": 565
+    },
+    {
+        "cardID": 163,
+        "encID": 566
+    },
+    {
+        "cardID": 163,
+        "encID": 567
+    },
+    {
+        "cardID": 164,
+        "encID": 568
+    },
+    {
+        "cardID": 164,
+        "encID": 569
+    },
+    {
+        "cardID": 164,
+        "encID": 570
+    },
+    {
+        "cardID": 165,
+        "encID": 571
+    },
+    {
+        "cardID": 165,
+        "encID": 572
+    },
+    {
+        "cardID": 165,
+        "encID": 573
+    },
+    {
+        "cardID": 166,
+        "encID": 574
+    },
+    {
+        "cardID": 166,
+        "encID": 575
+    },
+    {
+        "cardID": 166,
+        "encID": 576
+    },
+    {
+        "cardID": 167,
+        "encID": 577
+    },
+    {
+        "cardID": 167,
+        "encID": 578
+    },
+    {
+        "cardID": 167,
+        "encID": 579
+    },
+    {
+        "cardID": 168,
+        "encID": 580
+    },
+    {
+        "cardID": 168,
+        "encID": 581
+    },
+    {
+        "cardID": 168,
+        "encID": 582
+    },
+    {
+        "cardID": 169,
+        "encID": 583
+    },
+    {
+        "cardID": 169,
+        "encID": 584
+    },
+    {
+        "cardID": 169,
+        "encID": 585
+    },
+    {
+        "cardID": 170,
+        "encID": 586
+    },
+    {
+        "cardID": 170,
+        "encID": 587
+    },
+    {
+        "cardID": 170,
+        "encID": 588
+    },
+    {
+        "cardID": 171,
+        "encID": 589
+    },
+    {
+        "cardID": 171,
+        "encID": 590
+    },
+    {
+        "cardID": 171,
+        "encID": 591
+    },
+    {
+        "cardID": 172,
+        "encID": 592
+    },
+    {
+        "cardID": 172,
+        "encID": 593
+    },
+    {
+        "cardID": 172,
+        "encID": 594
+    },
+    {
+        "cardID": 173,
+        "encID": 595
+    },
+    {
+        "cardID": 173,
+        "encID": 596
+    },
+    {
+        "cardID": 173,
+        "encID": 597
+    },
+    {
+        "cardID": 174,
+        "encID": 598
+    },
+    {
+        "cardID": 174,
+        "encID": 599
+    },
+    {
+        "cardID": 174,
+        "encID": 600
+    },
+    {
+        "cardID": 175,
+        "encID": 601
+    },
+    {
+        "cardID": 175,
+        "encID": 602
+    },
+    {
+        "cardID": 175,
+        "encID": 603
+    },
+    {
+        "cardID": 176,
+        "encID": 604
+    },
+    {
+        "cardID": 176,
+        "encID": 605
+    },
+    {
+        "cardID": 176,
+        "encID": 606
+    },
+    {
+        "cardID": 177,
+        "encID": 607
+    },
+    {
+        "cardID": 177,
+        "encID": 608
+    },
+    {
+        "cardID": 177,
+        "encID": 609
+    },
+    {
+        "cardID": 178,
+        "encID": 610
+    },
+    {
+        "cardID": 178,
+        "encID": 611
+    },
+    {
+        "cardID": 178,
+        "encID": 612
+    },
+    {
+        "cardID": 179,
+        "encID": 613
+    },
+    {
+        "cardID": 179,
+        "encID": 614
+    },
+    {
+        "cardID": 179,
+        "encID": 615
+    },
+    {
+        "cardID": 180,
+        "encID": 616
+    },
+    {
+        "cardID": 180,
+        "encID": 617
+    },
+    {
+        "cardID": 180,
+        "encID": 618
+    },
+    {
+        "cardID": 181,
+        "encID": 619
+    },
+    {
+        "cardID": 181,
+        "encID": 620
+    },
+    {
+        "cardID": 181,
+        "encID": 621
+    },
+    {
+        "cardID": 182,
+        "encID": 622
+    },
+    {
+        "cardID": 182,
+        "encID": 623
+    },
+    {
+        "cardID": 182,
+        "encID": 624
+    },
+    {
+        "cardID": 183,
+        "encID": 625
+    },
+    {
+        "cardID": 183,
+        "encID": 626
+    },
+    {
+        "cardID": 183,
+        "encID": 627
+    },
+    {
+        "cardID": 184,
+        "encID": 628
+    },
+    {
+        "cardID": 184,
+        "encID": 629
+    },
+    {
+        "cardID": 184,
+        "encID": 630
+    },
+    {
+        "cardID": 185,
+        "encID": 631
+    },
+    {
+        "cardID": 185,
+        "encID": 632
+    },
+    {
+        "cardID": 185,
+        "encID": 633
+    },
+    {
+        "cardID": 186,
+        "encID": 634
+    },
+    {
+        "cardID": 186,
+        "encID": 635
+    },
+    {
+        "cardID": 186,
+        "encID": 636
+    },
+    {
+        "cardID": 187,
+        "encID": 637
+    },
+    {
+        "cardID": 187,
+        "encID": 638
+    },
+    {
+        "cardID": 187,
+        "encID": 639
+    },
+    {
+        "cardID": 188,
+        "encID": 640
+    },
+    {
+        "cardID": 188,
+        "encID": 641
+    },
+    {
+        "cardID": 188,
+        "encID": 642
+    },
+    {
+        "cardID": 189,
+        "encID": 643
+    },
+    {
+        "cardID": 189,
+        "encID": 644
+    },
+    {
+        "cardID": 189,
+        "encID": 645
+    },
+    {
+        "cardID": 190,
+        "encID": 646
+    },
+    {
+        "cardID": 190,
+        "encID": 647
+    },
+    {
+        "cardID": 190,
+        "encID": 648
+    },
+    {
+        "cardID": 191,
+        "encID": 649
+    },
+    {
+        "cardID": 191,
+        "encID": 650
+    },
+    {
+        "cardID": 191,
+        "encID": 651
+    },
+    {
+        "cardID": 192,
+        "encID": 652
+    },
+    {
+        "cardID": 192,
+        "encID": 653
+    },
+    {
+        "cardID": 192,
+        "encID": 654
+    },
+    {
+        "cardID": 193,
+        "encID": 655
+    },
+    {
+        "cardID": 193,
+        "encID": 656
+    },
+    {
+        "cardID": 193,
+        "encID": 657
+    },
+    {
+        "cardID": 194,
+        "encID": 658
+    },
+    {
+        "cardID": 194,
+        "encID": 659
+    },
+    {
+        "cardID": 194,
+        "encID": 660
+    },
+    {
+        "cardID": -34,
+        "encID": 661
+    },
+    {
+        "cardID": -34,
+        "encID": 662
+    },
+    {
+        "cardID": -34,
+        "encID": 663
+    },
+    {
+        "cardID": -33,
+        "encID": 664
+    },
+    {
+        "cardID": -33,
+        "encID": 665
+    },
+    {
+        "cardID": -33,
+        "encID": 666
+    },
+    {
+        "cardID": -32,
+        "encID": 667
+    },
+    {
+        "cardID": -32,
+        "encID": 668
+    },
+    {
+        "cardID": -32,
+        "encID": 669
+    },
+    {
+        "cardID": -31,
+        "encID": 670
+    },
+    {
+        "cardID": -31,
+        "encID": 671
+    },
+    {
+        "cardID": -31,
+        "encID": 672
+    },
+    {
+        "cardID": -30,
+        "encID": 673
+    },
+    {
+        "cardID": -30,
+        "encID": 674
+    },
+    {
+        "cardID": -30,
+        "encID": 675
+    },
+    {
+        "cardID": -29,
+        "encID": 676
+    },
+    {
+        "cardID": -29,
+        "encID": 677
+    },
+    {
+        "cardID": -29,
+        "encID": 678
+    },
+    {
+        "cardID": -28,
+        "encID": 679
+    },
+    {
+        "cardID": -28,
+        "encID": 680
+    },
+    {
+        "cardID": -28,
+        "encID": 681
+    },
+    {
+        "cardID": 195,
+        "encID": 682
+    },
+    {
+        "cardID": 195,
+        "encID": 683
+    },
+    {
+        "cardID": 195,
+        "encID": 684
+    },
+    {
+        "cardID": 196,
+        "encID": 685
+    },
+    {
+        "cardID": 196,
+        "encID": 686
+    },
+    {
+        "cardID": 196,
+        "encID": 687
+    },
+    {
+        "cardID": 197,
+        "encID": 688
+    },
+    {
+        "cardID": 197,
+        "encID": 689
+    },
+    {
+        "cardID": 197,
+        "encID": 690
+    },
+    {
+        "cardID": 198,
+        "encID": 691
+    },
+    {
+        "cardID": 198,
+        "encID": 692
+    },
+    {
+        "cardID": 198,
+        "encID": 693
+    },
+    {
+        "cardID": 199,
+        "encID": 694
+    },
+    {
+        "cardID": 199,
+        "encID": 695
+    },
+    {
+        "cardID": 199,
+        "encID": 696
+    },
+    {
+        "cardID": 200,
+        "encID": 697
+    },
+    {
+        "cardID": 200,
+        "encID": 698
+    },
+    {
+        "cardID": 200,
+        "encID": 699
+    },
+    {
+        "cardID": 201,
+        "encID": 700
+    },
+    {
+        "cardID": 201,
+        "encID": 701
+    },
+    {
+        "cardID": 201,
+        "encID": 702
+    },
+    {
+        "cardID": 202,
+        "encID": 703
+    },
+    {
+        "cardID": 202,
+        "encID": 704
+    },
+    {
+        "cardID": 202,
+        "encID": 705
+    },
+    {
+        "cardID": 203,
+        "encID": 706
+    },
+    {
+        "cardID": 203,
+        "encID": 707
+    },
+    {
+        "cardID": 203,
+        "encID": 708
+    },
+    {
+        "cardID": 204,
+        "encID": 709
+    },
+    {
+        "cardID": 204,
+        "encID": 710
+    },
+    {
+        "cardID": 204,
+        "encID": 711
+    },
+    {
+        "cardID": 205,
+        "encID": 712
+    },
+    {
+        "cardID": 205,
+        "encID": 713
+    },
+    {
+        "cardID": 205,
+        "encID": 714
+    },
+    {
+        "cardID": 206,
+        "encID": 715
+    },
+    {
+        "cardID": 206,
+        "encID": 716
+    },
+    {
+        "cardID": 206,
+        "encID": 717
+    },
+    {
+        "cardID": 207,
+        "encID": 718
+    },
+    {
+        "cardID": 207,
+        "encID": 719
+    },
+    {
+        "cardID": 207,
+        "encID": 720
+    },
+    {
+        "cardID": 208,
+        "encID": 721
+    },
+    {
+        "cardID": 208,
+        "encID": 722
+    },
+    {
+        "cardID": 208,
+        "encID": 723
+    },
+    {
+        "cardID": 209,
+        "encID": 724
+    },
+    {
+        "cardID": 209,
+        "encID": 725
+    },
+    {
+        "cardID": 209,
+        "encID": 726
+    },
+    {
+        "cardID": 210,
+        "encID": 727
+    },
+    {
+        "cardID": 210,
+        "encID": 728
+    },
+    {
+        "cardID": 210,
+        "encID": 729
+    },
+    {
+        "cardID": 211,
+        "encID": 730
+    },
+    {
+        "cardID": 211,
+        "encID": 731
+    },
+    {
+        "cardID": 211,
+        "encID": 732
+    },
+    {
+        "cardID": 212,
+        "encID": 733
+    },
+    {
+        "cardID": 212,
+        "encID": 734
+    },
+    {
+        "cardID": 212,
+        "encID": 735
+    },
+    {
+        "cardID": 213,
+        "encID": 736
+    },
+    {
+        "cardID": 213,
+        "encID": 737
+    },
+    {
+        "cardID": 213,
+        "encID": 738
+    },
+    {
+        "cardID": 214,
+        "encID": 739
+    },
+    {
+        "cardID": 214,
+        "encID": 740
+    },
+    {
+        "cardID": 214,
+        "encID": 741
+    },
+    {
+        "cardID": 215,
+        "encID": 742
+    },
+    {
+        "cardID": 215,
+        "encID": 743
+    },
+    {
+        "cardID": 215,
+        "encID": 744
+    },
+    {
+        "cardID": 216,
+        "encID": 745
+    },
+    {
+        "cardID": 216,
+        "encID": 746
+    },
+    {
+        "cardID": 216,
+        "encID": 747
+    },
+    {
+        "cardID": 217,
+        "encID": 748
+    },
+    {
+        "cardID": 217,
+        "encID": 749
+    },
+    {
+        "cardID": 217,
+        "encID": 750
+    },
+    {
+        "cardID": 218,
+        "encID": 751
+    },
+    {
+        "cardID": 218,
+        "encID": 752
+    },
+    {
+        "cardID": 218,
+        "encID": 753
+    },
+    {
+        "cardID": 219,
+        "encID": 754
+    },
+    {
+        "cardID": 219,
+        "encID": 755
+    },
+    {
+        "cardID": 219,
+        "encID": 756
+    },
+    {
+        "cardID": 220,
+        "encID": 757
+    },
+    {
+        "cardID": 220,
+        "encID": 758
+    },
+    {
+        "cardID": 220,
+        "encID": 759
+    },
+    {
+        "cardID": 221,
+        "encID": 760
+    },
+    {
+        "cardID": 221,
+        "encID": 761
+    },
+    {
+        "cardID": 221,
+        "encID": 762
+    },
+    {
+        "cardID": 222,
+        "encID": 763
+    },
+    {
+        "cardID": 222,
+        "encID": 764
+    },
+    {
+        "cardID": 222,
+        "encID": 765
+    },
+    {
+        "cardID": 223,
+        "encID": 766
+    },
+    {
+        "cardID": 223,
+        "encID": 767
+    },
+    {
+        "cardID": 223,
+        "encID": 768
+    },
+    {
+        "cardID": 224,
+        "encID": 769
+    },
+    {
+        "cardID": 224,
+        "encID": 770
+    },
+    {
+        "cardID": 224,
+        "encID": 771
+    },
+    {
+        "cardID": 225,
+        "encID": 772
+    },
+    {
+        "cardID": 225,
+        "encID": 773
+    },
+    {
+        "cardID": 225,
+        "encID": 774
+    },
+    {
+        "cardID": 226,
+        "encID": 775
+    },
+    {
+        "cardID": 226,
+        "encID": 776
+    },
+    {
+        "cardID": 226,
+        "encID": 777
+    },
+    {
+        "cardID": 227,
+        "encID": 778
+    },
+    {
+        "cardID": 227,
+        "encID": 779
+    },
+    {
+        "cardID": 227,
+        "encID": 780
+    },
+    {
+        "cardID": 228,
+        "encID": 781
+    },
+    {
+        "cardID": 228,
+        "encID": 782
+    },
+    {
+        "cardID": 228,
+        "encID": 783
+    },
+    {
+        "cardID": 229,
+        "encID": 784
+    },
+    {
+        "cardID": 229,
+        "encID": 785
+    },
+    {
+        "cardID": 229,
+        "encID": 786
+    },
+    {
+        "cardID": 230,
+        "encID": 787
+    },
+    {
+        "cardID": 230,
+        "encID": 788
+    },
+    {
+        "cardID": 230,
+        "encID": 789
+    },
+    {
+        "cardID": 231,
+        "encID": 790
+    },
+    {
+        "cardID": 231,
+        "encID": 791
+    },
+    {
+        "cardID": 231,
+        "encID": 792
+    },
+    {
+        "cardID": -39,
+        "encID": 793
+    },
+    {
+        "cardID": -39,
+        "encID": 794
+    },
+    {
+        "cardID": -39,
+        "encID": 795
+    },
+    {
+        "cardID": -38,
+        "encID": 796
+    },
+    {
+        "cardID": -38,
+        "encID": 797
+    },
+    {
+        "cardID": -38,
+        "encID": 798
+    },
+    {
+        "cardID": -37,
+        "encID": 799
+    },
+    {
+        "cardID": -37,
+        "encID": 800
+    },
+    {
+        "cardID": -37,
+        "encID": 801
+    },
+    {
+        "cardID": -36,
+        "encID": 802
+    },
+    {
+        "cardID": -36,
+        "encID": 803
+    },
+    {
+        "cardID": -36,
+        "encID": 804
+    },
+    {
+        "cardID": -35,
+        "encID": 805
+    },
+    {
+        "cardID": -35,
+        "encID": 806
+    },
+    {
+        "cardID": -35,
+        "encID": 807
+    },
+    {
+        "cardID": 232,
+        "encID": 808
+    },
+    {
+        "cardID": 232,
+        "encID": 809
+    },
+    {
+        "cardID": 232,
+        "encID": 810
+    },
+    {
+        "cardID": 233,
+        "encID": 811
+    },
+    {
+        "cardID": 233,
+        "encID": 812
+    },
+    {
+        "cardID": 233,
+        "encID": 813
+    },
+    {
+        "cardID": 234,
+        "encID": 814
+    },
+    {
+        "cardID": 234,
+        "encID": 815
+    },
+    {
+        "cardID": 234,
+        "encID": 816
+    },
+    {
+        "cardID": 235,
+        "encID": 817
+    },
+    {
+        "cardID": 235,
+        "encID": 818
+    },
+    {
+        "cardID": 235,
+        "encID": 819
+    },
+    {
+        "cardID": 236,
+        "encID": 820
+    },
+    {
+        "cardID": 236,
+        "encID": 821
+    },
+    {
+        "cardID": 236,
+        "encID": 822
+    },
+    {
+        "cardID": 237,
+        "encID": 823
+    },
+    {
+        "cardID": 237,
+        "encID": 824
+    },
+    {
+        "cardID": 237,
+        "encID": 825
+    },
+    {
+        "cardID": 238,
+        "encID": 826
+    },
+    {
+        "cardID": 238,
+        "encID": 827
+    },
+    {
+        "cardID": 238,
+        "encID": 828
+    },
+    {
+        "cardID": 239,
+        "encID": 829
+    },
+    {
+        "cardID": 239,
+        "encID": 830
+    },
+    {
+        "cardID": 239,
+        "encID": 831
+    },
+    {
+        "cardID": 240,
+        "encID": 832
+    },
+    {
+        "cardID": 240,
+        "encID": 833
+    },
+    {
+        "cardID": 240,
+        "encID": 834
+    },
+    {
+        "cardID": 241,
+        "encID": 835
+    },
+    {
+        "cardID": 241,
+        "encID": 836
+    },
+    {
+        "cardID": 241,
+        "encID": 837
+    },
+    {
+        "cardID": 242,
+        "encID": 838
+    },
+    {
+        "cardID": 242,
+        "encID": 839
+    },
+    {
+        "cardID": 242,
+        "encID": 840
+    },
+    {
+        "cardID": 243,
+        "encID": 841
+    },
+    {
+        "cardID": 243,
+        "encID": 842
+    },
+    {
+        "cardID": 243,
+        "encID": 843
+    },
+    {
+        "cardID": 244,
+        "encID": 844
+    },
+    {
+        "cardID": 244,
+        "encID": 845
+    },
+    {
+        "cardID": 244,
+        "encID": 846
+    },
+    {
+        "cardID": 245,
+        "encID": 847
+    },
+    {
+        "cardID": 245,
+        "encID": 848
+    },
+    {
+        "cardID": 245,
+        "encID": 849
+    },
+    {
+        "cardID": 246,
+        "encID": 850
+    },
+    {
+        "cardID": 246,
+        "encID": 851
+    },
+    {
+        "cardID": 246,
+        "encID": 852
+    },
+    {
+        "cardID": 247,
+        "encID": 853
+    },
+    {
+        "cardID": 247,
+        "encID": 854
+    },
+    {
+        "cardID": 247,
+        "encID": 855
+    },
+    {
+        "cardID": 248,
+        "encID": 856
+    },
+    {
+        "cardID": 248,
+        "encID": 857
+    },
+    {
+        "cardID": 248,
+        "encID": 858
+    },
+    {
+        "cardID": 249,
+        "encID": 859
+    },
+    {
+        "cardID": 249,
+        "encID": 860
+    },
+    {
+        "cardID": 249,
+        "encID": 861
+    },
+    {
+        "cardID": 250,
+        "encID": 862
+    },
+    {
+        "cardID": 250,
+        "encID": 863
+    },
+    {
+        "cardID": 250,
+        "encID": 864
+    },
+    {
+        "cardID": 251,
+        "encID": 865
+    },
+    {
+        "cardID": 251,
+        "encID": 866
+    },
+    {
+        "cardID": 251,
+        "encID": 867
+    },
+    {
+        "cardID": 252,
+        "encID": 868
+    },
+    {
+        "cardID": 252,
+        "encID": 869
+    },
+    {
+        "cardID": 252,
+        "encID": 870
+    },
+    {
+        "cardID": 253,
+        "encID": 871
+    },
+    {
+        "cardID": 253,
+        "encID": 872
+    },
+    {
+        "cardID": 253,
+        "encID": 873
+    },
+    {
+        "cardID": 254,
+        "encID": 874
+    },
+    {
+        "cardID": 254,
+        "encID": 875
+    },
+    {
+        "cardID": 254,
+        "encID": 876
+    },
+    {
+        "cardID": 255,
+        "encID": 877
+    },
+    {
+        "cardID": 255,
+        "encID": 878
+    },
+    {
+        "cardID": 255,
+        "encID": 879
+    },
+    {
+        "cardID": 256,
+        "encID": 880
+    },
+    {
+        "cardID": 256,
+        "encID": 881
+    },
+    {
+        "cardID": 256,
+        "encID": 882
+    },
+    {
+        "cardID": 257,
+        "encID": 883
+    },
+    {
+        "cardID": 257,
+        "encID": 884
+    },
+    {
+        "cardID": 257,
+        "encID": 885
+    },
+    {
+        "cardID": 258,
+        "encID": 886
+    },
+    {
+        "cardID": 258,
+        "encID": 887
+    },
+    {
+        "cardID": 258,
+        "encID": 888
+    },
+    {
+        "cardID": 259,
+        "encID": 889
+    },
+    {
+        "cardID": 259,
+        "encID": 890
+    },
+    {
+        "cardID": 259,
+        "encID": 891
+    },
+    {
+        "cardID": 260,
+        "encID": 892
+    },
+    {
+        "cardID": 260,
+        "encID": 893
+    },
+    {
+        "cardID": 260,
+        "encID": 894
+    },
+    {
+        "cardID": 261,
+        "encID": 895
+    },
+    {
+        "cardID": 261,
+        "encID": 896
+    },
+    {
+        "cardID": 261,
+        "encID": 897
+    },
+    {
+        "cardID": 262,
+        "encID": 898
+    },
+    {
+        "cardID": 262,
+        "encID": 899
+    },
+    {
+        "cardID": 262,
+        "encID": 900
+    },
+    {
+        "cardID": 263,
+        "encID": 901
+    },
+    {
+        "cardID": 263,
+        "encID": 902
+    },
+    {
+        "cardID": 263,
+        "encID": 903
+    },
+    {
+        "cardID": 264,
+        "encID": 904
+    },
+    {
+        "cardID": 264,
+        "encID": 905
+    },
+    {
+        "cardID": 264,
+        "encID": 906
+    },
+    {
+        "cardID": 265,
+        "encID": 907
+    },
+    {
+        "cardID": 265,
+        "encID": 908
+    },
+    {
+        "cardID": 265,
+        "encID": 909
+    },
+    {
+        "cardID": 266,
+        "encID": 910
+    },
+    {
+        "cardID": 266,
+        "encID": 911
+    },
+    {
+        "cardID": 266,
+        "encID": 912
+    },
+    {
+        "cardID": 267,
+        "encID": 913
+    },
+    {
+        "cardID": 267,
+        "encID": 914
+    },
+    {
+        "cardID": 267,
+        "encID": 915
+    },
+    {
+        "cardID": 268,
+        "encID": 916
+    },
+    {
+        "cardID": 268,
+        "encID": 917
+    },
+    {
+        "cardID": 268,
+        "encID": 918
+    },
+    {
+        "cardID": 269,
+        "encID": 919
+    },
+    {
+        "cardID": 269,
+        "encID": 920
+    },
+    {
+        "cardID": 269,
+        "encID": 921
+    },
+    {
+        "cardID": 270,
+        "encID": 922
+    },
+    {
+        "cardID": 270,
+        "encID": 923
+    },
+    {
+        "cardID": 270,
+        "encID": 924
+    },
+    {
+        "cardID": -50,
+        "encID": 925
+    },
+    {
+        "cardID": -50,
+        "encID": 926
+    },
+    {
+        "cardID": -50,
+        "encID": 927
+    },
+    {
+        "cardID": -44,
+        "encID": 928
+    },
+    {
+        "cardID": -44,
+        "encID": 929
+    },
+    {
+        "cardID": -44,
+        "encID": 930
+    },
+    {
+        "cardID": -43,
+        "encID": 931
+    },
+    {
+        "cardID": -43,
+        "encID": 932
+    },
+    {
+        "cardID": -43,
+        "encID": 933
+    },
+    {
+        "cardID": -42,
+        "encID": 934
+    },
+    {
+        "cardID": -42,
+        "encID": 935
+    },
+    {
+        "cardID": -42,
+        "encID": 936
+    },
+    {
+        "cardID": -41,
+        "encID": 937
+    },
+    {
+        "cardID": -41,
+        "encID": 938
+    },
+    {
+        "cardID": -41,
+        "encID": 939
+    },
+    {
+        "cardID": -40,
+        "encID": 940
+    },
+    {
+        "cardID": -40,
+        "encID": 941
+    },
+    {
+        "cardID": -40,
+        "encID": 942
+    },
+    {
+        "cardID": 271,
+        "encID": 943
+    },
+    {
+        "cardID": 271,
+        "encID": 944
+    },
+    {
+        "cardID": 271,
+        "encID": 945
+    },
+    {
+        "cardID": 272,
+        "encID": 946
+    },
+    {
+        "cardID": 272,
+        "encID": 947
+    },
+    {
+        "cardID": 272,
+        "encID": 948
+    },
+    {
+        "cardID": 273,
+        "encID": 949
+    },
+    {
+        "cardID": 273,
+        "encID": 950
+    },
+    {
+        "cardID": 273,
+        "encID": 951
+    },
+    {
+        "cardID": 274,
+        "encID": 952
+    },
+    {
+        "cardID": 274,
+        "encID": 953
+    },
+    {
+        "cardID": 274,
+        "encID": 954
+    },
+    {
+        "cardID": 275,
+        "encID": 955
+    },
+    {
+        "cardID": 275,
+        "encID": 956
+    },
+    {
+        "cardID": 275,
+        "encID": 957
+    },
+    {
+        "cardID": 276,
+        "encID": 958
+    },
+    {
+        "cardID": 276,
+        "encID": 959
+    },
+    {
+        "cardID": 276,
+        "encID": 960
+    },
+    {
+        "cardID": 277,
+        "encID": 961
+    },
+    {
+        "cardID": 277,
+        "encID": 962
+    },
+    {
+        "cardID": 277,
+        "encID": 963
+    },
+    {
+        "cardID": 278,
+        "encID": 964
+    },
+    {
+        "cardID": 278,
+        "encID": 965
+    },
+    {
+        "cardID": 278,
+        "encID": 966
+    },
+    {
+        "cardID": 279,
+        "encID": 967
+    },
+    {
+        "cardID": 279,
+        "encID": 968
+    },
+    {
+        "cardID": 279,
+        "encID": 969
+    },
+    {
+        "cardID": 280,
+        "encID": 970
+    },
+    {
+        "cardID": 280,
+        "encID": 971
+    },
+    {
+        "cardID": 280,
+        "encID": 972
+    },
+    {
+        "cardID": 281,
+        "encID": 973
+    },
+    {
+        "cardID": 281,
+        "encID": 974
+    },
+    {
+        "cardID": 281,
+        "encID": 975
+    },
+    {
+        "cardID": 282,
+        "encID": 976
+    },
+    {
+        "cardID": 282,
+        "encID": 977
+    },
+    {
+        "cardID": 282,
+        "encID": 978
+    },
+    {
+        "cardID": 283,
+        "encID": 979
+    },
+    {
+        "cardID": 283,
+        "encID": 980
+    },
+    {
+        "cardID": 283,
+        "encID": 981
+    },
+    {
+        "cardID": 284,
+        "encID": 982
+    },
+    {
+        "cardID": 284,
+        "encID": 983
+    },
+    {
+        "cardID": 284,
+        "encID": 984
+    },
+    {
+        "cardID": 285,
+        "encID": 985
+    },
+    {
+        "cardID": 285,
+        "encID": 986
+    },
+    {
+        "cardID": 285,
+        "encID": 987
+    },
+    {
+        "cardID": 286,
+        "encID": 988
+    },
+    {
+        "cardID": 286,
+        "encID": 989
+    },
+    {
+        "cardID": 286,
+        "encID": 990
+    },
+    {
+        "cardID": 287,
+        "encID": 991
+    },
+    {
+        "cardID": 287,
+        "encID": 992
+    },
+    {
+        "cardID": 287,
+        "encID": 993
+    },
+    {
+        "cardID": 288,
+        "encID": 994
+    },
+    {
+        "cardID": 288,
+        "encID": 995
+    },
+    {
+        "cardID": 288,
+        "encID": 996
+    },
+    {
+        "cardID": 289,
+        "encID": 997
+    },
+    {
+        "cardID": 289,
+        "encID": 998
+    },
+    {
+        "cardID": 289,
+        "encID": 999
+    },
+    {
+        "cardID": 290,
+        "encID": 1000
+    },
+    {
+        "cardID": 290,
+        "encID": 1001
+    },
+    {
+        "cardID": 290,
+        "encID": 1002
+    },
+    {
+        "cardID": 291,
+        "encID": 1003
+    },
+    {
+        "cardID": 291,
+        "encID": 1004
+    },
+    {
+        "cardID": 291,
+        "encID": 1005
+    },
+    {
+        "cardID": 292,
+        "encID": 1006
+    },
+    {
+        "cardID": 292,
+        "encID": 1007
+    },
+    {
+        "cardID": 292,
+        "encID": 1008
+    },
+    {
+        "cardID": 293,
+        "encID": 1009
+    },
+    {
+        "cardID": 293,
+        "encID": 1010
+    },
+    {
+        "cardID": 293,
+        "encID": 1011
+    },
+    {
+        "cardID": 294,
+        "encID": 1012
+    },
+    {
+        "cardID": 294,
+        "encID": 1013
+    },
+    {
+        "cardID": 294,
+        "encID": 1014
+    },
+    {
+        "cardID": 295,
+        "encID": 1015
+    },
+    {
+        "cardID": 295,
+        "encID": 1016
+    },
+    {
+        "cardID": 295,
+        "encID": 1017
+    },
+    {
+        "cardID": 296,
+        "encID": 1018
+    },
+    {
+        "cardID": 296,
+        "encID": 1019
+    },
+    {
+        "cardID": 296,
+        "encID": 1020
+    },
+    {
+        "cardID": 297,
+        "encID": 1021
+    },
+    {
+        "cardID": 297,
+        "encID": 1022
+    },
+    {
+        "cardID": 297,
+        "encID": 1023
+    },
+    {
+        "cardID": 298,
+        "encID": 1024
+    },
+    {
+        "cardID": 298,
+        "encID": 1025
+    },
+    {
+        "cardID": 298,
+        "encID": 1026
+    },
+    {
+        "cardID": 299,
+        "encID": 1027
+    },
+    {
+        "cardID": 299,
+        "encID": 1028
+    },
+    {
+        "cardID": 299,
+        "encID": 1029
+    },
+    {
+        "cardID": 300,
+        "encID": 1030
+    },
+    {
+        "cardID": 300,
+        "encID": 1031
+    },
+    {
+        "cardID": 300,
+        "encID": 1032
+    },
+    {
+        "cardID": 301,
+        "encID": 1033
+    },
+    {
+        "cardID": 301,
+        "encID": 1034
+    },
+    {
+        "cardID": 301,
+        "encID": 1035
+    },
+    {
+        "cardID": 302,
+        "encID": 1036
+    },
+    {
+        "cardID": 302,
+        "encID": 1037
+    },
+    {
+        "cardID": 302,
+        "encID": 1038
+    },
+    {
+        "cardID": 303,
+        "encID": 1039
+    },
+    {
+        "cardID": 303,
+        "encID": 1040
+    },
+    {
+        "cardID": 303,
+        "encID": 1041
+    },
+    {
+        "cardID": 304,
+        "encID": 1042
+    },
+    {
+        "cardID": 304,
+        "encID": 1043
+    },
+    {
+        "cardID": 304,
+        "encID": 1044
+    },
+    {
+        "cardID": 305,
+        "encID": 1045
+    },
+    {
+        "cardID": 305,
+        "encID": 1046
+    },
+    {
+        "cardID": 305,
+        "encID": 1047
+    },
+    {
+        "cardID": 306,
+        "encID": 1048
+    },
+    {
+        "cardID": 306,
+        "encID": 1049
+    },
+    {
+        "cardID": 306,
+        "encID": 1050
+    },
+    {
+        "cardID": 307,
+        "encID": 1051
+    },
+    {
+        "cardID": 307,
+        "encID": 1052
+    },
+    {
+        "cardID": 307,
+        "encID": 1053
+    },
+    {
+        "cardID": 308,
+        "encID": 1054
+    },
+    {
+        "cardID": 308,
+        "encID": 1055
+    },
+    {
+        "cardID": 308,
+        "encID": 1056
+    },
+    {
+        "cardID": -49,
+        "encID": 1057
+    },
+    {
+        "cardID": -49,
+        "encID": 1058
+    },
+    {
+        "cardID": -49,
+        "encID": 1059
+    },
+    {
+        "cardID": -48,
+        "encID": 1060
+    },
+    {
+        "cardID": -48,
+        "encID": 1061
+    },
+    {
+        "cardID": -48,
+        "encID": 1062
+    },
+    {
+        "cardID": -47,
+        "encID": 1063
+    },
+    {
+        "cardID": -47,
+        "encID": 1064
+    },
+    {
+        "cardID": -47,
+        "encID": 1065
+    },
+    {
+        "cardID": -46,
+        "encID": 1066
+    },
+    {
+        "cardID": -46,
+        "encID": 1067
+    },
+    {
+        "cardID": -46,
+        "encID": 1068
+    },
+    {
+        "cardID": -45,
+        "encID": 1069
+    },
+    {
+        "cardID": -45,
+        "encID": 1070
+    },
+    {
+        "cardID": -45,
+        "encID": 1071
+    },
+    {
+        "cardID": 309,
+        "encID": 1072
+    },
+    {
+        "cardID": 309,
+        "encID": 1073
+    },
+    {
+        "cardID": 309,
+        "encID": 1074
+    },
+    {
+        "cardID": 310,
+        "encID": 1075
+    },
+    {
+        "cardID": 310,
+        "encID": 1076
+    },
+    {
+        "cardID": 310,
+        "encID": 1077
+    },
+    {
+        "cardID": 311,
+        "encID": 1078
+    },
+    {
+        "cardID": 311,
+        "encID": 1079
+    },
+    {
+        "cardID": 311,
+        "encID": 1080
+    },
+    {
+        "cardID": 312,
+        "encID": 1081
+    },
+    {
+        "cardID": 312,
+        "encID": 1082
+    },
+    {
+        "cardID": 312,
+        "encID": 1083
+    },
+    {
+        "cardID": 313,
+        "encID": 1084
+    },
+    {
+        "cardID": 313,
+        "encID": 1085
+    },
+    {
+        "cardID": 313,
+        "encID": 1086
+    },
+    {
+        "cardID": 314,
+        "encID": 1087
+    },
+    {
+        "cardID": 314,
+        "encID": 1088
+    },
+    {
+        "cardID": 314,
+        "encID": 1089
+    },
+    {
+        "cardID": 315,
+        "encID": 1090
+    },
+    {
+        "cardID": 315,
+        "encID": 1091
+    },
+    {
+        "cardID": 315,
+        "encID": 1092
+    },
+    {
+        "cardID": 316,
+        "encID": 1093
+    },
+    {
+        "cardID": 316,
+        "encID": 1094
+    },
+    {
+        "cardID": 316,
+        "encID": 1095
+    },
+    {
+        "cardID": 317,
+        "encID": 1096
+    },
+    {
+        "cardID": 317,
+        "encID": 1097
+    },
+    {
+        "cardID": 317,
+        "encID": 1098
+    },
+    {
+        "cardID": 318,
+        "encID": 1099
+    },
+    {
+        "cardID": 318,
+        "encID": 1100
+    },
+    {
+        "cardID": 318,
+        "encID": 1101
+    },
+    {
+        "cardID": 319,
+        "encID": 1102
+    },
+    {
+        "cardID": 319,
+        "encID": 1103
+    },
+    {
+        "cardID": 319,
+        "encID": 1104
+    },
+    {
+        "cardID": 320,
+        "encID": 1105
+    },
+    {
+        "cardID": 320,
+        "encID": 1106
+    },
+    {
+        "cardID": 320,
+        "encID": 1107
+    },
+    {
+        "cardID": 321,
+        "encID": 1108
+    },
+    {
+        "cardID": 321,
+        "encID": 1109
+    },
+    {
+        "cardID": 321,
+        "encID": 1110
+    },
+    {
+        "cardID": 322,
+        "encID": 1111
+    },
+    {
+        "cardID": 322,
+        "encID": 1112
+    },
+    {
+        "cardID": 322,
+        "encID": 1113
+    },
+    {
+        "cardID": 323,
+        "encID": 1114
+    },
+    {
+        "cardID": 323,
+        "encID": 1115
+    },
+    {
+        "cardID": 323,
+        "encID": 1116
+    },
+    {
+        "cardID": 324,
+        "encID": 1117
+    },
+    {
+        "cardID": 324,
+        "encID": 1118
+    },
+    {
+        "cardID": 324,
+        "encID": 1119
+    },
+    {
+        "cardID": 325,
+        "encID": 1120
+    },
+    {
+        "cardID": 325,
+        "encID": 1121
+    },
+    {
+        "cardID": 325,
+        "encID": 1122
+    },
+    {
+        "cardID": 326,
+        "encID": 1123
+    },
+    {
+        "cardID": 326,
+        "encID": 1124
+    },
+    {
+        "cardID": 326,
+        "encID": 1125
+    },
+    {
+        "cardID": 327,
+        "encID": 1126
+    },
+    {
+        "cardID": 327,
+        "encID": 1127
+    },
+    {
+        "cardID": 327,
+        "encID": 1128
+    },
+    {
+        "cardID": 328,
+        "encID": 1129
+    },
+    {
+        "cardID": 328,
+        "encID": 1130
+    },
+    {
+        "cardID": 328,
+        "encID": 1131
+    },
+    {
+        "cardID": 329,
+        "encID": 1132
+    },
+    {
+        "cardID": 329,
+        "encID": 1133
+    },
+    {
+        "cardID": 329,
+        "encID": 1134
+    },
+    {
+        "cardID": 330,
+        "encID": 1135
+    },
+    {
+        "cardID": 330,
+        "encID": 1136
+    },
+    {
+        "cardID": 330,
+        "encID": 1137
+    },
+    {
+        "cardID": 331,
+        "encID": 1138
+    },
+    {
+        "cardID": 331,
+        "encID": 1139
+    },
+    {
+        "cardID": 331,
+        "encID": 1140
+    },
+    {
+        "cardID": 332,
+        "encID": 1141
+    },
+    {
+        "cardID": 332,
+        "encID": 1142
+    },
+    {
+        "cardID": 332,
+        "encID": 1143
+    },
+    {
+        "cardID": 333,
+        "encID": 1144
+    },
+    {
+        "cardID": 333,
+        "encID": 1145
+    },
+    {
+        "cardID": 333,
+        "encID": 1146
+    },
+    {
+        "cardID": 334,
+        "encID": 1147
+    },
+    {
+        "cardID": 334,
+        "encID": 1148
+    },
+    {
+        "cardID": 334,
+        "encID": 1149
+    },
+    {
+        "cardID": 335,
+        "encID": 1150
+    },
+    {
+        "cardID": 335,
+        "encID": 1151
+    },
+    {
+        "cardID": 335,
+        "encID": 1152
+    },
+    {
+        "cardID": 336,
+        "encID": 1153
+    },
+    {
+        "cardID": 336,
+        "encID": 1154
+    },
+    {
+        "cardID": 336,
+        "encID": 1155
+    },
+    {
+        "cardID": 337,
+        "encID": 1156
+    },
+    {
+        "cardID": 337,
+        "encID": 1157
+    },
+    {
+        "cardID": 337,
+        "encID": 1158
+    },
+    {
+        "cardID": 338,
+        "encID": 1159
+    },
+    {
+        "cardID": 338,
+        "encID": 1160
+    },
+    {
+        "cardID": 338,
+        "encID": 1161
+    },
+    {
+        "cardID": 339,
+        "encID": 1162
+    },
+    {
+        "cardID": 339,
+        "encID": 1163
+    },
+    {
+        "cardID": 339,
+        "encID": 1164
+    },
+    {
+        "cardID": 340,
+        "encID": 1165
+    },
+    {
+        "cardID": 340,
+        "encID": 1166
+    },
+    {
+        "cardID": 340,
+        "encID": 1167
+    },
+    {
+        "cardID": 341,
+        "encID": 1168
+    },
+    {
+        "cardID": 341,
+        "encID": 1169
+    },
+    {
+        "cardID": 341,
+        "encID": 1170
+    },
+    {
+        "cardID": 342,
+        "encID": 1171
+    },
+    {
+        "cardID": 342,
+        "encID": 1172
+    },
+    {
+        "cardID": 342,
+        "encID": 1173
+    },
+    {
+        "cardID": 343,
+        "encID": 1174
+    },
+    {
+        "cardID": 343,
+        "encID": 1175
+    },
+    {
+        "cardID": 343,
+        "encID": 1176
+    },
+    {
+        "cardID": 344,
+        "encID": 1177
+    },
+    {
+        "cardID": 344,
+        "encID": 1178
+    },
+    {
+        "cardID": 344,
+        "encID": 1179
+    },
+    {
+        "cardID": 345,
+        "encID": 1180
+    },
+    {
+        "cardID": 345,
+        "encID": 1181
+    },
+    {
+        "cardID": 345,
+        "encID": 1182
+    },
+    {
+        "cardID": 346,
+        "encID": 1183
+    },
+    {
+        "cardID": 346,
+        "encID": 1184
+    },
+    {
+        "cardID": 346,
+        "encID": 1185
+    },
+    {
+        "cardID": 347,
+        "encID": 1186
+    },
+    {
+        "cardID": 347,
+        "encID": 1187
+    },
+    {
+        "cardID": 347,
+        "encID": 1188
+    },
+    {
+        "cardID": -51,
+        "encID": 1189
+    },
+    {
+        "cardID": -51,
+        "encID": 1190
+    },
+    {
+        "cardID": -51,
+        "encID": 1191
+    },
+    {
+        "cardID": 348,
+        "encID": 1192
+    },
+    {
+        "cardID": 348,
+        "encID": 1193
+    },
+    {
+        "cardID": 348,
+        "encID": 1194
+    },
+    {
+        "cardID": 349,
+        "encID": 1195
+    },
+    {
+        "cardID": 349,
+        "encID": 1196
+    },
+    {
+        "cardID": 349,
+        "encID": 1197
+    },
+    {
+        "cardID": 350,
+        "encID": 1198
+    },
+    {
+        "cardID": 350,
+        "encID": 1199
+    },
+    {
+        "cardID": 350,
+        "encID": 1200
+    },
+    {
+        "cardID": 351,
+        "encID": 1201
+    },
+    {
+        "cardID": 351,
+        "encID": 1202
+    },
+    {
+        "cardID": 351,
+        "encID": 1203
+    },
+    {
+        "cardID": 352,
+        "encID": 1204
+    },
+    {
+        "cardID": 352,
+        "encID": 1205
+    },
+    {
+        "cardID": 352,
+        "encID": 1206
+    },
+    {
+        "cardID": 353,
+        "encID": 1207
+    },
+    {
+        "cardID": 353,
+        "encID": 1208
+    },
+    {
+        "cardID": 353,
+        "encID": 1209
+    },
+    {
+        "cardID": 354,
+        "encID": 1210
+    },
+    {
+        "cardID": 354,
+        "encID": 1211
+    },
+    {
+        "cardID": 354,
+        "encID": 1212
+    },
+    {
+        "cardID": 355,
+        "encID": 1213
+    },
+    {
+        "cardID": 355,
+        "encID": 1214
+    },
+    {
+        "cardID": 355,
+        "encID": 1215
+    },
+    {
+        "cardID": 356,
+        "encID": 1216
+    },
+    {
+        "cardID": 356,
+        "encID": 1217
+    },
+    {
+        "cardID": 356,
+        "encID": 1218
+    },
+    {
+        "cardID": 357,
+        "encID": 1219
+    },
+    {
+        "cardID": 357,
+        "encID": 1220
+    },
+    {
+        "cardID": 357,
+        "encID": 1221
+    },
+    {
+        "cardID": 358,
+        "encID": 1222
+    },
+    {
+        "cardID": 358,
+        "encID": 1223
+    },
+    {
+        "cardID": 358,
+        "encID": 1224
+    },
+    {
+        "cardID": 359,
+        "encID": 1225
+    },
+    {
+        "cardID": 359,
+        "encID": 1226
+    },
+    {
+        "cardID": 359,
+        "encID": 1227
+    },
+    {
+        "cardID": 360,
+        "encID": 1228
+    },
+    {
+        "cardID": 360,
+        "encID": 1229
+    },
+    {
+        "cardID": 360,
+        "encID": 1230
+    },
+    {
+        "cardID": 361,
+        "encID": 1231
+    },
+    {
+        "cardID": 361,
+        "encID": 1232
+    },
+    {
+        "cardID": 361,
+        "encID": 1233
+    },
+    {
+        "cardID": 362,
+        "encID": 1234
+    },
+    {
+        "cardID": 362,
+        "encID": 1235
+    },
+    {
+        "cardID": 362,
+        "encID": 1236
+    },
+    {
+        "cardID": 363,
+        "encID": 1237
+    },
+    {
+        "cardID": 363,
+        "encID": 1238
+    },
+    {
+        "cardID": 363,
+        "encID": 1239
+    },
+    {
+        "cardID": 364,
+        "encID": 1240
+    },
+    {
+        "cardID": 364,
+        "encID": 1241
+    },
+    {
+        "cardID": 364,
+        "encID": 1242
+    },
+    {
+        "cardID": 365,
+        "encID": 1243
+    },
+    {
+        "cardID": 365,
+        "encID": 1244
+    },
+    {
+        "cardID": 365,
+        "encID": 1245
+    },
+    {
+        "cardID": 366,
+        "encID": 1246
+    },
+    {
+        "cardID": 366,
+        "encID": 1247
+    },
+    {
+        "cardID": 366,
+        "encID": 1248
+    },
+    {
+        "cardID": 367,
+        "encID": 1249
+    },
+    {
+        "cardID": 367,
+        "encID": 1250
+    },
+    {
+        "cardID": 367,
+        "encID": 1251
+    },
+    {
+        "cardID": 368,
+        "encID": 1252
+    },
+    {
+        "cardID": 368,
+        "encID": 1253
+    },
+    {
+        "cardID": 368,
+        "encID": 1254
+    },
+    {
+        "cardID": 369,
+        "encID": 1255
+    },
+    {
+        "cardID": 369,
+        "encID": 1256
+    },
+    {
+        "cardID": 369,
+        "encID": 1257
+    },
+    {
+        "cardID": 370,
+        "encID": 1258
+    },
+    {
+        "cardID": 370,
+        "encID": 1259
+    },
+    {
+        "cardID": 370,
+        "encID": 1260
+    },
+    {
+        "cardID": 371,
+        "encID": 1261
+    },
+    {
+        "cardID": 371,
+        "encID": 1262
+    },
+    {
+        "cardID": 371,
+        "encID": 1263
+    },
+    {
+        "cardID": 372,
+        "encID": 1264
+    },
+    {
+        "cardID": 372,
+        "encID": 1265
+    },
+    {
+        "cardID": 372,
+        "encID": 1266
+    },
+    {
+        "cardID": 373,
+        "encID": 1267
+    },
+    {
+        "cardID": 373,
+        "encID": 1268
+    },
+    {
+        "cardID": 373,
+        "encID": 1269
+    },
+    {
+        "cardID": 374,
+        "encID": 1270
+    },
+    {
+        "cardID": 374,
+        "encID": 1271
+    },
+    {
+        "cardID": 374,
+        "encID": 1272
+    },
+    {
+        "cardID": 375,
+        "encID": 1273
+    },
+    {
+        "cardID": 375,
+        "encID": 1274
+    },
+    {
+        "cardID": 375,
+        "encID": 1275
+    },
+    {
+        "cardID": 376,
+        "encID": 1276
+    },
+    {
+        "cardID": 376,
+        "encID": 1277
+    },
+    {
+        "cardID": 376,
+        "encID": 1278
+    },
+    {
+        "cardID": 377,
+        "encID": 1279
+    },
+    {
+        "cardID": 377,
+        "encID": 1280
+    },
+    {
+        "cardID": 377,
+        "encID": 1281
+    },
+    {
+        "cardID": 378,
+        "encID": 1282
+    },
+    {
+        "cardID": 378,
+        "encID": 1283
+    },
+    {
+        "cardID": 378,
+        "encID": 1284
+    },
+    {
+        "cardID": 379,
+        "encID": 1285
+    },
+    {
+        "cardID": 379,
+        "encID": 1286
+    },
+    {
+        "cardID": 379,
+        "encID": 1287
+    },
+    {
+        "cardID": 380,
+        "encID": 1288
+    },
+    {
+        "cardID": 380,
+        "encID": 1289
+    },
+    {
+        "cardID": 380,
+        "encID": 1290
+    },
+    {
+        "cardID": 381,
+        "encID": 1291
+    },
+    {
+        "cardID": 381,
+        "encID": 1292
+    },
+    {
+        "cardID": 381,
+        "encID": 1293
+    },
+    {
+        "cardID": 382,
+        "encID": 1294
+    },
+    {
+        "cardID": 382,
+        "encID": 1295
+    },
+    {
+        "cardID": 382,
+        "encID": 1296
+    },
+    {
+        "cardID": 383,
+        "encID": 1297
+    },
+    {
+        "cardID": 383,
+        "encID": 1298
+    },
+    {
+        "cardID": 383,
+        "encID": 1299
+    },
+    {
+        "cardID": 384,
+        "encID": 1300
+    },
+    {
+        "cardID": 384,
+        "encID": 1301
+    },
+    {
+        "cardID": 384,
+        "encID": 1302
+    },
+    {
+        "cardID": 385,
+        "encID": 1303
+    },
+    {
+        "cardID": 385,
+        "encID": 1304
+    },
+    {
+        "cardID": 385,
+        "encID": 1305
+    },
+    {
+        "cardID": 386,
+        "encID": 1306
+    },
+    {
+        "cardID": 386,
+        "encID": 1307
+    },
+    {
+        "cardID": 386,
+        "encID": 1308
+    },
+    {
+        "cardID": 387,
+        "encID": 1309
+    },
+    {
+        "cardID": 387,
+        "encID": 1310
+    },
+    {
+        "cardID": 387,
+        "encID": 1311
+    },
+    {
+        "cardID": 388,
+        "encID": 1312
+    },
+    {
+        "cardID": 388,
+        "encID": 1313
+    },
+    {
+        "cardID": 388,
+        "encID": 1314
+    },
+    {
+        "cardID": 389,
+        "encID": 1315
+    },
+    {
+        "cardID": 389,
+        "encID": 1316
+    },
+    {
+        "cardID": 389,
+        "encID": 1317
+    },
+    {
+        "cardID": 390,
+        "encID": 1318
+    },
+    {
+        "cardID": 390,
+        "encID": 1319
+    },
+    {
+        "cardID": 390,
+        "encID": 1320
+    },
+    {
+        "cardID": 391,
+        "encID": 1321
+    },
+    {
+        "cardID": 391,
+        "encID": 1322
+    },
+    {
+        "cardID": 391,
+        "encID": 1323
+    },
+    {
+        "cardID": 392,
+        "encID": 1324
+    },
+    {
+        "cardID": 392,
+        "encID": 1325
+    },
+    {
+        "cardID": 392,
+        "encID": 1326
+    },
+    {
+        "cardID": 393,
+        "encID": 1327
+    },
+    {
+        "cardID": 393,
+        "encID": 1328
+    },
+    {
+        "cardID": 393,
+        "encID": 1329
+    },
+    {
+        "cardID": 394,
+        "encID": 1330
+    },
+    {
+        "cardID": 394,
+        "encID": 1331
+    },
+    {
+        "cardID": 394,
+        "encID": 1332
+    },
+    {
+        "cardID": 395,
+        "encID": 1333
+    },
+    {
+        "cardID": 395,
+        "encID": 1334
+    },
+    {
+        "cardID": 395,
+        "encID": 1335
+    },
+    {
+        "cardID": 396,
+        "encID": 1336
+    },
+    {
+        "cardID": 396,
+        "encID": 1337
+    },
+    {
+        "cardID": 396,
+        "encID": 1338
+    },
+    {
+        "cardID": 397,
+        "encID": 1339
+    },
+    {
+        "cardID": 397,
+        "encID": 1340
+    },
+    {
+        "cardID": 397,
+        "encID": 1341
+    },
+    {
+        "cardID": 398,
+        "encID": 1342
+    },
+    {
+        "cardID": 398,
+        "encID": 1343
+    },
+    {
+        "cardID": 398,
+        "encID": 1344
+    },
+    {
+        "cardID": 400,
+        "encID": 1345
+    },
+    {
+        "cardID": 400,
+        "encID": 1346
+    },
+    {
+        "cardID": 400,
+        "encID": 1347
+    },
+    {
+        "cardID": 401,
+        "encID": 1348
+    },
+    {
+        "cardID": 401,
+        "encID": 1349
+    },
+    {
+        "cardID": 401,
+        "encID": 1350
+    },
+    {
+        "cardID": 402,
+        "encID": 1351
+    },
+    {
+        "cardID": 402,
+        "encID": 1352
+    },
+    {
+        "cardID": 402,
+        "encID": 1353
+    },
+    {
+        "cardID": 403,
+        "encID": 1354
+    },
+    {
+        "cardID": 403,
+        "encID": 1355
+    },
+    {
+        "cardID": 403,
+        "encID": 1356
+    },
+    {
+        "cardID": 404,
+        "encID": 1357
+    },
+    {
+        "cardID": 404,
+        "encID": 1358
+    },
+    {
+        "cardID": 404,
+        "encID": 1359
+    },
+    {
+        "cardID": 405,
+        "encID": 1360
+    },
+    {
+        "cardID": 405,
+        "encID": 1361
+    },
+    {
+        "cardID": 405,
+        "encID": 1362
+    },
+    {
+        "cardID": 406,
+        "encID": 1363
+    },
+    {
+        "cardID": 406,
+        "encID": 1364
+    },
+    {
+        "cardID": 406,
+        "encID": 1365
+    },
+    {
+        "cardID": 407,
+        "encID": 1366
+    },
+    {
+        "cardID": 407,
+        "encID": 1367
+    },
+    {
+        "cardID": 407,
+        "encID": 1368
+    },
+    {
+        "cardID": 408,
+        "encID": 1369
+    },
+    {
+        "cardID": 408,
+        "encID": 1370
+    },
+    {
+        "cardID": 408,
+        "encID": 1371
+    },
+    {
+        "cardID": 409,
+        "encID": 1372
+    },
+    {
+        "cardID": 409,
+        "encID": 1373
+    },
+    {
+        "cardID": 409,
+        "encID": 1374
+    },
+    {
+        "cardID": 410,
+        "encID": 1375
+    },
+    {
+        "cardID": 410,
+        "encID": 1376
+    },
+    {
+        "cardID": 410,
+        "encID": 1377
+    },
+    {
+        "cardID": 411,
+        "encID": 1378
+    },
+    {
+        "cardID": 411,
+        "encID": 1379
+    },
+    {
+        "cardID": 411,
+        "encID": 1380
+    },
+    {
+        "cardID": 412,
+        "encID": 1381
+    },
+    {
+        "cardID": 412,
+        "encID": 1382
+    },
+    {
+        "cardID": 412,
+        "encID": 1383
+    },
+    {
+        "cardID": 413,
+        "encID": 1384
+    },
+    {
+        "cardID": 413,
+        "encID": 1385
+    },
+    {
+        "cardID": 413,
+        "encID": 1386
+    },
+    {
+        "cardID": 414,
+        "encID": 1387
+    },
+    {
+        "cardID": 414,
+        "encID": 1388
+    },
+    {
+        "cardID": 414,
+        "encID": 1389
+    },
+    {
+        "cardID": 415,
+        "encID": 1390
+    },
+    {
+        "cardID": 415,
+        "encID": 1391
+    },
+    {
+        "cardID": 415,
+        "encID": 1392
+    },
+    {
+        "cardID": 416,
+        "encID": 1393
+    },
+    {
+        "cardID": 416,
+        "encID": 1394
+    },
+    {
+        "cardID": 416,
+        "encID": 1395
+    },
+    {
+        "cardID": 417,
+        "encID": 1396
+    },
+    {
+        "cardID": 417,
+        "encID": 1397
+    },
+    {
+        "cardID": 417,
+        "encID": 1398
+    },
+    {
+        "cardID": 418,
+        "encID": 1399
+    },
+    {
+        "cardID": 418,
+        "encID": 1400
+    },
+    {
+        "cardID": 418,
+        "encID": 1401
+    },
+    {
+        "cardID": 419,
+        "encID": 1402
+    },
+    {
+        "cardID": 419,
+        "encID": 1403
+    },
+    {
+        "cardID": 419,
+        "encID": 1404
+    },
+    {
+        "cardID": 420,
+        "encID": 1405
+    },
+    {
+        "cardID": 420,
+        "encID": 1406
+    },
+    {
+        "cardID": 420,
+        "encID": 1407
+    },
+    {
+        "cardID": 421,
+        "encID": 1408
+    },
+    {
+        "cardID": 421,
+        "encID": 1409
+    },
+    {
+        "cardID": 421,
+        "encID": 1410
+    },
+    {
+        "cardID": 422,
+        "encID": 1411
+    },
+    {
+        "cardID": 422,
+        "encID": 1412
+    },
+    {
+        "cardID": 422,
+        "encID": 1413
+    },
+    {
+        "cardID": 423,
+        "encID": 1414
+    },
+    {
+        "cardID": 423,
+        "encID": 1415
+    },
+    {
+        "cardID": 423,
+        "encID": 1416
+    },
+    {
+        "cardID": 424,
+        "encID": 1417
+    },
+    {
+        "cardID": 424,
+        "encID": 1418
+    },
+    {
+        "cardID": 424,
+        "encID": 1419
+    },
+    {
+        "cardID": 425,
+        "encID": 1420
+    },
+    {
+        "cardID": 425,
+        "encID": 1421
+    },
+    {
+        "cardID": 425,
+        "encID": 1422
+    },
+    {
+        "cardID": 426,
+        "encID": 1423
+    },
+    {
+        "cardID": 426,
+        "encID": 1424
+    },
+    {
+        "cardID": 426,
+        "encID": 1425
+    },
+    {
+        "cardID": 427,
+        "encID": 1426
+    },
+    {
+        "cardID": 427,
+        "encID": 1427
+    },
+    {
+        "cardID": 427,
+        "encID": 1428
+    },
+    {
+        "cardID": 428,
+        "encID": 1429
+    },
+    {
+        "cardID": 428,
+        "encID": 1430
+    },
+    {
+        "cardID": 428,
+        "encID": 1431
+    },
+    {
+        "cardID": 429,
+        "encID": 1432
+    },
+    {
+        "cardID": 429,
+        "encID": 1433
+    },
+    {
+        "cardID": 429,
+        "encID": 1434
+    },
+    {
+        "cardID": 430,
+        "encID": 1435
+    },
+    {
+        "cardID": 430,
+        "encID": 1436
+    },
+    {
+        "cardID": 430,
+        "encID": 1437
+    },
+    {
+        "cardID": 431,
+        "encID": 1438
+    },
+    {
+        "cardID": 431,
+        "encID": 1439
+    },
+    {
+        "cardID": 431,
+        "encID": 1440
+    },
+    {
+        "cardID": 432,
+        "encID": 1441
+    },
+    {
+        "cardID": 432,
+        "encID": 1442
+    },
+    {
+        "cardID": 432,
+        "encID": 1443
+    },
+    {
+        "cardID": 433,
+        "encID": 1444
+    },
+    {
+        "cardID": 433,
+        "encID": 1445
+    },
+    {
+        "cardID": 433,
+        "encID": 1446
+    },
+    {
+        "cardID": 434,
+        "encID": 1447
+    },
+    {
+        "cardID": 434,
+        "encID": 1448
+    },
+    {
+        "cardID": 434,
+        "encID": 1449
+    },
+    {
+        "cardID": 435,
+        "encID": 1450
+    },
+    {
+        "cardID": 435,
+        "encID": 1451
+    },
+    {
+        "cardID": 435,
+        "encID": 1452
+    },
+    {
+        "cardID": 436,
+        "encID": 1453
+    },
+    {
+        "cardID": 436,
+        "encID": 1454
+    },
+    {
+        "cardID": 436,
+        "encID": 1455
+    },
+    {
+        "cardID": 437,
+        "encID": 1456
+    },
+    {
+        "cardID": 437,
+        "encID": 1457
+    },
+    {
+        "cardID": 437,
+        "encID": 1458
+    },
+    {
+        "cardID": 438,
+        "encID": 1459
+    },
+    {
+        "cardID": 438,
+        "encID": 1460
+    },
+    {
+        "cardID": 438,
+        "encID": 1461
+    },
+    {
+        "cardID": 439,
+        "encID": 1462
+    },
+    {
+        "cardID": 439,
+        "encID": 1463
+    },
+    {
+        "cardID": 439,
+        "encID": 1464
+    },
+    {
+        "cardID": 440,
+        "encID": 1465
+    },
+    {
+        "cardID": 440,
+        "encID": 1466
+    },
+    {
+        "cardID": 440,
+        "encID": 1467
+    },
+    {
+        "cardID": 441,
+        "encID": 1468
+    },
+    {
+        "cardID": 441,
+        "encID": 1469
+    },
+    {
+        "cardID": 441,
+        "encID": 1470
+    },
+    {
+        "cardID": 442,
+        "encID": 1471
+    },
+    {
+        "cardID": 442,
+        "encID": 1472
+    },
+    {
+        "cardID": 442,
+        "encID": 1473
+    },
+    {
+        "cardID": 443,
+        "encID": 1474
+    },
+    {
+        "cardID": 443,
+        "encID": 1475
+    },
+    {
+        "cardID": 443,
+        "encID": 1476
+    },
+    {
+        "cardID": 444,
+        "encID": 1477
+    },
+    {
+        "cardID": 444,
+        "encID": 1478
+    },
+    {
+        "cardID": 444,
+        "encID": 1479
+    },
+    {
+        "cardID": 445,
+        "encID": 1480
+    },
+    {
+        "cardID": 445,
+        "encID": 1481
+    },
+    {
+        "cardID": 445,
+        "encID": 1482
+    },
+    {
+        "cardID": 446,
+        "encID": 1483
+    },
+    {
+        "cardID": 446,
+        "encID": 1484
+    },
+    {
+        "cardID": 446,
+        "encID": 1485
+    },
+    {
+        "cardID": 447,
+        "encID": 1486
+    },
+    {
+        "cardID": 447,
+        "encID": 1487
+    },
+    {
+        "cardID": 447,
+        "encID": 1488
+    },
+    {
+        "cardID": 448,
+        "encID": 1489
+    },
+    {
+        "cardID": 448,
+        "encID": 1490
+    },
+    {
+        "cardID": 448,
+        "encID": 1491
+    },
+    {
+        "cardID": 449,
+        "encID": 1492
+    },
+    {
+        "cardID": 449,
+        "encID": 1493
+    },
+    {
+        "cardID": 449,
+        "encID": 1494
+    },
+    {
+        "cardID": 450,
+        "encID": 1495
+    },
+    {
+        "cardID": 450,
+        "encID": 1496
+    },
+    {
+        "cardID": 450,
+        "encID": 1497
+    },
+    {
+        "cardID": 451,
+        "encID": 1498
+    },
+    {
+        "cardID": 451,
+        "encID": 1499
+    },
+    {
+        "cardID": 451,
+        "encID": 1500
+    },
+    {
+        "cardID": 452,
+        "encID": 1501
+    },
+    {
+        "cardID": 452,
+        "encID": 1502
+    },
+    {
+        "cardID": 452,
+        "encID": 1503
+    },
+    {
+        "cardID": 453,
+        "encID": 1504
+    },
+    {
+        "cardID": 453,
+        "encID": 1505
+    },
+    {
+        "cardID": 453,
+        "encID": 1506
+    },
+    {
+        "cardID": 454,
+        "encID": 1507
+    },
+    {
+        "cardID": 454,
+        "encID": 1508
+    },
+    {
+        "cardID": 454,
+        "encID": 1509
+    },
+    {
+        "cardID": 455,
+        "encID": 1510
+    },
+    {
+        "cardID": 455,
+        "encID": 1511
+    },
+    {
+        "cardID": 455,
+        "encID": 1512
+    },
+    {
+        "cardID": 456,
+        "encID": 1513
+    },
+    {
+        "cardID": 456,
+        "encID": 1514
+    },
+    {
+        "cardID": 456,
+        "encID": 1515
+    },
+    {
+        "cardID": 457,
+        "encID": 1516
+    },
+    {
+        "cardID": 457,
+        "encID": 1517
+    },
+    {
+        "cardID": 457,
+        "encID": 1518
+    },
+    {
+        "cardID": 458,
+        "encID": 1519
+    },
+    {
+        "cardID": 458,
+        "encID": 1520
+    },
+    {
+        "cardID": 458,
+        "encID": 1521
+    },
+    {
+        "cardID": 459,
+        "encID": 1522
+    },
+    {
+        "cardID": 459,
+        "encID": 1523
+    },
+    {
+        "cardID": 459,
+        "encID": 1524
+    },
+    {
+        "cardID": 460,
+        "encID": 1525
+    },
+    {
+        "cardID": 460,
+        "encID": 1526
+    },
+    {
+        "cardID": 460,
+        "encID": 1527
+    },
+    {
+        "cardID": 461,
+        "encID": 1528
+    },
+    {
+        "cardID": 461,
+        "encID": 1529
+    },
+    {
+        "cardID": 461,
+        "encID": 1530
+    },
+    {
+        "cardID": 462,
+        "encID": 1531
+    },
+    {
+        "cardID": 462,
+        "encID": 1532
+    },
+    {
+        "cardID": 462,
+        "encID": 1533
+    },
+    {
+        "cardID": 463,
+        "encID": 1534
+    },
+    {
+        "cardID": 463,
+        "encID": 1535
+    },
+    {
+        "cardID": 463,
+        "encID": 1536
+    },
+    {
+        "cardID": 464,
+        "encID": 1537
+    },
+    {
+        "cardID": 464,
+        "encID": 1538
+    },
+    {
+        "cardID": 464,
+        "encID": 1539
+    },
+    {
+        "cardID": 465,
+        "encID": 1540
+    },
+    {
+        "cardID": 465,
+        "encID": 1541
+    },
+    {
+        "cardID": 465,
+        "encID": 1542
+    },
+    {
+        "cardID": 466,
+        "encID": 1543
+    },
+    {
+        "cardID": 466,
+        "encID": 1544
+    },
+    {
+        "cardID": 466,
+        "encID": 1545
+    },
+    {
+        "cardID": 467,
+        "encID": 1546
+    },
+    {
+        "cardID": 467,
+        "encID": 1547
+    },
+    {
+        "cardID": 467,
+        "encID": 1548
+    },
+    {
+        "cardID": 468,
+        "encID": 1549
+    },
+    {
+        "cardID": 468,
+        "encID": 1550
+    },
+    {
+        "cardID": 468,
+        "encID": 1551
+    },
+    {
+        "cardID": 469,
+        "encID": 1552
+    },
+    {
+        "cardID": 469,
+        "encID": 1553
+    },
+    {
+        "cardID": 469,
+        "encID": 1554
+    },
+    {
+        "cardID": 470,
+        "encID": 1555
+    },
+    {
+        "cardID": 470,
+        "encID": 1556
+    },
+    {
+        "cardID": 470,
+        "encID": 1557
+    },
+    {
+        "cardID": 471,
+        "encID": 1558
+    },
+    {
+        "cardID": 471,
+        "encID": 1559
+    },
+    {
+        "cardID": 471,
+        "encID": 1560
+    },
+    {
+        "cardID": 472,
+        "encID": 1561
+    },
+    {
+        "cardID": 472,
+        "encID": 1562
+    },
+    {
+        "cardID": 472,
+        "encID": 1563
+    },
+    {
+        "cardID": 473,
+        "encID": 1564
+    },
+    {
+        "cardID": 473,
+        "encID": 1565
+    },
+    {
+        "cardID": 473,
+        "encID": 1566
+    },
+    {
+        "cardID": 474,
+        "encID": 1567
+    },
+    {
+        "cardID": 474,
+        "encID": 1568
+    },
+    {
+        "cardID": 474,
+        "encID": 1569
+    },
+    {
+        "cardID": 475,
+        "encID": 1570
+    },
+    {
+        "cardID": 475,
+        "encID": 1571
+    },
+    {
+        "cardID": 475,
+        "encID": 1572
+    },
+    {
+        "cardID": 476,
+        "encID": 1573
+    },
+    {
+        "cardID": 476,
+        "encID": 1574
+    },
+    {
+        "cardID": 476,
+        "encID": 1575
+    },
+    {
+        "cardID": 477,
+        "encID": 1576
+    },
+    {
+        "cardID": 477,
+        "encID": 1577
+    },
+    {
+        "cardID": 477,
+        "encID": 1578
+    },
+    {
+        "cardID": 478,
+        "encID": 1579
+    },
+    {
+        "cardID": 478,
+        "encID": 1580
+    },
+    {
+        "cardID": 478,
+        "encID": 1581
+    },
+    {
+        "cardID": 479,
+        "encID": 1582
+    },
+    {
+        "cardID": 479,
+        "encID": 1583
+    },
+    {
+        "cardID": 479,
+        "encID": 1584
+    },
+    {
+        "cardID": 480,
+        "encID": 1585
+    },
+    {
+        "cardID": 480,
+        "encID": 1586
+    },
+    {
+        "cardID": 480,
+        "encID": 1587
+    },
+    {
+        "cardID": 481,
+        "encID": 1588
+    },
+    {
+        "cardID": 481,
+        "encID": 1589
+    },
+    {
+        "cardID": 481,
+        "encID": 1590
+    },
+    {
+        "cardID": 482,
+        "encID": 1591
+    },
+    {
+        "cardID": 482,
+        "encID": 1592
+    },
+    {
+        "cardID": 482,
+        "encID": 1593
+    },
+    {
+        "cardID": 483,
+        "encID": 1594
+    },
+    {
+        "cardID": 483,
+        "encID": 1595
+    },
+    {
+        "cardID": 483,
+        "encID": 1596
+    },
+    {
+        "cardID": 484,
+        "encID": 1597
+    },
+    {
+        "cardID": 484,
+        "encID": 1598
+    },
+    {
+        "cardID": 484,
+        "encID": 1599
+    },
+    {
+        "cardID": 485,
+        "encID": 1600
+    },
+    {
+        "cardID": 485,
+        "encID": 1601
+    },
+    {
+        "cardID": 485,
+        "encID": 1602
+    },
+    {
+        "cardID": 486,
+        "encID": 1603
+    },
+    {
+        "cardID": 486,
+        "encID": 1604
+    },
+    {
+        "cardID": 486,
+        "encID": 1605
+    },
+    {
+        "cardID": 487,
+        "encID": 1606
+    },
+    {
+        "cardID": 487,
+        "encID": 1607
+    },
+    {
+        "cardID": 487,
+        "encID": 1608
+    },
+    {
+        "cardID": 488,
+        "encID": 1609
+    },
+    {
+        "cardID": 488,
+        "encID": 1610
+    },
+    {
+        "cardID": 488,
+        "encID": 1611
+    },
+    {
+        "cardID": 489,
+        "encID": 1612
+    },
+    {
+        "cardID": 489,
+        "encID": 1613
+    },
+    {
+        "cardID": 489,
+        "encID": 1614
+    },
+    {
+        "cardID": 490,
+        "encID": 1615
+    },
+    {
+        "cardID": 490,
+        "encID": 1616
+    },
+    {
+        "cardID": 490,
+        "encID": 1617
+    },
+    {
+        "cardID": 491,
+        "encID": 1618
+    },
+    {
+        "cardID": 491,
+        "encID": 1619
+    },
+    {
+        "cardID": 491,
+        "encID": 1620
+    },
+    {
+        "cardID": 492,
+        "encID": 1621
+    },
+    {
+        "cardID": 492,
+        "encID": 1622
+    },
+    {
+        "cardID": 492,
+        "encID": 1623
+    },
+    {
+        "cardID": 493,
+        "encID": 1624
+    },
+    {
+        "cardID": 493,
+        "encID": 1625
+    },
+    {
+        "cardID": 493,
+        "encID": 1626
+    },
+    {
+        "cardID": 494,
+        "encID": 1627
+    },
+    {
+        "cardID": 494,
+        "encID": 1628
+    },
+    {
+        "cardID": 494,
+        "encID": 1629
+    },
+    {
+        "cardID": 495,
+        "encID": 1630
+    },
+    {
+        "cardID": 495,
+        "encID": 1631
+    },
+    {
+        "cardID": 495,
+        "encID": 1632
+    },
+    {
+        "cardID": 496,
+        "encID": 1633
+    },
+    {
+        "cardID": 496,
+        "encID": 1634
+    },
+    {
+        "cardID": 496,
+        "encID": 1635
+    },
+    {
+        "cardID": 497,
+        "encID": 1636
+    },
+    {
+        "cardID": 497,
+        "encID": 1637
+    },
+    {
+        "cardID": 497,
+        "encID": 1638
+    },
+    {
+        "cardID": 498,
+        "encID": 1639
+    },
+    {
+        "cardID": 498,
+        "encID": 1640
+    },
+    {
+        "cardID": 498,
+        "encID": 1641
+    },
+    {
+        "cardID": 499,
+        "encID": 1642
+    },
+    {
+        "cardID": 499,
+        "encID": 1643
+    },
+    {
+        "cardID": 499,
+        "encID": 1644
+    },
+    {
+        "cardID": 500,
+        "encID": 1645
+    },
+    {
+        "cardID": 500,
+        "encID": 1646
+    },
+    {
+        "cardID": 500,
+        "encID": 1647
+    },
+    {
+        "cardID": 501,
+        "encID": 1648
+    },
+    {
+        "cardID": 501,
+        "encID": 1649
+    },
+    {
+        "cardID": 501,
+        "encID": 1650
+    },
+    {
+        "cardID": 502,
+        "encID": 1651
+    },
+    {
+        "cardID": 502,
+        "encID": 1652
+    },
+    {
+        "cardID": 502,
+        "encID": 1653
+    },
+    {
+        "cardID": 503,
+        "encID": 1654
+    },
+    {
+        "cardID": 503,
+        "encID": 1655
+    },
+    {
+        "cardID": 503,
+        "encID": 1656
+    },
+    {
+        "cardID": 504,
+        "encID": 1657
+    },
+    {
+        "cardID": 504,
+        "encID": 1658
+    },
+    {
+        "cardID": 504,
+        "encID": 1659
+    },
+    {
+        "cardID": 505,
+        "encID": 1660
+    },
+    {
+        "cardID": 505,
+        "encID": 1661
+    },
+    {
+        "cardID": 505,
+        "encID": 1662
+    },
+    {
+        "cardID": 506,
+        "encID": 1663
+    },
+    {
+        "cardID": 506,
+        "encID": 1664
+    },
+    {
+        "cardID": 506,
+        "encID": 1665
+    },
+    {
+        "cardID": 507,
+        "encID": 1666
+    },
+    {
+        "cardID": 507,
+        "encID": 1667
+    },
+    {
+        "cardID": 507,
+        "encID": 1668
+    },
+    {
+        "cardID": 508,
+        "encID": 1669
+    },
+    {
+        "cardID": 508,
+        "encID": 1670
+    },
+    {
+        "cardID": 508,
+        "encID": 1671
+    },
+    {
+        "cardID": 509,
+        "encID": 1672
+    },
+    {
+        "cardID": 509,
+        "encID": 1673
+    },
+    {
+        "cardID": 509,
+        "encID": 1674
+    },
+    {
+        "cardID": 510,
+        "encID": 1675
+    },
+    {
+        "cardID": 510,
+        "encID": 1676
+    },
+    {
+        "cardID": 510,
+        "encID": 1677
+    },
+    {
+        "cardID": 511,
+        "encID": 1678
+    },
+    {
+        "cardID": 511,
+        "encID": 1679
+    },
+    {
+        "cardID": 511,
+        "encID": 1680
+    },
+    {
+        "cardID": 512,
+        "encID": 1681
+    },
+    {
+        "cardID": 512,
+        "encID": 1682
+    },
+    {
+        "cardID": 512,
+        "encID": 1683
+    },
+    {
+        "cardID": 513,
+        "encID": 1684
+    },
+    {
+        "cardID": 513,
+        "encID": 1685
+    },
+    {
+        "cardID": 513,
+        "encID": 1686
+    },
+    {
+        "cardID": 514,
+        "encID": 1687
+    },
+    {
+        "cardID": 514,
+        "encID": 1688
+    },
+    {
+        "cardID": 514,
+        "encID": 1689
+    },
+    {
+        "cardID": 515,
+        "encID": 1690
+    },
+    {
+        "cardID": 515,
+        "encID": 1691
+    },
+    {
+        "cardID": 515,
+        "encID": 1692
+    },
+    {
+        "cardID": 516,
+        "encID": 1693
+    },
+    {
+        "cardID": 516,
+        "encID": 1694
+    },
+    {
+        "cardID": 516,
+        "encID": 1695
+    },
+    {
+        "cardID": 517,
+        "encID": 1696
+    },
+    {
+        "cardID": 517,
+        "encID": 1697
+    },
+    {
+        "cardID": 517,
+        "encID": 1698
+    },
+    {
+        "cardID": 518,
+        "encID": 1699
+    },
+    {
+        "cardID": 518,
+        "encID": 1700
+    },
+    {
+        "cardID": 518,
+        "encID": 1701
+    },
+    {
+        "cardID": 519,
+        "encID": 1702
+    },
+    {
+        "cardID": 519,
+        "encID": 1703
+    },
+    {
+        "cardID": 519,
+        "encID": 1704
+    },
+    {
+        "cardID": 520,
+        "encID": 1705
+    },
+    {
+        "cardID": 520,
+        "encID": 1706
+    },
+    {
+        "cardID": 520,
+        "encID": 1707
+    },
+    {
+        "cardID": 521,
+        "encID": 1708
+    },
+    {
+        "cardID": 521,
+        "encID": 1709
+    },
+    {
+        "cardID": 521,
+        "encID": 1710
+    },
+    {
+        "cardID": 522,
+        "encID": 1711
+    },
+    {
+        "cardID": 522,
+        "encID": 1712
+    },
+    {
+        "cardID": 522,
+        "encID": 1713
+    },
+    {
+        "cardID": 523,
+        "encID": 1714
+    },
+    {
+        "cardID": 523,
+        "encID": 1715
+    },
+    {
+        "cardID": 523,
+        "encID": 1716
+    },
+    {
+        "cardID": 524,
+        "encID": 1717
+    },
+    {
+        "cardID": 524,
+        "encID": 1718
+    },
+    {
+        "cardID": 524,
+        "encID": 1719
+    },
+    {
+        "cardID": 525,
+        "encID": 1720
+    },
+    {
+        "cardID": 525,
+        "encID": 1721
+    },
+    {
+        "cardID": 525,
+        "encID": 1722
+    },
+    {
+        "cardID": 526,
+        "encID": 1723
+    },
+    {
+        "cardID": 526,
+        "encID": 1724
+    },
+    {
+        "cardID": 526,
+        "encID": 1725
+    },
+    {
+        "cardID": 527,
+        "encID": 1726
+    },
+    {
+        "cardID": 527,
+        "encID": 1727
+    },
+    {
+        "cardID": 527,
+        "encID": 1728
+    },
+    {
+        "cardID": 528,
+        "encID": 1729
+    },
+    {
+        "cardID": 528,
+        "encID": 1730
+    },
+    {
+        "cardID": 528,
+        "encID": 1731
+    },
+    {
+        "cardID": 529,
+        "encID": 1732
+    },
+    {
+        "cardID": 529,
+        "encID": 1733
+    },
+    {
+        "cardID": 529,
+        "encID": 1734
+    },
+    {
+        "cardID": 530,
+        "encID": 1735
+    },
+    {
+        "cardID": 530,
+        "encID": 1736
+    },
+    {
+        "cardID": 530,
+        "encID": 1737
+    },
+    {
+        "cardID": 531,
+        "encID": 1738
+    },
+    {
+        "cardID": 531,
+        "encID": 1739
+    },
+    {
+        "cardID": 531,
+        "encID": 1740
+    },
+    {
+        "cardID": 532,
+        "encID": 1741
+    },
+    {
+        "cardID": 532,
+        "encID": 1742
+    },
+    {
+        "cardID": 532,
+        "encID": 1743
+    },
+    {
+        "cardID": 533,
+        "encID": 1744
+    },
+    {
+        "cardID": 533,
+        "encID": 1745
+    },
+    {
+        "cardID": 533,
+        "encID": 1746
+    },
+    {
+        "cardID": 534,
+        "encID": 1747
+    },
+    {
+        "cardID": 534,
+        "encID": 1748
+    },
+    {
+        "cardID": 534,
+        "encID": 1749
+    },
+    {
+        "cardID": 535,
+        "encID": 1750
+    },
+    {
+        "cardID": 535,
+        "encID": 1751
+    },
+    {
+        "cardID": 535,
+        "encID": 1752
+    },
+    {
+        "cardID": 536,
+        "encID": 1753
+    },
+    {
+        "cardID": 536,
+        "encID": 1754
+    },
+    {
+        "cardID": 536,
+        "encID": 1755
+    },
+    {
+        "cardID": 537,
+        "encID": 1756
+    },
+    {
+        "cardID": 537,
+        "encID": 1757
+    },
+    {
+        "cardID": 537,
+        "encID": 1758
+    },
+    {
+        "cardID": 538,
+        "encID": 1759
+    },
+    {
+        "cardID": 538,
+        "encID": 1760
+    },
+    {
+        "cardID": 538,
+        "encID": 1761
+    },
+    {
+        "cardID": 539,
+        "encID": 1762
+    },
+    {
+        "cardID": 539,
+        "encID": 1763
+    },
+    {
+        "cardID": 539,
+        "encID": 1764
+    },
+    {
+        "cardID": 540,
+        "encID": 1765
+    },
+    {
+        "cardID": 540,
+        "encID": 1766
+    },
+    {
+        "cardID": 540,
+        "encID": 1767
+    },
+    {
+        "cardID": 541,
+        "encID": 1768
+    },
+    {
+        "cardID": 541,
+        "encID": 1769
+    },
+    {
+        "cardID": 541,
+        "encID": 1770
+    },
+    {
+        "cardID": 542,
+        "encID": 1771
+    },
+    {
+        "cardID": 542,
+        "encID": 1772
+    },
+    {
+        "cardID": 542,
+        "encID": 1773
+    },
+    {
+        "cardID": 543,
+        "encID": 1774
+    },
+    {
+        "cardID": 543,
+        "encID": 1775
+    },
+    {
+        "cardID": 543,
+        "encID": 1776
+    },
+    {
+        "cardID": 544,
+        "encID": 1777
+    },
+    {
+        "cardID": 544,
+        "encID": 1778
+    },
+    {
+        "cardID": 544,
+        "encID": 1779
+    },
+    {
+        "cardID": 545,
+        "encID": 1780
+    },
+    {
+        "cardID": 545,
+        "encID": 1781
+    },
+    {
+        "cardID": 545,
+        "encID": 1782
+    },
+    {
+        "cardID": 546,
+        "encID": 1783
+    },
+    {
+        "cardID": 546,
+        "encID": 1784
+    },
+    {
+        "cardID": 546,
+        "encID": 1785
+    },
+    {
+        "cardID": 547,
+        "encID": 1786
+    },
+    {
+        "cardID": 547,
+        "encID": 1787
+    },
+    {
+        "cardID": 547,
+        "encID": 1788
+    },
+    {
+        "cardID": 548,
+        "encID": 1789
+    },
+    {
+        "cardID": 548,
+        "encID": 1790
+    },
+    {
+        "cardID": 548,
+        "encID": 1791
+    },
+    {
+        "cardID": 549,
+        "encID": 1792
+    },
+    {
+        "cardID": 549,
+        "encID": 1793
+    },
+    {
+        "cardID": 549,
+        "encID": 1794
+    },
+    {
+        "cardID": 550,
+        "encID": 1795
+    },
+    {
+        "cardID": 550,
+        "encID": 1796
+    },
+    {
+        "cardID": 550,
+        "encID": 1797
+    },
+    {
+        "cardID": 551,
+        "encID": 1798
+    },
+    {
+        "cardID": 551,
+        "encID": 1799
+    },
+    {
+        "cardID": 551,
+        "encID": 1800
+    },
+    {
+        "cardID": 552,
+        "encID": 1801
+    },
+    {
+        "cardID": 552,
+        "encID": 1802
+    },
+    {
+        "cardID": 552,
+        "encID": 1803
+    },
+    {
+        "cardID": 553,
+        "encID": 1804
+    },
+    {
+        "cardID": 553,
+        "encID": 1805
+    },
+    {
+        "cardID": 553,
+        "encID": 1806
+    },
+    {
+        "cardID": 554,
+        "encID": 1807
+    },
+    {
+        "cardID": 554,
+        "encID": 1808
+    },
+    {
+        "cardID": 554,
+        "encID": 1809
+    },
+    {
+        "cardID": 555,
+        "encID": 1810
+    },
+    {
+        "cardID": 555,
+        "encID": 1811
+    },
+    {
+        "cardID": 555,
+        "encID": 1812
+    },
+    {
+        "cardID": 556,
+        "encID": 1813
+    },
+    {
+        "cardID": 556,
+        "encID": 1814
+    },
+    {
+        "cardID": 556,
+        "encID": 1815
+    },
+    {
+        "cardID": 557,
+        "encID": 1816
+    },
+    {
+        "cardID": 557,
+        "encID": 1817
+    },
+    {
+        "cardID": 557,
+        "encID": 1818
+    },
+    {
+        "cardID": 558,
+        "encID": 1819
+    },
+    {
+        "cardID": 558,
+        "encID": 1820
+    },
+    {
+        "cardID": 558,
+        "encID": 1821
+    },
+    {
+        "cardID": 559,
+        "encID": 1822
+    },
+    {
+        "cardID": 559,
+        "encID": 1823
+    },
+    {
+        "cardID": 559,
+        "encID": 1824
+    },
+    {
+        "cardID": 560,
+        "encID": 1825
+    },
+    {
+        "cardID": 560,
+        "encID": 1826
+    },
+    {
+        "cardID": 560,
+        "encID": 1827
+    },
+    {
+        "cardID": 561,
+        "encID": 1828
+    },
+    {
+        "cardID": 561,
+        "encID": 1829
+    },
+    {
+        "cardID": 561,
+        "encID": 1830
+    },
+    {
+        "cardID": 562,
+        "encID": 1831
+    },
+    {
+        "cardID": 562,
+        "encID": 1832
+    },
+    {
+        "cardID": 562,
+        "encID": 1833
+    },
+    {
+        "cardID": 563,
+        "encID": 1834
+    },
+    {
+        "cardID": 563,
+        "encID": 1835
+    },
+    {
+        "cardID": 563,
+        "encID": 1836
+    },
+    {
+        "cardID": 564,
+        "encID": 1837
+    },
+    {
+        "cardID": 564,
+        "encID": 1838
+    },
+    {
+        "cardID": 564,
+        "encID": 1839
+    },
+    {
+        "cardID": 565,
+        "encID": 1840
+    },
+    {
+        "cardID": 565,
+        "encID": 1841
+    },
+    {
+        "cardID": 565,
+        "encID": 1842
+    },
+    {
+        "cardID": 566,
+        "encID": 1843
+    },
+    {
+        "cardID": 566,
+        "encID": 1844
+    },
+    {
+        "cardID": 566,
+        "encID": 1845
+    },
+    {
+        "cardID": 567,
+        "encID": 1846
+    },
+    {
+        "cardID": 567,
+        "encID": 1847
+    },
+    {
+        "cardID": 567,
+        "encID": 1848
+    },
+    {
+        "cardID": 568,
+        "encID": 1849
+    },
+    {
+        "cardID": 568,
+        "encID": 1850
+    },
+    {
+        "cardID": 568,
+        "encID": 1851
+    },
+    {
+        "cardID": 569,
+        "encID": 1852
+    },
+    {
+        "cardID": 569,
+        "encID": 1853
+    },
+    {
+        "cardID": 569,
+        "encID": 1854
+    },
+    {
+        "cardID": 570,
+        "encID": 1855
+    },
+    {
+        "cardID": 570,
+        "encID": 1856
+    },
+    {
+        "cardID": 570,
+        "encID": 1857
+    },
+    {
+        "cardID": 571,
+        "encID": 1858
+    },
+    {
+        "cardID": 571,
+        "encID": 1859
+    },
+    {
+        "cardID": 571,
+        "encID": 1860
+    },
+    {
+        "cardID": 572,
+        "encID": 1861
+    },
+    {
+        "cardID": 572,
+        "encID": 1862
+    },
+    {
+        "cardID": 572,
+        "encID": 1863
+    },
+    {
+        "cardID": 573,
+        "encID": 1864
+    },
+    {
+        "cardID": 573,
+        "encID": 1865
+    },
+    {
+        "cardID": 573,
+        "encID": 1866
+    },
+    {
+        "cardID": 574,
+        "encID": 1867
+    },
+    {
+        "cardID": 574,
+        "encID": 1868
+    },
+    {
+        "cardID": 574,
+        "encID": 1869
+    },
+    {
+        "cardID": 575,
+        "encID": 1870
+    },
+    {
+        "cardID": 575,
+        "encID": 1871
+    },
+    {
+        "cardID": 575,
+        "encID": 1872
+    },
+    {
+        "cardID": 576,
+        "encID": 1873
+    },
+    {
+        "cardID": 576,
+        "encID": 1874
+    },
+    {
+        "cardID": 576,
+        "encID": 1875
+    },
+    {
+        "cardID": 577,
+        "encID": 1876
+    },
+    {
+        "cardID": 577,
+        "encID": 1877
+    },
+    {
+        "cardID": 577,
+        "encID": 1878
+    },
+    {
+        "cardID": 578,
+        "encID": 1879
+    },
+    {
+        "cardID": 578,
+        "encID": 1880
+    },
+    {
+        "cardID": 578,
+        "encID": 1881
+    },
+    {
+        "cardID": 579,
+        "encID": 1882
+    },
+    {
+        "cardID": 579,
+        "encID": 1883
+    },
+    {
+        "cardID": 579,
+        "encID": 1884
+    },
+    {
+        "cardID": 580,
+        "encID": 1885
+    },
+    {
+        "cardID": 580,
+        "encID": 1886
+    },
+    {
+        "cardID": 580,
+        "encID": 1887
+    },
+    {
+        "cardID": 581,
+        "encID": 1888
+    },
+    {
+        "cardID": 581,
+        "encID": 1889
+    },
+    {
+        "cardID": 581,
+        "encID": 1890
+    },
+    {
+        "cardID": 582,
+        "encID": 1891
+    },
+    {
+        "cardID": 582,
+        "encID": 1892
+    },
+    {
+        "cardID": 582,
+        "encID": 1893
+    },
+    {
+        "cardID": 583,
+        "encID": 1894
+    },
+    {
+        "cardID": 583,
+        "encID": 1895
+    },
+    {
+        "cardID": 583,
+        "encID": 1896
+    },
+    {
+        "cardID": 584,
+        "encID": 1897
+    },
+    {
+        "cardID": 584,
+        "encID": 1898
+    },
+    {
+        "cardID": 584,
+        "encID": 1899
+    },
+    {
+        "cardID": 585,
+        "encID": 1900
+    },
+    {
+        "cardID": 585,
+        "encID": 1901
+    },
+    {
+        "cardID": 585,
+        "encID": 1902
+    },
+    {
+        "cardID": 586,
+        "encID": 1903
+    },
+    {
+        "cardID": 586,
+        "encID": 1904
+    },
+    {
+        "cardID": 586,
+        "encID": 1905
+    },
+    {
+        "cardID": 587,
+        "encID": 1906
+    },
+    {
+        "cardID": 587,
+        "encID": 1907
+    },
+    {
+        "cardID": 587,
+        "encID": 1908
+    },
+    {
+        "cardID": 588,
+        "encID": 1909
+    },
+    {
+        "cardID": 588,
+        "encID": 1910
+    },
+    {
+        "cardID": 588,
+        "encID": 1911
+    },
+    {
+        "cardID": 589,
+        "encID": 1912
+    },
+    {
+        "cardID": 589,
+        "encID": 1913
+    },
+    {
+        "cardID": 589,
+        "encID": 1914
+    },
+    {
+        "cardID": 590,
+        "encID": 1915
+    },
+    {
+        "cardID": 590,
+        "encID": 1916
+    },
+    {
+        "cardID": 590,
+        "encID": 1917
+    },
+    {
+        "cardID": 591,
+        "encID": 1918
+    },
+    {
+        "cardID": 591,
+        "encID": 1919
+    },
+    {
+        "cardID": 591,
+        "encID": 1920
+    },
+    {
+        "cardID": 592,
+        "encID": 1921
+    },
+    {
+        "cardID": 592,
+        "encID": 1922
+    },
+    {
+        "cardID": 592,
+        "encID": 1923
+    },
+    {
+        "cardID": 593,
+        "encID": 1924
+    },
+    {
+        "cardID": 593,
+        "encID": 1925
+    },
+    {
+        "cardID": 593,
+        "encID": 1926
+    },
+    {
+        "cardID": 594,
+        "encID": 1927
+    },
+    {
+        "cardID": 594,
+        "encID": 1928
+    },
+    {
+        "cardID": 594,
+        "encID": 1929
+    },
+    {
+        "cardID": 595,
+        "encID": 1930
+    },
+    {
+        "cardID": 595,
+        "encID": 1931
+    },
+    {
+        "cardID": 595,
+        "encID": 1932
+    },
+    {
+        "cardID": 596,
+        "encID": 1933
+    },
+    {
+        "cardID": 596,
+        "encID": 1934
+    },
+    {
+        "cardID": 596,
+        "encID": 1935
+    },
+    {
+        "cardID": 597,
+        "encID": 1936
+    },
+    {
+        "cardID": 597,
+        "encID": 1937
+    },
+    {
+        "cardID": 597,
+        "encID": 1938
+    },
+    {
+        "cardID": 598,
+        "encID": 1939
+    },
+    {
+        "cardID": 598,
+        "encID": 1940
+    },
+    {
+        "cardID": 598,
+        "encID": 1941
+    },
+    {
+        "cardID": 599,
+        "encID": 1942
+    },
+    {
+        "cardID": 599,
+        "encID": 1943
+    },
+    {
+        "cardID": 599,
+        "encID": 1944
+    },
+    {
+        "cardID": 600,
+        "encID": 1945
+    },
+    {
+        "cardID": 600,
+        "encID": 1946
+    },
+    {
+        "cardID": 600,
+        "encID": 1947
+    },
+    {
+        "cardID": 601,
+        "encID": 1948
+    },
+    {
+        "cardID": 601,
+        "encID": 1949
+    },
+    {
+        "cardID": 601,
+        "encID": 1950
+    },
+    {
+        "cardID": 602,
+        "encID": 1951
+    },
+    {
+        "cardID": 602,
+        "encID": 1952
+    },
+    {
+        "cardID": 602,
+        "encID": 1953
+    },
+    {
+        "cardID": 603,
+        "encID": 1954
+    },
+    {
+        "cardID": 603,
+        "encID": 1955
+    },
+    {
+        "cardID": 603,
+        "encID": 1956
+    },
+    {
+        "cardID": 604,
+        "encID": 1957
+    },
+    {
+        "cardID": 604,
+        "encID": 1958
+    },
+    {
+        "cardID": 604,
+        "encID": 1959
+    },
+    {
+        "cardID": 605,
+        "encID": 1960
+    },
+    {
+        "cardID": 605,
+        "encID": 1961
+    },
+    {
+        "cardID": 605,
+        "encID": 1962
+    },
+    {
+        "cardID": 606,
+        "encID": 1963
+    },
+    {
+        "cardID": 606,
+        "encID": 1964
+    },
+    {
+        "cardID": 606,
+        "encID": 1965
+    },
+    {
+        "cardID": 607,
+        "encID": 1966
+    },
+    {
+        "cardID": 607,
+        "encID": 1967
+    },
+    {
+        "cardID": 607,
+        "encID": 1968
+    },
+    {
+        "cardID": 608,
+        "encID": 1969
+    },
+    {
+        "cardID": 608,
+        "encID": 1970
+    },
+    {
+        "cardID": 608,
+        "encID": 1971
+    },
+    {
+        "cardID": 609,
+        "encID": 1972
+    },
+    {
+        "cardID": 609,
+        "encID": 1973
+    },
+    {
+        "cardID": 609,
+        "encID": 1974
+    },
+    {
+        "cardID": 610,
+        "encID": 1975
+    },
+    {
+        "cardID": 610,
+        "encID": 1976
+    },
+    {
+        "cardID": 610,
+        "encID": 1977
+    },
+    {
+        "cardID": 611,
+        "encID": 1978
+    },
+    {
+        "cardID": 611,
+        "encID": 1979
+    },
+    {
+        "cardID": 611,
+        "encID": 1980
+    },
+    {
+        "cardID": 612,
+        "encID": 1981
+    },
+    {
+        "cardID": 612,
+        "encID": 1982
+    },
+    {
+        "cardID": 612,
+        "encID": 1983
+    },
+    {
+        "cardID": 613,
+        "encID": 1984
+    },
+    {
+        "cardID": 613,
+        "encID": 1985
+    },
+    {
+        "cardID": 613,
+        "encID": 1986
+    },
+    {
+        "cardID": 614,
+        "encID": 1987
+    },
+    {
+        "cardID": 614,
+        "encID": 1988
+    },
+    {
+        "cardID": 614,
+        "encID": 1989
+    },
+    {
+        "cardID": 615,
+        "encID": 1990
+    },
+    {
+        "cardID": 615,
+        "encID": 1991
+    },
+    {
+        "cardID": 615,
+        "encID": 1992
+    },
+    {
+        "cardID": 616,
+        "encID": 1993
+    },
+    {
+        "cardID": 616,
+        "encID": 1994
+    },
+    {
+        "cardID": 616,
+        "encID": 1995
+    },
+    {
+        "cardID": 617,
+        "encID": 1996
+    },
+    {
+        "cardID": 617,
+        "encID": 1997
+    },
+    {
+        "cardID": 617,
+        "encID": 1998
+    },
+    {
+        "cardID": 618,
+        "encID": 1999
+    },
+    {
+        "cardID": 618,
+        "encID": 2000
+    },
+    {
+        "cardID": 618,
+        "encID": 2001
+    },
+    {
+        "cardID": 619,
+        "encID": 2002
+    },
+    {
+        "cardID": 619,
+        "encID": 2003
+    },
+    {
+        "cardID": 619,
+        "encID": 2004
+    },
+    {
+        "cardID": 620,
+        "encID": 2005
+    },
+    {
+        "cardID": 620,
+        "encID": 2006
+    },
+    {
+        "cardID": 620,
+        "encID": 2007
+    },
+    {
+        "cardID": 621,
+        "encID": 2008
+    },
+    {
+        "cardID": 621,
+        "encID": 2009
+    },
+    {
+        "cardID": 621,
+        "encID": 2010
+    },
+    {
+        "cardID": 622,
+        "encID": 2011
+    },
+    {
+        "cardID": 622,
+        "encID": 2012
+    },
+    {
+        "cardID": 622,
+        "encID": 2013
+    },
+    {
+        "cardID": 623,
+        "encID": 2014
+    },
+    {
+        "cardID": 623,
+        "encID": 2015
+    },
+    {
+        "cardID": 623,
+        "encID": 2016
+    },
+    {
+        "cardID": 624,
+        "encID": 2017
+    },
+    {
+        "cardID": 624,
+        "encID": 2018
+    },
+    {
+        "cardID": 624,
+        "encID": 2019
+    },
+    {
+        "cardID": 625,
+        "encID": 2020
+    },
+    {
+        "cardID": 625,
+        "encID": 2021
+    },
+    {
+        "cardID": 625,
+        "encID": 2022
+    },
+    {
+        "cardID": 626,
+        "encID": 2023
+    },
+    {
+        "cardID": 626,
+        "encID": 2024
+    },
+    {
+        "cardID": 626,
+        "encID": 2025
+    },
+    {
+        "cardID": 627,
+        "encID": 2026
+    },
+    {
+        "cardID": 627,
+        "encID": 2027
+    },
+    {
+        "cardID": 627,
+        "encID": 2028
+    },
+    {
+        "cardID": 628,
+        "encID": 2029
+    },
+    {
+        "cardID": 628,
+        "encID": 2030
+    },
+    {
+        "cardID": 628,
+        "encID": 2031
+    },
+    {
+        "cardID": 629,
+        "encID": 2032
+    },
+    {
+        "cardID": 629,
+        "encID": 2033
+    },
+    {
+        "cardID": 629,
+        "encID": 2034
+    },
+    {
+        "cardID": 630,
+        "encID": 2035
+    },
+    {
+        "cardID": 630,
+        "encID": 2036
+    },
+    {
+        "cardID": 630,
+        "encID": 2037
+    },
+    {
+        "cardID": 631,
+        "encID": 2038
+    },
+    {
+        "cardID": 631,
+        "encID": 2039
+    },
+    {
+        "cardID": 631,
+        "encID": 2040
+    },
+    {
+        "cardID": 632,
+        "encID": 2041
+    },
+    {
+        "cardID": 632,
+        "encID": 2042
+    },
+    {
+        "cardID": 632,
+        "encID": 2043
+    },
+    {
+        "cardID": 633,
+        "encID": 2044
+    },
+    {
+        "cardID": 633,
+        "encID": 2045
+    },
+    {
+        "cardID": 633,
+        "encID": 2046
+    },
+    {
+        "cardID": 634,
+        "encID": 2047
+    },
+    {
+        "cardID": 634,
+        "encID": 2048
+    },
+    {
+        "cardID": 634,
+        "encID": 2049
+    },
+    {
+        "cardID": 635,
+        "encID": 2050
+    },
+    {
+        "cardID": 635,
+        "encID": 2051
+    },
+    {
+        "cardID": 635,
+        "encID": 2052
+    },
+    {
+        "cardID": 636,
+        "encID": 2053
+    },
+    {
+        "cardID": 636,
+        "encID": 2054
+    },
+    {
+        "cardID": 636,
+        "encID": 2055
+    },
+    {
+        "cardID": 637,
+        "encID": 2056
+    },
+    {
+        "cardID": 637,
+        "encID": 2057
+    },
+    {
+        "cardID": 637,
+        "encID": 2058
+    },
+    {
+        "cardID": 638,
+        "encID": 2059
+    },
+    {
+        "cardID": 638,
+        "encID": 2060
+    },
+    {
+        "cardID": 638,
+        "encID": 2061
+    },
+    {
+        "cardID": 639,
+        "encID": 2062
+    },
+    {
+        "cardID": 639,
+        "encID": 2063
+    },
+    {
+        "cardID": 639,
+        "encID": 2064
+    },
+    {
+        "cardID": 640,
+        "encID": 2065
+    },
+    {
+        "cardID": 640,
+        "encID": 2066
+    },
+    {
+        "cardID": 640,
+        "encID": 2067
+    },
+    {
+        "cardID": 641,
+        "encID": 2068
+    },
+    {
+        "cardID": 641,
+        "encID": 2069
+    },
+    {
+        "cardID": 641,
+        "encID": 2070
+    },
+    {
+        "cardID": 642,
+        "encID": 2071
+    },
+    {
+        "cardID": 642,
+        "encID": 2072
+    },
+    {
+        "cardID": 642,
+        "encID": 2073
+    },
+    {
+        "cardID": 643,
+        "encID": 2074
+    },
+    {
+        "cardID": 643,
+        "encID": 2075
+    },
+    {
+        "cardID": 643,
+        "encID": 2076
+    },
+    {
+        "cardID": 644,
+        "encID": 2077
+    },
+    {
+        "cardID": 644,
+        "encID": 2078
+    },
+    {
+        "cardID": 644,
+        "encID": 2079
+    },
+    {
+        "cardID": 645,
+        "encID": 2080
+    },
+    {
+        "cardID": 645,
+        "encID": 2081
+    },
+    {
+        "cardID": 645,
+        "encID": 2082
+    },
+    {
+        "cardID": 646,
+        "encID": 2083
+    },
+    {
+        "cardID": 646,
+        "encID": 2084
+    },
+    {
+        "cardID": 646,
+        "encID": 2085
+    },
+    {
+        "cardID": 647,
+        "encID": 2086
+    },
+    {
+        "cardID": 647,
+        "encID": 2087
+    },
+    {
+        "cardID": 647,
+        "encID": 2088
+    },
+    {
+        "cardID": 648,
+        "encID": 2089
+    },
+    {
+        "cardID": 648,
+        "encID": 2090
+    },
+    {
+        "cardID": 648,
+        "encID": 2091
+    },
+    {
+        "cardID": 649,
+        "encID": 2092
+    },
+    {
+        "cardID": 649,
+        "encID": 2093
+    },
+    {
+        "cardID": 649,
+        "encID": 2094
+    },
+    {
+        "cardID": 650,
+        "encID": 2095
+    },
+    {
+        "cardID": 650,
+        "encID": 2096
+    },
+    {
+        "cardID": 650,
+        "encID": 2097
+    },
+    {
+        "cardID": 651,
+        "encID": 2098
+    },
+    {
+        "cardID": 651,
+        "encID": 2099
+    },
+    {
+        "cardID": 651,
+        "encID": 2100
+    },
+    {
+        "cardID": 652,
+        "encID": 2101
+    },
+    {
+        "cardID": 652,
+        "encID": 2102
+    },
+    {
+        "cardID": 652,
+        "encID": 2103
+    },
+    {
+        "cardID": 653,
+        "encID": 2104
+    },
+    {
+        "cardID": 653,
+        "encID": 2105
+    },
+    {
+        "cardID": 653,
+        "encID": 2106
+    },
+    {
+        "cardID": 654,
+        "encID": 2107
+    },
+    {
+        "cardID": 654,
+        "encID": 2108
+    },
+    {
+        "cardID": 654,
+        "encID": 2109
+    },
+    {
+        "cardID": 655,
+        "encID": 2110
+    },
+    {
+        "cardID": 655,
+        "encID": 2111
+    },
+    {
+        "cardID": 655,
+        "encID": 2112
+    },
+    {
+        "cardID": 656,
+        "encID": 2113
+    },
+    {
+        "cardID": 656,
+        "encID": 2114
+    },
+    {
+        "cardID": 656,
+        "encID": 2115
+    },
+    {
+        "cardID": 657,
+        "encID": 2116
+    },
+    {
+        "cardID": 657,
+        "encID": 2117
+    },
+    {
+        "cardID": 657,
+        "encID": 2118
+    },
+    {
+        "cardID": 658,
+        "encID": 2119
+    },
+    {
+        "cardID": 658,
+        "encID": 2120
+    },
+    {
+        "cardID": 658,
+        "encID": 2121
+    },
+    {
+        "cardID": 659,
+        "encID": 2122
+    },
+    {
+        "cardID": 659,
+        "encID": 2123
+    },
+    {
+        "cardID": 659,
+        "encID": 2124
+    },
+    {
+        "cardID": 660,
+        "encID": 2125
+    },
+    {
+        "cardID": 660,
+        "encID": 2126
+    },
+    {
+        "cardID": 660,
+        "encID": 2127
+    },
+    {
+        "cardID": 661,
+        "encID": 2128
+    },
+    {
+        "cardID": 661,
+        "encID": 2129
+    },
+    {
+        "cardID": 661,
+        "encID": 2130
+    },
+    {
+        "cardID": 662,
+        "encID": 2131
+    },
+    {
+        "cardID": 662,
+        "encID": 2132
+    },
+    {
+        "cardID": 662,
+        "encID": 2133
+    },
+    {
+        "cardID": 663,
+        "encID": 2134
+    },
+    {
+        "cardID": 663,
+        "encID": 2135
+    },
+    {
+        "cardID": 663,
+        "encID": 2136
+    },
+    {
+        "cardID": 664,
+        "encID": 2137
+    },
+    {
+        "cardID": 664,
+        "encID": 2138
+    },
+    {
+        "cardID": 664,
+        "encID": 2139
+    },
+    {
+        "cardID": 665,
+        "encID": 2140
+    },
+    {
+        "cardID": 665,
+        "encID": 2141
+    },
+    {
+        "cardID": 665,
+        "encID": 2142
+    },
+    {
+        "cardID": 666,
+        "encID": 2143
+    },
+    {
+        "cardID": 666,
+        "encID": 2144
+    },
+    {
+        "cardID": 666,
+        "encID": 2145
+    },
+    {
+        "cardID": 667,
+        "encID": 2146
+    },
+    {
+        "cardID": 667,
+        "encID": 2147
+    },
+    {
+        "cardID": 667,
+        "encID": 2148
+    },
+    {
+        "cardID": 668,
+        "encID": 2149
+    },
+    {
+        "cardID": 668,
+        "encID": 2150
+    },
+    {
+        "cardID": 668,
+        "encID": 2151
+    },
+    {
+        "cardID": 669,
+        "encID": 2152
+    },
+    {
+        "cardID": 669,
+        "encID": 2153
+    },
+    {
+        "cardID": 669,
+        "encID": 2154
+    },
+    {
+        "cardID": 670,
+        "encID": 2155
+    },
+    {
+        "cardID": 670,
+        "encID": 2156
+    },
+    {
+        "cardID": 670,
+        "encID": 2157
+    },
+    {
+        "cardID": 671,
+        "encID": 2158
+    },
+    {
+        "cardID": 671,
+        "encID": 2159
+    },
+    {
+        "cardID": 671,
+        "encID": 2160
+    },
+    {
+        "cardID": 672,
+        "encID": 2161
+    },
+    {
+        "cardID": 672,
+        "encID": 2162
+    },
+    {
+        "cardID": 672,
+        "encID": 2163
+    },
+    {
+        "cardID": 673,
+        "encID": 2164
+    },
+    {
+        "cardID": 673,
+        "encID": 2165
+    },
+    {
+        "cardID": 673,
+        "encID": 2166
+    },
+    {
+        "cardID": 674,
+        "encID": 2167
+    },
+    {
+        "cardID": 674,
+        "encID": 2168
+    },
+    {
+        "cardID": 674,
+        "encID": 2169
+    },
+    {
+        "cardID": 675,
+        "encID": 2170
+    },
+    {
+        "cardID": 675,
+        "encID": 2171
+    },
+    {
+        "cardID": 675,
+        "encID": 2172
+    },
+    {
+        "cardID": 676,
+        "encID": 2173
+    },
+    {
+        "cardID": 676,
+        "encID": 2174
+    },
+    {
+        "cardID": 676,
+        "encID": 2175
+    },
+    {
+        "cardID": 677,
+        "encID": 2176
+    },
+    {
+        "cardID": 677,
+        "encID": 2177
+    },
+    {
+        "cardID": 677,
+        "encID": 2178
+    },
+    {
+        "cardID": 678,
+        "encID": 2179
+    },
+    {
+        "cardID": 678,
+        "encID": 2180
+    },
+    {
+        "cardID": 678,
+        "encID": 2181
+    },
+    {
+        "cardID": 679,
+        "encID": 2182
+    },
+    {
+        "cardID": 679,
+        "encID": 2183
+    },
+    {
+        "cardID": 679,
+        "encID": 2184
+    },
+    {
+        "cardID": 680,
+        "encID": 2185
+    },
+    {
+        "cardID": 680,
+        "encID": 2186
+    },
+    {
+        "cardID": 680,
+        "encID": 2187
+    },
+    {
+        "cardID": 681,
+        "encID": 2188
+    },
+    {
+        "cardID": 681,
+        "encID": 2189
+    },
+    {
+        "cardID": 681,
+        "encID": 2190
+    },
+    {
+        "cardID": 682,
+        "encID": 2191
+    },
+    {
+        "cardID": 682,
+        "encID": 2192
+    },
+    {
+        "cardID": 682,
+        "encID": 2193
+    },
+    {
+        "cardID": 683,
+        "encID": 2194
+    },
+    {
+        "cardID": 683,
+        "encID": 2195
+    },
+    {
+        "cardID": 683,
+        "encID": 2196
+    },
+    {
+        "cardID": 684,
+        "encID": 2197
+    },
+    {
+        "cardID": 684,
+        "encID": 2198
+    },
+    {
+        "cardID": 684,
+        "encID": 2199
+    },
+    {
+        "cardID": 685,
+        "encID": 2200
+    },
+    {
+        "cardID": 685,
+        "encID": 2201
+    },
+    {
+        "cardID": 685,
+        "encID": 2202
+    },
+    {
+        "cardID": 686,
+        "encID": 2203
+    },
+    {
+        "cardID": 686,
+        "encID": 2204
+    },
+    {
+        "cardID": 686,
+        "encID": 2205
+    },
+    {
+        "cardID": 687,
+        "encID": 2206
+    },
+    {
+        "cardID": 687,
+        "encID": 2207
+    },
+    {
+        "cardID": 687,
+        "encID": 2208
+    },
+    {
+        "cardID": 4242,
+        "encID": 14242
+    },
+    {
+        "cardID": 4501,
+        "encID": 14950
+    },
+    {
+        "cardID": 4501,
+        "encID": 14951
+    },
+    {
+        "cardID": 4502,
+        "encID": 14952
+    },
+    {
+        "cardID": 4502,
+        "encID": 14953
+    },
+    {
+        "cardID": 4503,
+        "encID": 14954
+    },
+    {
+        "cardID": 4503,
+        "encID": 14955
+    },
+    {
+        "cardID": 4504,
+        "encID": 14962
+    },
+    {
+        "cardID": 4504,
+        "encID": 14963
+    },
+    {
+        "cardID": 4505,
+        "encID": 14964
+    },
+    {
+        "cardID": 4505,
+        "encID": 14965
+    },
+    {
+        "cardID": 4506,
+        "encID": 14966
+    },
+    {
+        "cardID": 4506,
+        "encID": 14967
+    },
+    {
+        "cardID": 4507,
+        "encID": 14968
+    },
+    {
+        "cardID": 4507,
+        "encID": 14969
+    },
+    {
+        "cardID": 4507,
+        "encID": 14970
+    },
+    {
+        "cardID": 4508,
+        "encID": 14971
+    },
+    {
+        "cardID": 4508,
+        "encID": 14972
+    },
+    {
+        "cardID": 4508,
+        "encID": 14973
+    },
+    {
+        "cardID": 4509,
+        "encID": 14974
+    },
+    {
+        "cardID": 4509,
+        "encID": 14975
+    },
+    {
+        "cardID": 4509,
+        "encID": 14976
+    },
+    {
+        "cardID": 4510,
+        "encID": 14977
+    },
+    {
+        "cardID": 4510,
+        "encID": 14978
+    },
+    {
+        "cardID": 4510,
+        "encID": 14979
+    },
+    {
+        "cardID": 4511,
+        "encID": 14980
+    },
+    {
+        "cardID": 4511,
+        "encID": 14981
+    },
+    {
+        "cardID": 4511,
+        "encID": 14982
+    },
+    {
+        "cardID": 4512,
+        "encID": 14983
+    },
+    {
+        "cardID": 4512,
+        "encID": 14984
+    },
+    {
+        "cardID": 4512,
+        "encID": 14985
+    },
+    {
+        "cardID": 4513,
+        "encID": 14986
+    },
+    {
+        "cardID": 4513,
+        "encID": 14987
+    },
+    {
+        "cardID": 4513,
+        "encID": 14988
+    },
+    {
+        "cardID": 4514,
+        "encID": 14989
+    },
+    {
+        "cardID": 4514,
+        "encID": 14990
+    },
+    {
+        "cardID": 4514,
+        "encID": 14991
+    },
+    {
+        "cardID": 4515,
+        "encID": 14992
+    },
+    {
+        "cardID": 4515,
+        "encID": 14993
+    },
+    {
+        "cardID": 4515,
+        "encID": 14994
+    },
+    {
+        "cardID": 4516,
+        "encID": 14995
+    },
+    {
+        "cardID": 4516,
+        "encID": 14996
+    },
+    {
+        "cardID": 4516,
+        "encID": 14997
+    },
+    {
+        "cardID": 4517,
+        "encID": 14998
+    },
+    {
+        "cardID": 4517,
+        "encID": 14999
+    },
+    {
+        "cardID": 4517,
+        "encID": 15000
+    },
+    {
+        "cardID": 4518,
+        "encID": 15001
+    },
+    {
+        "cardID": 4518,
+        "encID": 15002
+    },
+    {
+        "cardID": 4518,
+        "encID": 15003
+    },
+    {
+        "cardID": 4519,
+        "encID": 15004
+    },
+    {
+        "cardID": 4519,
+        "encID": 15005
+    },
+    {
+        "cardID": 4519,
+        "encID": 15006
+    },
+    {
+        "cardID": 4520,
+        "encID": 15007
+    },
+    {
+        "cardID": 4520,
+        "encID": 15008
+    },
+    {
+        "cardID": 4520,
+        "encID": 15009
+    },
+    {
+        "cardID": 4521,
+        "encID": 15010
+    },
+    {
+        "cardID": 4521,
+        "encID": 15011
+    },
+    {
+        "cardID": 4521,
+        "encID": 15012
+    },
+    {
+        "cardID": 4522,
+        "encID": 15013
+    },
+    {
+        "cardID": 4522,
+        "encID": 15014
+    },
+    {
+        "cardID": 4522,
+        "encID": 15015
+    },
+    {
+        "cardID": 4523,
+        "encID": 15016
+    },
+    {
+        "cardID": 4523,
+        "encID": 15017
+    },
+    {
+        "cardID": 4523,
+        "encID": 15018
+    },
+    {
+        "cardID": 4524,
+        "encID": 15019
+    },
+    {
+        "cardID": 4524,
+        "encID": 15020
+    },
+    {
+        "cardID": 4524,
+        "encID": 15021
+    },
+    {
+        "cardID": 4525,
+        "encID": 15022
+    },
+    {
+        "cardID": 4525,
+        "encID": 15023
+    },
+    {
+        "cardID": 4525,
+        "encID": 15024
+    },
+    {
+        "cardID": 4526,
+        "encID": 15025
+    },
+    {
+        "cardID": 4526,
+        "encID": 15026
+    },
+    {
+        "cardID": 4526,
+        "encID": 15027
+    },
+    {
+        "cardID": 4527,
+        "encID": 15028
+    },
+    {
+        "cardID": 4527,
+        "encID": 15029
+    },
+    {
+        "cardID": 4527,
+        "encID": 15030
+    },
+    {
+        "cardID": 4528,
+        "encID": 15031
+    },
+    {
+        "cardID": 4528,
+        "encID": 15032
+    },
+    {
+        "cardID": 4528,
+        "encID": 15033
+    },
+    {
+        "cardID": 4529,
+        "encID": 15034
+    },
+    {
+        "cardID": 4529,
+        "encID": 15035
+    },
+    {
+        "cardID": 4529,
+        "encID": 15036
+    },
+    {
+        "cardID": 4530,
+        "encID": 15037
+    },
+    {
+        "cardID": 4530,
+        "encID": 15038
+    },
+    {
+        "cardID": 4530,
+        "encID": 15039
+    },
+    {
+        "cardID": 4531,
+        "encID": 15040
+    },
+    {
+        "cardID": 4531,
+        "encID": 15041
+    },
+    {
+        "cardID": 4531,
+        "encID": 15042
+    },
+    {
+        "cardID": 4532,
+        "encID": 15043
+    },
+    {
+        "cardID": 4532,
+        "encID": 15044
+    },
+    {
+        "cardID": 4532,
+        "encID": 15045
+    },
+    {
+        "cardID": 4533,
+        "encID": 15046
+    },
+    {
+        "cardID": 4533,
+        "encID": 15047
+    },
+    {
+        "cardID": 4533,
+        "encID": 15048
+    },
+    {
+        "cardID": 4534,
+        "encID": 15049
+    },
+    {
+        "cardID": 4534,
+        "encID": 15050
+    },
+    {
+        "cardID": 4534,
+        "encID": 15051
+    },
+    {
+        "cardID": 4535,
+        "encID": 15052
+    },
+    {
+        "cardID": 4535,
+        "encID": 15053
+    },
+    {
+        "cardID": 4535,
+        "encID": 15054
+    },
+    {
+        "cardID": 4536,
+        "encID": 15055
+    },
+    {
+        "cardID": 4536,
+        "encID": 15056
+    },
+    {
+        "cardID": 4536,
+        "encID": 15057
+    },
+    {
+        "cardID": 4537,
+        "encID": 15058
+    },
+    {
+        "cardID": 4537,
+        "encID": 15059
+    },
+    {
+        "cardID": 4537,
+        "encID": 15060
+    },
+    {
+        "cardID": 4538,
+        "encID": 15061
+    },
+    {
+        "cardID": 4538,
+        "encID": 15062
+    },
+    {
+        "cardID": 4538,
+        "encID": 15063
+    },
+    {
+        "cardID": 4539,
+        "encID": 15064
+    },
+    {
+        "cardID": 4539,
+        "encID": 15065
+    },
+    {
+        "cardID": 4539,
+        "encID": 15066
+    },
+    {
+        "cardID": 4540,
+        "encID": 15067
+    },
+    {
+        "cardID": 4540,
+        "encID": 15068
+    },
+    {
+        "cardID": 4540,
+        "encID": 15069
+    },
+    {
+        "cardID": 4541,
+        "encID": 15070
+    },
+    {
+        "cardID": 4541,
+        "encID": 15071
+    },
+    {
+        "cardID": 4541,
+        "encID": 15072
+    },
+    {
+        "cardID": 4542,
+        "encID": 15073
+    },
+    {
+        "cardID": 4542,
+        "encID": 15074
+    },
+    {
+        "cardID": 4542,
+        "encID": 15075
+    },
+    {
+        "cardID": 4543,
+        "encID": 15076
+    },
+    {
+        "cardID": 4543,
+        "encID": 15077
+    },
+    {
+        "cardID": 4543,
+        "encID": 15078
+    },
+    {
+        "cardID": 4544,
+        "encID": 15079
+    },
+    {
+        "cardID": 4544,
+        "encID": 15080
+    },
+    {
+        "cardID": 4544,
+        "encID": 15081
+    },
+    {
+        "cardID": 4545,
+        "encID": 15082
+    },
+    {
+        "cardID": 4545,
+        "encID": 15083
+    },
+    {
+        "cardID": 4545,
+        "encID": 15084
+    },
+    {
+        "cardID": 4546,
+        "encID": 15085
+    },
+    {
+        "cardID": 4546,
+        "encID": 15086
+    },
+    {
+        "cardID": 4546,
+        "encID": 15087
+    },
+    {
+        "cardID": 4547,
+        "encID": 15088
+    },
+    {
+        "cardID": 4547,
+        "encID": 15089
+    },
+    {
+        "cardID": 4547,
+        "encID": 15090
+    },
+    {
+        "cardID": 4548,
+        "encID": 15091
+    },
+    {
+        "cardID": 4548,
+        "encID": 15092
+    },
+    {
+        "cardID": 4548,
+        "encID": 15093
+    },
+    {
+        "cardID": 4549,
+        "encID": 15094
+    },
+    {
+        "cardID": 4549,
+        "encID": 15095
+    },
+    {
+        "cardID": 4549,
+        "encID": 15096
+    },
+    {
+        "cardID": 4550,
+        "encID": 15097
+    },
+    {
+        "cardID": 4550,
+        "encID": 15098
+    },
+    {
+        "cardID": 4550,
+        "encID": 15099
+    },
+    {
+        "cardID": 4551,
+        "encID": 15100
+    },
+    {
+        "cardID": 4551,
+        "encID": 15101
+    },
+    {
+        "cardID": 4551,
+        "encID": 15102
+    },
+    {
+        "cardID": 4552,
+        "encID": 15103
+    },
+    {
+        "cardID": 4552,
+        "encID": 15104
+    },
+    {
+        "cardID": 4552,
+        "encID": 15105
+    },
+    {
+        "cardID": 4553,
+        "encID": 15106
+    },
+    {
+        "cardID": 4553,
+        "encID": 15107
+    },
+    {
+        "cardID": 4554,
+        "encID": 15108
+    },
+    {
+        "cardID": 4554,
+        "encID": 15109
+    },
+    {
+        "cardID": 4555,
+        "encID": 15110
+    },
+    {
+        "cardID": 4555,
+        "encID": 15111
+    },
+    {
+        "cardID": 4556,
+        "encID": 15112
+    },
+    {
+        "cardID": 4556,
+        "encID": 15113
+    },
+    {
+        "cardID": 4557,
+        "encID": 15114
+    },
+    {
+        "cardID": 4557,
+        "encID": 15115
+    },
+    {
+        "cardID": 4557,
+        "encID": 15116
+    },
+    {
+        "cardID": 4558,
+        "encID": 15117
+    },
+    {
+        "cardID": 4558,
+        "encID": 15118
+    },
+    {
+        "cardID": 4558,
+        "encID": 15119
+    },
+    {
+        "cardID": 4559,
+        "encID": 15120
+    },
+    {
+        "cardID": 4559,
+        "encID": 15121
+    },
+    {
+        "cardID": 4559,
+        "encID": 15122
+    },
+    {
+        "cardID": 4560,
+        "encID": 15123
+    },
+    {
+        "cardID": 4560,
+        "encID": 15124
+    },
+    {
+        "cardID": 4560,
+        "encID": 15125
+    },
+    {
+        "cardID": 4561,
+        "encID": 15126
+    },
+    {
+        "cardID": 4561,
+        "encID": 15127
+    },
+    {
+        "cardID": 4561,
+        "encID": 15128
+    },
+    {
+        "cardID": 4562,
+        "encID": 15129
+    },
+    {
+        "cardID": 4562,
+        "encID": 15130
+    },
+    {
+        "cardID": 4562,
+        "encID": 15131
+    },
+    {
+        "cardID": 4563,
+        "encID": 15132
+    },
+    {
+        "cardID": 4563,
+        "encID": 15133
+    },
+    {
+        "cardID": 4563,
+        "encID": 15134
+    },
+    {
+        "cardID": 4564,
+        "encID": 15135
+    },
+    {
+        "cardID": 4564,
+        "encID": 15136
+    },
+    {
+        "cardID": 4565,
+        "encID": 15137
+    },
+    {
+        "cardID": 4565,
+        "encID": 15138
+    },
+    {
+        "cardID": 4565,
+        "encID": 15139
+    },
+    {
+        "cardID": 4566,
+        "encID": 15140
+    },
+    {
+        "cardID": 4566,
+        "encID": 15141
+    },
+    {
+        "cardID": 4567,
+        "encID": 15142
+    },
+    {
+        "cardID": 4567,
+        "encID": 15143
+    },
+    {
+        "cardID": 4567,
+        "encID": 15144
+    },
+    {
+        "cardID": 4568,
+        "encID": 15145
+    },
+    {
+        "cardID": 4568,
+        "encID": 15146
+    },
+    {
+        "cardID": 4568,
+        "encID": 15147
+    },
+    {
+        "cardID": 4569,
+        "encID": 15148
+    },
+    {
+        "cardID": 4569,
+        "encID": 15149
+    },
+    {
+        "cardID": 4569,
+        "encID": 15150
+    },
+    {
+        "cardID": 4570,
+        "encID": 15151
+    },
+    {
+        "cardID": 4570,
+        "encID": 15152
+    },
+    {
+        "cardID": 4570,
+        "encID": 15153
+    },
+    {
+        "cardID": 4571,
+        "encID": 15154
+    },
+    {
+        "cardID": 4571,
+        "encID": 15155
+    },
+    {
+        "cardID": 4571,
+        "encID": 15156
+    },
+    {
+        "cardID": 4572,
+        "encID": 15157
+    },
+    {
+        "cardID": 4572,
+        "encID": 15158
+    },
+    {
+        "cardID": 4573,
+        "encID": 15159
+    },
+    {
+        "cardID": 4573,
+        "encID": 15160
+    },
+    {
+        "cardID": 4573,
+        "encID": 15161
+    },
+    {
+        "cardID": 4574,
+        "encID": 15162
+    },
+    {
+        "cardID": 4574,
+        "encID": 15163
+    },
+    {
+        "cardID": 4574,
+        "encID": 15164
+    },
+    {
+        "cardID": 4575,
+        "encID": 15165
+    },
+    {
+        "cardID": 4575,
+        "encID": 15166
+    },
+    {
+        "cardID": 4575,
+        "encID": 15167
+    },
+    {
+        "cardID": 4576,
+        "encID": 15168
+    },
+    {
+        "cardID": 4576,
+        "encID": 15169
+    },
+    {
+        "cardID": 4577,
+        "encID": 15170
+    },
+    {
+        "cardID": 4577,
+        "encID": 15171
+    },
+    {
+        "cardID": 4577,
+        "encID": 15172
+    },
+    {
+        "cardID": 4578,
+        "encID": 15173
+    },
+    {
+        "cardID": 4578,
+        "encID": 15174
+    },
+    {
+        "cardID": 4578,
+        "encID": 15175
+    },
+    {
+        "cardID": 4579,
+        "encID": 15176
+    },
+    {
+        "cardID": 4579,
+        "encID": 15177
+    },
+    {
+        "cardID": 4579,
+        "encID": 15178
+    },
+    {
+        "cardID": 4580,
+        "encID": 15179
+    },
+    {
+        "cardID": 4580,
+        "encID": 15180
+    },
+    {
+        "cardID": 4580,
+        "encID": 15181
+    },
+    {
+        "cardID": 4581,
+        "encID": 15182
+    },
+    {
+        "cardID": 4581,
+        "encID": 15183
+    },
+    {
+        "cardID": 4581,
+        "encID": 15184
+    },
+    {
+        "cardID": 4582,
+        "encID": 15185
+    },
+    {
+        "cardID": 4582,
+        "encID": 15186
+    },
+    {
+        "cardID": 4582,
+        "encID": 15187
+    },
+    {
+        "cardID": 5001,
+        "encID": 20000
+    },
+    {
+        "cardID": 5001,
+        "encID": 20001
+    },
+    {
+        "cardID": 5001,
+        "encID": 20002
+    },
+    {
+        "cardID": 5002,
+        "encID": 20003
+    },
+    {
+        "cardID": 5002,
+        "encID": 20004
+    },
+    {
+        "cardID": 5002,
+        "encID": 20005
+    },
+    {
+        "cardID": 5003,
+        "encID": 20006
+    },
+    {
+        "cardID": 5003,
+        "encID": 20007
+    },
+    {
+        "cardID": 5003,
+        "encID": 20008
+    },
+    {
+        "cardID": 5004,
+        "encID": 20009
+    },
+    {
+        "cardID": 5004,
+        "encID": 20010
+    },
+    {
+        "cardID": 5004,
+        "encID": 20011
+    },
+    {
+        "cardID": 5005,
+        "encID": 20012
+    },
+    {
+        "cardID": 5005,
+        "encID": 20013
+    },
+    {
+        "cardID": 5005,
+        "encID": 20014
+    },
+    {
+        "cardID": 5006,
+        "encID": 20015
+    },
+    {
+        "cardID": 5006,
+        "encID": 20016
+    },
+    {
+        "cardID": 5006,
+        "encID": 20017
+    },
+    {
+        "cardID": 5007,
+        "encID": 20018
+    },
+    {
+        "cardID": 5007,
+        "encID": 20019
+    },
+    {
+        "cardID": 5007,
+        "encID": 20020
+    },
+    {
+        "cardID": 5008,
+        "encID": 20021
+    },
+    {
+        "cardID": 5008,
+        "encID": 20022
+    },
+    {
+        "cardID": 5008,
+        "encID": 20023
+    },
+    {
+        "cardID": 5009,
+        "encID": 20024
+    },
+    {
+        "cardID": 5009,
+        "encID": 20025
+    },
+    {
+        "cardID": 5009,
+        "encID": 20026
+    },
+    {
+        "cardID": 5010,
+        "encID": 20027
+    },
+    {
+        "cardID": 5010,
+        "encID": 20028
+    },
+    {
+        "cardID": 5010,
+        "encID": 20029
+    },
+    {
+        "cardID": 5011,
+        "encID": 20030
+    },
+    {
+        "cardID": 5011,
+        "encID": 20031
+    },
+    {
+        "cardID": 5011,
+        "encID": 20032
+    },
+    {
+        "cardID": 5012,
+        "encID": 20033
+    },
+    {
+        "cardID": 5012,
+        "encID": 20034
+    },
+    {
+        "cardID": 5012,
+        "encID": 20035
+    },
+    {
+        "cardID": 5013,
+        "encID": 20036
+    },
+    {
+        "cardID": 5013,
+        "encID": 20037
+    },
+    {
+        "cardID": 5013,
+        "encID": 20038
+    },
+    {
+        "cardID": 5014,
+        "encID": 20039
+    },
+    {
+        "cardID": 5014,
+        "encID": 20040
+    },
+    {
+        "cardID": 5014,
+        "encID": 20041
+    },
+    {
+        "cardID": 5015,
+        "encID": 20042
+    },
+    {
+        "cardID": 5015,
+        "encID": 20043
+    },
+    {
+        "cardID": 5015,
+        "encID": 20044
+    },
+    {
+        "cardID": 5016,
+        "encID": 20045
+    },
+    {
+        "cardID": 5016,
+        "encID": 20046
+    },
+    {
+        "cardID": 5016,
+        "encID": 20047
+    },
+    {
+        "cardID": 5017,
+        "encID": 20048
+    },
+    {
+        "cardID": 5017,
+        "encID": 20049
+    },
+    {
+        "cardID": 5017,
+        "encID": 20050
+    },
+    {
+        "cardID": 5018,
+        "encID": 20051
+    },
+    {
+        "cardID": 5018,
+        "encID": 20052
+    },
+    {
+        "cardID": 5018,
+        "encID": 20053
+    },
+    {
+        "cardID": 5019,
+        "encID": 20054
+    },
+    {
+        "cardID": 5019,
+        "encID": 20055
+    },
+    {
+        "cardID": 5019,
+        "encID": 20056
+    },
+    {
+        "cardID": 5020,
+        "encID": 20057
+    },
+    {
+        "cardID": 5020,
+        "encID": 20058
+    },
+    {
+        "cardID": 5020,
+        "encID": 20059
+    },
+    {
+        "cardID": 5021,
+        "encID": 20060
+    },
+    {
+        "cardID": 5021,
+        "encID": 20061
+    },
+    {
+        "cardID": 5021,
+        "encID": 20062
+    },
+    {
+        "cardID": 5022,
+        "encID": 20063
+    },
+    {
+        "cardID": 5022,
+        "encID": 20064
+    },
+    {
+        "cardID": 5022,
+        "encID": 20065
+    },
+    {
+        "cardID": 5023,
+        "encID": 20066
+    },
+    {
+        "cardID": 5023,
+        "encID": 20067
+    },
+    {
+        "cardID": 5023,
+        "encID": 20068
+    },
+    {
+        "cardID": 5024,
+        "encID": 20069
+    },
+    {
+        "cardID": 5024,
+        "encID": 20070
+    },
+    {
+        "cardID": 5024,
+        "encID": 20071
+    },
+    {
+        "cardID": 5025,
+        "encID": 20072
+    },
+    {
+        "cardID": 5025,
+        "encID": 20073
+    },
+    {
+        "cardID": 5025,
+        "encID": 20074
+    },
+    {
+        "cardID": 5026,
+        "encID": 20075
+    },
+    {
+        "cardID": 5026,
+        "encID": 20076
+    },
+    {
+        "cardID": 5026,
+        "encID": 20077
+    },
+    {
+        "cardID": 5027,
+        "encID": 20078
+    },
+    {
+        "cardID": 5027,
+        "encID": 20079
+    },
+    {
+        "cardID": 5027,
+        "encID": 20080
+    },
+    {
+        "cardID": 5028,
+        "encID": 20081
+    },
+    {
+        "cardID": 5028,
+        "encID": 20082
+    },
+    {
+        "cardID": 5028,
+        "encID": 20083
+    },
+    {
+        "cardID": 5029,
+        "encID": 20084
+    },
+    {
+        "cardID": 5029,
+        "encID": 20085
+    },
+    {
+        "cardID": 5029,
+        "encID": 20086
+    },
+    {
+        "cardID": 5030,
+        "encID": 20087
+    },
+    {
+        "cardID": 5030,
+        "encID": 20088
+    },
+    {
+        "cardID": 5030,
+        "encID": 20089
+    },
+    {
+        "cardID": 5031,
+        "encID": 20090
+    },
+    {
+        "cardID": 5031,
+        "encID": 20091
+    },
+    {
+        "cardID": 5031,
+        "encID": 20092
+    },
+    {
+        "cardID": 5032,
+        "encID": 20093
+    },
+    {
+        "cardID": 5032,
+        "encID": 20094
+    },
+    {
+        "cardID": 5032,
+        "encID": 20095
+    },
+    {
+        "cardID": 5033,
+        "encID": 20096
+    },
+    {
+        "cardID": 5033,
+        "encID": 20097
+    },
+    {
+        "cardID": 5033,
+        "encID": 20098
+    },
+    {
+        "cardID": 5034,
+        "encID": 20099
+    },
+    {
+        "cardID": 5034,
+        "encID": 20100
+    },
+    {
+        "cardID": 5034,
+        "encID": 20101
+    },
+    {
+        "cardID": 5035,
+        "encID": 20102
+    },
+    {
+        "cardID": 5035,
+        "encID": 20103
+    },
+    {
+        "cardID": 5035,
+        "encID": 20104
+    },
+    {
+        "cardID": 5036,
+        "encID": 20105
+    },
+    {
+        "cardID": 5036,
+        "encID": 20106
+    },
+    {
+        "cardID": 5036,
+        "encID": 20107
+    },
+    {
+        "cardID": 5037,
+        "encID": 20108
+    },
+    {
+        "cardID": 5037,
+        "encID": 20109
+    },
+    {
+        "cardID": 5037,
+        "encID": 20110
+    },
+    {
+        "cardID": 5038,
+        "encID": 20111
+    },
+    {
+        "cardID": 5038,
+        "encID": 20112
+    },
+    {
+        "cardID": 5038,
+        "encID": 20113
+    },
+    {
+        "cardID": 5039,
+        "encID": 20114
+    },
+    {
+        "cardID": 5039,
+        "encID": 20115
+    },
+    {
+        "cardID": 5039,
+        "encID": 20116
+    },
+    {
+        "cardID": 5040,
+        "encID": 20117
+    },
+    {
+        "cardID": 5040,
+        "encID": 20118
+    },
+    {
+        "cardID": 5040,
+        "encID": 20119
+    },
+    {
+        "cardID": 5041,
+        "encID": 20120
+    },
+    {
+        "cardID": 5041,
+        "encID": 20121
+    },
+    {
+        "cardID": 5041,
+        "encID": 20122
+    },
+    {
+        "cardID": 5042,
+        "encID": 20123
+    },
+    {
+        "cardID": 5042,
+        "encID": 20124
+    },
+    {
+        "cardID": 5042,
+        "encID": 20125
+    },
+    {
+        "cardID": 5043,
+        "encID": 20126
+    },
+    {
+        "cardID": 5043,
+        "encID": 20127
+    },
+    {
+        "cardID": 5043,
+        "encID": 20128
+    },
+    {
+        "cardID": 5044,
+        "encID": 20129
+    },
+    {
+        "cardID": 5044,
+        "encID": 20130
+    },
+    {
+        "cardID": 5044,
+        "encID": 20131
+    },
+    {
+        "cardID": 5045,
+        "encID": 20132
+    },
+    {
+        "cardID": 5045,
+        "encID": 20133
+    },
+    {
+        "cardID": 5045,
+        "encID": 20134
+    },
+    {
+        "cardID": 5046,
+        "encID": 20135
+    },
+    {
+        "cardID": 5046,
+        "encID": 20136
+    },
+    {
+        "cardID": 5046,
+        "encID": 20137
+    },
+    {
+        "cardID": 5047,
+        "encID": 20138
+    },
+    {
+        "cardID": 5047,
+        "encID": 20139
+    },
+    {
+        "cardID": 5048,
+        "encID": 20140
+    },
+    {
+        "cardID": 5048,
+        "encID": 20141
+    },
+    {
+        "cardID": 5049,
+        "encID": 20142
+    },
+    {
+        "cardID": 5049,
+        "encID": 20143
+    },
+    {
+        "cardID": 5050,
+        "encID": 20144
+    },
+    {
+        "cardID": 5050,
+        "encID": 20145
+    },
+    {
+        "cardID": 5051,
+        "encID": 20146
+    },
+    {
+        "cardID": 5051,
+        "encID": 20147
+    },
+    {
+        "cardID": 5051,
+        "encID": 20148
+    },
+    {
+        "cardID": 5052,
+        "encID": 20149
+    },
+    {
+        "cardID": 5052,
+        "encID": 20150
+    },
+    {
+        "cardID": 5052,
+        "encID": 20151
+    },
+    {
+        "cardID": 5053,
+        "encID": 20152
+    },
+    {
+        "cardID": 5053,
+        "encID": 20153
+    },
+    {
+        "cardID": 5053,
+        "encID": 20154
+    },
+    {
+        "cardID": 5054,
+        "encID": 20155
+    },
+    {
+        "cardID": 5054,
+        "encID": 20156
+    },
+    {
+        "cardID": 5054,
+        "encID": 20157
+    },
+    {
+        "cardID": 5055,
+        "encID": 20158
+    },
+    {
+        "cardID": 5055,
+        "encID": 20159
+    },
+    {
+        "cardID": 5055,
+        "encID": 20160
+    },
+    {
+        "cardID": 5056,
+        "encID": 20161
+    },
+    {
+        "cardID": 5056,
+        "encID": 20162
+    },
+    {
+        "cardID": 5056,
+        "encID": 20163
+    },
+    {
+        "cardID": 5057,
+        "encID": 20164
+    },
+    {
+        "cardID": 5057,
+        "encID": 20165
+    },
+    {
+        "cardID": 5057,
+        "encID": 20166
+    },
+    {
+        "cardID": 5058,
+        "encID": 20167
+    },
+    {
+        "cardID": 5058,
+        "encID": 20168
+    },
+    {
+        "cardID": 5058,
+        "encID": 20169
+    },
+    {
+        "cardID": 5059,
+        "encID": 20170
+    },
+    {
+        "cardID": 5059,
+        "encID": 20171
+    },
+    {
+        "cardID": 5060,
+        "encID": 20172
+    },
+    {
+        "cardID": 5060,
+        "encID": 20173
+    },
+    {
+        "cardID": 5061,
+        "encID": 20174
+    },
+    {
+        "cardID": 5061,
+        "encID": 20175
+    },
+    {
+        "cardID": 5061,
+        "encID": 20176
+    },
+    {
+        "cardID": 5062,
+        "encID": 20177
+    },
+    {
+        "cardID": 5062,
+        "encID": 20178
+    },
+    {
+        "cardID": 5062,
+        "encID": 20179
+    },
+    {
+        "cardID": 5063,
+        "encID": 20180
+    },
+    {
+        "cardID": 5063,
+        "encID": 20181
+    },
+    {
+        "cardID": 5063,
+        "encID": 20182
+    },
+    {
+        "cardID": 5064,
+        "encID": 20183
+    },
+    {
+        "cardID": 5064,
+        "encID": 20184
+    },
+    {
+        "cardID": 5064,
+        "encID": 20185
+    },
+    {
+        "cardID": 5065,
+        "encID": 20186
+    },
+    {
+        "cardID": 5065,
+        "encID": 20187
+    },
+    {
+        "cardID": 5066,
+        "encID": 20188
+    },
+    {
+        "cardID": 5066,
+        "encID": 20189
+    },
+    {
+        "cardID": 5066,
+        "encID": 20190
+    },
+    {
+        "cardID": 5067,
+        "encID": 20191
+    },
+    {
+        "cardID": 5067,
+        "encID": 20192
+    },
+    {
+        "cardID": 5067,
+        "encID": 20193
+    },
+    {
+        "cardID": 5068,
+        "encID": 20194
+    },
+    {
+        "cardID": 5068,
+        "encID": 20195
+    },
+    {
+        "cardID": 5069,
+        "encID": 20196
+    },
+    {
+        "cardID": 5069,
+        "encID": 20197
+    },
+    {
+        "cardID": 5069,
+        "encID": 20198
+    },
+    {
+        "cardID": 5070,
+        "encID": 20199
+    },
+    {
+        "cardID": 5070,
+        "encID": 20200
+    },
+    {
+        "cardID": 5070,
+        "encID": 20201
+    },
+    {
+        "cardID": 5071,
+        "encID": 20202
+    },
+    {
+        "cardID": 5071,
+        "encID": 20203
+    },
+    {
+        "cardID": 5071,
+        "encID": 20204
+    },
+    {
+        "cardID": 5072,
+        "encID": 20205
+    },
+    {
+        "cardID": 5072,
+        "encID": 20206
+    },
+    {
+        "cardID": 5072,
+        "encID": 20207
+    },
+    {
+        "cardID": 5073,
+        "encID": 20208
+    },
+    {
+        "cardID": 5073,
+        "encID": 20209
+    },
+    {
+        "cardID": 5073,
+        "encID": 20210
+    },
+    {
+        "cardID": 5074,
+        "encID": 20211
+    },
+    {
+        "cardID": 5074,
+        "encID": 20212
+    },
+    {
+        "cardID": 5074,
+        "encID": 20213
+    },
+    {
+        "cardID": 5075,
+        "encID": 20214
+    },
+    {
+        "cardID": 5075,
+        "encID": 20215
+    },
+    {
+        "cardID": 5075,
+        "encID": 20216
+    },
+    {
+        "cardID": 5076,
+        "encID": 20217
+    },
+    {
+        "cardID": 5076,
+        "encID": 20218
+    },
+    {
+        "cardID": 5076,
+        "encID": 20219
+    },
+    {
+        "cardID": 5501,
+        "encID": 25000
+    },
+    {
+        "cardID": 5501,
+        "encID": 25001
+    },
+    {
+        "cardID": 5501,
+        "encID": 25002
+    },
+    {
+        "cardID": 5502,
+        "encID": 25003
+    },
+    {
+        "cardID": 5502,
+        "encID": 25004
+    },
+    {
+        "cardID": 5502,
+        "encID": 25005
+    },
+    {
+        "cardID": 5503,
+        "encID": 25006
+    },
+    {
+        "cardID": 5503,
+        "encID": 25007
+    },
+    {
+        "cardID": 5503,
+        "encID": 25008
+    },
+    {
+        "cardID": 5504,
+        "encID": 25009
+    },
+    {
+        "cardID": 5504,
+        "encID": 25010
+    },
+    {
+        "cardID": 5504,
+        "encID": 25011
+    },
+    {
+        "cardID": 5505,
+        "encID": 25012
+    },
+    {
+        "cardID": 5505,
+        "encID": 25013
+    },
+    {
+        "cardID": 5505,
+        "encID": 25014
+    },
+    {
+        "cardID": 5506,
+        "encID": 25015
+    },
+    {
+        "cardID": 5506,
+        "encID": 25016
+    },
+    {
+        "cardID": 5506,
+        "encID": 25017
+    },
+    {
+        "cardID": 5507,
+        "encID": 25018
+    },
+    {
+        "cardID": 5507,
+        "encID": 25019
+    },
+    {
+        "cardID": 5507,
+        "encID": 25020
+    },
+    {
+        "cardID": 5508,
+        "encID": 25021
+    },
+    {
+        "cardID": 5508,
+        "encID": 25022
+    },
+    {
+        "cardID": 5508,
+        "encID": 25023
+    },
+    {
+        "cardID": 5509,
+        "encID": 25024
+    },
+    {
+        "cardID": 5509,
+        "encID": 25025
+    },
+    {
+        "cardID": 5509,
+        "encID": 25026
+    },
+    {
+        "cardID": 5510,
+        "encID": 25027
+    },
+    {
+        "cardID": 5510,
+        "encID": 25028
+    },
+    {
+        "cardID": 5510,
+        "encID": 25029
+    },
+    {
+        "cardID": 5511,
+        "encID": 25030
+    },
+    {
+        "cardID": 5511,
+        "encID": 25031
+    },
+    {
+        "cardID": 5511,
+        "encID": 25032
+    },
+    {
+        "cardID": 5512,
+        "encID": 25033
+    },
+    {
+        "cardID": 5512,
+        "encID": 25034
+    },
+    {
+        "cardID": 5512,
+        "encID": 25035
+    },
+    {
+        "cardID": 5513,
+        "encID": 25036
+    },
+    {
+        "cardID": 5513,
+        "encID": 25037
+    },
+    {
+        "cardID": 5513,
+        "encID": 25038
+    },
+    {
+        "cardID": 5514,
+        "encID": 25039
+    },
+    {
+        "cardID": 5514,
+        "encID": 25040
+    },
+    {
+        "cardID": 5514,
+        "encID": 25041
+    },
+    {
+        "cardID": 5515,
+        "encID": 25042
+    },
+    {
+        "cardID": 5515,
+        "encID": 25043
+    },
+    {
+        "cardID": 5515,
+        "encID": 25044
+    },
+    {
+        "cardID": 5516,
+        "encID": 25045
+    },
+    {
+        "cardID": 5516,
+        "encID": 25046
+    },
+    {
+        "cardID": 5516,
+        "encID": 25047
+    },
+    {
+        "cardID": 5517,
+        "encID": 25048
+    },
+    {
+        "cardID": 5517,
+        "encID": 25049
+    },
+    {
+        "cardID": 5517,
+        "encID": 25050
+    },
+    {
+        "cardID": 5518,
+        "encID": 25051
+    },
+    {
+        "cardID": 5518,
+        "encID": 25052
+    },
+    {
+        "cardID": 5518,
+        "encID": 25053
+    },
+    {
+        "cardID": 5519,
+        "encID": 25054
+    },
+    {
+        "cardID": 5519,
+        "encID": 25055
+    },
+    {
+        "cardID": 5519,
+        "encID": 25056
+    },
+    {
+        "cardID": 5520,
+        "encID": 25057
+    },
+    {
+        "cardID": 5520,
+        "encID": 25058
+    },
+    {
+        "cardID": 5520,
+        "encID": 25059
+    },
+    {
+        "cardID": 5521,
+        "encID": 25060
+    },
+    {
+        "cardID": 5521,
+        "encID": 25061
+    },
+    {
+        "cardID": 5521,
+        "encID": 25062
+    },
+    {
+        "cardID": 5522,
+        "encID": 25063
+    },
+    {
+        "cardID": 5522,
+        "encID": 25064
+    },
+    {
+        "cardID": 5522,
+        "encID": 25065
+    },
+    {
+        "cardID": 5523,
+        "encID": 25066
+    },
+    {
+        "cardID": 5523,
+        "encID": 25067
+    },
+    {
+        "cardID": 5523,
+        "encID": 25068
+    },
+    {
+        "cardID": 5524,
+        "encID": 25069
+    },
+    {
+        "cardID": 5524,
+        "encID": 25070
+    },
+    {
+        "cardID": 5524,
+        "encID": 25071
+    },
+    {
+        "cardID": 5525,
+        "encID": 25072
+    },
+    {
+        "cardID": 5525,
+        "encID": 25073
+    },
+    {
+        "cardID": 5525,
+        "encID": 25074
+    },
+    {
+        "cardID": 5526,
+        "encID": 25075
+    },
+    {
+        "cardID": 5526,
+        "encID": 25076
+    },
+    {
+        "cardID": 5526,
+        "encID": 25077
+    },
+    {
+        "cardID": 5527,
+        "encID": 25078
+    },
+    {
+        "cardID": 5527,
+        "encID": 25079
+    },
+    {
+        "cardID": 5527,
+        "encID": 25080
+    },
+    {
+        "cardID": 5528,
+        "encID": 25081
+    },
+    {
+        "cardID": 5528,
+        "encID": 25082
+    },
+    {
+        "cardID": 5528,
+        "encID": 25083
+    },
+    {
+        "cardID": 5529,
+        "encID": 25084
+    },
+    {
+        "cardID": 5529,
+        "encID": 25085
+    },
+    {
+        "cardID": 5529,
+        "encID": 25086
+    },
+    {
+        "cardID": 5530,
+        "encID": 25087
+    },
+    {
+        "cardID": 5530,
+        "encID": 25088
+    },
+    {
+        "cardID": 5530,
+        "encID": 25089
+    },
+    {
+        "cardID": 5531,
+        "encID": 25090
+    },
+    {
+        "cardID": 5531,
+        "encID": 25091
+    },
+    {
+        "cardID": 5531,
+        "encID": 25092
+    },
+    {
+        "cardID": 5532,
+        "encID": 25093
+    },
+    {
+        "cardID": 5532,
+        "encID": 25094
+    },
+    {
+        "cardID": 5532,
+        "encID": 25095
+    },
+    {
+        "cardID": 5533,
+        "encID": 25096
+    },
+    {
+        "cardID": 5533,
+        "encID": 25097
+    },
+    {
+        "cardID": 5533,
+        "encID": 25098
+    },
+    {
+        "cardID": 5534,
+        "encID": 25099
+    },
+    {
+        "cardID": 5534,
+        "encID": 25100
+    },
+    {
+        "cardID": 5534,
+        "encID": 25101
+    },
+    {
+        "cardID": 5535,
+        "encID": 25102
+    },
+    {
+        "cardID": 5535,
+        "encID": 25103
+    },
+    {
+        "cardID": 5535,
+        "encID": 25104
+    },
+    {
+        "cardID": 5536,
+        "encID": 25105
+    },
+    {
+        "cardID": 5536,
+        "encID": 25106
+    },
+    {
+        "cardID": 5536,
+        "encID": 25107
+    },
+    {
+        "cardID": 5537,
+        "encID": 25108
+    },
+    {
+        "cardID": 5537,
+        "encID": 25109
+    },
+    {
+        "cardID": 5537,
+        "encID": 25110
+    },
+    {
+        "cardID": 5538,
+        "encID": 25111
+    },
+    {
+        "cardID": 5538,
+        "encID": 25112
+    },
+    {
+        "cardID": 5538,
+        "encID": 25113
+    },
+    {
+        "cardID": 5539,
+        "encID": 25114
+    },
+    {
+        "cardID": 5539,
+        "encID": 25115
+    },
+    {
+        "cardID": 5539,
+        "encID": 25116
+    },
+    {
+        "cardID": 5540,
+        "encID": 25117
+    },
+    {
+        "cardID": 5540,
+        "encID": 25118
+    },
+    {
+        "cardID": 5540,
+        "encID": 25119
+    },
+    {
+        "cardID": 5541,
+        "encID": 25120
+    },
+    {
+        "cardID": 5541,
+        "encID": 25121
+    },
+    {
+        "cardID": 5541,
+        "encID": 25122
+    },
+    {
+        "cardID": 5542,
+        "encID": 25123
+    },
+    {
+        "cardID": 5542,
+        "encID": 25124
+    },
+    {
+        "cardID": 5542,
+        "encID": 25125
+    },
+    {
+        "cardID": 5543,
+        "encID": 25126
+    },
+    {
+        "cardID": 5543,
+        "encID": 25127
+    },
+    {
+        "cardID": 5543,
+        "encID": 25128
+    },
+    {
+        "cardID": 5544,
+        "encID": 25129
+    },
+    {
+        "cardID": 5544,
+        "encID": 25130
+    },
+    {
+        "cardID": 5544,
+        "encID": 25131
+    },
+    {
+        "cardID": 5545,
+        "encID": 25132
+    },
+    {
+        "cardID": 5545,
+        "encID": 25133
+    },
+    {
+        "cardID": 5545,
+        "encID": 25134
+    },
+    {
+        "cardID": 5546,
+        "encID": 25135
+    },
+    {
+        "cardID": 5546,
+        "encID": 25136
+    },
+    {
+        "cardID": 5546,
+        "encID": 25137
+    },
+    {
+        "cardID": 5547,
+        "encID": 25138
+    },
+    {
+        "cardID": 5547,
+        "encID": 25139
+    },
+    {
+        "cardID": 5548,
+        "encID": 25140
+    },
+    {
+        "cardID": 5548,
+        "encID": 25141
+    },
+    {
+        "cardID": 5549,
+        "encID": 25142
+    },
+    {
+        "cardID": 5549,
+        "encID": 25143
+    },
+    {
+        "cardID": 5550,
+        "encID": 25144
+    },
+    {
+        "cardID": 5550,
+        "encID": 25145
+    },
+    {
+        "cardID": 5551,
+        "encID": 25146
+    },
+    {
+        "cardID": 5551,
+        "encID": 25147
+    },
+    {
+        "cardID": 5551,
+        "encID": 25148
+    },
+    {
+        "cardID": 5552,
+        "encID": 25149
+    },
+    {
+        "cardID": 5552,
+        "encID": 25150
+    },
+    {
+        "cardID": 5552,
+        "encID": 25151
+    },
+    {
+        "cardID": 5553,
+        "encID": 25152
+    },
+    {
+        "cardID": 5553,
+        "encID": 25153
+    },
+    {
+        "cardID": 5553,
+        "encID": 25154
+    },
+    {
+        "cardID": 5554,
+        "encID": 25155
+    },
+    {
+        "cardID": 5554,
+        "encID": 25156
+    },
+    {
+        "cardID": 5554,
+        "encID": 25157
+    },
+    {
+        "cardID": 5555,
+        "encID": 25158
+    },
+    {
+        "cardID": 5555,
+        "encID": 25159
+    },
+    {
+        "cardID": 5555,
+        "encID": 25160
+    },
+    {
+        "cardID": 5556,
+        "encID": 25161
+    },
+    {
+        "cardID": 5556,
+        "encID": 25162
+    },
+    {
+        "cardID": 5556,
+        "encID": 25163
+    },
+    {
+        "cardID": 5557,
+        "encID": 25164
+    },
+    {
+        "cardID": 5557,
+        "encID": 25165
+    },
+    {
+        "cardID": 5557,
+        "encID": 25166
+    },
+    {
+        "cardID": 5558,
+        "encID": 25167
+    },
+    {
+        "cardID": 5558,
+        "encID": 25168
+    },
+    {
+        "cardID": 5558,
+        "encID": 25169
+    },
+    {
+        "cardID": 5559,
+        "encID": 25170
+    },
+    {
+        "cardID": 5559,
+        "encID": 25171
+    },
+    {
+        "cardID": 5559,
+        "encID": 25172
+    },
+    {
+        "cardID": 5560,
+        "encID": 25173
+    },
+    {
+        "cardID": 5560,
+        "encID": 25174
+    },
+    {
+        "cardID": 5560,
+        "encID": 25175
+    },
+    {
+        "cardID": 5561,
+        "encID": 25176
+    },
+    {
+        "cardID": 5561,
+        "encID": 25177
+    },
+    {
+        "cardID": 5562,
+        "encID": 25178
+    },
+    {
+        "cardID": 5562,
+        "encID": 25179
+    },
+    {
+        "cardID": 5562,
+        "encID": 25180
+    },
+    {
+        "cardID": 5563,
+        "encID": 25181
+    },
+    {
+        "cardID": 5563,
+        "encID": 25182
+    },
+    {
+        "cardID": 5564,
+        "encID": 25183
+    },
+    {
+        "cardID": 5564,
+        "encID": 25184
+    },
+    {
+        "cardID": 5564,
+        "encID": 25185
+    },
+    {
+        "cardID": 5565,
+        "encID": 25186
+    },
+    {
+        "cardID": 5565,
+        "encID": 25187
+    },
+    {
+        "cardID": 5565,
+        "encID": 25188
+    },
+    {
+        "cardID": 5566,
+        "encID": 25189
+    },
+    {
+        "cardID": 5566,
+        "encID": 25190
+    },
+    {
+        "cardID": 5566,
+        "encID": 25191
+    },
+    {
+        "cardID": 5567,
+        "encID": 25192
+    },
+    {
+        "cardID": 5567,
+        "encID": 25193
+    },
+    {
+        "cardID": 5567,
+        "encID": 25194
+    },
+    {
+        "cardID": 5568,
+        "encID": 25195
+    },
+    {
+        "cardID": 5568,
+        "encID": 25196
+    },
+    {
+        "cardID": 5569,
+        "encID": 25197
+    },
+    {
+        "cardID": 5569,
+        "encID": 25198
+    },
+    {
+        "cardID": 5570,
+        "encID": 25199
+    },
+    {
+        "cardID": 5570,
+        "encID": 25200
+    },
+    {
+        "cardID": 5570,
+        "encID": 25201
+    },
+    {
+        "cardID": 5571,
+        "encID": 25202
+    },
+    {
+        "cardID": 5571,
+        "encID": 25203
+    },
+    {
+        "cardID": 5571,
+        "encID": 25204
+    },
+    {
+        "cardID": 5572,
+        "encID": 25205
+    },
+    {
+        "cardID": 5572,
+        "encID": 25206
+    },
+    {
+        "cardID": 5572,
+        "encID": 25207
+    },
+    {
+        "cardID": 5573,
+        "encID": 25208
+    },
+    {
+        "cardID": 5573,
+        "encID": 25209
+    },
+    {
+        "cardID": 5573,
+        "encID": 25210
+    },
+    {
+        "cardID": 5574,
+        "encID": 25211
+    },
+    {
+        "cardID": 5574,
+        "encID": 25212
+    },
+    {
+        "cardID": 5574,
+        "encID": 25213
+    },
+    {
+        "cardID": 5575,
+        "encID": 25214
+    },
+    {
+        "cardID": 5575,
+        "encID": 25216
+    },
+    {
+        "cardID": 5575,
+        "encID": 25217
+    },
+    {
+        "cardID": 5576,
+        "encID": 25218
+    },
+    {
+        "cardID": 5576,
+        "encID": 25219
+    },
+    {
+        "cardID": 5576,
+        "encID": 25220
+    },
+    {
+        "cardID": 6001,
+        "encID": 30000
+    },
+    {
+        "cardID": 6001,
+        "encID": 30001
+    },
+    {
+        "cardID": 6001,
+        "encID": 30002
+    },
+    {
+        "cardID": 6002,
+        "encID": 30003
+    },
+    {
+        "cardID": 6002,
+        "encID": 30004
+    },
+    {
+        "cardID": 6002,
+        "encID": 30005
+    },
+    {
+        "cardID": 6003,
+        "encID": 30006
+    },
+    {
+        "cardID": 6003,
+        "encID": 30007
+    },
+    {
+        "cardID": 6003,
+        "encID": 30008
+    },
+    {
+        "cardID": 6004,
+        "encID": 30009
+    },
+    {
+        "cardID": 6004,
+        "encID": 30010
+    },
+    {
+        "cardID": 6004,
+        "encID": 30011
+    },
+    {
+        "cardID": 6005,
+        "encID": 30012
+    },
+    {
+        "cardID": 6005,
+        "encID": 30013
+    },
+    {
+        "cardID": 6005,
+        "encID": 30014
+    },
+    {
+        "cardID": 6006,
+        "encID": 30015
+    },
+    {
+        "cardID": 6006,
+        "encID": 30016
+    },
+    {
+        "cardID": 6006,
+        "encID": 30017
+    },
+    {
+        "cardID": 6007,
+        "encID": 30018
+    },
+    {
+        "cardID": 6007,
+        "encID": 30019
+    },
+    {
+        "cardID": 6007,
+        "encID": 30020
+    },
+    {
+        "cardID": 6008,
+        "encID": 30021
+    },
+    {
+        "cardID": 6008,
+        "encID": 30022
+    },
+    {
+        "cardID": 6008,
+        "encID": 30023
+    },
+    {
+        "cardID": 6009,
+        "encID": 30024
+    },
+    {
+        "cardID": 6009,
+        "encID": 30025
+    },
+    {
+        "cardID": 6009,
+        "encID": 30026
+    },
+    {
+        "cardID": 6010,
+        "encID": 30027
+    },
+    {
+        "cardID": 6010,
+        "encID": 30028
+    },
+    {
+        "cardID": 6010,
+        "encID": 30029
+    },
+    {
+        "cardID": 6011,
+        "encID": 30030
+    },
+    {
+        "cardID": 6011,
+        "encID": 30031
+    },
+    {
+        "cardID": 6011,
+        "encID": 30032
+    },
+    {
+        "cardID": 6012,
+        "encID": 30033
+    },
+    {
+        "cardID": 6012,
+        "encID": 30034
+    },
+    {
+        "cardID": 6012,
+        "encID": 30035
+    },
+    {
+        "cardID": 6013,
+        "encID": 30036
+    },
+    {
+        "cardID": 6013,
+        "encID": 30037
+    },
+    {
+        "cardID": 6013,
+        "encID": 30038
+    },
+    {
+        "cardID": 6014,
+        "encID": 30039
+    },
+    {
+        "cardID": 6014,
+        "encID": 30040
+    },
+    {
+        "cardID": 6014,
+        "encID": 30041
+    },
+    {
+        "cardID": 6015,
+        "encID": 30042
+    },
+    {
+        "cardID": 6015,
+        "encID": 30043
+    },
+    {
+        "cardID": 6015,
+        "encID": 30044
+    },
+    {
+        "cardID": 6016,
+        "encID": 30045
+    },
+    {
+        "cardID": 6016,
+        "encID": 30046
+    },
+    {
+        "cardID": 6016,
+        "encID": 30047
+    },
+    {
+        "cardID": 6017,
+        "encID": 30048
+    },
+    {
+        "cardID": 6017,
+        "encID": 30049
+    },
+    {
+        "cardID": 6017,
+        "encID": 30050
+    },
+    {
+        "cardID": 6018,
+        "encID": 30051
+    },
+    {
+        "cardID": 6018,
+        "encID": 30052
+    },
+    {
+        "cardID": 6018,
+        "encID": 30053
+    },
+    {
+        "cardID": 6019,
+        "encID": 30054
+    },
+    {
+        "cardID": 6019,
+        "encID": 30055
+    },
+    {
+        "cardID": 6019,
+        "encID": 30056
+    },
+    {
+        "cardID": 6020,
+        "encID": 30057
+    },
+    {
+        "cardID": 6020,
+        "encID": 30058
+    },
+    {
+        "cardID": 6020,
+        "encID": 30059
+    },
+    {
+        "cardID": 6021,
+        "encID": 30060
+    },
+    {
+        "cardID": 6021,
+        "encID": 30061
+    },
+    {
+        "cardID": 6021,
+        "encID": 30062
+    },
+    {
+        "cardID": 6022,
+        "encID": 30063
+    },
+    {
+        "cardID": 6022,
+        "encID": 30064
+    },
+    {
+        "cardID": 6022,
+        "encID": 30065
+    },
+    {
+        "cardID": 6023,
+        "encID": 30066
+    },
+    {
+        "cardID": 6023,
+        "encID": 30067
+    },
+    {
+        "cardID": 6023,
+        "encID": 30068
+    },
+    {
+        "cardID": 6024,
+        "encID": 30069
+    },
+    {
+        "cardID": 6024,
+        "encID": 30070
+    },
+    {
+        "cardID": 6024,
+        "encID": 30071
+    },
+    {
+        "cardID": 6025,
+        "encID": 30072
+    },
+    {
+        "cardID": 6025,
+        "encID": 30073
+    },
+    {
+        "cardID": 6025,
+        "encID": 30074
+    },
+    {
+        "cardID": 6026,
+        "encID": 30075
+    },
+    {
+        "cardID": 6026,
+        "encID": 30076
+    },
+    {
+        "cardID": 6026,
+        "encID": 30077
+    },
+    {
+        "cardID": 6027,
+        "encID": 30078
+    },
+    {
+        "cardID": 6027,
+        "encID": 30079
+    },
+    {
+        "cardID": 6027,
+        "encID": 30080
+    },
+    {
+        "cardID": 6028,
+        "encID": 30081
+    },
+    {
+        "cardID": 6028,
+        "encID": 30082
+    },
+    {
+        "cardID": 6028,
+        "encID": 30083
+    },
+    {
+        "cardID": 6029,
+        "encID": 30084
+    },
+    {
+        "cardID": 6029,
+        "encID": 30085
+    },
+    {
+        "cardID": 6029,
+        "encID": 30086
+    },
+    {
+        "cardID": 6030,
+        "encID": 30087
+    },
+    {
+        "cardID": 6030,
+        "encID": 30088
+    },
+    {
+        "cardID": 6030,
+        "encID": 30089
+    },
+    {
+        "cardID": 6031,
+        "encID": 30090
+    },
+    {
+        "cardID": 6031,
+        "encID": 30091
+    },
+    {
+        "cardID": 6031,
+        "encID": 30092
+    },
+    {
+        "cardID": 6032,
+        "encID": 30093
+    },
+    {
+        "cardID": 6032,
+        "encID": 30094
+    },
+    {
+        "cardID": 6032,
+        "encID": 30095
+    },
+    {
+        "cardID": 6033,
+        "encID": 30096
+    },
+    {
+        "cardID": 6033,
+        "encID": 30097
+    },
+    {
+        "cardID": 6033,
+        "encID": 30098
+    },
+    {
+        "cardID": 6034,
+        "encID": 30099
+    },
+    {
+        "cardID": 6034,
+        "encID": 30100
+    },
+    {
+        "cardID": 6034,
+        "encID": 30101
+    },
+    {
+        "cardID": 6035,
+        "encID": 30102
+    },
+    {
+        "cardID": 6035,
+        "encID": 30103
+    },
+    {
+        "cardID": 6035,
+        "encID": 30104
+    },
+    {
+        "cardID": 6036,
+        "encID": 30105
+    },
+    {
+        "cardID": 6036,
+        "encID": 30106
+    },
+    {
+        "cardID": 6036,
+        "encID": 30107
+    },
+    {
+        "cardID": 6037,
+        "encID": 30108
+    },
+    {
+        "cardID": 6037,
+        "encID": 30109
+    },
+    {
+        "cardID": 6037,
+        "encID": 30110
+    },
+    {
+        "cardID": 6038,
+        "encID": 30111
+    },
+    {
+        "cardID": 6038,
+        "encID": 30112
+    },
+    {
+        "cardID": 6038,
+        "encID": 30113
+    },
+    {
+        "cardID": 6039,
+        "encID": 30114
+    },
+    {
+        "cardID": 6039,
+        "encID": 30115
+    },
+    {
+        "cardID": 6039,
+        "encID": 30116
+    },
+    {
+        "cardID": 6040,
+        "encID": 30117
+    },
+    {
+        "cardID": 6040,
+        "encID": 30119
+    },
+    {
+        "cardID": 6040,
+        "encID": 30121
+    },
+    {
+        "cardID": 6041,
+        "encID": 30118
+    },
+    {
+        "cardID": 6041,
+        "encID": 30120
+    },
+    {
+        "cardID": 6041,
+        "encID": 30122
+    },
+    {
+        "cardID": 6042,
+        "encID": 30123
+    },
+    {
+        "cardID": 6042,
+        "encID": 30124
+    },
+    {
+        "cardID": 6042,
+        "encID": 30125
+    },
+    {
+        "cardID": 6043,
+        "encID": 30126
+    },
+    {
+        "cardID": 6043,
+        "encID": 30127
+    },
+    {
+        "cardID": 6043,
+        "encID": 30128
+    },
+    {
+        "cardID": 6044,
+        "encID": 30129
+    },
+    {
+        "cardID": 6044,
+        "encID": 30130
+    },
+    {
+        "cardID": 6044,
+        "encID": 30131
+    },
+    {
+        "cardID": 6045,
+        "encID": 30132
+    },
+    {
+        "cardID": 6045,
+        "encID": 30133
+    },
+    {
+        "cardID": 6045,
+        "encID": 30134
+    },
+    {
+        "cardID": 6046,
+        "encID": 30135
+    },
+    {
+        "cardID": 6046,
+        "encID": 30136
+    },
+    {
+        "cardID": 6046,
+        "encID": 30137
+    },
+    {
+        "cardID": 6047,
+        "encID": 30138
+    },
+    {
+        "cardID": 6047,
+        "encID": 30139
+    },
+    {
+        "cardID": 6048,
+        "encID": 30140
+    },
+    {
+        "cardID": 6048,
+        "encID": 30141
+    },
+    {
+        "cardID": 6049,
+        "encID": 30142
+    },
+    {
+        "cardID": 6049,
+        "encID": 30143
+    },
+    {
+        "cardID": 6050,
+        "encID": 30144
+    },
+    {
+        "cardID": 6050,
+        "encID": 30145
+    },
+    {
+        "cardID": 6051,
+        "encID": 30146
+    },
+    {
+        "cardID": 6051,
+        "encID": 30147
+    },
+    {
+        "cardID": 6051,
+        "encID": 30148
+    },
+    {
+        "cardID": 6052,
+        "encID": 30149
+    },
+    {
+        "cardID": 6052,
+        "encID": 30150
+    },
+    {
+        "cardID": 6052,
+        "encID": 30151
+    },
+    {
+        "cardID": 6053,
+        "encID": 30152
+    },
+    {
+        "cardID": 6053,
+        "encID": 30153
+    },
+    {
+        "cardID": 6053,
+        "encID": 30154
+    },
+    {
+        "cardID": 6054,
+        "encID": 30155
+    },
+    {
+        "cardID": 6054,
+        "encID": 30156
+    },
+    {
+        "cardID": 6054,
+        "encID": 30157
+    },
+    {
+        "cardID": 6055,
+        "encID": 30158
+    },
+    {
+        "cardID": 6055,
+        "encID": 30159
+    },
+    {
+        "cardID": 6055,
+        "encID": 30160
+    },
+    {
+        "cardID": 6056,
+        "encID": 30161
+    },
+    {
+        "cardID": 6056,
+        "encID": 30162
+    },
+    {
+        "cardID": 6056,
+        "encID": 30163
+    },
+    {
+        "cardID": 6057,
+        "encID": 30164
+    },
+    {
+        "cardID": 6057,
+        "encID": 30165
+    },
+    {
+        "cardID": 6057,
+        "encID": 30166
+    },
+    {
+        "cardID": 6058,
+        "encID": 30167
+    },
+    {
+        "cardID": 6058,
+        "encID": 30168
+    },
+    {
+        "cardID": 6058,
+        "encID": 30169
+    },
+    {
+        "cardID": 6059,
+        "encID": 30170
+    },
+    {
+        "cardID": 6059,
+        "encID": 30171
+    },
+    {
+        "cardID": 6059,
+        "encID": 30172
+    },
+    {
+        "cardID": 6060,
+        "encID": 30173
+    },
+    {
+        "cardID": 6060,
+        "encID": 30174
+    },
+    {
+        "cardID": 6060,
+        "encID": 30175
+    },
+    {
+        "cardID": 6061,
+        "encID": 30176
+    },
+    {
+        "cardID": 6061,
+        "encID": 30177
+    },
+    {
+        "cardID": 6062,
+        "encID": 30178
+    },
+    {
+        "cardID": 6062,
+        "encID": 30179
+    },
+    {
+        "cardID": 6062,
+        "encID": 30180
+    },
+    {
+        "cardID": 6063,
+        "encID": 30181
+    },
+    {
+        "cardID": 6063,
+        "encID": 30182
+    },
+    {
+        "cardID": 6064,
+        "encID": 30183
+    },
+    {
+        "cardID": 6064,
+        "encID": 30184
+    },
+    {
+        "cardID": 6064,
+        "encID": 30185
+    },
+    {
+        "cardID": 6065,
+        "encID": 30186
+    },
+    {
+        "cardID": 6065,
+        "encID": 30187
+    },
+    {
+        "cardID": 6065,
+        "encID": 30188
+    },
+    {
+        "cardID": 6066,
+        "encID": 30189
+    },
+    {
+        "cardID": 6066,
+        "encID": 30190
+    },
+    {
+        "cardID": 6067,
+        "encID": 30191
+    },
+    {
+        "cardID": 6067,
+        "encID": 30192
+    },
+    {
+        "cardID": 6067,
+        "encID": 30193
+    },
+    {
+        "cardID": 6068,
+        "encID": 30194
+    },
+    {
+        "cardID": 6068,
+        "encID": 30195
+    },
+    {
+        "cardID": 6068,
+        "encID": 30196
+    },
+    {
+        "cardID": 6069,
+        "encID": 30197
+    },
+    {
+        "cardID": 6069,
+        "encID": 30198
+    },
+    {
+        "cardID": 6069,
+        "encID": 30199
+    },
+    {
+        "cardID": 6070,
+        "encID": 30200
+    },
+    {
+        "cardID": 6070,
+        "encID": 30201
+    },
+    {
+        "cardID": 6071,
+        "encID": 30202
+    },
+    {
+        "cardID": 6071,
+        "encID": 30203
+    },
+    {
+        "cardID": 6071,
+        "encID": 30204
+    },
+    {
+        "cardID": 6072,
+        "encID": 30205
+    },
+    {
+        "cardID": 6072,
+        "encID": 30206
+    },
+    {
+        "cardID": 6072,
+        "encID": 30207
+    },
+    {
+        "cardID": 6073,
+        "encID": 30208
+    },
+    {
+        "cardID": 6073,
+        "encID": 30209
+    },
+    {
+        "cardID": 6073,
+        "encID": 30210
+    },
+    {
+        "cardID": 6074,
+        "encID": 30211
+    },
+    {
+        "cardID": 6074,
+        "encID": 30212
+    },
+    {
+        "cardID": 6074,
+        "encID": 30213
+    },
+    {
+        "cardID": 6075,
+        "encID": 30214
+    },
+    {
+        "cardID": 6075,
+        "encID": 30215
+    },
+    {
+        "cardID": 6075,
+        "encID": 30216
+    },
+    {
+        "cardID": 6076,
+        "encID": 30217
+    },
+    {
+        "cardID": 6076,
+        "encID": 30218
+    },
+    {
+        "cardID": 6076,
+        "encID": 30219
+    }
+]

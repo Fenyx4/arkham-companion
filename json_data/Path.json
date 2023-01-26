@@ -1,0 +1,34 @@
+[
+    {
+        "path": "otherworld/otherworld_front_colorless.png",
+        "pathID": 0
+    },
+    {
+        "path": "otherworld/otherworld_front_yellow.png",
+        "pathID": 1
+    },
+    {
+        "path": "otherworld/otherworld_front_red.png",
+        "pathID": 2
+    },
+    {
+        "path": "otherworld/otherworld_front_blue.png",
+        "pathID": 3
+    },
+    {
+        "path": "otherworld/otherworld_front_green.png",
+        "pathID": 4
+    },
+    {
+        "path": "otherworld/otherworld_front_redyellow.png",
+        "pathID": 5
+    },
+    {
+        "path": "otherworld/otherworld_front_blueyellow.png",
+        "pathID": 6
+    },
+    {
+        "path": "otherworld/otherworld_front_redgreen.png",
+        "pathID": 7
+    }
+]
