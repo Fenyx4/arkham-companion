@@ -1,3 +1,4 @@
+import 'package:arkham_companion/checkbox_model.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Arkham Companion',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Arkham Companion'),
     );
   }
 }
@@ -50,6 +51,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  final checkboxes = [
+    CheckboxModel(title: 'Test 1', value: false),
+    CheckboxModel(title: 'Test 2', value: false),
+    CheckboxModel(title: 'Test 3', value: false),
+    CheckboxModel(title: 'Test 4', value: false),
+  ];
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -61,8 +69,60 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List<Widget> buildCheckboxes(List<CheckboxModel> data) {
+    return data.map((e) => buildSingleCheckbox(e)).toList();
+  }
+
+  Widget buildSingleCheckbox(CheckboxModel model) {
+    TextStyle style = model.shouldToggle
+        ? TextStyle(color: Colors.black)
+        : TextStyle(color: Colors.grey);
+    return ListTile(
+      title: Text(
+        model.title,
+        style: style,
+      ),
+      leading: Checkbox(
+        value: model.value,
+        onChanged: (_) {
+          //model.handler();
+          setState(
+            () {
+              model.toggle();
+            },
+          );
+        },
+      ),
+      onTap: () {
+        setState(
+          () {
+            model.toggle();
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    TextStyle style = TextStyle(fontSize: 28, fontWeight: FontWeight.bold);
+    TextStyle style2 = TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
+    List<Widget> checkboxModels = buildCheckboxes(checkboxes);
+    Column checkboxGroup = Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Text("Group 1", style: style2),
+          ),
+        ),
+      ],
+    );
+
+    for (var model in checkboxModels) {
+      checkboxGroup.children.add(model);
+    }
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -102,6 +162,22 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            ElevatedButton(
+              onPressed: () {
+                print('button pressed!');
+              },
+              child: Text('Next'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: Text('Multi-Checkbox Demo', style: style)),
+            ),
+            Container(
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: checkboxGroup),
           ],
         ),
       ),
