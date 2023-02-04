@@ -1,6 +1,9 @@
 import 'package:arkham_companion/checkbox_model.dart';
 import 'package:flutter/material.dart';
 
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -51,12 +54,30 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  final checkboxes = [
-    CheckboxModel(title: 'Test 1', value: false),
-    CheckboxModel(title: 'Test 2', value: false),
-    CheckboxModel(title: 'Test 3', value: false),
-    CheckboxModel(title: 'Test 4', value: false),
-  ];
+  @override
+  initState() {
+    super.initState();
+    readJson();
+  }
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/expansions.json');
+    final data = await json.decode(response);
+    setState(() {
+      for (var element in data) {
+        checkboxes.add(CheckboxModel(title: element["expName"], value: false));
+      }
+    });
+  }
+
+  List<CheckboxModel> checkboxes = [];
+  //   CheckboxModel(title: 'Test 1', value: false),
+  //   CheckboxModel(title: 'Test 2', value: false),
+  //   CheckboxModel(title: 'Test 3', value: false),
+  //   CheckboxModel(title: 'Test 4', value: false),
+  // ];
 
   void _incrementCounter() {
     setState(() {
