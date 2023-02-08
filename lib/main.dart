@@ -22,10 +22,7 @@ class FirstRoute extends StatelessWidget {
           child: const Text('Open route'),
           onPressed: () {
             // Navigate to second route when tapped.
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
-            );
+            Navigator.pushNamed(context, '/Expansions');
           },
         ),
       ),
@@ -33,14 +30,14 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+class Neighborhoods extends StatelessWidget {
+  const Neighborhoods({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Route'),
+        title: const Text('Neighborhoods'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -75,13 +72,20 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Arkham Companion'),
+      //home: const MyHomePage(title: 'Arkham Companion'),
+      initialRoute: '/Expansions',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/Expansions': (context) => const Expansions(title: 'Arkham Companion'),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => const Neighborhoods(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Expansions extends StatefulWidget {
+  const Expansions({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -95,10 +99,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Expansions> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<Expansions> {
   int _counter = 0;
 
   @override
@@ -235,7 +239,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Navigate to second route when tapped.
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecondRoute()),
+                  MaterialPageRoute(
+                      builder: (context) => const Neighborhoods()),
                 );
                 print('button pressed!');
               },
