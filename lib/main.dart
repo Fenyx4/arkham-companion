@@ -1,15 +1,13 @@
-import 'package:arkham_companion/checkbox_model.dart';
+import 'package:arkham_companion/neighborhoods.dart';
+import 'package:arkham_companion/expansions.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:convert';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
+class ArkhamCompanion extends StatelessWidget {
+  const ArkhamCompanion({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,28 +22,6 @@ class FirstRoute extends StatelessWidget {
             // Navigate to second route when tapped.
             Navigator.pushNamed(context, '/Expansions');
           },
-        ),
-      ),
-    );
-  }
-}
-
-class Neighborhoods extends StatelessWidget {
-  const Neighborhoods({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Neighborhoods'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
         ),
       ),
     );
@@ -76,16 +52,16 @@ class MyApp extends StatelessWidget {
       initialRoute: '/Expansions',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/Expansions': (context) => const Expansions(title: 'Arkham Companion'),
+        '/Expansions': (context) => const MyHomePage(title: 'Arkham Companion'),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => const Neighborhoods(),
+        '/Neighborhoods': (context) => const Neighborhoods(),
       },
     );
   }
 }
 
-class Expansions extends StatefulWidget {
-  const Expansions({super.key, required this.title});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -99,102 +75,53 @@ class Expansions extends StatefulWidget {
   final String title;
 
   @override
-  State<Expansions> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<Expansions> {
-  int _counter = 0;
-
+class _MyHomePageState extends State<MyHomePage> {
   @override
   initState() {
     super.initState();
-    readJson();
   }
 
-  // Fetch content from the json file
-  Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/expansions.json');
-    final data = await json.decode(response);
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+  ];
+
+  static const List<Widget> _pages = <Widget>[
+    ExpansionsPage(),
+    Icon(
+      Icons.camera,
+      size: 150,
+    ),
+    Icon(
+      Icons.chat,
+      size: 150,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
     setState(() {
-      for (var element in data) {
-        checkboxes.add(CheckboxModel(title: element["expName"], value: false));
-      }
+      _selectedIndex = index;
     });
-  }
-
-  List<CheckboxModel> checkboxes = [];
-  //   CheckboxModel(title: 'Test 1', value: false),
-  //   CheckboxModel(title: 'Test 2', value: false),
-  //   CheckboxModel(title: 'Test 3', value: false),
-  //   CheckboxModel(title: 'Test 4', value: false),
-  // ];
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  List<Widget> buildCheckboxes(List<CheckboxModel> data) {
-    return data.map((e) => buildSingleCheckbox(e)).toList();
-  }
-
-  Widget buildSingleCheckbox(CheckboxModel model) {
-    TextStyle style = model.shouldToggle
-        ? TextStyle(color: Colors.black)
-        : TextStyle(color: Colors.grey);
-    return ListTile(
-      title: Text(
-        model.title,
-        style: style,
-      ),
-      leading: Checkbox(
-        value: model.value,
-        onChanged: (_) {
-          //model.handler();
-          setState(
-            () {
-              model.toggle();
-            },
-          );
-        },
-      ),
-      onTap: () {
-        setState(
-          () {
-            model.toggle();
-          },
-        );
-      },
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style = TextStyle(fontSize: 28, fontWeight: FontWeight.bold);
-    TextStyle style2 = TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
-    List<Widget> checkboxModels = buildCheckboxes(checkboxes);
-    Column checkboxGroup = Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: Text("Group 1", style: style2),
-          ),
-        ),
-      ],
-    );
-
-    for (var model in checkboxModels) {
-      checkboxGroup.children.add(model);
-    }
-
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -210,60 +137,70 @@ class _MyHomePageState extends State<Expansions> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have clicked the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to second route when tapped.
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const Neighborhoods()),
-                );
-                print('button pressed!');
-              },
-              child: Text('Next'),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text('Multi-Checkbox Demo', style: style)),
-            ),
-            Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: checkboxGroup),
-          ],
-        ),
+        child: _pages.elementAt(_selectedIndex), //New
+
+        // child: Column(
+        //   // Column is also a layout widget. It takes a list of children and
+        //   // arranges them vertically. By default, it sizes itself to fit its
+        //   // children horizontally, and tries to be as tall as its parent.
+        //   //
+        //   // Invoke "debug painting" (press "p" in the console, choose the
+        //   // "Toggle Debug Paint" action from the Flutter Inspector in Android
+        //   // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+        //   // to see the wireframe for each widget.
+        //   //
+        //   // Column has various properties to control how it sizes itself and
+        //   // how it positions its children. Here we use mainAxisAlignment to
+        //   // center the children vertically; the main axis here is the vertical
+        //   // axis because Columns are vertical (the cross axis would be
+        //   // horizontal).
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: <Widget>[
+        //     // ElevatedButton(
+        //     //   onPressed: () {
+        //     //     // Navigate to the second screen using a named route.
+        //     //     Navigator.pushNamed(context, '/Neighborhoods');
+        //     //     print('button pressed!');
+        //     //   },
+        //     //   child: Text('Next'),
+        //     // ),
+        //     Padding(
+        //       padding: const EdgeInsets.all(.0),
+        //       child: Center(child: Text('Expansion Selection', style: style)),
+        //     ),
+        //     Container(
+        //         decoration: BoxDecoration(
+        //           border: Border.all(),
+        //           borderRadius: BorderRadius.circular(12),
+        //         ),
+        //         child: checkboxGroup),
+        //   ],
+        // ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
