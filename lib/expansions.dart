@@ -31,18 +31,30 @@ class _ExpansionsPageState extends State<ExpansionsPage> {
         itemCount: expansions.length,
         itemBuilder: (context, index) {
           final exp = expansions[index];
-          return CheckboxListTile(
+          return ListTile(
+            leading: Image.asset(
+              'assets/${exp.selected ? exp.cbIconPathOn : exp.cbIconPathOff}',
+              width: 32,
+              height: 32,
+            ),
             title: Text(exp.name),
-            value: exp.selected,
-            onChanged: (bool? value) {
+            trailing: GestureDetector(
+              onTap: () {
+                setState(() {
+                  exp.selected = !exp.selected;
+                });
+              },
+              child: Image.asset(
+                'assets/${exp.selected ? exp.cbIconPathOn : exp.cbIconPathOff}',
+                width: 32,
+                height: 32,
+              ),
+            ),
+            onTap: () {
               setState(() {
-                exp.selected = value ?? false;
+                exp.selected = !exp.selected;
               });
             },
-            secondary: exp.cbIconPathOff != null
-                ? Image.asset('assets/${exp.cbIconPathOff!}',
-                    width: 32, height: 32)
-                : null,
           );
         },
       ),
