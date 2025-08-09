@@ -32,8 +32,14 @@ class NeighborhoodsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Neighborhoods'),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
         padding: const EdgeInsets.all(8),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, // Two columns
+          childAspectRatio: 2, // Adjust height/width ratio as needed
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+        ),
         itemCount: neighborhoods.length,
         itemBuilder: (BuildContext context, int index) {
           final nei = neighborhoods[index];
@@ -41,62 +47,46 @@ class NeighborhoodsPage extends StatelessWidget {
               (nei.buttonPath != null && nei.buttonPath!.isNotEmpty)
                   ? 'assets/${nei.buttonPath}'
                   : 'assets/encounter/neighbourhood_overlay.png';
-          return GestureDetector(
-              child: Container(
-                  width: 120,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    image: DecorationImage(
-                        image: AssetImage(
-                            "assets/encounter/neighbourhood_overlay.png"),
-                        fit: BoxFit.fill),
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: Opacity(
+                  opacity: 1.0,
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(
+                        'assets/encounter/neighbourhood_overlay.png',
+                        fit: BoxFit.cover,
+                      );
+                    },
                   ),
-                  child: Center(child: Text("clickMe")) // button text
+                ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  padding: const EdgeInsets.all(0),
+                ),
+                onPressed: () {
+                  print("you clicked ${nei.name}");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Center(
+                    child: Text(
+                      nei.name,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                   ),
-              onTap: () {
-                print("you clicked me");
-              });
-          // return Container(
-          //   margin: const EdgeInsets.symmetric(vertical: 6),
-          //   child: Stack(
-          //     children: [
-          //       Positioned.fill(
-          //         child: Opacity(
-          //           opacity: 0.3,
-          //           child: Image.asset(
-          //             imagePath,
-          //             fit: BoxFit.cover,
-          //             errorBuilder: (context, error, stackTrace) {
-          //               return Image.asset(
-          //                 'assets/encounter/neighbourhood_overlay.png',
-          //                 fit: BoxFit.cover,
-          //               );
-          //             },
-          //           ),
-          //         ),
-          //       ),
-          //       ElevatedButton(
-          //         style: ElevatedButton.styleFrom(
-          //           minimumSize: const Size.fromHeight(60),
-          //           backgroundColor: Colors.transparent,
-          //           shadowColor: Colors.transparent,
-          //           padding: const EdgeInsets.all(0),
-          //         ),
-          //         onPressed: () {
-          //           // TODO: Define what happens when a neighborhood is pressed
-          //         },
-          //         child: Center(
-          //           child: Text(
-          //             nei.name,
-          //             style: const TextStyle(
-          //                 fontSize: 20, fontWeight: FontWeight.bold),
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // );
+                ),
+              ),
+            ],
+          );
         },
       ),
     );
