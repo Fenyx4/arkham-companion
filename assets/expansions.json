@@ -1,72 +1,308 @@
-[
+{
+  "expansions": [
     {
-        "expID": 1,
-        "expIconPath": null,
-        "cbIconPathOff": "checkbox/btn_ba_check_off.png",
-        "cbIconPathOn": "checkbox/btn_ba_check_on.png",
-        "expName": "Base"
+      "id": 0,
+      "name": "Base",
+      "iconPath": "",
+      "cbIconPathOff": "checkbox/btn_ba_check_off.png",
+      "cbIconPathOn": "checkbox/btn_ba_check_on.png",
+      "neighborhoods": [
+        {
+          "name": "Downtown",
+          "buttonPath": "encounter/encounter_nei_btn_downtown.png",
+          "cardPath": "encounter/encounter_front_downtown.png"
+        },
+        {
+          "name": "Easttown",
+          "buttonPath": "encounter/encounter_nei_btn_easttown.png",
+          "cardPath": "encounter/encounter_front_easttown.png"
+        },
+        {
+          "name": "French Hill",
+          "buttonPath": "encounter/encounter_nei_btn_frenchhill.png",
+          "cardPath": "encounter/encounter_front_frenchhill.png"
+        },
+        {
+          "name": "Merchant District",
+          "buttonPath": "encounter/encounter_nei_btn_merchant.png",
+          "cardPath": "encounter/encounter_front_merchant.png"
+        },
+        {
+          "name": "Miskatonic University",
+          "buttonPath": "encounter/encounter_nei_btn_miskatonic.png",
+          "cardPath": "encounter/encounter_front_miskatonic.png"
+        },
+        {
+          "name": "Northside",
+          "buttonPath": "encounter/encounter_nei_btn_northside.png",
+          "cardPath": "encounter/encounter_front_northside.png"
+        },
+        {
+          "name": "Rivertown",
+          "buttonPath": "encounter/encounter_nei_btn_rivertown.png",
+          "cardPath": "encounter/encounter_front_rivertown.png"
+        },
+        {
+          "name": "Southside",
+          "buttonPath": "encounter/encounter_nei_btn_southside.png",
+          "cardPath": "encounter/encounter_front_southside.png"
+        },
+        {
+          "name": "Uptown",
+          "buttonPath": "encounter/encounter_nei_btn_uptown.png",
+          "cardPath": "encounter/encounter_front_uptown.png"
+        }
+      ],
+      "otherWorldLocations": [
+        {
+          "locationId": 499,
+          "name": "The Stars are Right",
+          "locButtonPath": "",
+          "sort": 0,
+          "colorID": []
+        },
+        {
+          "locationId": 500,
+          "name": "Other",
+          "locButtonPath": "",
+          "sort": 12,
+          "colorID": []
+        },
+        {
+          "locationId": 501,
+          "name": "Abyss",
+          "locButtonPath": "encounter/otherworld_loc_btn_abyss.png",
+          "sort": 1,
+          "colorID": []
+        },
+        {
+          "locationId": 502,
+          "name": "Another Dimension",
+          "locButtonPath": "encounter/otherworld_loc_btn_anotherdimension.png",
+          "sort": 0,
+          "colorID": []
+        },
+        {
+          "locationId": 503,
+          "name": "City of the Great Race",
+          "locButtonPath": "encounter/otherworld_loc_btn_city.png",
+          "sort": 2,
+          "colorID": []
+        },
+        {
+          "locationId": 504,
+          "name": "Yuggoth",
+          "locButtonPath": "encounter/otherworld_loc_btn_yuggoth.png",
+          "sort": 7,
+          "colorID": []
+        },
+        {
+          "locationId": 505,
+          "name": "Celeano",
+          "locButtonPath": "encounter/otherworld_loc_btn_celeano.png",
+          "sort": 4,
+          "colorID": []
+        },
+        {
+          "locationId": 506,
+          "name": "The Dreamlands",
+          "locButtonPath": "encounter/otherworld_loc_btn_dreamlands.png",
+          "sort": 5,
+          "colorID": []
+        },
+        {
+          "locationId": 507,
+          "name": "Plateau of Leng",
+          "locButtonPath": "encounter/otherworld_loc_btn_leng.png",
+          "sort": 6,
+          "colorID": []
+        },
+        {
+          "locationId": 508,
+          "name": "R'lyeh",
+          "locButtonPath": "encounter/otherworld_loc_btn_rlyeh.png",
+          "sort": 3,
+          "colorID": []
+        }
+      ],
+      "colors": [
+        {
+          "colorID": 0,
+          "name": "Colorless",
+          "colorButtonPath": "encounter/otherworld_color_btn_colorless.png"
+        },
+        {
+          "colorID": 1,
+          "name": "Yellow",
+          "colorButtonPath": "encounter/otherworld_color_btn_yellow.png"
+        },
+        {
+          "colorID": 2,
+          "name": "Red",
+          "colorButtonPath": "encounter/otherworld_color_btn_red.png"
+        },
+        {
+          "colorID": 3,
+          "name": "Blue",
+          "colorButtonPath": "encounter/otherworld_color_btn_blue.png"
+        },
+        {
+          "colorID": 4,
+          "name": "Green",
+          "colorButtonPath": "encounter/otherworld_color_btn_green.png"
+        }
+      ]
     },
     {
-        "expID": 2,
-        "expIconPath": "encounter/icon_exp_dp.png",
-        "cbIconPathOff": "checkbox/btn_dp_check_off.png",
-        "cbIconPathOn": "checkbox/btn_dp_check_on.png",
-        "expName": "Curse of the Dark Pharoah"
+      "id": 0,
+      "name": "Curse of the Dark Pharoah",
+      "iconPath": "encounter/icon_exp_dp.png",
+      "cbIconPathOff": "checkbox/btn_dp_check_off.png",
+      "cbIconPathOn": "checkbox/btn_dp_check_on.png"
     },
     {
-        "expID": 3,
-        "expIconPath": "encounter/icon_exp_dh.png",
-        "cbIconPathOff": "checkbox/btn_dh_check_off.png",
-        "cbIconPathOn": "checkbox/btn_dh_check_on.png",
-        "expName": "Dunwich Horror"
+      "id": 0,
+      "name": "Dunwich Horror",
+      "iconPath": "encounter/icon_exp_dh.png",
+      "cbIconPathOff": "checkbox/btn_dh_check_off.png",
+      "cbIconPathOn": "checkbox/btn_dh_check_on.png",
+      "neighborhoods": [
+        {
+          "name": "Backwoods Country",
+          "buttonPath": "encounter/encounter_nei_btn_backwoods.png",
+          "cardPath": "encounter/encounter_front_backwoods.png"
+        },
+        {
+          "name": "Blasted Heath",
+          "buttonPath": "encounter/encounter_nei_btn_blasted.png",
+          "cardPath": "encounter/encounter_front_blasted.png"
+        },
+        {
+          "name": "Village Commons",
+          "buttonPath": "encounter/encounter_nei_btn_village.png",
+          "cardPath": "encounter/encounter_front_village.png"
+        }
+      ],
+      "otherWorldLocations": [
+        {
+          "locationId": 509,
+          "name": "Another Time",
+          "locButtonPath": "encounter/otherworld_loc_btn_anothertime.png",
+          "sort": 8,
+          "colorID": []
+        },
+        {
+          "locationId": 510,
+          "name": "Lost Carcosa",
+          "locButtonPath": "encounter/otherworld_loc_btn_lostcarcosa.png",
+          "sort": 9,
+          "colorID": []
+        }
+      ]
     },
     {
-        "expID": 4,
-        "expIconPath": "encounter/icon_exp_ky.png",
-        "cbIconPathOff": "checkbox/btn_ky_check_off.png",
-        "cbIconPathOn": "checkbox/btn_ky_check_on.png",
-        "expName": "The King in Yellow"
+      "id": 0,
+      "name": "The King in Yellow",
+      "iconPath": "encounter/icon_exp_ky.png",
+      "cbIconPathOff": "checkbox/btn_ky_check_off.png",
+      "cbIconPathOn": "checkbox/btn_ky_check_on.png"
     },
     {
-        "expID": 5,
-        "expIconPath": "encounter/icon_exp_kh.png",
-        "cbIconPathOff": "checkbox/btn_kh_check_off.png",
-        "cbIconPathOn": "checkbox/btn_kh_check_on.png",
-        "expName": "Kingsport Horror"
+      "id": 0,
+      "name": "Kingsport Horror",
+      "iconPath": "encounter/icon_exp_kh.png",
+      "cbIconPathOff": "checkbox/btn_kh_check_off.png",
+      "cbIconPathOn": "checkbox/btn_kh_check_on.png",
+      "neighborhoods": [
+        {
+          "name": "Central Hill",
+          "buttonPath": "encounter/encounter_nei_btn_central.png",
+          "cardPath": "encounter/encounter_front_central.png"
+        },
+        {
+          "name": "Harborside",
+          "buttonPath": "encounter/encounter_nei_btn_harborside.png",
+          "cardPath": "encounter/encounter_front_harborside.png"
+        },
+        {
+          "name": "Kingsport Head",
+          "buttonPath": "encounter/encounter_nei_btn_kingsport.png",
+          "cardPath": "encounter/encounter_front_kingsport.png"
+        },
+        {
+          "name": "South Shore",
+          "buttonPath": "encounter/encounter_nei_btn_south.png",
+          "cardPath": "encounter/encounter_front_south.png"
+        }
+      ],
+      "otherWorldLocations": [
+        {
+          "locationId": 511,
+          "name": "Unknown Kadath",
+          "locButtonPath": "encounter/otherworld_loc_btn_kadath.png",
+          "sort": 10,
+          "colorID": []
+        },
+        {
+          "locationId": 512,
+          "name": "The Underworld",
+          "locButtonPath": "encounter/otherworld_loc_btn_underworld.png",
+          "sort": 11,
+          "colorID": []
+        }
+      ]
     },
     {
-        "expID": 6,
-        "expIconPath": "encounter/icon_exp_bg.png",
-        "cbIconPathOff": "checkbox/btn_bg_check_off.png",
-        "cbIconPathOn": "checkbox/btn_bg_check_on.png",
-        "expName": "Black Goat of the Woods"
+      "id": 0,
+      "name": "Black Goat of the Woods",
+      "iconPath": "encounter/icon_exp_bg.png",
+      "cbIconPathOff": "checkbox/btn_bg_check_off.png",
+      "cbIconPathOn": "checkbox/btn_bg_check_on.png"
     },
     {
-        "expID": 7,
-        "expIconPath": "encounter/icon_exp_ih.png",
-        "cbIconPathOff": "checkbox/btn_ih_check_off.png",
-        "cbIconPathOn": "checkbox/btn_ih_check_on.png",
-        "expName": "Innsmouth Horror"
+      "id": 0,
+      "name": "Innsmouth Horror",
+      "iconPath": "encounter/icon_exp_ih.png",
+      "cbIconPathOff": "checkbox/btn_ih_check_off.png",
+      "cbIconPathOn": "checkbox/btn_ih_check_on.png",
+      "neighborhoods": [
+        {
+          "name": "Church Green",
+          "buttonPath": "encounter/encounter_nei_btn_church.png",
+          "cardPath": "encounter/encounter_front_church.png"
+        },
+        {
+          "name": "Factory District",
+          "buttonPath": "encounter/encounter_nei_btn_factory.png",
+          "cardPath": "encounter/encounter_front_factory.png"
+        },
+        {
+          "name": "Innsmouth Shore",
+          "buttonPath": "encounter/encounter_nei_btn_innsmouth.png",
+          "cardPath": "encounter/encounter_front_innsmouth.png"
+        }
+      ]
     },
     {
-        "expID": 8,
-        "expIconPath": "encounter/icon_exp_lt.png",
-        "cbIconPathOff": "checkbox/btn_lt_check_off.png",
-        "cbIconPathOn": "checkbox/btn_lt_check_on.png",
-        "expName": "Lurker at the Threshold"
+      "id": 0,
+      "name": "Lurker at the Threshold",
+      "iconPath": "encounter/icon_exp_lt.png",
+      "cbIconPathOff": "checkbox/btn_lt_check_off.png",
+      "cbIconPathOn": "checkbox/btn_lt_check_on.png"
     },
     {
-        "expID": 9,
-        "expIconPath": "encounter/icon_exp_dpr.png",
-        "cbIconPathOff": "checkbox/btn_dpr_check_off.png",
-        "cbIconPathOn": "checkbox/btn_dpr_check_on.png",
-        "expName": "Curse of the Dark Pharoah Revised"
+      "id": 0,
+      "name": "Curse of the Dark Pharoah Revised",
+      "iconPath": "encounter/icon_exp_dpr.png",
+      "cbIconPathOff": "checkbox/btn_dpr_check_off.png",
+      "cbIconPathOn": "checkbox/btn_dpr_check_on.png"
     },
     {
-        "expID": 10,
-        "expIconPath": "encounter/icon_exp_mh.png",
-        "cbIconPathOff": "checkbox/btn_mh_check_off.png",
-        "cbIconPathOn": "checkbox/btn_mh_check_on.png",
-        "expName": "Miskatonic Horror"
+      "id": 0,
+      "name": "Miskatonic Horror",
+      "iconPath": "encounter/icon_exp_mh.png",
+      "cbIconPathOff": "checkbox/btn_mh_check_off.png",
+      "cbIconPathOn": "checkbox/btn_mh_check_on.png"
     }
-]
+  ]
+}
