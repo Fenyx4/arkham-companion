@@ -41,46 +41,62 @@ class NeighborhoodsPage extends StatelessWidget {
               (nei.buttonPath != null && nei.buttonPath!.isNotEmpty)
                   ? 'assets/${nei.buttonPath}'
                   : 'assets/encounter/neighbourhood_overlay.png';
-          return Container(
-            margin: const EdgeInsets.symmetric(vertical: 6),
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: Opacity(
-                    opacity: 0.3,
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Image.asset(
-                          'assets/encounter/neighbourhood_overlay.png',
-                          fit: BoxFit.cover,
-                        );
-                      },
-                    ),
+          return GestureDetector(
+              child: Container(
+                  width: 120,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    image: DecorationImage(
+                        image: AssetImage(
+                            "assets/encounter/neighbourhood_overlay.png"),
+                        fit: BoxFit.fill),
                   ),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(60),
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    padding: const EdgeInsets.all(0),
+                  child: Center(child: Text("clickMe")) // button text
                   ),
-                  onPressed: () {
-                    // TODO: Define what happens when a neighborhood is pressed
-                  },
-                  child: Center(
-                    child: Text(
-                      nei.name,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
+              onTap: () {
+                print("you clicked me");
+              });
+          // return Container(
+          //   margin: const EdgeInsets.symmetric(vertical: 6),
+          //   child: Stack(
+          //     children: [
+          //       Positioned.fill(
+          //         child: Opacity(
+          //           opacity: 0.3,
+          //           child: Image.asset(
+          //             imagePath,
+          //             fit: BoxFit.cover,
+          //             errorBuilder: (context, error, stackTrace) {
+          //               return Image.asset(
+          //                 'assets/encounter/neighbourhood_overlay.png',
+          //                 fit: BoxFit.cover,
+          //               );
+          //             },
+          //           ),
+          //         ),
+          //       ),
+          //       ElevatedButton(
+          //         style: ElevatedButton.styleFrom(
+          //           minimumSize: const Size.fromHeight(60),
+          //           backgroundColor: Colors.transparent,
+          //           shadowColor: Colors.transparent,
+          //           padding: const EdgeInsets.all(0),
+          //         ),
+          //         onPressed: () {
+          //           // TODO: Define what happens when a neighborhood is pressed
+          //         },
+          //         child: Center(
+          //           child: Text(
+          //             nei.name,
+          //             style: const TextStyle(
+          //                 fontSize: 20, fontWeight: FontWeight.bold),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // );
         },
       ),
     );
