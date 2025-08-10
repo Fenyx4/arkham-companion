@@ -46,7 +46,7 @@ type JsonEncounter struct {
 type JsonLocation struct {
 	LocationId int    `json:"locationId"`
 	Name        string `json:"name"`
-	LocButtonPath string `json:"locButtonPath"`
+	//LocButtonPath string `json:"locButtonPath"`
 	Sort int    `json:"sort"`
 	ColorIds []int    `json:"colorID"`
 }
@@ -227,7 +227,7 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 	for _, loc := range locations {
 		// Initialize the location in the JSON format
 		jsonLocation := JsonLocation{
-			LocButtonPath: loc.LocButtonPath,
+			//LocButtonPath: loc.LocButtonPath,
 			LocationId:    loc.LocID,
 			Name:       loc.LocName,
 			Sort:          loc.Sort,

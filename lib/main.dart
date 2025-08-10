@@ -1,5 +1,6 @@
 import 'package:arkham_companion/neighborhoods.dart';
 import 'package:arkham_companion/expansions.dart';
+import 'package:arkham_companion/otherworlds.dart';
 import 'package:flutter/material.dart';
 import 'expansion_model.dart';
 
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       );
     } else if (_selectedIndex == 1) {
-      page = const Icon(Icons.business, size: 150);
+      page = OtherworldsPage(selectedExpansions: expansions);
     } else {
       page = NeighborhoodsPage(selectedExpansions: expansions);
     }
@@ -130,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
+            label: 'Otherworlds',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.location_city),

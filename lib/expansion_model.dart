@@ -18,6 +18,34 @@ class Neighborhood {
   }
 }
 
+class Otherworld {
+  //   "locationId": 499,
+  // "name": "The Stars are Right",
+  // "locButtonPath": "",
+  // "sort": 0,
+  // "colorID": []
+  final String name;
+  final int? locationId;
+  final int? sort;
+  final List<int>? colorID;
+
+  Otherworld({
+    required this.name,
+    this.locationId,
+    this.sort,
+    this.colorID,
+  });
+
+  factory Otherworld.fromJson(Map<String, dynamic> json) {
+    return Otherworld(
+      name: json['name'] ?? '',
+      locationId: json['locationId'],
+      sort: json['sort'],
+      colorID: (json['colorID'] as List?)?.map((e) => e as int).toList(),
+    );
+  }
+}
+
 class Expansion {
   final int id;
   final String name;
@@ -26,6 +54,7 @@ class Expansion {
   final String? cbIconPathOn;
   bool selected;
   final List<Neighborhood>? neighborhoods;
+  final List<Otherworld>? otherWorldLocations;
 
   Expansion({
     required this.id,
@@ -35,6 +64,7 @@ class Expansion {
     this.cbIconPathOn,
     this.selected = false,
     this.neighborhoods,
+    this.otherWorldLocations,
   });
 
   factory Expansion.fromJson(Map<String, dynamic> json) {
@@ -46,6 +76,9 @@ class Expansion {
       cbIconPathOn: json['cbIconPathOn'],
       neighborhoods: (json['neighborhoods'] as List?)
           ?.map((n) => Neighborhood.fromJson(n))
+          .toList(),
+      otherWorldLocations: (json['otherWorldLocations'] as List?)
+          ?.map((o) => Otherworld.fromJson(o))
           .toList(),
     );
   }
@@ -60,6 +93,14 @@ class Expansion {
                   'name': n.name,
                   'buttonPath': n.buttonPath,
                   'cardPath': n.cardPath,
+                })
+            .toList(),
+        'otherWorldLocations': otherWorldLocations
+            ?.map((o) => {
+                  'name': o.name,
+                  'locationId': o.locationId,
+                  'sort': o.sort,
+                  'colorID': o.colorID,
                 })
             .toList(),
       };

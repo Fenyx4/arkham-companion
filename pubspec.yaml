@@ -64,6 +64,8 @@ flutter:
     - assets/expansions.json
     - assets/encounter/
     - assets/checkbox/
+    - assets/otherworld/
+    - assets/other/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
