@@ -55,6 +55,8 @@ type JsonColor struct {
 	ColorID int    `json:"colorID"`
 	Name string `json:"name"`
 	ColorButtonPath string `json:"colorButtonPath"`
+	ColorPipOnPath string `json:"colorPipOnPath,omitempty"`
+	ColorPipOffPath string `json:"colorPipOffPath,omitempty"`
 }
 
 
@@ -97,6 +99,8 @@ type Color struct {
 	ColorExpID      int    `json:"colorExpID"`
 	ColorID         int    `json:"colorID"`
 	ColorName       string `json:"colorName"`
+	ColorPipOnPath  string `json:"colorPipOnPath,omitempty"`
+	ColorPipOffPath string `json:"colorPipOffPath,omitempty"`
 }
 
 type LocationToColor struct {
@@ -317,6 +321,8 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 			ColorID:        color.ColorID,
 			Name:           color.ColorName,
 			ColorButtonPath: color.ColorButtonPath,
+			ColorPipOnPath:  color.ColorPipOnPath,
+			ColorPipOffPath: color.ColorPipOffPath,
 		}
 		// Add color to thier corresponding expansions
 		if exp, exists := expansionsMap[color.ColorExpID]; exists {

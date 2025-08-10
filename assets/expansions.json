@@ -154,22 +154,30 @@
         {
           "colorID": 1,
           "name": "Yellow",
-          "colorButtonPath": "encounter/otherworld_color_btn_yellow.png"
+          "colorButtonPath": "encounter/otherworld_color_btn_yellow.png",
+          "colorPipOnPath": "other/yellow_on.png",
+          "colorPipOffPath": "other/yellow_off.png"
         },
         {
           "colorID": 2,
           "name": "Red",
-          "colorButtonPath": "encounter/otherworld_color_btn_red.png"
+          "colorButtonPath": "encounter/otherworld_color_btn_red.png",
+          "colorPipOnPath": "other/red_on.png",
+          "colorPipOffPath": "other/red_off.png"
         },
         {
           "colorID": 3,
           "name": "Blue",
-          "colorButtonPath": "encounter/otherworld_color_btn_blue.png"
+          "colorButtonPath": "encounter/otherworld_color_btn_blue.png",
+          "colorPipOnPath": "other/blue_on.png",
+          "colorPipOffPath": "other/blue_off.png"
         },
         {
           "colorID": 4,
           "name": "Green",
-          "colorButtonPath": "encounter/otherworld_color_btn_green.png"
+          "colorButtonPath": "encounter/otherworld_color_btn_green.png",
+          "colorPipOnPath": "other/green_on.png",
+          "colorPipOffPath": "other/green_off.png"
         }
       ]
     },

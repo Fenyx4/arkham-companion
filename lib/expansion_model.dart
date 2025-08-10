@@ -46,6 +46,38 @@ class Otherworld {
   }
 }
 
+class Color {
+  //          "colorID": 1,
+  // "name": "Yellow",
+  // "colorButtonPath": "encounter/otherworld_color_btn_yellow.png",
+  // "colorPipOnPath": "other/yellow_on.png",
+  // "colorPipOffPath": "other/yellow_off.png"
+
+  final String colorButtonPath;
+  final String? colorPipOnPath;
+  final String? colorPipOffPath;
+  final int colorID;
+  final String name;
+
+  Color({
+    required this.colorButtonPath,
+    this.colorPipOnPath,
+    this.colorPipOffPath,
+    required this.colorID,
+    required this.name,
+  });
+
+  factory Color.fromJson(Map<String, dynamic> json) {
+    return Color(
+      colorButtonPath: json['colorButtonPath'] ?? '',
+      colorPipOnPath: json['colorPipOnPath'],
+      colorPipOffPath: json['colorPipOffPath'],
+      colorID: json['colorID'],
+      name: json['colorName'] ?? '',
+    );
+  }
+}
+
 class Expansion {
   final int id;
   final String name;
@@ -55,6 +87,7 @@ class Expansion {
   bool selected;
   final List<Neighborhood>? neighborhoods;
   final List<Otherworld>? otherWorldLocations;
+  final List<Color>? colors;
 
   Expansion({
     required this.id,
@@ -65,6 +98,7 @@ class Expansion {
     this.selected = false,
     this.neighborhoods,
     this.otherWorldLocations,
+    this.colors,
   });
 
   factory Expansion.fromJson(Map<String, dynamic> json) {
@@ -80,6 +114,7 @@ class Expansion {
       otherWorldLocations: (json['otherWorldLocations'] as List?)
           ?.map((o) => Otherworld.fromJson(o))
           .toList(),
+      colors: (json['colors'] as List?)?.map((c) => Color.fromJson(c)).toList(),
     );
   }
 
@@ -103,5 +138,12 @@ class Expansion {
                   'colorID': o.colorID,
                 })
             .toList(),
+        'colors': colors?.map((c) => {
+              'colorButtonPath': c.colorButtonPath,
+              'colorPipOnPath': c.colorPipOnPath,
+              'colorPipOffPath': c.colorPipOffPath,
+              'colorID': c.colorID,
+              'colorName': c.name,
+            })
       };
 }

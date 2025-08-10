@@ -30,6 +30,20 @@ class OtherworldsPage extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final ow = otherWorlds[index];
           const imagePath = 'assets/other/otherworld_loc_btn.png';
+
+          // Gather all colors from selected expansions
+          final allColors =
+              selectedExpansions.expand((exp) => exp.colors ?? []).toList();
+
+          // Get the Color objects for this Otherworld's colorID list
+          final colorPips = (ow.colorID ?? [])
+              .map((id) => allColors.firstWhere(
+                    (c) => c.colorID == id,
+                    orElse: () => null,
+                  ))
+              .where((c) => c != null && c.colorPipOnPath != null)
+              .toList();
+
           return Stack(
             children: [
               Positioned.fill(
@@ -47,6 +61,37 @@ class OtherworldsPage extends StatelessWidget {
                   ),
                 ),
               ),
+              // Color pips in upper right, 2x2 grid
+              if (colorPips.isNotEmpty)
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 2,
+                        crossAxisSpacing: 2,
+                      ),
+                      itemCount: colorPips.length,
+                      itemBuilder: (context, pipIndex) {
+                        final c = colorPips[pipIndex];
+                        return Image.asset(
+                          'assets/${c!.colorPipOnPath}',
+                          width: 16,
+                          height: 16,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const SizedBox(width: 16, height: 16);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,

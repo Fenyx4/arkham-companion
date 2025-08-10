@@ -7,24 +7,32 @@
     },
     {
         "colorButtonPath": "encounter/otherworld_color_btn_yellow.png",
+        "colorPipOnPath": "other/yellow_on.png",
+        "colorPipOffPath": "other/yellow_off.png",
         "colorExpID": 1,
         "colorID": 1,
         "colorName": "Yellow"
     },
     {
         "colorButtonPath": "encounter/otherworld_color_btn_red.png",
+        "colorPipOnPath": "other/red_on.png",
+        "colorPipOffPath": "other/red_off.png",
         "colorExpID": 1,
         "colorID": 2,
         "colorName": "Red"
     },
     {
         "colorButtonPath": "encounter/otherworld_color_btn_blue.png",
+        "colorPipOnPath": "other/blue_on.png",
+        "colorPipOffPath": "other/blue_off.png",
         "colorExpID": 1,
         "colorID": 3,
         "colorName": "Blue"
     },
     {
         "colorButtonPath": "encounter/otherworld_color_btn_green.png",
+        "colorPipOnPath": "other/green_on.png",
+        "colorPipOffPath": "other/green_off.png",
         "colorExpID": 1,
         "colorID": 4,
         "colorName": "Green"
