@@ -99,6 +99,11 @@ type Color struct {
 	ColorName       string `json:"colorName"`
 }
 
+type LocationToColor struct {
+	LocID    int `json:"locID"`
+	ColorID  int `json:"colorID"`
+}
+
 func readAndMarshalJson(filePath string, v interface{}) error {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -162,12 +167,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
 
-	writeJsonFormat(expansions, cards, neighborhoods, cardToExp, locations, colors, "expansions.json")
+	// Read LocationToColor.json file
+	var locationToColors []LocationToColor
+	err = readAndMarshalJson("LocationToColor.json", &locationToColors)
+	if err != nil {
+		log.Fatal(err)
+	}
+	
+	writeJsonFormat(expansions, cards, neighborhoods, cardToExp, locations, colors, locationToColors, "expansions.json")
 }
 
-func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neighborhood, cardToExp []CardToExpansion, locations []Location, colors []Color, outputFile string) {
+func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neighborhood, cardToExp []CardToExpansion, locations []Location, colors []Color, locationToColors []LocationToColor, outputFile string) {
 	jsonFormat := JsonFormat{
 		Expansions: make([]JsonExpansion, len(expansions)),
 	}
@@ -222,6 +233,13 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 	log.Printf("Neighborhoods: %d", jsonFormat.Expansions[0].Neighborhoods)
 	log.Printf("Neighborhoods: %d", expansionsMap[1].Neighborhoods)
 
+	// Add color IDs to locations based on LocationToColor
+	locationToColorsMap := make(map[int][]int)
+	for _, locColor := range locationToColors {
+		log.Printf("LocationToColor: LocID %d, ColorID %d", locColor.LocID, locColor.ColorID)
+		locationToColorsMap[locColor.LocID] = append(locationToColorsMap[locColor.LocID], locColor.ColorID)
+	}
+
 	// Load locations and associate them with neighborhoods (for arkham cards) or expansions (for otherworld locations)
 	locationsMap := make(map[int]*JsonLocation)
 	for _, loc := range locations {
@@ -233,6 +251,12 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 			Sort:          loc.Sort,
 			ColorIds:      []int{}, // Initialize empty slice for color IDs
 		}
+
+		// Add color IDs to the location from the locationToColorsMap
+		if colorIds, exists := locationToColorsMap[loc.LocID]; exists {
+			log.Printf("Location %s has colors %v", loc.LocName, colorIds)
+			jsonLocation.ColorIds = append(jsonLocation.ColorIds, colorIds...)
+		} 
 
 		// Find the corresponding neighborhood for this location
 		if loc.NeiID != 0 {
@@ -287,6 +311,7 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 	}
 
 	// Add colors to the JSON format
+	colorsMap := make(map[int]*JsonColor)
 	for _, color := range colors {
 		jsonColor := JsonColor{
 			ColorID:        color.ColorID,
@@ -300,8 +325,12 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 		} else {
 			log.Printf("Warning: Expansion ID %d not found for color %s", color.ColorExpID, color.ColorName)
 		}
+
+		colorsMap[color.ColorID] = &jsonColor
 	}		
 	
+	
+
 
 
 	// Marshal the data to JSON

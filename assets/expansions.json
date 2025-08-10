@@ -57,72 +57,92 @@
         {
           "locationId": 499,
           "name": "The Stars are Right",
-          "locButtonPath": "",
           "sort": 0,
-          "colorID": []
+          "colorID": [
+            0
+          ]
         },
         {
           "locationId": 500,
           "name": "Other",
-          "locButtonPath": "",
           "sort": 12,
           "colorID": []
         },
         {
           "locationId": 501,
           "name": "Abyss",
-          "locButtonPath": "encounter/otherworld_loc_btn_abyss.png",
           "sort": 1,
-          "colorID": []
+          "colorID": [
+            3,
+            2
+          ]
         },
         {
           "locationId": 502,
           "name": "Another Dimension",
-          "locButtonPath": "encounter/otherworld_loc_btn_anotherdimension.png",
           "sort": 0,
-          "colorID": []
+          "colorID": [
+            1,
+            2,
+            3,
+            4
+          ]
         },
         {
           "locationId": 503,
           "name": "City of the Great Race",
-          "locButtonPath": "encounter/otherworld_loc_btn_city.png",
           "sort": 2,
-          "colorID": []
+          "colorID": [
+            4,
+            1
+          ]
         },
         {
           "locationId": 504,
           "name": "Yuggoth",
-          "locButtonPath": "encounter/otherworld_loc_btn_yuggoth.png",
           "sort": 7,
-          "colorID": []
+          "colorID": [
+            3,
+            1
+          ]
         },
         {
           "locationId": 505,
           "name": "Celeano",
-          "locButtonPath": "encounter/otherworld_loc_btn_celeano.png",
           "sort": 4,
-          "colorID": []
+          "colorID": [
+            3,
+            4
+          ]
         },
         {
           "locationId": 506,
           "name": "The Dreamlands",
-          "locButtonPath": "encounter/otherworld_loc_btn_dreamlands.png",
           "sort": 5,
-          "colorID": []
+          "colorID": [
+            1,
+            2,
+            3,
+            4
+          ]
         },
         {
           "locationId": 507,
           "name": "Plateau of Leng",
-          "locButtonPath": "encounter/otherworld_loc_btn_leng.png",
           "sort": 6,
-          "colorID": []
+          "colorID": [
+            4,
+            2
+          ]
         },
         {
           "locationId": 508,
           "name": "R'lyeh",
-          "locButtonPath": "encounter/otherworld_loc_btn_rlyeh.png",
           "sort": 3,
-          "colorID": []
+          "colorID": [
+            2,
+            1
+          ]
         }
       ],
       "colors": [
@@ -187,16 +207,20 @@
         {
           "locationId": 509,
           "name": "Another Time",
-          "locButtonPath": "encounter/otherworld_loc_btn_anothertime.png",
           "sort": 8,
-          "colorID": []
+          "colorID": [
+            2,
+            4
+          ]
         },
         {
           "locationId": 510,
           "name": "Lost Carcosa",
-          "locButtonPath": "encounter/otherworld_loc_btn_lostcarcosa.png",
           "sort": 9,
-          "colorID": []
+          "colorID": [
+            3,
+            1
+          ]
         }
       ]
     },
@@ -239,16 +263,20 @@
         {
           "locationId": 511,
           "name": "Unknown Kadath",
-          "locButtonPath": "encounter/otherworld_loc_btn_kadath.png",
           "sort": 10,
-          "colorID": []
+          "colorID": [
+            1,
+            2
+          ]
         },
         {
           "locationId": 512,
           "name": "The Underworld",
-          "locButtonPath": "encounter/otherworld_loc_btn_underworld.png",
           "sort": 11,
-          "colorID": []
+          "colorID": [
+            3,
+            4
+          ]
         }
       ]
     },
