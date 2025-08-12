@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'expansion_model.dart';
+import 'neighborhood_cards.dart';
 
 class NeighborhoodsPage extends StatelessWidget {
   final List<Expansion> selectedExpansions;
@@ -72,6 +73,14 @@ class NeighborhoodsPage extends StatelessWidget {
                 ),
                 onPressed: () {
                   print("you clicked ${nei.name}");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NeighborhoodCardsPage(
+                          neighborhood: nei,
+                          selectedExpansions: selectedExpansions),
+                    ),
+                  );
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),

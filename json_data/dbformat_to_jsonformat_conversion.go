@@ -54,6 +54,7 @@ type JsonLocation struct {
 type JsonColor struct {
 	ColorID int    `json:"colorID"`
 	Name string `json:"name"`
+	Cards 		[]JsonCard `json:"cards,omitempty"`
 	ColorButtonPath string `json:"colorButtonPath"`
 	ColorPipOnPath string `json:"colorPipOnPath,omitempty"`
 	ColorPipOffPath string `json:"colorPipOffPath,omitempty"`
@@ -106,6 +107,22 @@ type Color struct {
 type LocationToColor struct {
 	LocID    int `json:"locID"`
 	ColorID  int `json:"colorID"`
+}
+
+type CardToEncounter struct {
+	EncID    int `json:"encID"`
+	CardID   int `json:"cardID"`
+}
+
+type Encounters struct {
+	EncID	int    `json:"encID"`
+	EncText string `json:"encText"`
+	LocID	int    `json:"locID"`
+}
+
+type CardToColor struct {
+	CardID int `json:"cardToColorCardID"`
+	ColorID int `json:"cardToColorColorID"`
 }
 
 func readAndMarshalJson(filePath string, v interface{}) error {
@@ -178,11 +195,29 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	var cardToEncounters []CardToEncounter
+	err = readAndMarshalJson("CardToEncounter.json", &cardToEncounters)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var encounters []Encounters
+	err = readAndMarshalJson("Encounter.json", &encounters)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var cardToColor []CardToColor
+	err = readAndMarshalJson("CardToColor.json", &cardToColor)
+	if err != nil {
+		log.Fatal(err)
+	}
 	
-	writeJsonFormat(expansions, cards, neighborhoods, cardToExp, locations, colors, locationToColors, "expansions.json")
+	writeJsonFormat(expansions, cards, neighborhoods, cardToExp, locations, colors, locationToColors, cardToEncounters, encounters, cardToColor, "expansions.json")
 }
 
-func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neighborhood, cardToExp []CardToExpansion, locations []Location, colors []Color, locationToColors []LocationToColor, outputFile string) {
+func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neighborhood, cardToExp []CardToExpansion, locations []Location, colors []Color, locationToColors []LocationToColor, cardToEncounters []CardToEncounter, encounters []Encounters, cardToColor []CardToColor, outputFile string) {
 	jsonFormat := JsonFormat{
 		Expansions: make([]JsonExpansion, len(expansions)),
 	}
@@ -209,7 +244,79 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 		expansionsMap[exp.ExpID] = &jsonFormat.Expansions[i]
 	}
 
+	
+	encountersMap := make(map[int]*JsonEncounter)
+	for _, enc := range encounters {
+		jsonEncounter := JsonEncounter{
+			Text: enc.EncText,
+			LocationId: enc.LocID,
+		}
+		// Add the encounter to the map
+		encountersMap[enc.EncID] = &jsonEncounter
+	}
 
+	cardIDToEncounterID := make(map[int][]int)
+	for _, cte := range cardToEncounters {
+		// Associate encounters with cards
+		cardIDToEncounterID[cte.CardID] = append(cardIDToEncounterID[cte.CardID], cte.EncID)
+	}
+
+	cardIDToExpansionID := make(map[int][]int)
+	for _, cte := range cardToExp {
+		// Associate cards with expansions
+		cardIDToExpansionID[cte.CardID] = append(cardIDToExpansionID[cte.CardID], cte.ExpansionID)
+	}
+
+	neighborhoodToCardsMap := make(map[int][]*JsonCard)
+	cardsMap := make(map[int]*JsonCard)
+	for _, card := range cards {
+		// Initialize the card in the JSON format
+		jsonCard := JsonCard{
+			ColorIds: []int{},
+			ExpansionIds: []int{},
+		}
+
+		// Add encounters to the card
+		if encounterIDs, exists := cardIDToEncounterID[card.CardID]; exists {
+			for _, encID := range encounterIDs {
+				if encounter, exists := encountersMap[encID]; exists {
+					jsonCard.Encounters = append(jsonCard.Encounters, *encounter)
+				} else {
+					log.Printf("Warning: Encounter ID %d not found for card %d", encID, card.CardID)
+				}
+			}
+		} else {
+			log.Printf("Warning: No encounters found for card ID %d", card.CardID)
+		}
+
+		// Add expansion IDs to the card
+		if expansionIDs, exists := cardIDToExpansionID[card.CardID]; exists {
+			for _, expID := range expansionIDs {
+				if _, exists := expansionsMap[expID]; exists {
+					jsonCard.ExpansionIds = append(jsonCard.ExpansionIds, expID)
+				} else {
+					log.Printf("Warning: Expansion ID %d not found for card %d", expID, card.CardID)
+				}
+			}
+		} else {
+			log.Printf("Warning: No expansions found for card ID %d", card.CardID)
+		}
+
+		neighborhoodToCardsMap[card.NeighborID] = append(neighborhoodToCardsMap[card.NeighborID], &jsonCard)
+		cardsMap[card.CardID] = &jsonCard
+	}
+
+	colorToCardsMap := make(map[int][]*JsonCard)
+	// Add cards to colors based on CardToColor
+	for _, ctc := range cardToColor {
+		if card, exists := cardsMap[ctc.CardID]; exists {
+			// Add the card to the color's card list
+			colorToCardsMap[ctc.ColorID] = append(colorToCardsMap[ctc.ColorID], card)
+			log.Printf("Card %d added to color %d", ctc.CardID, ctc.ColorID)
+		} else {
+			log.Printf("Warning: Card ID %d not found for color ID %d", ctc.CardID, ctc.ColorID)
+		}
+	}
 
 	// Load Neighborhoods and associate them with expansions
 	neighborhoodsMap := make(map[int]*JsonNeighborhood)
@@ -221,6 +328,18 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 			CardPath:    nei.CardPath,
 			Cards:     []JsonCard{},
 		}
+
+		// Add cards to the neighborhood
+		if cards, exists := neighborhoodToCardsMap[nei.NeighborhoodID]; exists {
+			for _, card := range cards {
+				// Add the card to the neighborhood
+				jsonNeighborhood.Cards = append(jsonNeighborhood.Cards, *card)
+				log.Printf("Card added to neighborhood %s", nei.Name)
+			}			
+		} else {
+			log.Printf("Warning: No cards found for neighborhood ID %d", nei.NeighborhoodID)
+		}
+
 		// Find the corresponding expansion for this neighborhood
 		if exp, exists := expansionsMap[nei.ExpansionID]; exists {
 			// Add the neighborhood to the expansion
@@ -283,37 +402,6 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 		locationsMap[loc.LocID] = &jsonLocation
 	}
 
-
-	cardsMap := make(map[int]*JsonCard)
-	for _, card := range cards {
-		// Initialize the card in the JSON format
-		jsonCard := JsonCard{
-			// Populate card fields as needed
-		}
-
-		// Find the corresponding neighborhoods for this card
-		if card.NeighborID != 0 {
-			if nei, exists := neighborhoodsMap[card.NeighborID]; exists {
-				// Add the card to the neighborhood
-				nei.Cards = append(nei.Cards, jsonCard)
-			} else {
-				log.Printf("Warning: Neighborhood ID %d not found for card %d", card.NeighborID, card.CardID)
-			}
-		}
-
-		cardsMap[card.CardID] = &jsonCard
-	}
-
-	for _, cte := range cardToExp {
-		// Find the corresponding card
-		if card, exists := cardsMap[cte.CardID]; exists {
-			// Add the expansion ID to the card
-			card.ExpansionIds = append(card.ExpansionIds, cte.ExpansionID)
-		} else {
-			log.Printf("Warning: Card ID %d not found for expansion ID %d", cte.CardID, cte.ExpansionID)
-		}
-	}
-
 	// Add colors to the JSON format
 	colorsMap := make(map[int]*JsonColor)
 	for _, color := range colors {
@@ -324,6 +412,17 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 			ColorPipOnPath:  color.ColorPipOnPath,
 			ColorPipOffPath: color.ColorPipOffPath,
 		}
+
+		// Add cards to the color
+		if cards, exists := colorToCardsMap[color.ColorID]; exists {
+			for _, card := range cards {
+				// Add the card to the color
+				jsonColor.Cards = append(jsonColor.Cards, *card)
+			}
+		} else {
+			log.Printf("Warning: No cards found for color ID %d", color.ColorID)
+		}
+
 		// Add color to thier corresponding expansions
 		if exp, exists := expansionsMap[color.ColorExpID]; exists {
 			// Add the color to the expansion

@@ -2,11 +2,13 @@ class Neighborhood {
   final String name;
   final String? buttonPath;
   final String? cardPath;
+  final List<ArkhamCard> cards;
 
   Neighborhood({
     required this.name,
     this.buttonPath,
     this.cardPath,
+    this.cards = const [],
   });
 
   factory Neighborhood.fromJson(Map<String, dynamic> json) {
@@ -14,6 +16,50 @@ class Neighborhood {
       name: json['name'] ?? '',
       buttonPath: json['buttonPath'],
       cardPath: json['cardPath'],
+      cards: (json['cards'] as List?)
+              ?.map((e) => ArkhamCard.fromJson(e))
+              .toList() ??
+          [],
+    );
+  }
+}
+
+class Encounter {
+  final int locationId;
+  final String text;
+
+  Encounter({
+    required this.locationId,
+    required this.text,
+  });
+
+  factory Encounter.fromJson(Map<String, dynamic> json) {
+    return Encounter(
+      locationId: json['locationId'],
+      text: json['text'] ?? '',
+    );
+  }
+}
+
+class ArkhamCard {
+  final List<Encounter>? encounters;
+  final List<int>? ColorIds;
+  final List<int>? ExpansionIds;
+
+  ArkhamCard({
+    this.ColorIds,
+    this.ExpansionIds,
+    this.encounters,
+  });
+
+  factory ArkhamCard.fromJson(Map<String, dynamic> json) {
+    return ArkhamCard(
+      ColorIds: (json['ColorIds'] as List?)?.map((e) => e as int).toList(),
+      ExpansionIds:
+          (json['ExpansionIds'] as List?)?.map((e) => e as int).toList(),
+      encounters: (json['encounters'] as List?)
+          ?.map((e) => Encounter.fromJson(e))
+          .toList(),
     );
   }
 }
@@ -58,6 +104,7 @@ class Color {
   final String? colorPipOffPath;
   final int colorID;
   final String name;
+  final List<ArkhamCard> cards;
 
   Color({
     required this.colorButtonPath,
@@ -65,6 +112,7 @@ class Color {
     this.colorPipOffPath,
     required this.colorID,
     required this.name,
+    this.cards = const [],
   });
 
   factory Color.fromJson(Map<String, dynamic> json) {
@@ -74,6 +122,10 @@ class Color {
       colorPipOffPath: json['colorPipOffPath'],
       colorID: json['colorID'],
       name: json['colorName'] ?? '',
+      cards: (json['cards'] as List?)
+              ?.map((e) => ArkhamCard.fromJson(e))
+              .toList() ??
+          [],
     );
   }
 }

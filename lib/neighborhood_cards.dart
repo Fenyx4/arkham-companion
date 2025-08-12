@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+import 'expansion_model.dart';
+
+class NeighborhoodCardsPage extends StatelessWidget {
+  final Neighborhood neighborhood;
+  final List<Expansion> selectedExpansions;
+
+  const NeighborhoodCardsPage(
+      {super.key,
+      required this.neighborhood,
+      required this.selectedExpansions});
+
+  @override
+  Widget build(BuildContext context) {
+    final cards = neighborhood.cards;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${neighborhood.name} Cards'),
+      ),
+      body: PageView.builder(
+        itemCount: cards.length,
+        itemBuilder: (context, cardIndex) {
+          final card = cards[cardIndex];
+          final encounters = card.encounters ?? [];
+
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+              elevation: 6,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              child: ListView.builder(
+                padding: const EdgeInsets.all(16),
+                itemCount: encounters.length,
+                itemBuilder: (context, encounterIndex) {
+                  final encounter = encounters[encounterIndex];
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Encounter ${encounterIndex + 1}',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        encounter.text,
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      const Divider(height: 24),
+                    ],
+                  );
+                },
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
