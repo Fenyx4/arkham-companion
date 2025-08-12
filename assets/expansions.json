@@ -892,6 +892,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 2,
+              "name": "Arkham Asylum",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 3,
+              "name": "Bank of Arkham",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 10,
+              "name": "Independence Square",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -1777,6 +1797,26 @@
               "expansionIds": [
                 5
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 8,
+              "name": "Hibb's Roadhouse",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 15,
+              "name": "Police Station",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 26,
+              "name": "Velma's Diner",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -2666,6 +2706,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 11,
+              "name": "Inner Sanctum",
+              "sort": 2,
+              "colorID": []
+            },
+            {
+              "locationId": 18,
+              "name": "Silver Twilight Lodge",
+              "sort": 1,
+              "colorID": []
+            },
+            {
+              "locationId": 23,
+              "name": "The Witch House",
+              "sort": 3,
+              "colorID": []
+            }
           ]
         },
         {
@@ -3551,6 +3611,26 @@
               "expansionIds": [
                 2
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 16,
+              "name": "River Docks",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 22,
+              "name": "The Unnamable",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 25,
+              "name": "Unvisited Isle",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -4440,6 +4520,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 1,
+              "name": "Administration Building",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 12,
+              "name": "Library",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 17,
+              "name": "Science Building",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -5325,6 +5425,26 @@
               "expansionIds": [
                 2
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 5,
+              "name": "Curiositie Shoppe",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 14,
+              "name": "Newspaper",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 24,
+              "name": "Train Station",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -6214,6 +6334,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 4,
+              "name": "Black Cave",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 6,
+              "name": "General Store",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 7,
+              "name": "Graveyard",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -7101,6 +7241,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 9,
+              "name": "Historical Society",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 13,
+              "name": "Ma's Boarding House",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 19,
+              "name": "South Church",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -7986,6 +8146,26 @@
               "expansionIds": [
                 5
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 21,
+              "name": "St. Mary's Hospital",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 27,
+              "name": "Woods",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 28,
+              "name": "Ye Olde Magick Shoppe",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -15096,6 +15276,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 20,
+              "name": "Cold Spring Glen",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 35,
+              "name": "Whateley Farm",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 36,
+              "name": "Wizard's Hill",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -15815,6 +16015,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 31,
+              "name": "Devil's Hopyard",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 33,
+              "name": "Gardners' Place",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 34,
+              "name": "Harney Jones' Shack",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -16532,6 +16752,26 @@
               "expansionIds": [
                 3
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 29,
+              "name": "Bishop's Brook Bridge",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 30,
+              "name": "Darke's Carnival",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 32,
+              "name": "Dunwich Village",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -17289,6 +17529,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 38,
+              "name": "7th House on the Left",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 40,
+              "name": "Congregational Hospital",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 44,
+              "name": "St. Erasmus's Home",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -18006,6 +18266,26 @@
                 10,
                 5
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 37,
+              "name": "607 Water St.",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 43,
+              "name": "North Point Lighthouse",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 47,
+              "name": "The Rope and Anchor",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -18726,6 +19006,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 45,
+              "name": "Strange High House",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 46,
+              "name": "The Causeway",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 48,
+              "name": "Wireless Station",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -19443,6 +19743,26 @@
                 10,
                 5
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 39,
+              "name": "Artists' Colony",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 41,
+              "name": "Hall School",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 42,
+              "name": "Neil's Curiosity Shop",
+              "sort": 0,
               "colorID": []
             }
           ]
@@ -20200,6 +20520,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 51,
+              "name": "Esoteric Order of Dagon",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 55,
+              "name": "Innsmouth Jail",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 56,
+              "name": "Jail Cell",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -20919,6 +21259,26 @@
               ],
               "colorID": []
             }
+          ],
+          "locations": [
+            {
+              "locationId": 53,
+              "name": "First National Grocery",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 54,
+              "name": "Gilman House Hotel",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 57,
+              "name": "Marsh Refinery",
+              "sort": 0,
+              "colorID": []
+            }
           ]
         },
         {
@@ -21636,6 +21996,26 @@
                 10,
                 7
               ],
+              "colorID": []
+            }
+          ],
+          "locations": [
+            {
+              "locationId": 49,
+              "name": "Devil Reef",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 52,
+              "name": "Falcon Point",
+              "sort": 0,
+              "colorID": []
+            },
+            {
+              "locationId": 58,
+              "name": "Y'ha-nthlei",
+              "sort": 0,
               "colorID": []
             }
           ]

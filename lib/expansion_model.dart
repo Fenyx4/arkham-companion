@@ -3,12 +3,14 @@ class Neighborhood {
   final String? buttonPath;
   final String? cardPath;
   final List<ArkhamCard> cards;
+  final List<Location> locations;
 
   Neighborhood({
     required this.name,
     this.buttonPath,
     this.cardPath,
     this.cards = const [],
+    this.locations = const [],
   });
 
   factory Neighborhood.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,27 @@ class Neighborhood {
               ?.map((e) => ArkhamCard.fromJson(e))
               .toList() ??
           [],
+      locations: (json['locations'] as List?)
+              ?.map((e) => Location.fromJson(e))
+              .toList() ??
+          [],
+    );
+  }
+}
+
+class Location {
+  final int locationID;
+  final String name;
+
+  Location({
+    required this.locationID,
+    required this.name,
+  });
+
+  factory Location.fromJson(Map<String, dynamic> json) {
+    return Location(
+      locationID: json['locationId'] ?? 0,
+      name: json['name'] ?? 'Unknown Location',
     );
   }
 }

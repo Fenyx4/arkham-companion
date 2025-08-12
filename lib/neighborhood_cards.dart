@@ -35,11 +35,17 @@ class NeighborhoodCardsPage extends StatelessWidget {
                 itemCount: encounters.length,
                 itemBuilder: (context, encounterIndex) {
                   final encounter = encounters[encounterIndex];
+                  final location = encounter.locationId != null
+                      ? neighborhood.locations?.firstWhere(
+                          (loc) => loc.locationID == encounter.locationId,
+                          orElse: () =>
+                              Location(locationID: 0, name: 'Unknown Location'))
+                      : null;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Encounter ${encounterIndex + 1}',
+                        '${location?.name}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,

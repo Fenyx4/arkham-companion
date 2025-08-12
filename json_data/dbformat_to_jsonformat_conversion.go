@@ -19,7 +19,7 @@ type JsonExpansion struct {
 	IconPath			string `json:"iconPath"`
 	CbIconPathOff		string `json:"cbIconPathOff"`
 	CbIconPathOn		string `json:"cbIconPathOn"`
-	Neighborhoods 		[]JsonNeighborhood `json:"neighborhoods,omitempty"`
+	Neighborhoods 		[]*JsonNeighborhood `json:"neighborhoods,omitempty"`
 	OtherWorldLocations []JsonLocation `json:"otherWorldLocations,omitempty"`
 	Colors 				[]JsonColor `json:"colors,omitempty"`
 }
@@ -343,7 +343,7 @@ func writeJsonFormat(expansions []Expansion, cards []Card, neighborhoods []Neigh
 		// Find the corresponding expansion for this neighborhood
 		if exp, exists := expansionsMap[nei.ExpansionID]; exists {
 			// Add the neighborhood to the expansion
-			exp.Neighborhoods = append(exp.Neighborhoods, jsonNeighborhood)
+			exp.Neighborhoods = append(exp.Neighborhoods, &jsonNeighborhood)
 			log.Printf("Neighborhoods: %d", exp.Name)
 			log.Printf("Neighborhoods: %d", exp.Neighborhoods)
 		} else {
