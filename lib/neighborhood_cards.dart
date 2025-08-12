@@ -49,12 +49,19 @@ class NeighborhoodCardsPage extends StatelessWidget {
                         '${location?.name}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontFamily: "Caslon Antique",
                           fontSize: 18,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Html(
                         data: encounter.text,
+                        style: {
+                          "body": Style(
+                            fontSize: FontSize(18.0),
+                            //fontFamily: "Caslon Antique"
+                          ),
+                        },
                         //style: const TextStyle(fontSize: 16),
                       ),
                       const Divider(height: 24),
