@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'expansion_model.dart';
 
 class NeighborhoodCardsPage extends StatelessWidget {
@@ -36,7 +37,7 @@ class NeighborhoodCardsPage extends StatelessWidget {
                 itemBuilder: (context, encounterIndex) {
                   final encounter = encounters[encounterIndex];
                   final location = encounter.locationId != null
-                      ? neighborhood.locations?.firstWhere(
+                      ? neighborhood.locations.firstWhere(
                           (loc) => loc.locationID == encounter.locationId,
                           orElse: () =>
                               Location(locationID: 0, name: 'Unknown Location'))
@@ -52,9 +53,9 @@ class NeighborhoodCardsPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 4),
-                      Text(
-                        encounter.text,
-                        style: const TextStyle(fontSize: 16),
+                      Html(
+                        data: encounter.text,
+                        //style: const TextStyle(fontSize: 16),
                       ),
                       const Divider(height: 24),
                     ],
