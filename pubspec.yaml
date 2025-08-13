@@ -88,6 +88,16 @@ flutter:
     - family: Domii
       fonts:
         - asset: fonts/se-domii.ttf
+    - family: Tex Gyre Termes
+      fonts:
+        - asset: fonts/texgyretermes-regular.otf
+        - asset: fonts/texgyretermes-italic.otf
+          style: italic
+        - asset: fonts/texgyretermes-bold.otf
+          weight: 700
+        - asset: fonts/texgyretermes-bolditalic.otf
+          weight: 700
+          style: italic
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
