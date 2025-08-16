@@ -30,7 +30,7 @@ class NeighborhoodCardsPage extends StatelessWidget {
           final encounters = card.encounters ?? [];
 
           //double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
-          double unitWidthValue = MediaQuery.of(context).size.width * 0.01;
+          //double unitWidthValue = MediaQuery.of(context).size.width * 0.01;
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -55,15 +55,15 @@ class NeighborhoodCardsPage extends StatelessWidget {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                                "assets/" + (neighborhood.cardPath ?? '')),
+                                "assets/${neighborhood.cardPath ?? ''}"),
                             fit: BoxFit.fill,
                           ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(
-                              calculatedWidth * 0.07,
+                              calculatedWidth * 0.09,
                               calculatedHeight * 0.14,
-                              calculatedWidth * 0.07,
+                              calculatedWidth * 0.09,
                               calculatedHeight * 0.14),
                           child: ListView.builder(
                             itemCount: encounters.length,
@@ -80,6 +80,8 @@ class NeighborhoodCardsPage extends StatelessWidget {
                                   : null;
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                spacing: 0,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Center(
                                     child: Text(
@@ -88,7 +90,7 @@ class NeighborhoodCardsPage extends StatelessWidget {
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Caslon Antique",
-                                        fontSize: calculatedHeight * 0.10,
+                                        fontSize: calculatedHeight * 0.11,
                                         //backgroundColor: Colors.blue,
                                         color: Colors.black,
                                         // Ensures text is readable on image
@@ -110,10 +112,11 @@ class NeighborhoodCardsPage extends StatelessWidget {
                                         //backgroundColor: Colors.pink,
                                         fontFamily: "Tex Gyre Termes",
                                         fontSize:
-                                            FontSize(calculatedHeight * 0.08),
+                                            FontSize(calculatedHeight * 0.070),
                                         color: Colors.black,
-                                        lineHeight: LineHeight(
-                                            calculatedHeight * 0.007),
+                                        lineHeight: LineHeight(1.00),
+                                        margin: Margins.only(
+                                            left: 0, right: 0, bottom: 4),
                                       ),
                                     },
                                   ),
